@@ -9,10 +9,7 @@ const withSvgr = require("next-svgr");
 const mdxPrism = require("mdx-prism");
 const withMdx = require("@next/mdx")({
   options: {
-    rehypePlugins: [
-      mdxPrism,
-      // require("@mapbox/rehype-prism")
-    ],
+    rehypePlugins: [mdxPrism],
     remarkPlugins: [
       require("remark-external-links"),
       require("remark-slug"),
