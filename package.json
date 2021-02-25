@@ -28,7 +28,7 @@
     "mdx-prism": "^0.3.1",
     "next": "^10.0.7",
     "next-compose-plugins": "^2.2.1",
-    "next-mdx-remote": "^1.0.1",
+    "next-mdx-remote": "2.0",
     "next-pwa": "^5.0.5",
     "next-svgr": "0.0.2",
     "next-themes": "0.0.12",
