@@ -45,6 +45,7 @@
     "remark-prism": "^1.3.4",
     "remark-rehype": "^8.0.0",
     "remark-slug": "^6.0.0",
+    "semver": "^7.3.4",
     "swr": "^0.4.2",
     "use-dismiss": "^2.0.3",
     "use-idb-keyval": "^0.3.1",
