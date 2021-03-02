@@ -49,7 +49,7 @@
     "swr": "^0.4.2",
     "use-dismiss": "^2.0.3",
     "use-idb-keyval": "^0.3.1",
-    "webpack": "4"
+    "webpack": "^5"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.2.0",

@@ -24,10 +24,8 @@ const Stoic = ({ quotes, source }) => {
 };
 
 export async function getServerSideProps() {
-  const source = fs.readFileSync(
-    process.cwd() + "/src/pages/stoic/Context.mdx",
-    "utf8"
-  );
+  const contentPath = process.cwd() + "/src/pages/stoic/Context.mdx";
+  const source = fs.readFileSync(contentPath, "utf8");
   const mdxSource = await renderToString(source);
   const props = { source: mdxSource, quotes: getRandomQuote(quotes) };
   return {
