@@ -6,7 +6,7 @@ const links = [
   { label: "Stoicism", href: "/stoic" },
   { label: "Blog", href: "/writing" },
   { label: "OmniFocus", href: "/focusing" },
-  { label: "Contact", href: "/available" },
+  //  { label: "Contact", href: "/available" },
   { label: "Patronage", href: "/grateful" },
 ];
 
@@ -23,6 +23,14 @@ export default function Footer() {
             </Link>
           </li>
         ))}
+        <li className="p-1">
+          <a
+            href="mailto:email@blp.is"
+            className="text-blue-600 hover:underline dark:text-blue-400"
+          >
+            Email
+          </a>
+        </li>
       </ul>
       <div className="flex flex-wrap">
         {/* <span>Copyright © {new Date().getFullYear()}.&nbsp;</span> */}
