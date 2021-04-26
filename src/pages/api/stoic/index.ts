@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import seneca from "./seneca";
-import marcus from "./marcus";
-import epictetus from "./epictetus";
-// import rufus from "./rufus";
+import seneca from "./_seneca";
+import marcus from "./_marcus";
+import epictetus from "./_epictetus";
+// import rufus from "./_rufus";
 export const quotes = [...seneca, ...marcus, ...epictetus];
 
 export type Philosopher =
