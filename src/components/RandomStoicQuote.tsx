@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useRouter, NextRouter } from "next/router";
 import { cx } from "@/styles";
-import { StoicProps } from "../api/stoic/index";
+import { StoicProps } from "src/pages/api/stoic";
 
 export default function RandomStoicQuote({ author, text, source }: StoicProps) {
   const [isRefreshing, setIsRefreshing] = React.useState(false);
