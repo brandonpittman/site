@@ -50,7 +50,7 @@ export default function Index() {
               rel="noopener noreferrer me"
             >
               Github
-            </a>
+            </a>{" "}
             or{" "}
             <a
               href="https://dribbble.com/pittman"
