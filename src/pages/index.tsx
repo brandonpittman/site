@@ -45,21 +45,13 @@ export default function Index() {
             </Link>{" "}
             or follow me on{" "}
             <a
-              href="https://twitter.com/brandonpittman"
-              target="_blank"
-              rel="noopener noreferrer me"
-            >
-              Twitter
-            </a>
-            ,{" "}
-            <a
               href="https://github.com/brandonpittman"
               target="_blank"
               rel="noopener noreferrer me"
             >
               Github
             </a>
-            , or{" "}
+            or{" "}
             <a
               href="https://dribbble.com/pittman"
               target="_blank"
