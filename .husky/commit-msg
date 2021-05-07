@@ -1,4 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 . "$(dirname $0)/_/husky.sh"
 
+commitmsg=$(cat $1)
+
+if [[ $commitmsg =~ [0-9] ]]; then 
+    echo "$commitmsg is a release" 
+else 
+    echo "oops" 
+fi
 # npx --no-install devmoji -e --lint
