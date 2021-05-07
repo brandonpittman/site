@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "scripts": {
     "vercel-build": "next build",
     "dev": "next",
