@@ -45,7 +45,7 @@ equipped to make the decision at this stage of whether or not the task should
 be done at all. Doing more doesn't mean you were productive. It means you
 checked off a lot of stuff.
 
-The closet any sort of productivity system has gotten to melding task
+The closest any sort of productivity system has gotten to melding task
 management and philosophy is [The Bullet Journal][]. Where BuJo succeeded is
 the monthly migration of tasks. The friction of having to copy over all the
 previous month's tasks to the next month by hand is a reminder to the person
