@@ -1,5 +1,4 @@
 module.exports = {
-  //plugins: ["simple-import-sort"],
   root: true,
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -37,7 +36,6 @@ module.exports = {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/no-unescaped-entities": "off",
-    //"simple-import-sort/sort": "error",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
