@@ -37,7 +37,7 @@ export default function Footer() {
         </li>
         <li className="p-1">
           <a
-            href="mailto:email@blp.is"
+            href="mailto:hey@blp.is"
             className="text-blue-600 hover:underline dark:text-blue-400"
           >
             Email
