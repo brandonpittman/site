@@ -4,9 +4,7 @@ import GithubIcon from "@images/github.svg";
 import TwitterIcon from "@images/twitter.svg";
 import { trackGoal } from "fathom-client";
 import Image from "next/image";
-import { PROFILE_IMG_BASE64 } from "@lib/constants";
-
-const ProfileImg = "/favicon-192x192.png";
+import ProfileImg from "@images/header-profile.png";
 
 const trackTwitterGoal = () => trackGoal("IFOPB1RM", 0);
 const trackGithubGoal = () => trackGoal("JOZATR2E", 0);
@@ -17,18 +15,12 @@ export default function Author() {
     <Card className="mt-32">
       <aside className="max-w-md p-8 mx-auto">
         <div className="relative w-32 h-32 mx-auto overflow-hidden rounded-full ring ring-gray-300">
-          <img
-            src={PROFILE_IMG_BASE64}
-            alt=""
-            aria-hidden
-            className="absolute inset-0 object-cover object-center w-full h-full"
-            style={{ filter: "blur(24px)", transform: "scale(1.2)" }}
-          />
           <Image
             src={ProfileImg}
             height={128}
             width={128}
             alt="Brandon in a black kimono"
+            placeholder="blur"
           />
         </div>
 
