@@ -20,6 +20,7 @@ const withMdx = require("@next/mdx")({
 });
 
 module.exports = withPlugins([withPWA, withMdx, withSvgr], {
+  reactStrictMode: true,
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "bs.js"],
   async redirects() {
     return [
