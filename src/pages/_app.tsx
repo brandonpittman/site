@@ -2,6 +2,7 @@ import "tailwindcss/tailwind.css";
 import "../css/dank-mono.css";
 import "../css/prism-night-owl.css";
 
+import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { FormspreeProvider } from "@formspree/react";
 import * as Fathom from "fathom-client";
@@ -118,20 +119,20 @@ export default function App({ Component, pageProps }) {
             <meta name="msapplication-config" content="/browserconfig.xml" />
             <link rel="manifest" href="/manifest.json" />
             <meta name="theme-color" content="#ffffff" />
-            <script
-              data-name="BMC-Widget"
-              data-cfasync="false"
-              src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-              data-id="blp"
-              data-description="Support me on Buy me a coffee!"
-              data-message=""
-              data-color="#5F7FFF"
-              data-position="Right"
-              data-x_margin="16"
-              data-y_margin="16"
-              defer
-            ></script>
           </Head>
+          <Script
+            strategy="lazyOnload"
+            data-name="BMC-Widget"
+            data-cfasync="false"
+            src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+            data-id="blp"
+            data-description="Support me on Buy me a coffee!"
+            data-message=""
+            data-color="#5F7FFF"
+            data-position="Right"
+            data-x_margin="16"
+            data-y_margin="16"
+          ></Script>
           <Component {...pageProps} />
         </FormspreeProvider>
       </MDXProvider>
