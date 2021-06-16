@@ -86,7 +86,6 @@
   },
   "license": "ISC",
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --cache --fix",
     "*.{ts,tsx,jsx,js,css,md,mdx}": "prettier --write"
   }
 }
