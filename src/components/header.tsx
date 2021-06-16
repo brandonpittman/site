@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import useDismiss from "use-dismiss";
-import ProfileImg from "public/favicon-128x128.png";
+import ProfileImg from "@images/header-profile.png";
 
 const links = HeaderLinks;
 const trackMobileMenuGoal = () => trackGoal("RYQBIEQE", 0);
