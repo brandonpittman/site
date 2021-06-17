@@ -26,17 +26,6 @@ export default function Footer() {
         ))}
         <li className="p-1">
           <a
-            onClick={() => trackGoal("RFVYJVL2", 0)}
-            href="https://world.hey.com/blp/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-blue-600 hover:underline dark:text-blue-400"
-          >
-            HEY World
-          </a>
-        </li>
-        <li className="p-1">
-          <a
             href="mailto:hey@blp.is"
             className="text-blue-600 hover:underline dark:text-blue-400"
           >
