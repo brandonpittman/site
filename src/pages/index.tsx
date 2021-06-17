@@ -85,7 +85,7 @@ export default function Index() {
         </div>
 
         <div className="flex items-center justify-center">
-          <Cta href="mailto:email@blp.is">Send me a message</Cta>
+          <Cta href="mailto:hey@blp.is">Send me a message</Cta>
         </div>
       </Layout>
     </>
