@@ -6,6 +6,8 @@ date: 2020-12-12
 tags: ["japan"]
 ---
 
+[one-foot-out-the-door](#one-foot-out-the-door)
+
 ## What a Nerd
 
 The first time I ever got interested in Japan was when I was a junior in high school. I was working at Arby’s with a Vietnamese guy who was super into anime. He lent me the whole run of _Cowboy Bebop_—**on VHS**. I watched it all, loved it, and was hooked on Japan. While I used to play nothing but sports video games, now I was playing JRPGs. I signed up for Netflix, back when they mailed you DVDs and rented every Kurosawa and yakuza film I could get my hands on. When I started college, I got a job working at Best Buy, and nearly my entire paycheck went right back into the store—games and anime DVDs.
@@ -50,4 +52,4 @@ I'll leave this first _Developed in Isolation_ story on a bright note. Taking th
 
 ---
 
-This post was originally part of the *Developed in Isolation* newsletter. [Subscribe to the newsletter](https://buttondown.email/developedinisolation) to read the next issue when it comes out. 
+This post was originally part of the _Developed in Isolation_ newsletter. [Subscribe to the newsletter](https://buttondown.email/developedinisolation) to read the next issue when it comes out.

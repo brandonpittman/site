@@ -1,9 +1,9 @@
 import Layout from "@components/layout";
 import { quotes, getRandomQuote } from "../api/stoic";
 import RandomStoicQuote from "@components/RandomStoicQuote";
-import renderToString from "next-mdx-remote/render-to-string";
-import hydrate from "next-mdx-remote/hydrate";
-import fs from "fs";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import fs from "fs/promises";
 
 const meta = {
   title: "Random Stoic Quote",
@@ -11,22 +11,23 @@ const meta = {
 };
 
 const Stoic = ({ quotes, source }) => {
-  const content = hydrate(source);
   return (
     <Layout className="prose dark:prose-dark" meta={meta}>
       <RandomStoicQuote {...quotes} />
 
       <hr />
 
-      <div>{content}</div>
+      <div>
+        <MDXRemote {...source} />
+      </div>
     </Layout>
   );
 };
 
 export async function getServerSideProps() {
   const contentPath = process.cwd() + "/src/components/StoicContent.mdx";
-  const source = fs.readFileSync(contentPath, "utf8");
-  const mdxSource = await renderToString(source);
+  const source = await fs.readFile(contentPath, "utf8");
+  const mdxSource = await serialize(source);
   const props = { source: mdxSource, quotes: getRandomQuote(quotes) };
   return {
     props,

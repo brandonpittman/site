@@ -2,7 +2,7 @@ import Layout from "@components/layout";
 import OldPostWarning from "@components/OldPostWarning";
 import PostMeta from "@components/post_meta";
 import { getAllPosts, queryPost } from "@lib/api";
-import hydrate from "next-mdx-remote/hydrate";
+import { MDXRemote } from "next-mdx-remote";
 import CustomLink from "@components/Link";
 
 const components = {
@@ -10,7 +10,6 @@ const components = {
 };
 
 export default function Post({ source, data }) {
-  const content = hydrate(source, { components });
   const meta = { title: data.title, description: data.description };
 
   return (
@@ -27,7 +26,9 @@ export default function Post({ source, data }) {
           {data.description}
         </p>
 
-        <div className="prose sm:prose-lg dark:prose-dark">{content}</div>
+        <div className="prose sm:prose-lg dark:prose-dark">
+          <MDXRemote {...source} components={components} />
+        </div>
       </div>
     </Layout>
   );

@@ -1,14 +1,9 @@
-import fs from "fs";
+import fs from "fs/promises";
 import globby from "globby";
 import matter from "gray-matter";
-import renderToString from "next-mdx-remote/render-to-string";
+import { serialize } from "next-mdx-remote/serialize";
 import { basename, join } from "path";
 import readingTime from "reading-time";
-import CustomLink from "@components/Link";
-
-const components = {
-  a: CustomLink,
-};
 
 const postsDirectory = join(process.cwd(), "content/posts");
 
@@ -26,12 +21,11 @@ export interface Post {
 export async function queryPost(slug: string, queryWithPlugins = false) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = await fs.readFile(fullPath, "utf8");
   let { data, content } = matter(fileContents);
   const remarkPlugins = [...(queryWithPlugins ? [require("remark-slug")] : [])];
   const rehypePlugins = [...(queryWithPlugins ? [require("mdx-prism")] : [])];
-  const source = await renderToString(content, {
-    components,
+  const source = await serialize(content, {
     mdxOptions: {
       remarkPlugins,
       rehypePlugins,
