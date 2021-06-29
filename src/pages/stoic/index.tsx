@@ -3,7 +3,7 @@ import { quotes, getRandomQuote } from "../api/stoic";
 import RandomStoicQuote from "@components/RandomStoicQuote";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import fs from "fs/promises";
+import fs from "fs";
 
 const meta = {
   title: "Random Stoic Quote",
@@ -26,7 +26,7 @@ const Stoic = ({ quotes, source }) => {
 
 export async function getServerSideProps() {
   const contentPath = process.cwd() + "/src/components/StoicContent.mdx";
-  const source = await fs.readFile(contentPath, "utf8");
+  const source = fs.readFileSync(contentPath, "utf8");
   const mdxSource = await serialize(source);
   const props = { source: mdxSource, quotes: getRandomQuote(quotes) };
   return {
