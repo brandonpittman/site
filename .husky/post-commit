@@ -2,5 +2,4 @@
 ## START BRANCHLESS CONFIG
 
 git branchless hook-post-commit "$@"
-next lint
 ## END BRANCHLESS CONFIG
