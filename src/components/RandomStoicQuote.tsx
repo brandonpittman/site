@@ -3,7 +3,8 @@ import { useRouter, NextRouter } from "next/router";
 import { cx } from "@/styles";
 import { StoicProps } from "src/pages/api/stoic";
 
-export default function RandomStoicQuote({ author, text, source }: StoicProps) {
+export default function RandomStoicQuote({ quote }: StoicProps) {
+  const { text, author, source } = quote;
   const [isRefreshing, setIsRefreshing] = React.useState(false);
   const router = useRouter();
   const refreshData = (router: NextRouter) => {
@@ -13,7 +14,7 @@ export default function RandomStoicQuote({ author, text, source }: StoicProps) {
 
   React.useEffect(() => {
     setIsRefreshing(false);
-  }, [author, text, source]);
+  }, [quote]);
 
   return (
     <div>

@@ -10,10 +10,10 @@ const meta = {
   description: "A small app that outputs a random Stoic quote.",
 };
 
-const Stoic = ({ quotes, source }) => {
+const Stoic = ({ quote, source }) => {
   return (
     <Layout className="prose dark:prose-dark" meta={meta}>
-      <RandomStoicQuote {...quotes} />
+      <RandomStoicQuote quote={quote} />
 
       <hr />
 
@@ -28,7 +28,7 @@ export async function getServerSideProps() {
   const contentPath = process.cwd() + "/src/components/StoicContent.mdx";
   const source = fs.readFileSync(contentPath, "utf8");
   const mdxSource = await serialize(source);
-  const props = { source: mdxSource, quotes: getRandomQuote(quotes) };
+  const props = { source: mdxSource, quote: getRandomQuote(quotes) };
   return {
     props,
   };

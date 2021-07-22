@@ -10,7 +10,9 @@ export type Philosopher =
   | "Seneca"
   | "Epictetus"
   | "Musonius Rufus";
-export type StoicProps = { author: Philosopher; text: string; source: string };
+export type StoicProps = {
+  quote: { author: Philosopher; text: string; source: string };
+};
 
 export const getRandomQuote = (data: typeof quotes) =>
   data[Math.floor(Math.random() * data.length)];
