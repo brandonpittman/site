@@ -81,7 +81,7 @@
     "rss-to-json": "^1.1.3",
     "sharp": "^0.27.2",
     "tailwindcss": "^2.0.3",
-    "tailwindcss-plugin-fancy": "^2.10.1",
+    "tailwindcss-plugin-fancy": "^3.0.2",
     "typescript": "^4.3.2"
   },
   "license": "ISC",
