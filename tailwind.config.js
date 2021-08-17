@@ -8,6 +8,7 @@ const whitelist = [/markdown/, /rich-text/, /primary/, /secondary/];
 
 module.exports = {
   darkMode: "class",
+  mode: "jit",
   purge: {
     options: {
       keyframes: true,
