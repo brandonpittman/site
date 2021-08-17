@@ -2,6 +2,7 @@ import "tailwindcss/tailwind.css";
 import "../css/dank-mono.css";
 import "../css/prism-night-owl.css";
 
+import { useAnalytics } from "@happykit/analytics";
 //import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import { FormspreeProvider } from "@formspree/react";
@@ -28,6 +29,8 @@ export default function App({ Component, pageProps }) {
       excludedDomains: ["vercel.app", "now.sh", "localhost"],
     });
   }, []);
+
+  useAnalytics({ publicKey: "analytics_pub_361b311602" });
 
   return (
     <ThemeProvider defaultTheme="system" attribute="class">
