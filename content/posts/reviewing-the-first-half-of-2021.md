@@ -21,9 +21,9 @@ tags:
 
 Towards the end of 2020, I started delving into Stoicism. The path that led me there was something like:
 
-1. Adam Wathan tweets about Atomic Habits
-2. Atomic Habits mentions _The Obstacle is the Way_
-3. Introduction to Marcus Aurelius and _Meditations_
+1. Adam Wathan tweets about <amazon name="Atomic Habits">_Atomic Habits_</amazon>
+2. Atomic Habits mentions <amazon name="The Obstacle Is the Way">_The Obstacle Is the Way_</amazon>
+3. Introduction to Marcus Aurelius and <amazon name="meditations">_Meditations_</amazon>
 
 I'm sure a lot of 30-something white guy programmers/productivity nerds have a similar story about how they wound up at Stoicism. What appealed to me about the philosophy was its focus on _amor fati_, or loving your fate. This is not to say that you should never take umbrage with injustice or stand by as atrocities happen, but it means that the things that happen _to you_ are out of your control. The only thing in your control is how to react to and perceive the events happening around you. You can choose to be angry or you can choose not to be. That choice about our impressions is the only thing we're truly in control of.
 
@@ -55,7 +55,7 @@ So what did I want to do this year, have a baby, it would seem. My boy—drum ro
 
 ### Ancient Languages
 
-I've always been a lover of history and language too, so this year I combined the two and started studying Latin and Attic Greek. Latin was surprisingly easy to get started with thanks to the [Lingua Latina][lingualatina] series of books. I was able to read the first chapter of the textbook, which is all in Latin, without any prior Latin experience. It achieves this by presenting you with easy to digest passages that any European language speaker should be able to parse the meaning of and lots of pictures in the margins.
+I've always been a lover of history and language too, so this year I combined the two and started studying Latin and Attic Greek. Latin was surprisingly easy to get started with thanks to the <amazon name="lingua latina">_Lingua Latina_</amazon> series of books. I was able to read the first chapter of the textbook, which is all in Latin, without any prior Latin experience. It achieves this by presenting you with easy to digest passages that any European language speaker should be able to parse the meaning of and lots of pictures in the margins.
 
 Attic Greek isn't quite as easy to get into, there isn't the same kind of great learning materials for Greek like Latin has, so you have to combine lots of resources together. The different alphabet also takes time getting used. I'm not as far along in my Greek study as I am with Latin, but I've got all the materials I need to continue on.
 
@@ -81,6 +81,5 @@ I guess that's it. That's what I've been doing with my 2021 so far. It's been gr
 
 [ivylee]: https://medium.com/internet-artist-collective/the-simplest-combo-to-maximize-productivity-6bd29c96eed4
 [analog]: https://ugmonk.com/pages/analog
-[lingualatina]: https://www.amazon.com/Lingua-Latina-Illustrata-Pars-Familia/dp/1585104205/ref=sr_1_1?dchild=1&keywords=lingua+latina&qid=1626934209&sr=8-1
 [lukeranieri]: https://lukeranieri.com/
 [jamesgranger]: https://www.youtube.com/watch?v=zWveMGgKtC8

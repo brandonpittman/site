@@ -4,9 +4,11 @@ import PostMeta from "@components/post_meta";
 import { getAllPosts, queryPost } from "@lib/api";
 import { MDXRemote } from "next-mdx-remote";
 import CustomLink from "@components/Link";
+import AmazonLink from "@components/AmazonLink";
 
 const components = {
   a: CustomLink,
+  amazon: AmazonLink,
 };
 
 export default function Post({ source, data }) {
