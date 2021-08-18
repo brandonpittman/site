@@ -37,7 +37,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
       <Head>
         <title>Unread Pinboard Links</title>
       </Head>
-      <h1>Unread Pinboard Links</h1>
+      <h1>Unread</h1>
       <ul>
         {links.map((link: PinboardItem) => (
           <li key={link.href}>
