@@ -29,7 +29,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
       },
     });
 
-    // mutate("/api/pinboard/unread");
+    mutate("/api/pinboard/unread");
   };
 
   return (
