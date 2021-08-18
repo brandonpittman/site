@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { isWithinInterval, subMinutes } from "date-fns/fp";
+import { isWithinInterval, subMinutes, isBefore } from "date-fns/fp";
+import Redis from "ioredis";
 
 export type PinboardItem = {
   href: string;
@@ -16,10 +17,11 @@ export type PinboardItem = {
 const Pinboard = require("node-pinboard").default;
 const token = process.env.PINBOARD_TOKEN;
 const pinboard = new Pinboard(token);
+const client = new Redis(process.env.UPSTASH_BLOG);
 
 const oneMinuteAgo = () => subMinutes(1)(new Date());
 
-const withinOneMinute = (date: Date) =>
+const withinOneMinute = (date: number) =>
   isWithinInterval(
     {
       start: oneMinuteAgo(),
@@ -34,8 +36,15 @@ export const markAsRead = async (item: PinboardItem) => {
 };
 
 export const fetchAll = async () => {
-  // const {update_time} = await pinboard.update();
-  return await pinboard.all();
+  const { update_time } = await pinboard.update();
+  if (withinOneMinute(Date.parse(update_time))) {
+    const links = await pinboard.all();
+    await client.set("links", JSON.stringify(links));
+    return links;
+  } else {
+    const links = await client.get("links");
+    return JSON.parse(links);
+  }
 };
 
 export const fetchUnread = async () => {
