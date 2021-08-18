@@ -1,30 +1,35 @@
 import Head from "next/head";
 import { serialize } from "cookie";
-import { useState } from "react";
 import { fetchUnread, PinboardItem } from "./api/pinboard/unread";
 import { GetServerSidePropsContext } from "next";
-import { Tag } from "@/images/heroicons/solid";
+import useSWR, { mutate } from "swr";
 
 const readItem = (link: PinboardItem) => ({
   ...link,
   toread: "no",
 });
 
-export default function ReadingPage({ links }: { links: PinboardItem[] }) {
-  const [state, setState] = useState(links);
+export default function ReadingPage({ data }: { data: PinboardItem[] }) {
+  const { data: links } = useSWR(`/api/pinboard/unread`, {
+    initialData: data,
+  });
 
-  const onClick = (item: PinboardItem) => {
-    setState((prev) =>
-      prev.filter((stateLink) => stateLink.href !== item.href)
+  const onClick = async (item: PinboardItem) => {
+    mutate(
+      "/api/pinboard/unread",
+      data.filter((v) => v.href !== item.href),
+      false
     );
 
-    fetch("/api/pinboard/read", {
+    await fetch("/api/pinboard/read", {
       method: "POST",
       body: JSON.stringify(readItem(item)),
       headers: {
         "Content-Type": "application/json",
       },
     });
+
+    mutate("/api/pinboard/unread");
   };
 
   return (
@@ -34,7 +39,7 @@ export default function ReadingPage({ links }: { links: PinboardItem[] }) {
       </Head>
       <h1>Unread Pinboard Links</h1>
       <ul>
-        {state.map((link: PinboardItem) => (
+        {links.map((link: PinboardItem) => (
           <li key={link.href}>
             <a
               href={link.href}
@@ -75,7 +80,7 @@ export async function getServerSideProps({
       notFound: true,
     };
   } else {
-    const links = await fetchUnread();
+    const data = await fetchUnread();
 
     const pwCookie = serialize(
       "password",
@@ -90,7 +95,7 @@ export async function getServerSideProps({
 
     return {
       props: {
-        links,
+        data,
       },
     };
   }

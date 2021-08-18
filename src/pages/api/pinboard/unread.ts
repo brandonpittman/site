@@ -18,7 +18,6 @@ const Pinboard = require("node-pinboard").default;
 const token = process.env.PINBOARD_TOKEN;
 const pinboard = new Pinboard(token);
 const client = new Redis(process.env.UPSTASH_BLOG);
-
 const oneMinuteAgo = () => subMinutes(1)(new Date());
 
 const withinOneMinute = (date: number) =>
@@ -30,21 +29,17 @@ const withinOneMinute = (date: number) =>
     date
   );
 
-export const markAsRead = async (item: PinboardItem) => {
-  await pinboard.delete(item.href);
-  await pinboard.add(item);
-};
-
 export const fetchAll = async () => {
-  const { update_time } = await pinboard.update();
-  if (withinOneMinute(Date.parse(update_time))) {
-    const links = await pinboard.all();
-    await client.set("links", JSON.stringify(links));
-    return links;
-  } else {
-    const links = await client.get("links");
-    return JSON.parse(links);
-  }
+  // const { update_time } = await pinboard.update();
+  // if (withinOneMinute(Date.parse(update_time))) {
+  //   await client.set("links", JSON.stringify(links));
+  //   return links;
+  // } else {
+  //   const links = await client.get("links");
+  //   return JSON.parse(links);
+  // }
+  const links = await pinboard.all();
+  return links;
 };
 
 export const fetchUnread = async () => {
@@ -56,10 +51,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("hi");
-  const { query } = req;
-
-  if (query.password !== process.env.PINBOARD_PASSWORD) {
+  if (req.cookies.password !== process.env.PINBOARD_PASSWORD) {
     return res.status(401).send("Not authorized.");
   }
 
