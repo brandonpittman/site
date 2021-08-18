@@ -30,15 +30,23 @@ const withinOneMinute = (date: number) =>
   );
 
 export const fetchAll = async () => {
-  // const { update_time } = await pinboard.update();
-  // if (withinOneMinute(Date.parse(update_time))) {
-  //   await client.set("links", JSON.stringify(links));
-  //   return links;
-  // } else {
-  //   const links = await client.get("links");
-  //   return JSON.parse(links);
-  // }
+  pinboard
+    .update()
+    .then(({ update_time }) => client.set("updated", update_time));
+
   const links = await pinboard.all();
+
+  const mappedLinks = links
+    .filter((v: PinboardItem) => v.toread === "yes")
+    .map((link: PinboardItem) => JSON.stringify(link));
+
+  client.del("unread").then(() => {
+    client.lpush("unread", ...mappedLinks);
+  });
+  // const cached = (await client.lrange("unread", 0, -1)).map((v) =>
+  //   JSON.parse(v)
+  // );
+  // console.log(cached);
   return links;
 };
 
