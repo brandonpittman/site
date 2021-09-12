@@ -1,5 +1,7 @@
+import Head from "next/head";
+
 const Ogp = () => (
-  <>
+  <Head>
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60x60.png" />
@@ -26,7 +28,7 @@ const Ogp = () => (
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#ffffff" />
-  </>
+  </Head>
 );
 
 export default Ogp;

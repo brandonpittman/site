@@ -4,15 +4,13 @@ const forms = require("@tailwindcss/forms");
 const lineClamp = require("@tailwindcss/line-clamp");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-const whitelist = [/markdown/, /rich-text/, /primary/, /secondary/];
-
 module.exports = {
   darkMode: "class",
   mode: "jit",
   purge: {
     options: {
       keyframes: true,
-      safelist: whitelist,
+      safelist: [/markdown/, /rich-text/, /primary/, /secondary/],
     },
     content: [
       "./src/components/**/*.{js,jsx,ts,tsx}",
@@ -94,17 +92,11 @@ module.exports = {
           },
         },
       }),
-      // fontFamily: {
-      //   sans: ["Inter", ...defaultTheme.fontFamily.sans],
-      // },
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      },
     },
     container: { center: true, padding: "1rem" },
-  },
-
-  variants: {
-    extend: {
-      typography: ["dark"],
-    },
   },
 
   plugins: [
