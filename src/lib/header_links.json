@@ -1,11 +1,14 @@
 {
   "internal": [
     {
-      "title": "Blog",
+      "title": "Writing",
       "to": "/writing"
     }
   ],
   "external": [
-   
+    {
+      "title": "GitHub",
+      "to": "https://github.com/brandonpittman"
+    }
   ]
 }

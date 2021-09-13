@@ -3,11 +3,11 @@ import { Transition } from "@headlessui/react";
 import { Menu, X } from "@images/heroicons/solid";
 import HeaderLinks from "@lib/header_links.json";
 import { trackGoal } from "fathom-client";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import useDismiss from "use-dismiss";
-import ProfileImg from "@images/header-profile.png";
+// import Image from "next/image";
+// import ProfileImg from "@images/header-profile.png";
 
 const links = HeaderLinks;
 const trackMobileMenuGoal = () => trackGoal("RYQBIEQE", 0);
@@ -25,11 +25,12 @@ export default function Header() {
   return (
     <header className="w-full">
       <nav className="w-full px-4 py-4 pb-4 bg-white border-b sm:px-16 dark:border-transparent dark:bg-black dark:text-white dark:shadow">
-        <div className="flex items-center justify-between w-full">
+        <div className="container mx-auto flex items-center justify-between w-full">
           <h1>
             <Link href="/">
-              <a className="py-2">
-                <div className="relative w-12 h-12 overflow-hidden rounded-full ring ring-gray-300">
+              <a className="p-2 focus:outline-none focus:ring rounded-md">
+                blp
+                {/*<div className="relative w-12 h-12 overflow-hidden rounded-full ring ring-gray-300">
                   <Image
                     src={ProfileImg}
                     width={48}
@@ -37,7 +38,7 @@ export default function Header() {
                     alt="Brandon in a black kimono"
                     placeholder="blur"
                   />
-                </div>
+                </div>*/}
               </a>
             </Link>
           </h1>
@@ -93,11 +94,11 @@ export default function Header() {
             </Transition>
           </div>
 
-          <ul className="hidden md:flex">
+          <ul className="hidden md:flex gap-8">
             {links.internal.map((link) => (
               <li key={link.title}>
                 <Link href={link.to}>
-                  <a className="block ml-8 text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition-all ease-in-out duration-75 hover:text-gray-900 dark:text-gray-50">
+                  <a className="block text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition ease-in-out duration-75 hover:text-gray-900 focus:outline-none focus:ring rounded-md p-2 dark:text-gray-50">
                     {link.title}
                   </a>
                 </Link>
@@ -109,7 +110,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer author"
                   href={link.to}
-                  className="block ml-8 text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition-all ease-in-out duration-75 hover:text-gray-900 dark:text-gray-50"
+                  className="block p-2 focus:outline-none focus:ring rounded-md text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition ease-in-out duration-75 hover:text-gray-900 dark:text-gray-50"
                 >
                   {link.title}
                 </a>
