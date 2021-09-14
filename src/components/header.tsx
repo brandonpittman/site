@@ -28,7 +28,7 @@ export default function Header() {
         <div className="container mx-auto flex items-center justify-between w-full">
           <h1>
             <Link href="/">
-              <a className="focus:outline-none focus:ring rounded-md">
+              <a className="focus:outline-none focus:ring rounded-full inline-block focus:ring-offset-4">
                 <span className="sr-only">Home</span>
                 <div className="relative flex items-center w-10 h-10 overflow-hidden rounded-full ring ring-gray-300">
                   <Image
