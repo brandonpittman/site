@@ -1,8 +1,8 @@
 ---
 date: 2020-09-21
-title: A Minimal Amount of Things
+title: On Minimalist Things
 description: Taking the time to scale down your task management system leads to greater focus on the things that you care about and want to accomplish.
-slug: a-minimal-amount-of-things
+slug: on-minimalist-things
 tags: ["things", "gtd", "productivity", "omnifocus"]
 ---
 

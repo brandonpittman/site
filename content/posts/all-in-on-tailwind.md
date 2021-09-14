@@ -1,10 +1,11 @@
 ---
+archived: true
 slug: all-in-on-tailwind
 date: 2019-07-27
 title: All In On Tailwind
 description: Where I eschew all CSS files and put everything into Tailwind's config file.
 image: "wing-with-sunset.jpg"
-tags: ['tailwind', 'css', 'postcss']
+tags: ["tailwind", "css", "postcss"]
 ---
 
 I'm a huge fan of Tailwind if you didn't already know. I also just love plain

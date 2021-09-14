@@ -1,7 +1,7 @@
 ---
-title: A Minimalist Take on GTD
+title: On Minimalist GTD
 date: 2020-12-16
-slug: a-minimalist-take-on-gtd
+slug: on-minimalist-gtd
 description: If you can't do GTD with pen and paper, an $80 to-do list isn't going to help you.
 tags: ["productivity", "gtd", "omnifocus"]
 ---

@@ -1,8 +1,8 @@
 ---
 date: 2021-02-03 21:00:00 +9:00
-title: Productivity and Philosophy
+title: On Productivity and Philosophy
 description: Productivity and philosophy go hand in hand.
-slug: productivity-and-philosophy
+slug: on-productivity-and-philosophy
 tags: ["productivity", "philosophy", "stoicism"]
 ---
 

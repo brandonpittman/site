@@ -11,6 +11,7 @@ export interface Post {
   content: string;
   source: any;
   data: {
+    archived: boolean;
     date: Date;
     tags: string[];
     description: string;
@@ -52,9 +53,11 @@ export async function getAllPosts(queryWithPlugins = false) {
   const posts = await Promise.all(
     slugs.map((slug) => queryPost(slug, queryWithPlugins))
   );
-  return posts.sort((post1: Post, post2: Post) =>
-    post1.data.date > post2.data.date ? -1 : 1
-  );
+  return posts
+    .filter((post) => !post.data.archived)
+    .sort((post1: Post, post2: Post) =>
+      post1.data.date > post2.data.date ? -1 : 1
+    );
 }
 
 export async function getAllTags(): Promise<string[]> {

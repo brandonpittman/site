@@ -1,4 +1,5 @@
 ---
+archived: true
 title: Giving Forestry.io a Go
 slug: giving-forestry-io-a-go
 description: The one where I check out another headless CMS, for the second time.

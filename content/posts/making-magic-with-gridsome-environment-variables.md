@@ -1,14 +1,15 @@
 ---
+archived: true
 title: Making Magic with Gridsome Environment Variables
 slug: making-magic-with-gridsome-environment-variables
 description: You can do some pretty interesting things with GRIDSOME environment variables.
 image: "grant-ritchie-x1w_Q78xNEY-unsplash.jpg"
 date: 2019-12-08T13:00:00.000+00:00
 tags:
-- node
-- jamstack
-- javascript
-- gridsome
+  - node
+  - jamstack
+  - javascript
+  - gridsome
 ---
 
 When working with [Gridsome](https://gridsome.org), you can have environment variables. Your usual environment variable is accessed using `SOME_VARIABLE_NAME`. This is great for stuff being processed by Gridsome's server API, but the client code probably doesn't need all your secret API keys and whatnot. Grisdsome has an affordance for client-side environment variables though. If you prefix your variable names with `GRIDSOME_`, just those variables will also be available in your client-side code. Non-secret stuff can be put in there without any worry. You can think grab those variables with `GRIDSOME_SOME_VARIABLE`.
@@ -17,8 +18,8 @@ What might you do with this? Well, at work, I have to build a lot of multi-lingu
 
 ```javascript
 function translate(x) {
-	// blah blah blah
-  	return someJSON[process.env.GRIDSOME_BUILD_LANG][x]
+  // blah blah blah
+  return someJSON[process.env.GRIDSOME_BUILD_LANG][x];
 }
 ```
 

@@ -3,7 +3,7 @@ slug: reasonml-in-2020
 date: 2020-09-05
 title: ReasonML in 2020
 description: The one where I talk about the goofy mess ReasonML has become.
-image: ""
+archived: true
 tags: ["reasonml", "javascript", "rescript", "bucklescript"]
 ---
 

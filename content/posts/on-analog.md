@@ -1,5 +1,5 @@
 ---
-slug: totally-analog
+slug: on-analog
 date: 2021-07-23
 title: On Ugmonk's Analog System
 description: Going all Analog for personal task management was the best choice I've ever made regarding productivity.
