@@ -27,7 +27,7 @@ export default function Layout({
       <div className="flex flex-col min-h-screen text-lg bg-gray-50 dark:bg-black dark:text-gray-50">
         <a
           href="#skip-content-target"
-          className="sr-only focus:not-sr-only focus:ring hover:ring"
+          className="sr-only m-4 focus:not-sr-only focus:!fixed bg-white rounded-md z-50 shadow left-4 top-4 focus:ring hover:ring focus:outline-none !p-1"
         >
           Skip to main content
         </a>
