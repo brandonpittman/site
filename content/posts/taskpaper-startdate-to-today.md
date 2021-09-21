@@ -1,4 +1,5 @@
 ---
+archived: true
 date: 2021-02-05 22:00:00 +9:00
 slug: taskpaper-startdate-to-today
 description: Change all the TaskPaper `@start(currentDate)` tags to `@today`.

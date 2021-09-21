@@ -1,4 +1,5 @@
 ---
+archived: true
 date: 2021-02-05 17:00:00 +9:00
 slug: defer-taskpaper-tasks-one-day.md
 description: Scripting TaskPaper for fun and profit. Stoic Productivity scripting at its finest.

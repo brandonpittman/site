@@ -1,17 +1,17 @@
 ---
-title: Learning Functional Programming
-slug: learning-functional-programming
-description: 'How I started with functional programming. '
+title: On Learning Functional Programming
+slug: on-learning-functional-programming
+description: "How I started with functional programming. "
 image: "victor-garcia-3YW2jxSblE8-unsplash.jpg"
 date: 2020-04-11T00:00:00+09:00
 tags:
-- purescript
-- elm
-- reason
-- javascript
-- fp
-
+  - purescript
+  - elm
+  - reason
+  - javascript
+  - fp
 ---
+
 Functional programming has always been one of those things that at once intrigued and terrified me. Something about the word “monad” sends shivers through OO people. But the allure of simple unary functions entices us. Having given up Ruby for JavaScript, I found myself in a language that seemed more welcoming of FP. There are a number of FP libraries written in JavaScript and people like Brian Lonsdoef are out there teaching and spreading the gospel.
 
 So that’s how I got my feet wet. I got more familiar with map and reduce. I started writing simpler functions. I played with Ramda and curried functions. I took Brian’s Frontend Masters courses. This led to late nights reading the docs for Ramda, Folktale, Fantasy Land, Sanctuary, and Fluture. I was hooked. I wanted to use Maybes, Tasks, and immutable data structures.

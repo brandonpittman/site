@@ -1,4 +1,5 @@
 ---
+archived: true
 title: Creating a Burner List in Things
 slug: creating-a-burner-list-in-things
 description: Adapting Jake Knapp's Burner List to work with Things' Today list.

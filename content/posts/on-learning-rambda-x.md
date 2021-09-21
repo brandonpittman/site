@@ -1,12 +1,12 @@
 ---
-title: Learning Rambda(x)
-slug: learning-rambda-x
+title: On Learning Rambda(x)
+slug: on-learning-rambda-x
 description: On-going journey to learn all the functions in Rambda(x)
 image: "black-lamb.jpg"
 date: 2020-01-22T15:00:00.000+00:00
 tags:
-- fp
-- javascript
+  - fp
+  - javascript
 ---
 
 I've been getting into functional programming as a of late, mostly due to
@@ -29,8 +29,8 @@ Well, this is an easy one to get started with. The first time I saw `add` as a
 function, I thought it was dumb, but once you realize you can do this:
 
 ```typescript
-const add5 = R.add(5)
-const result = add5(3) // 8
+const add5 = R.add(5);
+const result = add5(3); // 8
 ```
 
 The power of functional programming really starts to shine.
@@ -84,15 +84,15 @@ var over30 = R.allPass(rules)
 Then pass an object to see if it passes.
 
 ```typescript
-var brandon = { age: 36 }
-var lisa = { age: 26 }
-over30(brandon) // true
-over30(lisa) // false
+var brandon = { age: 36 };
+var lisa = { age: 26 };
+over30(brandon); // true
+over30(lisa); // false
 
 // Combine with all for fun and profit
-var allOver30 = R.all(over30)
-allOver30([brandon]) // true
-allOver30([brandon, lisa]) // false
+var allOver30 = R.all(over30);
+allOver30([brandon]); // true
+allOver30([brandon, lisa]); // false
 ```
 
 ## always/indentiy
@@ -106,8 +106,8 @@ Well, you just get a function that returns the thing you originaly gave it or
 the thing itself.
 
 ```typescript
-const brandon = R.always('Brandon')
-brandon() // 'Brandon
+const brandon = R.always("Brandon");
+brandon(); // 'Brandon
 ```
 
 ## and
@@ -115,8 +115,8 @@ brandon() // 'Brandon
 It's like `&&`.
 
 ```typescript
-R.and(1 > 0, 2 > 1) // true
-R.and(1 > 0, 0 > 1) // false
+R.and(1 > 0, 2 > 1); // true
+R.and(1 > 0, 0 > 1); // false
 ```
 
 ## any
@@ -154,10 +154,10 @@ assoc(prop: any, value: any, obj: object): object
 Sets a key/value on an object. Can be broken up for flexibility.
 
 ```typescript
-var person = {name: "John"}
-var setAge = R.assoc('age')
-var setAgeTo20 = setAge(20)
-setAgeTo20(person) // {name: "John", age: 20}
+var person = { name: "John" };
+var setAge = R.assoc("age");
+var setAgeTo20 = setAge(20);
+setAgeTo20(person); // {name: "John", age: 20}
 ```
 
 ## both/either
@@ -230,8 +230,8 @@ const result = g(4) // 10
 ## inc/dec
 
 ```typescript
-R.inc(2) // 2
-R.dec(2) // 1
+R.inc(2); // 2
+R.dec(2); // 1
 ```
 
 `++` and `--` for FP folks.
@@ -245,11 +245,11 @@ defaultTo(defaultValue: T, ...inputArguments: any[]): T
 Lets you set a default value. Great for when you need a fallback.
 
 ```typescript
-const defaultToBrandon = R.defaultTo('Brandon')
-var name
-defaultToBrandon(name) // 'Brandon'
-name = "Bruce Wayne"
-defaultToBrandon(name) // 'Bruce Wayne'
+const defaultToBrandon = R.defaultTo("Brandon");
+var name;
+defaultToBrandon(name); // 'Brandon'
+name = "Bruce Wayne";
+defaultToBrandon(name); // 'Bruce Wayne'
 ```
 
 ## dissoc
@@ -261,15 +261,15 @@ dissoc(prop: any, obj: object): object
 Returns an object without the specified key.
 
 ```typescript
-var person = { name: 'Brandon', age: 36 }
-const removeAge = R.dissoc('age')
-removeAge(person) // { name: 'Brandon' }
+var person = { name: "Brandon", age: 36 };
+const removeAge = R.dissoc("age");
+removeAge(person); // { name: 'Brandon' }
 ```
 
 ## divide
 
 ```typescript
-R.divide(100,5) // 20
+R.divide(100, 5); // 20
 ```
 
 ## drop/dropLast/take
@@ -285,9 +285,9 @@ Removes the indicated number of items or characters from the provided array or
 string.
 
 ```typescript
-var numbers = [1,2,3]
-R.drop(2, numbers) // [3]
-R.dropLast(2, numbers) // [1]
+var numbers = [1, 2, 3];
+R.drop(2, numbers); // [3]
+R.dropLast(2, numbers); // [1]
 ```
 
 ## startsWith/endsWith
@@ -300,9 +300,9 @@ endsWith(x: string, str: string): boolean
 Checks if a string starts or ends with a provided string. **Regex not allowed.**
 
 ```typescript
-var name = 'Brandon'
-R.startsWith('B', name) // true
-R.endsWith('n', name) // true
+var name = "Brandon";
+R.startsWith("B", name); // true
+R.endsWith("n", name); // true
 ```
 
 ## equals
@@ -314,10 +314,7 @@ equals(a: any, b: any): boolean
 Checks equality even in objects.
 
 ```typescript
-R.equals(
-  [1, {a:2}, [{b:3}]],
-  [1, {a:2}, [{b:3}]]
-) // true
+R.equals([1, { a: 2 }, [{ b: 3 }]], [1, { a: 2 }, [{ b: 3 }]]); // true
 ```
 
 ## F/T
@@ -365,7 +362,7 @@ flatten(arr: any[]): any[]
 Like a pancake, yo.
 
 ```typescript
-R.flatten([ 1, [ 2, [ 3 ] ] ]) // [ 1, 2, 3 ]
+R.flatten([1, [2, [3]]]); // [ 1, 2, 3 ]
 ```
 
 ## flip
@@ -377,8 +374,8 @@ flip(fn: Function): Function
 Returns a copy of the provided function with its parameters in reverse.
 
 ```typescript
-const subtractFlip = R.flip(R.subtract)
-const result = subtractFlip(1,7)// 6
+const subtractFlip = R.flip(R.subtract);
+const result = subtractFlip(1, 7); // 6
 ```
 
 ## forEach
@@ -432,7 +429,7 @@ has(prop: string, obj: Object): boolean
 Check is an object has a particular property.
 
 ```typescript
-R.has('name', {name: 'Brandon'}) // true
+R.has("name", { name: "Brandon" }); // true
 ```
 
 ## head/tail
@@ -478,8 +475,8 @@ includes(valueToFind: T|string, input: T[]|string): boolean
 Next level `includes`.
 
 ```typescript
-R.includes('oo', 'foo') // true
-R.includes({a: 1}, [{a: 1}]) // true
+R.includes("oo", "foo"); // true
+R.includes({ a: 1 }, [{ a: 1 }]); // true
 ```
 
 ## indexBy
@@ -515,8 +512,8 @@ Like `findIndex` for a specific value, not a function. Returns `-1` if not
 found.
 
 ```typescript
-R.indexOf(1, [1, 2]) // 0
-R.indexOf(0, [1, 2]) // -1
+R.indexOf(1, [1, 2]); // 0
+R.indexOf(0, [1, 2]); // -1
 ```
 
 ## init
@@ -528,8 +525,8 @@ init(arrOrStr: T[]|string): T[]|string
 Opposite of `tail()`.
 
 ```typescript
-R.init([1, 2, 3])  // [1, 2]
-R.init('foo')  // 'fo'
+R.init([1, 2, 3]); // [1, 2]
+R.init("foo"); // 'fo'
 ```
 
 ## is/isNil/isEmpty
@@ -543,7 +540,7 @@ isEmpty(x: any): boolean
 `is` checks against `instanceof`, but doesn't seem to work with `Array`.
 
 ```typescript
-R.is(String, 'foo') // true
+R.is(String, "foo"); // true
 ```
 
 ## join
@@ -638,19 +635,19 @@ not(x: any): boolean
 
 `!` as a function.
 
-```typescript
+````typescript
 R.not(true) // false
 
 ## omit
 
 ```typescript
 omit(propsToOmit: string[]|string, obj: Object): Object
-```
+````
 
 `R.dissoc` for multiple keys.
 
 ```typescript
-R.omit('a,c,d', {a: 1, b: 2, c: 3}) // {b: 2}
+R.omit("a,c,d", { a: 1, b: 2, c: 3 }); // {b: 2}
 ```
 
 ## path
@@ -662,7 +659,7 @@ path(pathToSearch: string[]|string, obj: Object): any
 Grab a value from an object by path string.
 
 ```typescript
-R.path('a.b', {a: {b: 1}}) // 1
+R.path("a.b", { a: { b: 1 } }); // 1
 ```
 
 ## pathOr
@@ -674,9 +671,9 @@ pathOr(defaultValue: any, pathToSearch: string[]|string, obj: Object): any
 Like `path` but lets you provide a default value, kinda like `defaultTo`.
 
 ```typescript
-R.pathOr(1, 'a.b', {a: {b: 2}}) // 2
-R.pathOr(1, ['a', 'b'], {a: {b: 2}}) // 2
-R.pathOr(1, ['a', 'c'], {a: {b: 2}}) // 1
+R.pathOr(1, "a.b", { a: { b: 2 } }); // 2
+R.pathOr(1, ["a", "b"], { a: { b: 2 } }); // 2
+R.pathOr(1, ["a", "c"], { a: { b: 2 } }); // 1
 ```
 
 ## partial
@@ -708,9 +705,9 @@ It's like `partial`, but it lets you use an object and its keys instead of
 positional parameters.
 
 ```typescript
-var fn = ({first, middle, last}) `${first} ${middle} ${last}`
-var start = R.partialCurry(fn, {first: 'Brandon'})
-var final = start({middle: 'Lee', last: 'Pittman'}) // "Brandon Lee Pittman"
+var fn = { first, middle, last }`${first} ${middle} ${last}`;
+var start = R.partialCurry(fn, { first: "Brandon" });
+var final = start({ middle: "Lee", last: "Pittman" }); // "Brandon Lee Pittman"
 ```
 
 ## pick
@@ -722,8 +719,8 @@ pick(propsToPick: string[], obj: Object): Object
 An grab just what you need from an object.
 
 ```typescript
-me = {first: 'Brandon', middle: 'Lee', last: 'Pittman'}
-R.pick(['first', 'last'], me)
+me = { first: "Brandon", middle: "Lee", last: "Pittman" };
+R.pick(["first", "last"], me);
 // { first: 'Brandon', last: 'Pittman' }
 ```
 
@@ -736,10 +733,10 @@ pluck(property: string, arr: Object[]): any[]
 Kinda like pick, but you're pulling specific key off of each object in an array.
 
 ```typescript
-b = {first: 'Brandon', last: 'Pittman'}
-l = {first: 'Lisa', last: 'Jones'}
-people = [b,l]
-R.pluck('first', people) // [ 'Brandon', 'Lisa' ]
+b = { first: "Brandon", last: "Pittman" };
+l = { first: "Lisa", last: "Jones" };
+people = [b, l];
+R.pluck("first", people); // [ 'Brandon', 'Lisa' ]
 ```
 
 ## prop
@@ -751,8 +748,8 @@ prop(propToFind: string, obj: Object): any
 `Object[prop]` as a Function.
 
 ```typescript
-b = {first: 'Brandon', last: 'Pittman'}
-R.prop('first', b) // "Brandon"
+b = { first: "Brandon", last: "Pittman" };
+R.prop("first", b); // "Brandon"
 ```
 
 ## propEq
@@ -764,8 +761,8 @@ propEq(propToFind: string, valueToMatch: any, obj: Object): boolean
 Checks if the provided prop equals the value given against a provide object.
 
 ```typescript
-b = {first: 'Brandon', last: 'Pittman'}
-R.propEq('first', 'Brandon', b) // true
+b = { first: "Brandon", last: "Pittman" };
+R.propEq("first", "Brandon", b); // true
 ```
 
 ## propIs
@@ -777,8 +774,8 @@ propIs(type: any, name: string, obj: Object): boolean
 Checks type of prop.
 
 ```typescript
-b = {first: 'Brandon', last: 'Pittman'}
-R.propIs(String, 'first', b)
+b = { first: "Brandon", last: "Pittman" };
+R.propIs(String, "first", b);
 ```
 
 ## propOr
@@ -790,7 +787,7 @@ propOr(defaultValue: any, param: string, obj: Object): any
 `prop()` but with a fallback.
 
 ```typescript
-R.propOr('Brandon Pittman', 'name', b) // "Brandon Pittman"
+R.propOr("Brandon Pittman", "name", b); // "Brandon Pittman"
 ```
 
 ## range
@@ -802,7 +799,7 @@ range(start: number, end: number): number[]
 Returns an array of numbers starting with `start` and going up to `end`.
 
 ```typescript
-R.range(0,3) // [0,1,2]
+R.range(0, 3); // [0,1,2]
 ```
 
 ## reduce
@@ -830,7 +827,7 @@ repeat(valueToRepeat: T, num: number): T[]
 Works like Ruby's `#times` method.
 
 ```typescript
-R.repeat('brandon', 2) // ['brandon', 'brandon']
+R.repeat("brandon", 2); // ['brandon', 'brandon']
 ```
 
 ## replace
@@ -860,7 +857,7 @@ slice(list: T[], from: Number, to: Number)
 ## sort
 
 ```typescript
-sort
+sort;
 ```
 
 `Array.prototype.sort`!!!
@@ -868,7 +865,7 @@ sort
 ## sortBy
 
 ```typescript
-sortBy
+sortBy;
 ```
 
 Sort but can take object props.
@@ -923,7 +920,7 @@ Runs the function `n` number of times. Passes the current iteration number to
 the function.
 
 ```typescript
-R.times(R.identity, 5) // [0, 1, 2, 3, 4]
+R.times(R.identity, 5); // [0, 1, 2, 3, 4]
 ```
 
 ## toLower/toUpper
@@ -960,9 +957,9 @@ transpose(input: Array): Array
 Spreads arrays out across new arrays.
 
 ```typescript
-const input = [[10, 11], [20], [], [30, 31, 32]]
-const expected = [[10, 20, 30], [11, 31], [32]]
-const result = R.transpose(input)
+const input = [[10, 11], [20], [], [30, 31, 32]];
+const expected = [[10, 20, 30], [11, 31], [32]];
+const result = R.transpose(input);
 // result === expected
 ```
 
@@ -992,7 +989,7 @@ uniqWith(fn: Function, arr: T[]): T[]
 Returns an array with just uniq elements. No more Array.from(new Set(...))!
 
 ```typescript
-R.uniq([1, 1, 2, 1]) // [1, 2]
+R.uniq([1, 1, 2, 1]); // [1, 2]
 ```
 
 ## uniqWith
@@ -1004,7 +1001,7 @@ uniqWith(fn: Function, arr: T[]): T[]
 Like `adjust`, without needing a function.
 
 ```typescript
-R.update(0, 'foo', ['bar', 'baz']) // ['foo', baz]
+R.update(0, "foo", ["bar", "baz"]); // ['foo', baz]
 ```
 
 ## values
@@ -1024,7 +1021,7 @@ without(a: T[], b: T[]): T[]
 Return array minus the supplied values.
 
 ```typescript
-R.without([1, 2], [1, 2, 3, 4])
+R.without([1, 2], [1, 2, 3, 4]);
 // [3, 4]
 ```
 
@@ -1037,9 +1034,9 @@ zip(a: K[], b: V[]): Array
 Unlike `transpose`, `zip` will end after the shortest list is done.
 
 ```typescript
-R.zip([1, 2, 3, 4], ['A', 'B'])
+R.zip([1, 2, 3, 4], ["A", "B"]);
 // [[1, 'A'], [2, 'B']]
-R.zipObj(['a', 'b', 'c'], [1, 2])
+R.zipObj(["a", "b", "c"], [1, 2]);
 // {a: 1, b: 2}
 ```
 
@@ -1075,8 +1072,8 @@ Update an object using a path syntax. Will dynamically create sub-keys as
 needed.
 
 ```typescript
-var me = {}
-R.change(me, 'name.last', 'Pittman')
+var me = {};
+R.change(me, "name.last", "Pittman");
 // { name: { last: 'Pittman' } }
 ```
 
@@ -1101,10 +1098,10 @@ piped(...fnList: any[]): any
 
 ```typescript
 const result = composed(
-  R.map(x => x*10),
-  R.filter(x => x > 1),
-  [1,2,3]
-)
+  R.map((x) => x * 10),
+  R.filter((x) => x > 1),
+  [1, 2, 3]
+);
 // => [20, 30]
 ```
 
@@ -1129,11 +1126,11 @@ defaultToStrict(defaultValue: T, ...inputArguments: any[]): T
 Like the regular `defaultTo`, but ya know, stricter.
 
 ```typescript
-R.defaultToStrict('foo', undefined) // => 'foo'
-R.defaultToStrict('foo', 1) // => 'foo'
-R.defaultToStrict('foo', {}) // => 'foo'
-R.defaultTo('foo', undefined, 1, [], {}) // => 'foo'
-R.defaultTo('foo', undefined, 1, [], {}, 'bar') // => 'bar'
+R.defaultToStrict("foo", undefined); // => 'foo'
+R.defaultToStrict("foo", 1); // => 'foo'
+R.defaultToStrict("foo", {}); // => 'foo'
+R.defaultTo("foo", undefined, 1, [], {}); // => 'foo'
+R.defaultTo("foo", undefined, 1, [], {}, "bar"); // => 'bar'
 ```
 
 ## defaultToWhen
@@ -1145,9 +1142,9 @@ defaultToWhen(fallback: any, fn: Function, ...inputArguments: any[]): any
 Returns the fallback if no argument passes the predicate function.
 
 ```typescript
-const fn = x => x > 2
-const fallback = 10
-const result = R.defaultToWhen(fallback, fn, 1,6,8,0 )
+const fn = (x) => x > 2;
+const fallback = 10;
+const result = R.defaultToWhen(fallback, fn, 1, 6, 8, 0);
 // result is 6
 ```
 
@@ -1160,7 +1157,7 @@ delay(ms: number): Promise
 It's a wait function. Should be used in an async function.
 
 ```typescript
-const result = R.delay(1000)
+const result = R.delay(1000);
 // `result` resolves to `'RAMBDAX_DELAY'`
 ```
 
@@ -1181,8 +1178,8 @@ findInObject(fn: Function, obj: object): object
 Like `Array.find` but for objects. Only returns the first match.
 
 ```typescript
-b = { first: "Brandon" }
-R.findInObject((v,k) => v.length > 6, b)
+b = { first: "Brandon" };
+R.findInObject((v, k) => v.length > 6, b);
 // { prop: 'first', value: 'Brandon' }
 ```
 
@@ -1197,9 +1194,9 @@ reset(): void
 Use Rambdax's cache object.
 
 ```typescript
-R.setter('name', 'Brandon')
-R.getter('name') // "Brandon"
-R.reset() // everything's undefined now
+R.setter("name", "Brandon");
+R.getter("name"); // "Brandon"
+R.reset(); // everything's undefined now
 ```
 
 ## glue
@@ -1228,8 +1225,8 @@ Takes an object with just one key and returns a new object with a `prop` and
 `value` set of keys.
 
 ```typescript
-var double = x => x * 2
-R.headObject({double}) // { prop: 'double', value: [Function] }
+var double = (x) => x * 2;
+R.headObject({ double }); // { prop: 'double', value: [Function] }
 ```
 
 ## includesType
@@ -1241,10 +1238,7 @@ includesType(targetType: string, list: any[]): boolean
 `Array.includes` but checks if a type is the same.
 
 ```typescript
-const result = R.includesType(
-  'String',
-  [1,2,'foo']
-) // true
+const result = R.includesType("String", [1, 2, "foo"]); // true
 ```
 
 ## inject
@@ -1257,7 +1251,7 @@ Injects the `inject` string after (or before with `true`) the `MARKER`
 location. Seems like it would be better to replace the marker.
 
 ```typescript
-R.inject('Lee', 'MIDDLE', 'Brandon MIDDLE Pittman', true) // "Brandon LeeMIDDLE Pittman"
+R.inject("Lee", "MIDDLE", "Brandon MIDDLE Pittman", true); // "Brandon LeeMIDDLE Pittman"
 ```
 
 ## isAttach
@@ -1269,9 +1263,9 @@ isAttach(): boolean
 Bolts on an `is` method to object-like variables to let you check type.
 
 ```typescript
-R.isAttach()
-const foo = [1,2,3]
-const result = foo.is(['number']) // => true
+R.isAttach();
+const foo = [1, 2, 3];
+const result = foo.is(["number"]); // => true
 ```
 
 ## isFalsy
@@ -1321,12 +1315,12 @@ valid. **Doesn't throw.**
 
 [Full `isValid` docs](https://github.com/selfrefactor/rambdax/blob/master/files/isValid.md).
 
-*Also, [superstruct](https://github.com/ianstormtaylor/superstruct) is a thing.*
+_Also, [superstruct](https://github.com/ianstormtaylor/superstruct) is a thing._
 
 ```typescript
 // as of 2020-01-28
-var brandon = {name: 'Brandon Pittman', married: false}
-R.isValid({input: brandon, schema: { name: String, married: Boolean}})
+var brandon = { name: "Brandon Pittman", married: false };
+R.isValid({ input: brandon, schema: { name: String, married: Boolean } });
 ```
 
 ## maybe
@@ -1339,13 +1333,9 @@ Acts like ternary operator. Recommended when dealing with nested ternary
 operator usage. Doesn't require the stems to be functions.
 
 ```typescript
-const x = 4
-const y = 8
-const result = R.maybe(
-  x > 2,
-  y > 10 ? 3 : 7,
-  5
-) // result == 7
+const x = 4;
+const y = 8;
+const result = R.maybe(x > 2, y > 10 ? 3 : 7, 5); // result == 7
 ```
 
 ## mapAsync/mapFastAsync
@@ -1399,9 +1389,7 @@ ok(...inputs: any[]): (schemas: any[]) => true | Error
 `R.isValid`-style checks, but throws error if validation fails.
 
 ```typescript
-const result = R.ok(
-  1, [ 'foo', 'bar' ]
-)('number', [ 'string' ])
+const result = R.ok(1, ["foo", "bar"])("number", ["string"]);
 // true
 ```
 
@@ -1431,11 +1419,7 @@ pathEq(path:string|string[], target: any, obj: object): boolean
 Checks for equality at `path`.
 
 ```typescript
-const result = R.pathEq(
-  'a.b',
-  1,
-  {a: {b:1} }
-) // true
+const result = R.pathEq("a.b", 1, { a: { b: 1 } }); // true
 ```
 
 ## pass
@@ -1465,16 +1449,16 @@ Passes `input` to each function in the object.
 
 ```typescript
 const conditions = {
-  foo: a => a > 10,
-  bar: a => ({baz:a})
-}
+  foo: (a) => a > 10,
+  bar: (a) => ({ baz: a }),
+};
 
-const result = R.produce(conditions, 7)
+const result = R.produce(conditions, 7);
 
 const expectedResult = {
   foo: false,
-  bar: {baz: 7}
-} // result === expectedResult
+  bar: { baz: 7 },
+}; // result === expectedResult
 ```
 
 ## promiseAllObject
@@ -1502,10 +1486,7 @@ remove(inputs: string|RegExp[], text: string): string
 Removes each string in the provided array from the input text.
 
 ```typescript
-const result = remove(
-  ['foo','bar'],
-  'foo bar baz foo'
-) // 'baz foo'
+const result = remove(["foo", "bar"], "foo bar baz foo"); // 'baz foo'
 ```
 
 ## renameProps
@@ -1519,51 +1500,51 @@ Renames the keys on an object.
 ```typescript
 const rules = {
   f: "foo",
-  b: "bar"
-}
+  b: "bar",
+};
 const input = {
-  f:1,
-  b:2
-}
-const result = R.renameProps(rules, input)
+  f: 1,
+  b: 2,
+};
+const result = R.renameProps(rules, input);
 const expectedResult = {
-  foo:1,
-  bar:2
-} // result === expectedResult
+  foo: 1,
+  bar: 2,
+}; // result === expectedResult
 ```
 
 ## resolve
 
- ```typescript
- resolve(afterResolve: Function, toResolve: Promise): Promise
- ```
+```typescript
+resolve(afterResolve: Function, toResolve: Promise): Promise
+```
 
- Turns a composition asynchronous.
+Turns a composition asynchronous.
 
- ```typescript
- const expected = {
-  firstName : 'FIRST_NAME_FOO',
-  lastName  : 'LAST_NAME_FOO',
-}
+```typescript
+const expected = {
+  firstName: "FIRST_NAME_FOO",
+  lastName: "LAST_NAME_FOO",
+};
 
-const fetchMember = async x => {
-  await R.delay(200)
+const fetchMember = async (x) => {
+  await R.delay(200);
 
   return {
-    a         : 1,
-    firstName : `FIRST_NAME_${ x.query }`,
-    lastName  : `LAST_NAME_${ x.query }`,
-  }
-}
+    a: 1,
+    firstName: `FIRST_NAME_${x.query}`,
+    lastName: `LAST_NAME_${x.query}`,
+  };
+};
 
 const getMemberName = pipe(
-  email => ({ query : email }),
+  (email) => ({ query: email }),
   fetchMember,
-  resolve(pick('firstName,lastName'))
-)
-const result = await getMemberName('FOO')
+  resolve(pick("firstName,lastName"))
+);
+const result = await getMemberName("FOO");
 // result === expected
- ```
+```
 
 ## s
 
@@ -1574,8 +1555,8 @@ s(): undefined
 Lets you chain function calls.
 
 ```typescript
-R.s() // true
-"foo".s(R.toUpper) // "FOO"
+R.s(); // true
+"foo".s(R.toUpper); // "FOO"
 ```
 
 ## sortObject
@@ -1587,10 +1568,10 @@ sortObject(predicate: Function, obj: Object): Object
 Allows you to sort an object using its props and values.
 
 ```typescript
-const predicate = (propA, propB, valueA, valueB) => valueA > valueB ? -1 : 1
-const sorted = R.sortObject(predicate, {a:1, b: 4, c: 2})
+const predicate = (propA, propB, valueA, valueB) => (valueA > valueB ? -1 : 1);
+const sorted = R.sortObject(predicate, { a: 1, b: 4, c: 2 });
 // {b:4, c: 2, a:1}
- ```
+```
 
 ## shuffle
 
@@ -1605,15 +1586,15 @@ Just like Icky Woods.
 A chainable switch statement. Must have a `.default()` call at the end.
 
 ```typescript
-const valueToMatch = {foo: 1}
+const valueToMatch = { foo: 1 };
 
 const result = R.switcher(valueToMatch)
-  .is('baz', 'is baz')
-  .is( x => typeof x === 'boolean', 'is boolean')
-  .is({foo: 1}, 'Property foo is 1')
-  .default('is bar')
+  .is("baz", "is baz")
+  .is((x) => typeof x === "boolean", "is boolean")
+  .is({ foo: 1 }, "Property foo is 1")
+  .default("is bar");
 
-console.log(result) // => 'Property foo is 1'
+console.log(result); // => 'Property foo is 1'
 ```
 
 ## tapAsync
@@ -1643,7 +1624,7 @@ toDecimal(num: number, charsAfterDecimalPoint: number): number
 Convert number to decimal number.
 
 ```typescript
-R.toDecimal(2.45464,2) // 2.45
+R.toDecimal(2.45464, 2); // 2.45
 ```
 
 ## throttle
@@ -1671,10 +1652,7 @@ unless(rule: Function|boolean, whenFalse: Function|any): Function
 Inverse of an `if`.
 
 ```typescript
-const result = R.unless(
-  R.isNil,
-  R.inc
-)(1) // 2
+const result = R.unless(R.isNil, R.inc)(1); // 2
 ```
 
 ## wait
@@ -1687,11 +1665,11 @@ Returns a promise that resolves to an array with a return value and an error, a
 la Go.
 
 ```typescript
-void async function wait(){
-  const [result, err] = await R.wait(R.delay(1000))
+void (async function wait() {
+  const [result, err] = await R.wait(R.delay(1000));
   // => err is undefined
   // => result is `RAMBDAX_DELAY`
-}()
+})();
 ```
 
 ## waitFor
@@ -1713,15 +1691,15 @@ Returns a function that takes an object and validates each prop.
 
 ```typescript
 const condition = R.where({
-  a : aProp => typeof aProp === "string",
-  b : bProp => bProp === 4
-})
+  a: (aProp) => typeof aProp === "string",
+  b: (bProp) => bProp === 4,
+});
 
 const result = condition({
-  a : "foo",
-  b : 4,
-  c : 11,
-}) // true
+  a: "foo",
+  b: 4,
+  c: 11,
+}); // true
 ```
 
 ## whereEq
@@ -1742,11 +1720,11 @@ If as a Function&trade;. Passes input value through if it doesn't meet the rule.
 
 ```typescript
 const truncate = R.when(
-  x => x.length > 5,
-  R.compose(x => `${x}...`, R.take(5))
-)
+  (x) => x.length > 5,
+  R.compose((x) => `${x}...`, R.take(5))
+);
 
-const result = truncate('12345678')
+const result = truncate("12345678");
 // '12345...'
 ```
 

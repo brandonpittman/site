@@ -1,4 +1,5 @@
 ---
+archived: true
 title: The Long Road to Salaryman
 description: Going from English teacher in Japan to working as a web dev in Japan was a quite a trip.
 slug: the-long-road-to-salaryman

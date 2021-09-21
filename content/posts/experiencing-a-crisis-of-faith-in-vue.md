@@ -1,4 +1,5 @@
 ---
+archived: true
 title: Experiencing a Crisis of Faith (in Vue)
 slug: experiencing-a-crisis-of-faith-in-vue
 description: I love Vue but lately I've been worried about the community around it.

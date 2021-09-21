@@ -1,10 +1,8 @@
 ---
 date: 2019-01-27
 description: "How I went about creating my own build system for templates needed for a project at work."
-image: "nodejs.png"
-tags: ['node', 'javascript']
-title: Keeping Node Scripts Alive
-slug: keeping-node-scripts-alive
+title: On Keeping Node Scripts Alive
+slug: on-keeping-node-scripts-alive
 ---
 
 I recently had a need to build a kind of one-off templating system at work. I
@@ -22,14 +20,14 @@ After that, I need a way to auto-render as I'm developing. I started off with
 [nodemon][], but I noticed a weird thing with using it as a module.
 
 ```javascript
-const nodemon = require('nodemon')
+const nodemon = require("nodemon");
 
 nodemon({
-  script: 'app.js',
-  ext: 'njk'
-})
+  script: "app.js",
+  ext: "njk",
+});
 
-nodemon.on('restart', files => console.log(files))
+nodemon.on("restart", (files) => console.log(files));
 ```
 
 Nodemon has a nice event system that gives you info about what files triggered
@@ -42,17 +40,17 @@ After nodemon, I landed on [chokidar][]. Chokidar is a simpler file watcher. It
 lets you do this.
 
 ```javascript
-const path = require('path')
-const builder = require('./app.js')
+const path = require("path");
+const builder = require("./app.js");
 
-const watcher = require('chokidar')
-  .watch('**/*.njk')
-  .on('ready', () => console.log('Watching for changes...'))
-  .on('change', filepath => {
-    console.log(`${filepath} updated`)
-    const data = path.parse(filepath)
-    builder(data)
-  })
+const watcher = require("chokidar")
+  .watch("**/*.njk")
+  .on("ready", () => console.log("Watching for changes..."))
+  .on("change", (filepath) => {
+    console.log(`${filepath} updated`);
+    const data = path.parse(filepath);
+    builder(data);
+  });
 ```
 
 It's a bit more direct and requires a little bit more care in how you setup the
@@ -63,7 +61,7 @@ Lastly, I just include a call out to [BrowserSync][] to make hot reloading
 possible. All in all, not a terrible setup. I'd normally be using [Nuxt][] for page
 generation, but sometimes you have to deal with other peoples' terrible code.
 
-*Update: like a hour after writing the original post*
+_Update: like a hour after writing the original post_
 
 Turns out, there's a [Nunjucks CLI project][nunjucks-cli]. It does pretty much
 everything I hand-coded already. Run it like this:
@@ -76,12 +74,12 @@ Processes all `.njk` files, with `templates` as the `src` directory, outputing t
 a lot time figuring out some new things in Node.js, I learned a lot about Node
 and its ecosystem at the same time.
 
-[EJS]: http://www.ejs.co
-[Handlebars]: http://handlebarsjs.com/
-[Edge]: https://edge.adonisjs.com/
-[Nunjucks]: https://mozilla.github.io/nunjucks/
-[Nodemon]: https://nodemon.io/
+[ejs]: http://www.ejs.co
+[handlebars]: http://handlebarsjs.com/
+[edge]: https://edge.adonisjs.com/
+[nunjucks]: https://mozilla.github.io/nunjucks/
+[nodemon]: https://nodemon.io/
 [chokidar]: https://github.com/paulmillr/chokidar
-[Nuxt]: http://nuxtjs.org/
-[BrowserSync]: https://www.browsersync.io/
+[nuxt]: http://nuxtjs.org/
+[browsersync]: https://www.browsersync.io/
 [nunjucks-cli]: https://github.com/jeremyben/nunjucks-cli
