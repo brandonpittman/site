@@ -22,6 +22,18 @@ const withMdx = require("@next/mdx")({
 module.exports = withPlugins([withPWA, withMdx, withSvgr], {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "bs.js"],
+  async rewrites() {
+    return [
+      {
+        source: "/bee.js",
+        destination: "https://cdn.splitbee.io/sb.js",
+      },
+      {
+        source: "/_hive/:slug",
+        destination: "https://hive.splitbee.io/:slug",
+      },
+    ];
+  },
   async redirects() {
     return [
       {
