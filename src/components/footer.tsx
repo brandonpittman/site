@@ -7,6 +7,10 @@ const links = [
   { label: "Stoicism", href: "/stoic" },
   { label: "Writing", href: "/writing" },
   { label: "Patronage", href: "/grateful" },
+  {
+    label: "Analytics",
+    href: "https://app.usefathom.com/share/excjwhrt/blp.is",
+  },
 ];
 
 export default function Footer() {
