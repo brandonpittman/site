@@ -48,7 +48,7 @@ specifiers:
   mdx-prism: ^0.3.1
   next: ^12.0.0
   next-compose-plugins: ^2.2.1
-  next-mdx-remote: ^3.0.2
+  next-mdx-remote: 3.0.5
   next-pwa: ^5.0.5
   next-svgr: 0.0.2
   next-themes: 0.0.12
@@ -101,7 +101,7 @@ dependencies:
   mdx-prism: 0.3.4
   next: 12.0.0_64cb5c731ebfc019f061f6a6e6da0339
   next-compose-plugins: 2.2.1
-  next-mdx-remote: 3.0.4_ceea2d44aceb2ba32350f50f2a522992
+  next-mdx-remote: 3.0.5_ceea2d44aceb2ba32350f50f2a522992
   next-pwa: 5.3.1_next@12.0.0+webpack@5.50.0
   next-svgr: 0.0.2
   next-themes: 0.0.12_f95422eb1bc4ab08afa156c5ffa64075
@@ -7346,8 +7346,8 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: false
 
-  /next-mdx-remote/3.0.4_ceea2d44aceb2ba32350f50f2a522992:
-    resolution: {integrity: sha512-n/xN6GaeBgJiuTJDrG6iqJ2EY5rEZ99Vf2H1nc75MNn1a6XnZLgT6uQJxqbSN84svc9aU3CSxfRlOqgqVVPHIg==}
+  /next-mdx-remote/3.0.5_ceea2d44aceb2ba32350f50f2a522992:
+    resolution: {integrity: sha512-m9OD2GBuqvz/IeM/h4kufQ7GEdaCaZ4owqkCQ+yoxzCIM7jVQYK9JWXNVcyPP/Y6FBS00fLH03Hn5VFdvkFf0A==}
     peerDependencies:
       react: '>=16.x <=17.x'
       react-dom: '>=16.x <=17.x'
