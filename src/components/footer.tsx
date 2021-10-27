@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { trackGoal } from "fathom-client";
 
 const links = [
   { label: "About", href: "/about" },
-  { label: "Now", href: "/now" },
   { label: "Stoicism", href: "/stoic" },
   { label: "Writing", href: "/writing" },
   { label: "Patronage", href: "/grateful" },
@@ -35,9 +33,9 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-      <div className="flex flex-wrap">
-        {/* <span>Copyright © {new Date().getFullYear()}.&nbsp;</span> */}
-        <span className="p-1">
+
+      <div className="flex flex-col items-center gap-2">
+        <p>
           This site is powered by{" "}
           <a
             className="text-blue-600 hover:underline dark:text-blue-400"
@@ -56,7 +54,8 @@ export default function Footer() {
           >
             GitHub.
           </a>
-        </span>
+        </p>
+        <p>Copyright © {new Date().getFullYear()}.&nbsp;</p>
       </div>
     </footer>
   );
