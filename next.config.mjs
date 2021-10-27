@@ -22,8 +22,8 @@ const withMdx = nextMdx({
 
 export default withPlugins([withPWA, withMdx, withSvgr], {
   experimental: {
-    // concurrentFeatures: true,
-    // serverComponents: true,
+    concurrentFeatures: true,
+    serverComponents: true,
     urlImports: ["https://cdn.skypack.dev"],
   },
   images: {
