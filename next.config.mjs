@@ -1,25 +1,26 @@
-// something
-const withPWA = require("next-pwa")({
+import nextPwa from "next-pwa";
+import withPlugins from "next-compose-plugins";
+import withSvgr from "next-svgr";
+import mdxPrism from "mdx-prism";
+import nextMdx from "@next/mdx";
+import remarkExternalLinks from "remark-external-links";
+import remarkSlug from "remark-slug";
+import remarkPrism from "remark-prism";
+
+const withPWA = nextPwa({
   pwa: {
     disable: process.env.NODE_ENV === "development",
     dest: "public",
   },
 });
-const withPlugins = require("next-compose-plugins");
-const withSvgr = require("next-svgr");
-const mdxPrism = require("mdx-prism");
-const withMdx = require("@next/mdx")({
+const withMdx = nextMdx({
   options: {
     rehypePlugins: [mdxPrism],
-    remarkPlugins: [
-      require("remark-external-links"),
-      require("remark-slug"),
-      require("remark-prism"),
-    ],
+    remarkPlugins: [remarkExternalLinks, remarkSlug, remarkPrism],
   },
 });
 
-module.exports = withPlugins([withPWA, withMdx, withSvgr], {
+export default withPlugins([withPWA, withMdx, withSvgr], {
   reactStrictMode: true,
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "bs.js"],
   async rewrites() {
