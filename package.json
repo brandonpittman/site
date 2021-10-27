@@ -90,8 +90,5 @@
     "tailwindcss-plugin-fancy": "^3.0.2",
     "typescript": "^4.3.2"
   },
-  "license": "ISC",
-  "lint-staged": {
-    "*.{ts,tsx,jsx,js,css,md,mdx}": "prettier --write"
-  }
+  "license": "ISC"
 }
