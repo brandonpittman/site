@@ -10,8 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@formspree/react": "^2.2.3",
-    "@happykit/analytics": "^1.0.1",
     "@headlessui/react": "^0.3.1",
     "@joebell/cx": "^0.1.0",
     "@mapbox/rehype-prism": "^0.6.0",
@@ -31,7 +29,7 @@
     "mdx-prism": "^0.3.1",
     "next": "^12.0.0",
     "next-compose-plugins": "^2.2.1",
-    "next-mdx-remote": "3.0.5",
+    "next-mdx-remote": "^3.0.7",
     "next-pwa": "^5.0.5",
     "next-svgr": "0.0.2",
     "next-themes": "0.0.12",

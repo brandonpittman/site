@@ -1,8 +1,6 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@formspree/react': ^2.2.3
-  '@happykit/analytics': ^1.0.1
   '@headlessui/react': ^0.3.1
   '@joebell/cx': ^0.1.0
   '@mapbox/rehype-prism': ^0.6.0
@@ -48,7 +46,7 @@ specifiers:
   mdx-prism: ^0.3.1
   next: ^12.0.0
   next-compose-plugins: ^2.2.1
-  next-mdx-remote: 3.0.5
+  next-mdx-remote: ^3.0.7
   next-pwa: ^5.0.5
   next-svgr: 0.0.2
   next-themes: 0.0.12
@@ -80,8 +78,6 @@ specifiers:
   webpack: ^5
 
 dependencies:
-  '@formspree/react': 2.2.3_2ced398083923aa365dca9fe160f2852
-  '@happykit/analytics': 1.0.1_7423ed08e84c98a65c242f2ed5654393
   '@headlessui/react': 0.3.2_2ced398083923aa365dca9fe160f2852
   '@joebell/cx': 0.1.0
   '@mapbox/rehype-prism': 0.6.0
@@ -101,7 +97,7 @@ dependencies:
   mdx-prism: 0.3.4
   next: 12.0.0_64cb5c731ebfc019f061f6a6e6da0339
   next-compose-plugins: 2.2.1
-  next-mdx-remote: 3.0.5_ceea2d44aceb2ba32350f50f2a522992
+  next-mdx-remote: 3.0.7_ceea2d44aceb2ba32350f50f2a522992
   next-pwa: 5.3.1_next@12.0.0+webpack@5.50.0
   next-svgr: 0.0.2
   next-themes: 0.0.12_f95422eb1bc4ab08afa156c5ffa64075
@@ -1465,23 +1461,6 @@ packages:
       - supports-color
     dev: true
 
-  /@formspree/core/2.6.2:
-    resolution: {integrity: sha512-cbaNhWQ4BFZWosh1Oa4pKD3CWAK3sn+nK3D1UQj6hO1O+AUH502OabKo5+ugC/P2+d4YZLadIY3mC11Ig4kEzA==}
-    dependencies:
-      '@types/promise-polyfill': 6.0.4
-      fetch-ponyfill: 6.1.1
-      promise-polyfill: 8.2.0
-    dev: false
-
-  /@formspree/react/2.2.3_2ced398083923aa365dca9fe160f2852:
-    resolution: {integrity: sha512-paiDNr0lsf3XwNiV8SrYQGXdSN471c9boFLesqxM01VimCgA0MwZbyo46cDxWO7ZML6FsuKUOvdjnRguSHFkow==}
-    peerDependencies:
-      react: '>= 16.8.0'
-    dependencies:
-      '@formspree/core': 2.6.2
-      react: 18.0.0-alpha-4298ddbc5-20211023
-    dev: false
-
   /@hapi/accept/5.0.2:
     resolution: {integrity: sha512-CmzBx/bXUR8451fnZRuZAJRlzgm0Jgu5dltTX/bszmR2lheb9BpyN47Q1RbaGTsvFzn0PXAEs+lXDKfshccYZw==}
     dependencies:
@@ -1497,17 +1476,6 @@ packages:
 
   /@hapi/hoek/9.2.0:
     resolution: {integrity: sha512-sqKVVVOe5ivCaXDWivIJYVSaEgdQK9ul7a4Kity5Iw7u9+wBAPbX1RMSnLLmp7O4Vzj0WOWwMAJsTL00xwaNug==}
-    dev: false
-
-  /@happykit/analytics/1.0.1_7423ed08e84c98a65c242f2ed5654393:
-    resolution: {integrity: sha512-yA0XHxDrfFqjD0R2mKQHsHvJlesoXno7795XbcI7WMDFBnZ02Y/ai5ZyVu17PP4B82pmpOa8zftSYizgtXzAhg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      next: '>=9.1.7'
-      react: '>=16'
-    dependencies:
-      next: 12.0.0_64cb5c731ebfc019f061f6a6e6da0339
-      react: 18.0.0-alpha-4298ddbc5-20211023
     dev: false
 
   /@headlessui/react/0.3.2_2ced398083923aa365dca9fe160f2852:
@@ -2416,10 +2384,6 @@ packages:
   /@types/prettier/2.3.2:
     resolution: {integrity: sha512-eI5Yrz3Qv4KPUa/nSIAi0h+qX0XyewOliug5F2QAtuRg6Kjg6jfmxe1GIwoIRhZspD1A0RP8ANrPwvEXXtRFog==}
     dev: true
-
-  /@types/promise-polyfill/6.0.4:
-    resolution: {integrity: sha512-GSCjjH6mDS8jgpT22rEOkZVqZcYj7i9AHJu4ntpvoohEpa0mLAKP/Kz3POMKqABaFsS4TyNHOeoyWpzycddcoQ==}
-    dev: false
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
@@ -5027,12 +4991,6 @@ packages:
       bser: 2.1.1
     dev: true
 
-  /fetch-ponyfill/6.1.1:
-    resolution: {integrity: sha512-rWLgTr5A44/XhvCQPYj0X9Tc+cjUaHofSM4lcwjc9MavD5lkjIhJ+h8JQlavPlTIgDpwhuRozaIykBvX9ItaSA==}
-    dependencies:
-      node-fetch: 2.6.1
-    dev: false
-
   /file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -7346,8 +7304,8 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: false
 
-  /next-mdx-remote/3.0.5_ceea2d44aceb2ba32350f50f2a522992:
-    resolution: {integrity: sha512-m9OD2GBuqvz/IeM/h4kufQ7GEdaCaZ4owqkCQ+yoxzCIM7jVQYK9JWXNVcyPP/Y6FBS00fLH03Hn5VFdvkFf0A==}
+  /next-mdx-remote/3.0.7_ceea2d44aceb2ba32350f50f2a522992:
+    resolution: {integrity: sha512-qLHf9nJHozhnntasYWUD+Y3xGAitMaG4dcS0qy+AxjS4pN241qwH6Rbik53ZqOA6ZCFWBCB/Y1HEQKDFnq1rew==}
     peerDependencies:
       react: '>=16.x <=17.x'
       react-dom: '>=16.x <=17.x'
@@ -8187,10 +8145,6 @@ packages:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
     dev: true
-
-  /promise-polyfill/8.2.0:
-    resolution: {integrity: sha512-k/TC0mIcPVF6yHhUvwAp7cvL6I2fFV7TzF1DuGPI8mBh4QQazf36xCKEHKTZKRysEoTQoQdKyP25J8MPJp7j5g==}
-    dev: false
 
   /prompts/2.4.1:
     resolution: {integrity: sha512-EQyfIuO2hPDsX1L/blblV+H7I0knhgAd82cVneCwcdND9B8AuCDuRcBH6yIcG4dFzlOUqbazQqwGjx5xmsNLuQ==}
