@@ -8,7 +8,6 @@ specifiers:
   '@mdx-js/react': ^1.6.22
   '@next/env': ^10.0.7
   '@next/mdx': ^10.0.7
-  '@splitbee/web': ^0.3.0
   '@tailwindcss/forms': ^0.2.1
   '@tailwindcss/line-clamp': ^0.2.0
   '@tailwindcss/typography': ^0.4.0
@@ -85,7 +84,6 @@ dependencies:
   '@mdx-js/react': 1.6.22_2ced398083923aa365dca9fe160f2852
   '@next/env': 10.2.3
   '@next/mdx': 10.2.3_f56c41adb6190c4680be4a1c0222355d
-  '@splitbee/web': 0.3.0
   '@tailwindcss/forms': 0.2.1
   autoprefixer: 10.3.1_postcss@8.3.6
   cookie: 0.4.1
@@ -2031,10 +2029,6 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.3
     dev: true
-
-  /@splitbee/web/0.3.0:
-    resolution: {integrity: sha512-jNPDKg0GQGa4jCaBc6JQsv0NHmBA80WCwZE49nFyhcbo32WF0GyqXeice7ZApy7OUHI16bAUAzm4MOQw3gvxfQ==}
-    dev: false
 
   /@surma/rollup-plugin-off-main-thread/1.4.2:
     resolution: {integrity: sha512-yBMPqmd1yEJo/280PAMkychuaALyQ9Lkb5q1ck3mjJrFuEobIfhnQ4J3mbvBoISmR3SWMWV+cGB/I0lCQee79A==}
