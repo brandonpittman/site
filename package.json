@@ -21,7 +21,7 @@
     "autoprefixer": "^10.2.4",
     "cookie": "^0.4.1",
     "date-fns": "^2.18.0",
-    "fathom-client": "^3.0.0",
+    "fathom-client": "^3.2.0",
     "globby": "^11.0.2",
     "gray-matter": "^4.0.2",
     "ioredis": "^4.27.7",
