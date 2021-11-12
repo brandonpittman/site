@@ -1,0 +1,38 @@
+import Layout from '@components/layout'
+
+export const meta = {
+    title: "Finished"
+  }
+
+# Finished
+
+## 2021
+
+- 4,000 Weeks (Oliver Burkeman)
+- The Antidote (Oliver Burkeman)
+- HELP! (Oliver Burkeman)
+- Courage is Calling (Ryan Holiday)
+- Lives of the Stoics (Ryan Holiday)
+- Anger, Mercy, Revenge (Seneca)
+- Meditations (Marcus Aurelius and Robin Waterfield)
+- Write Useful Books (Rob Fitzpatrick)
+- At the Existentialist Cafe (Sarah Bakewell)
+- Essentialism (Greg McKeowan)
+- Effortless (Greg McKeowan)
+- Man's Search for Meaning (Victor Frankl)
+- Two Meals a Day (Mark Sisson)
+- Phenomenology: The Basics (Dan Zahavi)
+- Getting Real (Jason Fried)
+- It Doesn't Have to Be Crazy at Work (Jason Fried)
+- Shape Up (Ryan Singer)
+- Discourses (Epictetus)
+- That One Should Disdain Hardships (Musonius Rufus)
+- Atomic Design (Brad Frost)
+
+export default function Finished({children}) {
+    return (
+      <Layout className="prose" meta={meta}>
+        {children}
+      </Layout>
+    )
+  }
