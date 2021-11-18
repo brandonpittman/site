@@ -20,7 +20,8 @@ Router.events.on("routeChangeComplete", trackPageview);
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     Fathom.load("EXCJWHRT", {
-      excludedDomains: ["vercel.app", "now.sh", "localhost"],
+      includedDomains: ["blp.is", "www.blp.is"],
+      url: "https://pheasant.blp.is/script.js",
     });
   }, []);
 
