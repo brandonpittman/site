@@ -1,13 +1,11 @@
 import Card from "@components/card";
 import { Transition } from "@headlessui/react";
 import { Menu, X } from "@images/heroicons/solid";
-import HeaderLinks from "@lib/header_links.json";
 import { trackGoal } from "fathom-client";
 import Link from "next/link";
 import { useState } from "react";
 import useDismiss from "use-dismiss";
 
-const links = HeaderLinks;
 const trackMobileMenuGoal = () => trackGoal("RYQBIEQE", 0);
 
 export default function Header() {
