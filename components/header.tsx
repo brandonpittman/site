@@ -6,8 +6,6 @@ import { trackGoal } from "fathom-client";
 import Link from "next/link";
 import { useState } from "react";
 import useDismiss from "use-dismiss";
-import Image from "next/image";
-import ProfileImg from "@images/header-profile.png";
 
 const links = HeaderLinks;
 const trackMobileMenuGoal = () => trackGoal("RYQBIEQE", 0);
@@ -23,22 +21,13 @@ export default function Header() {
   const mobileMenuRef = useDismiss(() => setIsOpen(false));
 
   return (
-    <header className="w-full text-sm">
-      <nav className="w-full px-4 py-4 pb-4 bg-white border-b sm:px-16 dark:border-transparent dark:bg-black dark:text-white dark:shadow">
-        <div className="container mx-auto flex items-center justify-between w-full">
+    <header className="">
+      <nav className="w-full py-4 pb-4 bg-white dark:border-transparent dark:bg-black dark:text-white dark:shadow">
+        <div className="max-w-prose mx-auto flex items-center justify-between w-full">
           <h1>
             <Link href="/">
-              <a className="focus:outline-none focus:ring rounded-full inline-block focus:ring-offset-4">
-                <span className="sr-only">Home</span>
-                <div className="relative flex items-center w-10 h-10 overflow-hidden rounded-full ring ring-gray-300">
-                  <Image
-                    src={ProfileImg}
-                    width={40}
-                    height={40}
-                    alt="Brandon in a black kimono"
-                    placeholder="blur"
-                  />
-                </div>
+              <a className="focus:outline-none focus:ring rounded inline-block">
+                🏛 Brandon Pittman
               </a>
             </Link>
           </h1>

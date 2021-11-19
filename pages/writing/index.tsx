@@ -17,8 +17,8 @@ export async function getStaticProps() {
 
 export default function Writing({ posts }: { posts: Post[] }) {
   return (
-    <Layout className="max-w-3xl mx-auto" meta={meta}>
-      <h1 className="text-4xl font-bold">Writing</h1>
+    <Layout meta={meta}>
+      <h1 className="pt-16 text-4xl font-bold">Writing</h1>
 
       <ul className="mt-16 grid gap-4">
         {posts.map((post) => (

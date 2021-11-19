@@ -12,7 +12,7 @@ const meta = {
 
 const Stoic = ({ quote, source }) => {
   return (
-    <Layout className="prose dark:prose-dark" meta={meta}>
+    <Layout className="prose lg:prose-lg dark:prose-dark" meta={meta}>
       <RandomStoicQuote quote={quote} />
 
       <hr />
