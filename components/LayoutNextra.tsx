@@ -8,6 +8,7 @@ export default function Layout({
   children,
   className,
   meta,
+  pageMap,
 }: {
   children?: React.ReactNode;
   className?: string;
@@ -15,14 +16,17 @@ export default function Layout({
     title: string;
     description: string;
   };
+  pageMap?: any;
 }) {
   const classes = clsx("flex-1 focus:outline-none", className);
 
-  return (
-    <>
-      <SEO title={meta.title} description={meta.description} />
-      <div className="flex flex-col w-full min-h-screen dark:bg-black dark:text-gray-50">
-        <div className="container mx-auto">
+  const mdxClasses = clsx("pt-16 prose lg:prose-lg dark:prose-dark", classes);
+
+  return function Notes({ children }) {
+    return (
+      <>
+        <SEO title={meta.title} description={meta.description} />
+        <div className="flex flex-col container min-h-screen dark:bg-black dark:text-gray-50">
           <a
             href="#skip-content-target"
             className="sr-only m-4 focus:not-sr-only focus:!fixed bg-white rounded-md z-50 shadow left-4 top-4 focus:ring hover:ring focus:outline-none !p-1"
@@ -33,13 +37,13 @@ export default function Layout({
           <main
             tabIndex={-1}
             id="skip-content-target"
-            className={clsx(classes, "max-w-prose w-full mx-auto")}
+            className={clsx("w-full max-w-prose mx-auto")}
           >
-            {children}
+            <div className={mdxClasses}>{children}</div>
           </main>
           <Footer />
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  };
 }

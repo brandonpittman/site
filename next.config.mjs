@@ -14,14 +14,14 @@ const withPWA = nextPwa({
     dest: "public",
   },
 });
-// const withMdx = nextMdx({
-//   options: {
-//     rehypePlugins: [mdxPrism],
-//     remarkPlugins: [remarkExternalLinks, remarkSlug, remarkPrism],
-//   },
-// });
 
-const withNextra = nextra("./components/layout.tsx");
+const withNextra = nextra({
+  theme: "./components/LayoutNextra.tsx",
+  mdxOptions: {
+    rehypePlugins: [mdxPrism],
+    remarkPlugins: [remarkExternalLinks, remarkSlug, remarkPrism],
+  },
+});
 
 export default withPlugins([withPWA, withSvgr, withNextra], {
   experimental: {

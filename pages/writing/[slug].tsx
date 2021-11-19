@@ -28,7 +28,7 @@ export default function Post({ source, data }) {
           {data.description}
         </p>
 
-        <div className="prose sm:prose-lg dark:prose-dark">
+        <div className="prose lg:prose-lg dark:prose-dark">
           <MDXRemote {...source} components={components} />
         </div>
       </div>
