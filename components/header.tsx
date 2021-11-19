@@ -6,6 +6,20 @@ import Link from "next/link";
 import { useState } from "react";
 import useDismiss from "use-dismiss";
 
+const links = {
+  internal: [
+    {
+      title: "Writing",
+      to: "/writing",
+    },
+  ],
+  external: [
+    {
+      title: "GitHub",
+      to: "https://github.com/brandonpittman",
+    },
+  ],
+};
 const trackMobileMenuGoal = () => trackGoal("RYQBIEQE", 0);
 
 export default function Header() {

@@ -37,7 +37,6 @@ yarn-error.log*
 public/sw.js*
 
 # ReasonML/ReScript
-/lib
 *.bs.js
 .merlin
 
