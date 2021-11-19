@@ -20,7 +20,12 @@ Router.events.on("routeChangeComplete", trackPageview);
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     Fathom.load("EXCJWHRT", {
-      includedDomains: ["blp.is", "www.blp.is"],
+      includedDomains: [
+        "blp.is",
+        "www.blp.is",
+        "brandonpittman.com",
+        "www.brandonpittman.com",
+      ],
       url: "https://pheasant.blp.is/script.js",
     });
   }, []);

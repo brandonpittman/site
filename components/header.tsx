@@ -34,8 +34,8 @@ export default function Header() {
 
   return (
     <header className="">
-      <nav className="w-full py-4 pb-4 bg-white dark:border-transparent dark:bg-black dark:text-white dark:shadow">
-        <div className="max-w-prose mx-auto flex items-center justify-between w-full">
+      <nav className="max-w-prose mx-auto w-full py-4 pb-4 bg-white dark:border-transparent dark:bg-black dark:text-white dark:shadow">
+        <div className="flex items-center justify-between w-full">
           <h1>
             <Link href="/">
               <a className="focus:outline-none focus:ring rounded inline-block">
