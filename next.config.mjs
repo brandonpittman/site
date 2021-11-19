@@ -1,3 +1,4 @@
+import nextra from "nextra";
 import nextPwa from "next-pwa";
 import withPlugins from "next-compose-plugins";
 import withSvgr from "next-svgr";
@@ -13,14 +14,16 @@ const withPWA = nextPwa({
     dest: "public",
   },
 });
-const withMdx = nextMdx({
-  options: {
-    rehypePlugins: [mdxPrism],
-    remarkPlugins: [remarkExternalLinks, remarkSlug, remarkPrism],
-  },
-});
+// const withMdx = nextMdx({
+//   options: {
+//     rehypePlugins: [mdxPrism],
+//     remarkPlugins: [remarkExternalLinks, remarkSlug, remarkPrism],
+//   },
+// });
 
-export default withPlugins([withPWA, withMdx, withSvgr], {
+const withNextra = nextra("./components/layout.tsx");
+
+export default withPlugins([withPWA, withSvgr, withNextra], {
   experimental: {
     urlImports: ["https://cdn.skypack.dev"],
     // concurrentFeatures: true,
@@ -30,7 +33,6 @@ export default withPlugins([withPWA, withMdx, withSvgr], {
     formats: ["image/avif", "image/webp"],
   },
   reactStrictMode: true,
-  pageExtensions: ["js", "jsx", "ts", "tsx", "mdx", "bs.js"],
   async rewrites() {
     return [];
   },

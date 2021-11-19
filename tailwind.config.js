@@ -13,8 +13,8 @@ module.exports = {
       safelist: [/markdown/, /rich-text/, /primary/, /secondary/],
     },
     content: [
-      "./src/components/**/*.{js,jsx,ts,tsx}",
-      "./src/pages/**/*.{mdx,js,jsx,ts,tsx}",
+      "./components/**/*.{js,jsx,ts,tsx}",
+      "./pages/**/*.{mdx,js,jsx,ts,tsx}",
       "./content/**/*.{md,mdx}",
     ],
   },

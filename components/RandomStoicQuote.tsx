@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useRouter, NextRouter } from "next/router";
-import { cx } from "@/styles";
-import { StoicProps } from "src/pages/api/stoic";
+import clsx from "clsx";
+import { StoicProps } from "pages/api/stoic";
 
 export default function RandomStoicQuote({ quote }: StoicProps) {
   const { text, author, source } = quote;
@@ -22,7 +22,7 @@ export default function RandomStoicQuote({ quote }: StoicProps) {
         <h2 className="flex items-center space-x-1">
           <span>Random Stoic Quote</span>
           <button
-            className={cx(
+            className={clsx(
               isRefreshing ? "animate-spin-reverse" : "focus:ring",
               "px-2 py-1 my-4 text-xs font-medium text-blue-400 border border-transparent rounded-md focus:outline-none"
             )}

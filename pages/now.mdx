@@ -1,11 +1,14 @@
-import Layout from "@components/layout";
+---
+title: "Now"
+description: "What I'm up to now."
+date: "2021-11-04"
+---
+
 import Lead from "@components/NowLead";
-import SEO from "@components/seo";
+
 export const meta = {
-  title: "Now",
-  description: "What I'm up to now.",
-  date: "2021-11-04",
-};
+  date: "2021-11-04"
+}
 
 # Now
 
@@ -37,9 +40,3 @@ Most of my free time is spent studying Brazilian Jiu Jitsu, Latin, and Ancient
 Greek. The jiu jitsu came up in an attempt to focus my mind and body on
 something physical while the languages are connected to my desire to read
 ancient philosophy in the original languages.
-
-export default ({ children }) => (
-  <Layout className="prose sm:prose-lg dark:prose-dark" meta={meta}>
-    {children}
-  </Layout>
-);
