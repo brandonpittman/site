@@ -5,7 +5,7 @@ export default function PostMeta({ post }) {
 
   return (
     <div className="flex items-center">
-      <p className="text-sm text-gray-700 dark:text-gray-400">
+      <p className="text-sm text-gray-700">
         <span>Published {published} ago</span>
         <span> • </span>
         <span> {post.data.timeToRead} </span>

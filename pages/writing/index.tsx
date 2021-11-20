@@ -18,13 +18,15 @@ export async function getStaticProps() {
 export default function Writing({ posts }: { posts: Post[] }) {
   return (
     <Layout meta={meta}>
-      <h1 className="pt-16 text-4xl font-bold">Writing</h1>
+      <div className="prose lg:prose-lg">
+        <h1 className="pt-16 text-4xl font-bold">Writing</h1>
+      </div>
 
       <ul className="mt-16 grid gap-4">
         {posts.map((post) => (
           <li key={post.data.slug}>
             <Link href="/writing/[slug]" as={"/writing/" + post.data.slug}>
-              <a className="font-bold text-gray-500 rounded-md focus:outline-none dark:focus:text-gray-100 focus:text-gray-900 hover:text-gray-900 dark:hover:text-gray-100">
+              <a className="font-bold text-gray-500 rounded-md focus:outline-none focus:text-gray-900 hover:text-gray-900">
                 {post.data.title}
               </a>
             </Link>

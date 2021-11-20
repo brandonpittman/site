@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <header className="">
-      <nav className="max-w-prose mx-auto w-full py-4 pb-4 bg-white dark:border-transparent dark:bg-black dark:text-white dark:shadow">
+      <nav className="max-w-prose mx-auto w-full py-4 pb-4 bg-white">
         <div className="flex items-center justify-between w-full">
           <h1>
             <Link href="/">
@@ -68,7 +68,7 @@ export default function Header() {
             >
               <Card
                 style={{ minWidth: "14rem" }}
-                className="absolute right-0 p-4 dark:text-blue-100 dark:bg-blue-500 dark:to-transparent dark:from-transparent text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black"
+                className="absolute right-0 p-4 text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black"
               >
                 <ul ref={mobileMenuRef}>
                   {links.internal.map((link) => (
@@ -99,7 +99,7 @@ export default function Header() {
             {links.internal.map((link) => (
               <li key={link.title}>
                 <Link href={link.to}>
-                  <a className="block text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition ease-in-out duration-75 hover:text-gray-900 focus:outline-none focus:ring rounded-md p-2 dark:text-gray-50">
+                  <a className="block text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition ease-in-out duration-75 hover:text-gray-900 focus:outline-none focus:ring rounded-md p-2">
                     {link.title}
                   </a>
                 </Link>
@@ -111,7 +111,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer author"
                   href={link.to}
-                  className="block p-2 focus:outline-none focus:ring rounded-md text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition ease-in-out duration-75 hover:text-gray-900 dark:text-gray-50"
+                  className="block p-2 focus:outline-none focus:ring rounded-md text-sm font-semibold tracking-wide text-gray-700 md:inline-block md:mt-0 transform transition ease-in-out duration-75 hover:text-gray-900"
                 >
                   {link.title}
                 </a>

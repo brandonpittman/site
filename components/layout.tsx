@@ -21,7 +21,7 @@ export default function Layout({
   return (
     <>
       <SEO title={meta.title} description={meta.description} />
-      <div className="dark:bg-black dark:text-gray-50">
+      <div>
         <div className="container mx-auto min-h-screen flex flex-col flex-1">
           <a
             href="#skip-content-target"

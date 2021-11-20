@@ -11,7 +11,7 @@ export default function Index() {
   return (
     <>
       <Layout meta={meta}>
-        <div className="pt-16 prose lg:prose-lg dark:prose-dark space-y-8">
+        <div className="pt-16 prose lg:prose-lg space-y-8">
           <p className="mt-4">
             You can read check out{" "}
             <Link href="/writing">

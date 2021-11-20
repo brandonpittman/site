@@ -15,22 +15,17 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col items-center px-4 py-16 mx-auto text-sm text-gray-700 dark:text-gray-400 sm:px-8 space-y-2">
+    <footer className="flex flex-col items-center px-4 py-16 mx-auto text-sm text-gray-700 sm:px-8 space-y-2">
       <ul className="flex flex-wrap justify-start w-full sm:justify-items-center sm:w-auto">
         {links.map((link) => (
           <li key={link.href} className="p-1">
             <Link href={link.href}>
-              <a className="text-blue-600 hover:underline dark:text-blue-400">
-                {link.label}
-              </a>
+              <a className="text-blue-600 hover:underline">{link.label}</a>
             </Link>
           </li>
         ))}
         <li className="p-1">
-          <a
-            href="mailto:hey@blp.is"
-            className="text-blue-600 hover:underline dark:text-blue-400"
-          >
+          <a href="mailto:hey@blp.is" className="text-blue-600 hover:underline">
             Email
           </a>
         </li>
@@ -40,7 +35,7 @@ export default function Footer() {
         <span className="p-1">
           This site is powered by{" "}
           <a
-            className="text-blue-600 hover:underline dark:text-blue-400"
+            className="text-blue-600 hover:underline"
             href="https://nextjs.org"
             target="_blank"
             rel="noreferrer noopener"
@@ -52,7 +47,7 @@ export default function Footer() {
             href="https://github.com/brandonpittman/next-blog"
             target="_blank"
             rel="noreferrer noopener author"
-            className="text-blue-600 hover:underline dark:text-blue-400"
+            className="text-blue-600 hover:underline"
           >
             GitHub.
           </a>

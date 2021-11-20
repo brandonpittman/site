@@ -9,7 +9,7 @@ interface CtaProps {
 
 export default function Cta({ href, className = "", children }: CtaProps) {
   const classes =
-    "inline-block px-3 py-2 font-medium rounded-md shadow-sm dark:from-transparent dark:to-transparent dark:bg-blue-600 dark:hover:bg-blue-700 transition bg-gradient-to-b from-gray-700 via-gray-900 to-black"
+    "inline-block px-3 py-2 font-medium rounded-md shadow-sm transition bg-gradient-to-b from-gray-700 via-gray-900 to-black"
       .concat(" ")
       .concat(className);
 
