@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import Redis from "ioredis";
-import { auth, lrange, get, set, del } from "@upstash/redis";
+import { auth, get, set, del } from "@upstash/redis";
 
 export type PinboardItem = {
   href: string;
@@ -51,5 +50,6 @@ export default async function handler(
 
   const unread = await fetchUnread();
 
+  console.log(unread)
   return res.status(200).json(unread);
 }
