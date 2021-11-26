@@ -18,14 +18,12 @@ const Pinboard = require("node-pinboard").default;
 const token = process.env.PINBOARD_TOKEN;
 const pinboard = new Pinboard(token);
 
-const authorizeUpstash = () =>
-  auth(
-    "https://apn1-known-marlin-30903.upstash.io",
-    "AXi3ACQgNzliYzBhMDctZWNlOC00ZjQ4LWIzOGItMzgwOWQ0ZDk0NzNiOGU2YjQ0ZDJlNWU0NDU4N2IxNmU4MzdjY2RmZjU3MzE="
-  );
+auth(
+  "https://apn1-known-marlin-30903.upstash.io",
+  "AXi3ACQgNzliYzBhMDctZWNlOC00ZjQ4LWIzOGItMzgwOWQ0ZDk0NzNiOGU2YjQ0ZDJlNWU0NDU4N2IxNmU4MzdjY2RmZjU3MzE="
+);
 
 export const setLinks = async (links: PinboardItem[]) => {
-  authorizeUpstash();
   await set("unread", JSON.stringify(links), "ex", 30);
 };
 
@@ -34,13 +32,11 @@ export const fetchAll = async () => {
 };
 
 const updateCache = async () => {
-  authorizeUpstash();
   const all: PinboardItem[] = await fetchAll();
   setLinks(all.filter((v) => v.toread === "yes"));
 };
 
 export const fetchUnread = async () => {
-  authorizeUpstash();
   updateCache();
   return JSON.parse((await get("unread")).data);
 };
