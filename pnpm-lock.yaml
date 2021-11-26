@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@headlessui/react': ^0.3.1
-  '@joebell/cx': ^0.1.0
   '@mapbox/rehype-prism': ^0.6.0
   '@mdx-js/loader': ^1.6.22
   '@mdx-js/react': ^1.6.22
@@ -19,6 +18,7 @@ specifiers:
   '@types/react': ^17.0.2
   '@typescript-eslint/eslint-plugin': ^4.27.0
   '@typescript-eslint/parser': ^4.27.0
+  '@upstash/redis': ^0.1.5
   autoprefixer: ^10.2.4
   clsx: ^1.1.1
   cookie: ^0.4.1
@@ -70,7 +70,7 @@ specifiers:
   rss-to-json: ^1.1.3
   semver: ^7.3.4
   sharp: ^0.27.2
-  swr: ^0.4.2
+  swr: ^1.0.1
   tailwindcss: ^2.0.3
   tailwindcss-plugin-fancy: ^3.0.2
   typescript: ^4.3.2
@@ -80,13 +80,13 @@ specifiers:
 
 dependencies:
   '@headlessui/react': 0.3.2_react@17.0.2
-  '@joebell/cx': 0.1.0
   '@mapbox/rehype-prism': 0.6.0
   '@mdx-js/loader': 1.6.22_react@17.0.2
   '@mdx-js/react': 1.6.22_react@17.0.2
   '@next/env': 12.0.4
   '@next/mdx': 12.0.4_f56c41adb6190c4680be4a1c0222355d
   '@tailwindcss/forms': 0.2.1
+  '@upstash/redis': 0.1.5
   autoprefixer: 10.4.0_postcss@8.3.11
   clsx: 1.1.1
   cookie: 0.4.1
@@ -118,7 +118,7 @@ dependencies:
   remark-rehype: 8.1.0
   remark-slug: 6.1.0
   semver: 7.3.5
-  swr: 0.4.2_react@17.0.2
+  swr: 1.0.1_react@17.0.2
   use-dismiss: 2.0.3_react@17.0.2
   use-idb-keyval: 0.3.9_react-dom@17.0.2+react@17.0.2
   webpack: 5.64.1
@@ -1737,11 +1737,6 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@joebell/cx/0.1.0:
-    resolution: {integrity: sha512-jEnMWRw0sHhB7KB0+jb1sIJyfk+t54DPxojesWiiV6rf8ynNfBPr+k3lPgLkxZCv0w2tUPOEWloscm1pqILh6A==}
-    engines: {node: '>=10'}
-    dev: false
-
   /@mapbox/rehype-prism/0.6.0:
     resolution: {integrity: sha512-/0Ev/PB4fXdKPT6VDzVpnAPxGpWFIc4Yz3mf/DzLEMxlpIPZpZlCzaFk4V4NGFofQXPc41+GpEcZtWP3VuFWVA==}
     engines: {node: '>=10'}
@@ -2712,6 +2707,13 @@ packages:
       '@typescript-eslint/types': 4.33.0
       eslint-visitor-keys: 2.1.0
     dev: true
+
+  /@upstash/redis/0.1.5:
+    resolution: {integrity: sha512-hD5AJj3fkVmJR1jsUAqyyQyYEOkdgHk6MxL+EO50ZPUnHd92Brn0Eouj1+orkPQFdO/hbaBxn91JTou2LpYCUg==}
+    engines: {node: '>=10'}
+    dependencies:
+      isomorphic-unfetch: 3.1.0
+    dev: false
 
   /@webassemblyjs/ast/1.11.1:
     resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==}
@@ -6636,6 +6638,13 @@ packages:
   /isobject/3.0.1:
     resolution: {integrity: sha1-TkMekrEalzFjaqH5yNHMvP2reN8=}
     engines: {node: '>=0.10.0'}
+
+  /isomorphic-unfetch/3.1.0:
+    resolution: {integrity: sha512-geDJjpoZ8N0kWexiwkX8F9NkTsXhetLPVbZFQ+JTW239QNOwvB0gniuR1Wc6f0AMTn7/mFGyXvHTifrCp/GH8Q==}
+    dependencies:
+      node-fetch: 2.6.6
+      unfetch: 4.2.0
+    dev: false
 
   /istanbul-lib-coverage/3.2.0:
     resolution: {integrity: sha512-eOeJ5BHCmHYvQK7xt9GkdHuzuCGS1Y6g9Gvnx3Ym33fz/HpLRYxiS0wHNr+m/MBC8B647Xt608vCDEvhl9c6Mw==}
@@ -10789,8 +10798,8 @@ packages:
       util.promisify: 1.0.1
     dev: false
 
-  /swr/0.4.2_react@17.0.2:
-    resolution: {integrity: sha512-SKGxcAfyijj/lE5ja5zVMDqJNudASH3WZPRUakDVOePTM18FnsXgugndjl9BSRwj+jokFCulMDe7F2pQL+VhEw==}
+  /swr/1.0.1_react@17.0.2:
+    resolution: {integrity: sha512-EPQAxSjoD4IaM49rpRHK0q+/NzcwoT8c0/Ylu/u3/6mFj/CWnQVjNJ0MV2Iuw/U+EJSd2TX5czdAwKPYZIG0YA==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0
     dependencies:
@@ -11278,6 +11287,10 @@ packages:
     dependencies:
       buffer: 5.7.1
       through: 2.3.8
+    dev: false
+
+  /unfetch/4.2.0:
+    resolution: {integrity: sha512-F9p7yYCn6cIW9El1zi0HI6vqpeIvBsr3dSuRO6Xuppb1u5rXpCPmMvLSyECLhybr9isec8Ohl0hPekMVrEinDA==}
     dev: false
 
   /unherit/1.1.3:

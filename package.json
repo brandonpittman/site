@@ -17,6 +17,7 @@
     "@next/env": "^12.0.4",
     "@next/mdx": "^12.0.4",
     "@tailwindcss/forms": "^0.2.1",
+    "@upstash/redis": "^0.1.5",
     "autoprefixer": "^10.2.4",
     "clsx": "^1.1.1",
     "cookie": "^0.4.1",
@@ -48,7 +49,7 @@
     "remark-rehype": "^8.0.0",
     "remark-slug": "^6.0.0",
     "semver": "^7.3.4",
-    "swr": "^0.4.2",
+    "swr": "^1.0.1",
     "use-dismiss": "^2.0.3",
     "use-idb-keyval": "^0.3.1",
     "webpack": "^5"

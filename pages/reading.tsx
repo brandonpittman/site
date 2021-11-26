@@ -2,23 +2,24 @@ import Head from "next/head";
 import { serialize } from "cookie";
 import { fetchUnread, PinboardItem } from "./api/pinboard/unread";
 import { GetServerSidePropsContext } from "next";
-import useSWR, { mutate } from "swr";
+import useSWR from "swr";
 
 const readItem = (link: PinboardItem) => ({
   ...link,
   toread: "no",
 });
 
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
+
 export default function ReadingPage({ data }: { data: PinboardItem[] }) {
-  const { data: links } = useSWR(`/api/pinboard/unread`, {
-    initialData: data,
+  const { data: links, mutate } = useSWR(`/api/pinboard/unread`, fetcher, {
+    fallbackData: data,
   });
 
   const onClick = async (item: PinboardItem) => {
     mutate(
-      "/api/pinboard/unread",
       data.filter((v) => v.href !== item.href),
-      false
+      true
     );
 
     await fetch("/api/pinboard/read", {
