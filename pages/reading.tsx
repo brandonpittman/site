@@ -39,31 +39,35 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
         <title>Unread Pinboard Links</title>
       </Head>
       <h1>Unread</h1>
-      <ul>
-        {links.map((link: PinboardItem) => (
-          <li key={link.href}>
-            <a
-              href={link.href}
-              onClick={() => onClick(link)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.description}
-            </a>
-            {link.tags ? (
-              <div className="flex items-center gap-2">
-                <ul className="flex flex-wrap leading-none list-none gap-2 !m-0">
-                  {link.tags.split(" ").map((tag) => (
-                    <li key={tag} className="before:!hidden !p-0 !m-0">
-                      <span className="">{tag}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </li>
-        ))}
-      </ul>
+      {links?.length ? (
+        <ul>
+          {links.map((link: PinboardItem) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                onClick={() => onClick(link)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.description}
+              </a>
+              {link.tags ? (
+                <div className="flex items-center gap-2">
+                  <ul className="flex flex-wrap leading-none list-none gap-2 !m-0">
+                    {link.tags.split(" ").map((tag) => (
+                      <li key={tag} className="before:!hidden !p-0 !m-0">
+                        <span className="">{tag}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-center">Loading…</p>
+      )}
     </div>
   );
 }
