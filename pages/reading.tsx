@@ -30,7 +30,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
       },
     });
 
-    mutate("/api/pinboard/unread");
+    mutate();
   };
 
   return (
@@ -92,7 +92,7 @@ export async function getServerSideProps({
       String(process.env.PINBOARD_PASSWORD),
       {
         httpOnly: true,
-        maxAge: 60 * 60 * 24 * 7, // 1 week
+        maxAge: 60 * 60 * 24 * 365, // 1 week
       }
     );
 
