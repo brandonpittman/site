@@ -19,7 +19,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
   const onClick = async (item: PinboardItem) => {
     mutate(
       data.filter((v) => v.href !== item.href),
-      true
+      false
     );
 
     await fetch("/api/pinboard/read", {
