@@ -50,6 +50,6 @@ export default async function handler(
 
   const unread = await fetchUnread();
 
-  console.log(unread)
+  console.log(unread);
   return res.status(200).json(unread);
 }
