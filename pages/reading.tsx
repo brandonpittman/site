@@ -13,7 +13,7 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function ReadingPage({ data }: { data: PinboardItem[] }) {
   const { data: links, mutate } = useSWR(`/api/pinboard/unread`, fetcher, {
-    fallback: data,
+    fallbackData: data,
   });
 
   const onClick = async (item: PinboardItem) => {
