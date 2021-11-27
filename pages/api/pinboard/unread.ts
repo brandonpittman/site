@@ -23,7 +23,8 @@ auth(
 );
 
 export const setLinks = async (links: PinboardItem[]) => {
-  await set("unread", JSON.stringify(links), "ex", 30);
+  const { data } = await set("unread", JSON.stringify(links));
+  return data;
 };
 
 export const fetchAll = async () => {
@@ -32,12 +33,14 @@ export const fetchAll = async () => {
 
 const updateCache = async () => {
   const all: PinboardItem[] = await fetchAll();
-  setLinks(all.filter((v) => v.toread === "yes"));
+  const toRead = all.filter((v) => v.toread === "yes");
+  return setLinks(toRead);
 };
 
 export const fetchUnread = async () => {
   updateCache();
-  return JSON.parse((await get("unread")).data);
+  const { data } = await get("unread");
+  return JSON.parse(data);
 };
 
 export default async function handler(

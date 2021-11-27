@@ -39,7 +39,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
         <title>Unread Pinboard Links</title>
       </Head>
       <h1>Unread</h1>
-      {links?.length ? (
+      {links ? (
         <ul>
           {links.map((link: PinboardItem) => (
             <li key={link.href}>
@@ -97,6 +97,8 @@ export async function getServerSideProps({
     );
 
     res.setHeader("Set-Cookie", pwCookie);
+
+    console.log("reading", data);
 
     return {
       props: {
