@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
         "brandonpittman.com",
         "www.brandonpittman.com",
       ],
-      url: "https://pheasant.blp.is/script.js",
+      url: "https://fortunate-attractive.blp.is/script.js",
     });
   }, []);
 
