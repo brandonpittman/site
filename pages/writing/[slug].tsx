@@ -5,7 +5,6 @@ import { getAllPosts, queryPost } from "@lib/api";
 import { MDXRemote } from "next-mdx-remote";
 import CustomLink from "@components/Link";
 import AmazonLink from "@components/AmazonLink";
-import createSeason from "date-season";
 
 const components = {
   a: CustomLink,
@@ -41,16 +40,12 @@ export async function getStaticProps({ params }) {
   const { data, content, source } = await queryPost(params.slug, {
     queryWithPlugins: true,
   });
-  const season = createSeason()(data.date);
 
   return {
     props: {
       source,
       content,
-      data: {
-        ...data,
-        season,
-      },
+      data,
     },
   };
 }
