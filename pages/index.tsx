@@ -50,15 +50,9 @@ export default function Index() {
           </p>
 
           <p>
-            If you'd like to help support my continued work on{" "}
-            <a
-              href="https://github.com/brandonpittman"
-              rel="noopener noreferrer"
-            >
-              open source software
-            </a>
-            , or you'd like to say "thanks" for something of mine that you used
-            or read that gave you some benefit, then consider{" "}
+            If you'd like to help support my continued work on open source
+            software , or you'd like to say "thanks" for something of mine that
+            you used or read that gave you some benefit, then consider{" "}
             <a
               href="https://buymeacoffee.com/blp"
               target="_blank"
@@ -68,7 +62,7 @@ export default function Index() {
             </a>
           </p>
 
-          <div id="contact" className="flex gap-1 items-center">
+          <div id="contact" className="py-16 flex gap-1 items-center">
             <MailIcon className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400" />
 
             <a href="mailto:hey@blp.is" className="!no-underline">
