@@ -19,7 +19,7 @@ export default function Post({ source, data }) {
     <Layout meta={meta}>
       <div className="pt-16 grid gap-12">
         <div className="grid gap-2">
-          <h1 className="text-5xl font-bold ">{data.title}</h1>
+          <h1 className="text-gray-900 text-5xl font-bold ">{data.title}</h1>
           <PostMeta post={{ data }} />
         </div>
 
