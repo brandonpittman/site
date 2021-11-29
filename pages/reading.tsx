@@ -98,8 +98,6 @@ export async function getServerSideProps({
 
     res.setHeader("Set-Cookie", pwCookie);
 
-    console.log("reading", data);
-
     return {
       props: {
         data,

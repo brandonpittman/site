@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { basename, join } from "path";
 import readingTime from "reading-time";
-import createSeason from "date-season";
 
 const postsDirectory = join(process.cwd(), "content/posts");
 
@@ -37,11 +36,8 @@ export async function queryPost(
       rehypePlugins,
     },
   });
-  const season = createSeason()(data.date);
-
   data = {
     ...data,
-    season,
     date: data.date.toISOString(),
     timeToRead: readingTime(content).text,
   };
