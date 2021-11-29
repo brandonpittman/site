@@ -1,6 +1,6 @@
-import Cta from "@components/cta";
 import Layout from "@components/layout";
 import Link from "next/link";
+import { MailIcon } from "@heroicons/react/outline";
 
 export const meta = {
   title: "Home",
@@ -11,8 +11,8 @@ export default function Index() {
   return (
     <>
       <Layout meta={meta}>
-        <div className="pt-16 prose lg:prose-lg space-y-8">
-          <p className="mt-4">
+        <div className="pt-16 prose lg:prose-lg">
+          <p>
             You can read check out{" "}
             <Link href="/writing">
               <a>things I've written</a>
@@ -49,10 +49,16 @@ export default function Index() {
             .
           </p>
 
-          <p className="mt-4">
-            If you'd like to help support my continued work on open source
-            software, or you'd like to say "thanks" for something of mine that
-            you used or read that gave you some benefit, then consider{" "}
+          <p>
+            If you'd like to help support my continued work on{" "}
+            <a
+              href="https://github.com/brandonpittman"
+              rel="noopener noreferrer"
+            >
+              open source software
+            </a>
+            , or you'd like to say "thanks" for something of mine that you used
+            or read that gave you some benefit, then consider{" "}
             <a
               href="https://buymeacoffee.com/blp"
               target="_blank"
@@ -62,8 +68,12 @@ export default function Index() {
             </a>
           </p>
 
-          <div className="flex items-center justify-center">
-            <Cta href="mailto:hey@blp.is">Shoot me an email</Cta>
+          <div id="contact" className="flex gap-1 items-center">
+            <MailIcon className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400" />
+
+            <a href="mailto:hey@blp.is" className="!no-underline">
+              Shoot me an email
+            </a>
           </div>
         </div>
       </Layout>

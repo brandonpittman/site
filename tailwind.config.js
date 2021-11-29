@@ -3,6 +3,7 @@ const typography = require("@tailwindcss/typography");
 const forms = require("@tailwindcss/forms");
 const lineClamp = require("@tailwindcss/line-clamp");
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   darkMode: "class",
@@ -128,6 +129,7 @@ module.exports = {
       addBase({
         body: {
           overscrollBehavior: "none",
+          color: colors.gray["500"],
         },
         ".markdown": {
           "img, pre": {
