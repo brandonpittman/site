@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { trackGoal } from "fathom-client";
+import Link from "@components/Link";
 
 const links = [
   { label: "About", href: "/about" },
@@ -15,44 +14,29 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col items-center px-4 py-16 mx-auto text-sm text-gray-700 sm:px-8 space-y-2">
-      <ul className="flex flex-wrap justify-start w-full sm:justify-items-center sm:w-auto">
+    <footer className="flex justify-between items-center gap-4 py-8 mx-auto text-gray-700 max-w-prose w-full">
+      <ul className="flex flex-wrap w-full text-sm gap-4">
         {links.map((link) => (
-          <li key={link.href} className="p-1">
-            <Link href={link.href}>
-              <a className="text-blue-600 hover:underline">{link.label}</a>
+          <li key={link.href}>
+            <Link href={link.href} className="transition hover:text-gray-900">
+              {link.label}
             </Link>
           </li>
         ))}
-        <li className="p-1">
-          <a href="mailto:hey@blp.is" className="text-blue-600 hover:underline">
+        <li>
+          <Link
+            href="mailto:hey@blp.is"
+            className="transition hover:text-gray-900"
+          >
             Email
-          </a>
+          </Link>
+        </li>
+        <li className="md:ml-auto">
+          <Link href="/colophon" className="transition hover:text-gray-900">
+            Colophon
+          </Link>
         </li>
       </ul>
-      <div className="flex flex-wrap">
-        {/* <span>Copyright © {new Date().getFullYear()}.&nbsp;</span> */}
-        <span className="p-1">
-          This site is powered by{" "}
-          <a
-            className="text-blue-600 hover:underline"
-            href="https://nextjs.org"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Next.js
-          </a>{" "}
-          and its source is available on{" "}
-          <a
-            href="https://github.com/brandonpittman/next-blog"
-            target="_blank"
-            rel="noreferrer noopener author"
-            className="text-blue-600 hover:underline"
-          >
-            GitHub.
-          </a>
-        </span>
-      </div>
     </footer>
   );
 }

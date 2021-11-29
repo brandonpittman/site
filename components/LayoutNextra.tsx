@@ -20,7 +20,7 @@ export default function Layout({
 }) {
   const classes = clsx("flex-1 focus:outline-none", className);
 
-  const mdxClasses = clsx("pt-16 prose lg:prose-lg", classes);
+  const mdxClasses = clsx("py-8 prose lg:prose-lg", classes);
 
   return function Notes({ children }) {
     return (

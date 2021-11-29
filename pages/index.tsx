@@ -11,7 +11,7 @@ export default function Index() {
   return (
     <>
       <Layout meta={meta}>
-        <div className="pt-16 prose lg:prose-lg">
+        <div className="pt-8 prose lg:prose-lg">
           <p>
             You can read check out{" "}
             <Link href="/writing">
@@ -62,7 +62,7 @@ export default function Index() {
             </a>
           </p>
 
-          <div id="contact" className="py-16 flex gap-1 items-center">
+          <div id="contact" className="py-8 flex gap-1 items-center">
             <MailIcon className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400" />
 
             <a href="mailto:hey@blp.is" className="!no-underline">

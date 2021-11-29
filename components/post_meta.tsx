@@ -1,7 +1,7 @@
 export default function PostMeta({ post }) {
   return (
-    <div className="flex items-center">
-      <p className="text-sm text-gray-700">
+    <div className="flex items-center pt-1">
+      <p className="text-sm">
         <span>
           Last updated in {post.data.season}{" "}
           {new Date(post.data.date).getFullYear()}
