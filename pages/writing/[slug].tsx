@@ -28,7 +28,7 @@ export default function Post({ source, data }) {
           {data.description}
         </p>
 
-        <div className="prose lg:prose-lg">
+        <div className="overflow-auto prose lg:prose-lg">
           <MDXRemote {...source} components={components} />
         </div>
       </div>
