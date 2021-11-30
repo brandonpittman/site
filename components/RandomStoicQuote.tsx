@@ -1,31 +1,27 @@
 import * as React from "react";
-import { useRouter, NextRouter } from "next/router";
 import clsx from "clsx";
 import { StoicProps } from "pages/api/stoic";
+import useSWR from "swr";
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function RandomStoicQuote({ quote }: StoicProps) {
-  const { text, author, source } = quote;
-  const [isRefreshing, setIsRefreshing] = React.useState(false);
-  const router = useRouter();
-  const refreshData = (router: NextRouter) => {
-    setIsRefreshing(true);
-    router.replace(router.asPath);
-  };
+  const { data, mutate, isValidating } = useSWR("/api/stoic", fetcher, {
+    fallbackData: quote,
+  });
 
-  React.useEffect(() => {
-    setIsRefreshing(false);
-  }, [quote]);
+  const { text, author, source } = data;
 
   return (
     <>
-      <h2 className="flex items-center space-x-1 pt-16">
+      <h2 className="flex items-center gap-1">
         <span>Random Stoic Quote</span>
         <button
           className={clsx(
-            isRefreshing ? "animate-spin-reverse" : "focus:ring",
-            "px-2 py-1 my-4 text-xs font-medium text-blue-400 border border-transparent rounded-md focus:outline-none"
+            isValidating ? "animate-spin-reverse" : "focus:ring",
+            "px-2 py-1 my-4 text-xs font-medium border border-transparent rounded-md focus:outline-none"
           )}
-          onClick={() => refreshData(router)}
+          onClick={() => mutate()}
         >
           <span className="sr-only">Refresh quote</span>
           <svg
