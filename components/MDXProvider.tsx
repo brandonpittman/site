@@ -7,7 +7,7 @@ import AmazonLink from "./AmazonLink";
 const components = {
   Image,
   a: Link,
-  amazon: AmazonLink,
+  Amazon: AmazonLink,
 };
 
 const Provider = ({ children }: { children: ReactNode }) => (

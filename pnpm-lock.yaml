@@ -45,7 +45,7 @@ specifiers:
   next-pwa: ^5.0.5
   next-svgr: 0.0.2
   next-themes: 0.0.12
-  nextra: ^1.1.0
+  nextra: 2.0.0-beta.3
   node-pinboard: ^2.0.1
   postcss: ^8.2.6
   prettier: ^2.5.0
@@ -96,7 +96,7 @@ dependencies:
   next-pwa: 5.4.0_next@12.0.4
   next-svgr: 0.0.2
   next-themes: 0.0.12_f195614718841b3c14a81ac95268ce58
-  nextra: 1.1.0_react@17.0.2
+  nextra: 2.0.0-beta.3_react@17.0.2
   node-pinboard: 2.0.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -587,7 +587,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.14.5
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.16.3_@babel+core@7.12.9
     dev: false
@@ -4926,6 +4926,10 @@ packages:
       estree-walker: 3.0.0
     dev: false
 
+  /estree-util-is-identifier-name/1.1.0:
+    resolution: {integrity: sha512-OVJZ3fGGt9By77Ix9NhaRbzfbDV/2rx9EP7YIDJTmsZSEc5kYn2vWcNccYyahJL2uAQZK2a5Or2i0wtIKTPoRQ==}
+    dev: false
+
   /estree-util-is-identifier-name/2.0.0:
     resolution: {integrity: sha512-aXXZFVMnBBDRP81vS4YtAYJ0hUkgEsXea7lNKWCOeaAquGb1Jm2rcONPB5fpzwgbNxulTvrWuKnp9UElUGAKeQ==}
     dev: false
@@ -8330,21 +8334,21 @@ packages:
       - webpack
     dev: false
 
-  /nextra/1.1.0_react@17.0.2:
-    resolution: {integrity: sha512-WxD1c05gs4cyPHWvqOei9ofIQkLjtzQaDQo8+56f5ss7yJ6ZyI7Ohx7nyyjm6yTo1fO8gfj3v1l/AZmLnjh4FA==}
+  /nextra/2.0.0-beta.3_react@17.0.2:
+    resolution: {integrity: sha512-GTwFTPhWm6LG2KDt8dgRBqx9S2Zx1eN9RfTmLY0kUazGWiQJlPXDwtcmjfj3ZXq2qBByU/9NnU/m2YynPJlAIg==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
       '@mdx-js/loader': 2.0.0-rc.2
+      '@mdx-js/mdx': 2.0.0-rc.2
       download: 8.0.0
       graceful-fs: 4.2.8
       gray-matter: 4.0.3
       loader-utils: 2.0.0
       react: 17.0.2
-      remark: 13.0.0
       remark-gfm: 1.0.0
+      remark-mdx-code-meta: 1.0.0
       slash: 3.0.0
-      strip-markdown: 4.2.0
     transitivePeerDependencies:
       - supports-color
       - webpack
@@ -9492,6 +9496,17 @@ packages:
       mdast-util-to-hast: 10.2.0
     dev: false
 
+  /remark-mdx-code-meta/1.0.0:
+    resolution: {integrity: sha512-7lu7aX7EeBQOwTQL8uYRvUhjAujMAC/bpOEv4p5pPL3xb9R6SR+8BKpiEA8CrbBEc8nhNac9QJ7/K3VpR5I7yQ==}
+    engines: {node: '>=12.2.0'}
+    dependencies:
+      acorn: 8.6.0
+      acorn-jsx: 5.3.2_acorn@8.6.0
+      estree-util-is-identifier-name: 1.1.0
+      hast-util-to-string: 1.0.4
+      unist-util-visit: 2.0.3
+    dev: false
+
   /remark-mdx/1.6.22:
     resolution: {integrity: sha512-phMHBJgeV76uyFkH4rvzCftLfKCr2RZuF+/gmVcaKrpsihyzmhXjA0BEMDaPTXG5y8qZOKPVo83NAOX01LPnOQ==}
     dependencies:
@@ -10441,10 +10456,6 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
     dev: true
-
-  /strip-markdown/4.2.0:
-    resolution: {integrity: sha512-sZYHI1KoKOOBfIq78R3E62NHg7kk6aKtZSqiH7wWxFB6Ak6PTZe4N88aJnzjV00Lbfw91oyLpy3baYfTTqNYBA==}
-    dev: false
 
   /strip-outer/1.0.1:
     resolution: {integrity: sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==}

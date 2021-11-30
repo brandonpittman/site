@@ -6,6 +6,7 @@ import * as Fathom from "fathom-client";
 import Router from "next/router";
 import React, { useEffect } from "react";
 import Ogp from "@components/Ogp";
+import MDXProvider from "@components/MDXProvider";
 
 const blacklist = ["/reading"];
 
@@ -31,7 +32,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Ogp />
-      <Component {...pageProps} />
+      <MDXProvider>
+        <Component {...pageProps} />
+      </MDXProvider>
     </>
   );
 }

@@ -7,24 +7,17 @@ import clsx from "clsx";
 import SEO from "@components/seo";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import { MDXProvider } from "@mdx-js/react";
-import CustomLink from "@components/Link";
-import AmazonLink from "@components/AmazonLink";
-
-const components = {
-  a: CustomLink,
-  amazon: AmazonLink,
-};
 
 const fetcher = (url: string) => fetch(url).then((r) => r.text());
 
 export default function Layout({
   className,
   meta,
-  route,
+  filename,
 }: {
   children?: React.ReactNode;
   className?: string;
+  filename: string;
   meta: {
     title: string;
     description: string;
@@ -35,7 +28,7 @@ export default function Layout({
   const classes = clsx("flex-1 focus:outline-none", className);
   const router = useRouter();
   const mdxClasses = clsx("py-8 prose lg:prose-lg", classes);
-  const url = `/api/time/${encodeURIComponent(route)}`;
+  const url = `/api/time/${encodeURIComponent(filename)}`;
   const { data: timeToRead } = useSWR(url, fetcher);
 
   return function Notes({ children }) {
@@ -69,9 +62,7 @@ export default function Layout({
                 {meta.description}
               </p>
 
-              <div className="overflow-auto prose lg:prose-lg">
-                <MDXProvider components={components}>{children}</MDXProvider>
-              </div>
+              <div className="overflow-auto prose lg:prose-lg">{children}</div>
             </div>
           </main>
           <Footer />
@@ -93,9 +84,7 @@ export default function Layout({
             id="skip-content-target"
             className={clsx("w-full flex-1 max-w-prose mx-auto")}
           >
-            <div className={mdxClasses}>
-              <MDXProvider components={components}>{children}</MDXProvider>
-            </div>
+            <div className={mdxClasses}>{children}</div>
           </main>
           <Footer />
         </div>

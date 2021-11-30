@@ -10,9 +10,7 @@ export default async function handler(
   const dir = join(process.cwd(), "pages");
   const { route } = req.query;
   const path = decodeURIComponent(route as string);
-  const timeToRead = readingTime(
-    readFileSync(join(dir, path + ".mdx"), "utf8")
-  ).text;
+  const timeToRead = readingTime(readFileSync(join(dir, path), "utf8")).text;
 
   return res.status(200).send(timeToRead);
 }

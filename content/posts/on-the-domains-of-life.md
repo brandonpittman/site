@@ -5,7 +5,7 @@ slug: on-the-domains-of-life
 description: Meaningful terms for the various areas of our life helps us map where things go and how to decide what next to do.
 ---
 
-Recently, I've been trying to wrangle the different areas of my life for the purposes of task/time management. The goal was inspired by Oliver Burkeman's <amazon name="4000 weeks">_4,000 Weeks_</amazon>, where he suggests drafting 4–5 domains of life and each day choosing the most impactful thing you can do relating to each one. To that end, I thought of the following domains in English:
+Recently, I've been trying to wrangle the different areas of my life for the purposes of task/time management. The goal was inspired by Oliver Burkeman's <Amazon name="4000 weeks">_4,000 Weeks_</Amazon>, where he suggests drafting 4–5 domains of life and each day choosing the most impactful thing you can do relating to each one. To that end, I thought of the following domains in English:
 
 - Home life
 - Work
