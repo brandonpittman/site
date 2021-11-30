@@ -7,8 +7,16 @@ import clsx from "clsx";
 import SEO from "@components/seo";
 import { useRouter } from "next/router";
 import useSWR from "swr";
+import { MDXProvider } from "@mdx-js/react";
+import CustomLink from "@components/Link";
+import AmazonLink from "@components/AmazonLink";
 
-const fetcher = (url) => fetch(url).then((r) => r.text());
+const components = {
+  a: CustomLink,
+  amazon: AmazonLink,
+};
+
+const fetcher = (url: string) => fetch(url).then((r) => r.text());
 
 export default function Layout({
   className,
@@ -61,7 +69,9 @@ export default function Layout({
                 {meta.description}
               </p>
 
-              <div className="overflow-auto prose lg:prose-lg">{children}</div>
+              <div className="overflow-auto prose lg:prose-lg">
+                <MDXProvider components={components}>{children}</MDXProvider>
+              </div>
             </div>
           </main>
           <Footer />
@@ -83,7 +93,9 @@ export default function Layout({
             id="skip-content-target"
             className={clsx("w-full flex-1 max-w-prose mx-auto")}
           >
-            <div className={mdxClasses}>{children}</div>
+            <div className={mdxClasses}>
+              <MDXProvider components={components}>{children}</MDXProvider>
+            </div>
           </main>
           <Footer />
         </div>
