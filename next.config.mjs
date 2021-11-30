@@ -3,7 +3,6 @@ import nextPwa from "next-pwa";
 import withPlugins from "next-compose-plugins";
 import withSvgr from "next-svgr";
 import mdxPrism from "mdx-prism";
-import nextMdx from "@next/mdx";
 import remarkExternalLinks from "remark-external-links";
 import remarkSlug from "remark-slug";
 import remarkPrism from "remark-prism";
@@ -16,6 +15,7 @@ const withPWA = nextPwa({
 });
 
 const withNextra = nextra({
+  unstable_staticImage: true,
   theme: "./components/LayoutNextra.tsx",
   mdxOptions: {
     rehypePlugins: [mdxPrism],
