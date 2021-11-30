@@ -7,6 +7,9 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 export default function RandomStoicQuote({ quote }: StoicProps) {
   const { data, mutate, isValidating } = useSWR("/api/stoic", fetcher, {
     fallbackData: quote,
+    revalidateOnFocus: false,
+    revalidateOnMount: false,
+    revalidateOnReconnect: false,
   });
 
   const { text, author, source } = data;
