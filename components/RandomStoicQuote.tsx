@@ -1,7 +1,6 @@
-import * as React from "react";
 import clsx from "clsx";
-import { StoicProps } from "pages/api/stoic";
 import useSWR from "swr";
+import type { StoicProps } from "pages/api/stoic";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
