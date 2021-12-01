@@ -2,7 +2,7 @@ import Link from "next/link";
 import Layout from "../../components/layout";
 import { Post, getAllPosts } from "../../lib/api";
 
-const formatDate = (date) =>
+const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {
     year: "numeric",
     month: "long",
@@ -39,7 +39,7 @@ export default function Writing({ posts }: { posts: Post[] }) {
               {formatDate(post.data.date)}
             </span>
             <Link href="/writing/[slug]" as={"/writing/" + post.data.slug}>
-              <a className="block text-gray-900 font-bold focus:outline-none">
+              <a className="block font-bold text-gray-900 focus:outline-none">
                 {post.data.title}
               </a>
             </Link>
