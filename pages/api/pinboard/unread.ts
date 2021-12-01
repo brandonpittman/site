@@ -23,8 +23,9 @@ auth(
 );
 
 export const setLinks = async (links: PinboardItem[]) => {
-  const { data } = await set("unread", JSON.stringify(links));
-  return data;
+  const { data: unread } = await set("unread", JSON.stringify(links));
+  const { data: updated } = await set("updated", new Date());
+  return { unread, updated };
 };
 
 export const fetchAll = async () => {
