@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { fetchUnread } from "../unread";
 
 export type PinboardItem = {
   href: string;
@@ -33,6 +34,7 @@ export default async function handler(
   const item = req.body;
 
   await markAsRead(item);
+  await fetchUnread();
 
   return res.status(200).json({ message: "updated" });
 }

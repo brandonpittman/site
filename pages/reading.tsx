@@ -4,7 +4,7 @@ import { fetchUnread, PinboardItem } from "./api/pinboard/unread";
 import { GetServerSidePropsContext } from "next";
 import useSWR from "swr";
 
-const readItem = (link: PinboardItem) => ({
+const markAsRead = (link: PinboardItem) => ({
   ...link,
   toread: "no",
 });
@@ -24,7 +24,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
     );
     await fetch("/api/pinboard/read", {
       method: "POST",
-      body: JSON.stringify(readItem(item)),
+      body: JSON.stringify(markAsRead(item)),
       headers: {
         "Content-Type": "application/json",
       },
