@@ -2,7 +2,7 @@
   "name": "site",
   "version": "1.6.0",
   "scripts": {
-    "vercel-build": "next build",
+    "vercel-build": "next build && quirrel ci",
     "dev": "next",
     "build": "next build",
     "start": "next start",
