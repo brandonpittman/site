@@ -18,7 +18,7 @@ const pinboard = new Pinboard(token);
 
 export const markAsRead = async (item: PinboardItem) => {
   await pinboard.delete(item.href);
-  const result = await pinboard.add({ ...item, url: item.href });
+  await pinboard.add({ ...item, url: item.href });
 };
 
 export default async function handler(

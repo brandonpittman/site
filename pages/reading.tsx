@@ -14,14 +14,14 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 export default function ReadingPage({ data }: { data: PinboardItem[] }) {
   const { data: links, mutate } = useSWR(`/api/pinboard/unread`, fetcher, {
     fallbackData: data,
+    revalidateOnFocus: false,
   });
 
   const onClick = async (item: PinboardItem) => {
     mutate(
-      data.filter((v) => v.href !== item.href),
+      links.filter((v) => v.href !== item.href),
       false
     );
-
     await fetch("/api/pinboard/read", {
       method: "POST",
       body: JSON.stringify(readItem(item)),
@@ -29,8 +29,6 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
         "Content-Type": "application/json",
       },
     });
-
-    mutate();
   };
 
   return (
