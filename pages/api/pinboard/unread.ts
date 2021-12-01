@@ -32,7 +32,7 @@ export const fetchAll = async () => {
   return await pinboard.all();
 };
 
-const updateCache = async () => {
+export const updateCache = async () => {
   const all: PinboardItem[] = await fetchAll();
   const toRead = all.filter((v) => v.toread === "yes");
   return setLinks(toRead);
