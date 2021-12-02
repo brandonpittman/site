@@ -17,10 +17,7 @@ const Pinboard = require("node-pinboard").default;
 const token = process.env.PINBOARD_TOKEN;
 const pinboard = new Pinboard(token);
 
-auth(
-  "https://apn1-known-marlin-30903.upstash.io",
-  "AXi3ACQgNzliYzBhMDctZWNlOC00ZjQ4LWIzOGItMzgwOWQ0ZDk0NzNiOGU2YjQ0ZDJlNWU0NDU4N2IxNmU4MzdjY2RmZjU3MzE="
-);
+auth(process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN);
 
 export const setLinks = async (links: PinboardItem[]) => {
   const { data: unread } = await set("unread", JSON.stringify(links));
