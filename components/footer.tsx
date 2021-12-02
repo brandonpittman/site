@@ -5,6 +5,7 @@ const links = [
   { label: "Now", href: "/now" },
   { label: "Stoicism", href: "/stoic" },
   { label: "Writing", href: "/writing" },
+  { label: "Reading", href: "/reading" },
   { label: "Patronage", href: "/grateful" },
   {
     label: "Analytics",

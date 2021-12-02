@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { serialize } from "cookie";
-import { fetchUnread, PinboardItem } from "./api/pinboard/unread";
+import { fetchUnread, PinboardItem } from "../api/pinboard/unread";
 import { GetServerSidePropsContext } from "next";
 import useSWR from "swr";
 
