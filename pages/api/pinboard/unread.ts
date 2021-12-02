@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { auth, get, set, del } from "@upstash/redis";
+import { auth, get, set } from "@upstash/redis";
 
 export type PinboardItem = {
   href: string;
