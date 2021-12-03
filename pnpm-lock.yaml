@@ -4,10 +4,9 @@ specifiers:
   '@headlessui/react': ^0.3.1
   '@heroicons/react': ^1.0.5
   '@mapbox/rehype-prism': ^0.6.0
-  '@mdx-js/loader': ^1.6.22
-  '@mdx-js/react': ^1.6.22
+  '@mdx-js/loader': ^2.0.0-rc.2
+  '@mdx-js/react': ^2.0.0-rc.2
   '@next/env': ^12.0.4
-  '@next/mdx': ^12.0.4
   '@tailwindcss/forms': ^0.2.1
   '@tailwindcss/line-clamp': ^0.2.0
   '@tailwindcss/typography': ^0.4.0
@@ -78,10 +77,9 @@ dependencies:
   '@headlessui/react': 0.3.2_react@17.0.2
   '@heroicons/react': 1.0.5_react@17.0.2
   '@mapbox/rehype-prism': 0.6.0
-  '@mdx-js/loader': 1.6.22_react@17.0.2
-  '@mdx-js/react': 1.6.22_react@17.0.2
+  '@mdx-js/loader': 2.0.0-rc.2
+  '@mdx-js/react': 2.0.0-rc.2_react@17.0.2
   '@next/env': 12.0.4
-  '@next/mdx': 12.0.4_f56c41adb6190c4680be4a1c0222355d
   '@tailwindcss/forms': 0.2.1
   '@types/core-js': 2.5.5
   '@upstash/redis': 0.1.5
@@ -1785,17 +1783,6 @@ packages:
       unist-util-visit: 2.0.3
     dev: false
 
-  /@mdx-js/loader/1.6.22_react@17.0.2:
-    resolution: {integrity: sha512-9CjGwy595NaxAYp0hF9B/A0lH6C8Rms97e2JS9d3jVUtILn6pT5i5IV965ra3lIWc7Rs1GG1tBdVF7dCowYe6Q==}
-    dependencies:
-      '@mdx-js/mdx': 1.6.22
-      '@mdx-js/react': 1.6.22_react@17.0.2
-      loader-utils: 2.0.0
-    transitivePeerDependencies:
-      - react
-      - supports-color
-    dev: false
-
   /@mdx-js/loader/2.0.0-rc.2:
     resolution: {integrity: sha512-cdOV/RZI0/5OnLwBjChvF2UewSuR8L39pZ+/5s/GAigIlzoef169S87Cn2osUabj6wkdWe+sb+4pfcD0x0o5Ig==}
     peerDependencies:
@@ -1865,6 +1852,16 @@ packages:
       react: 17.0.2
     dev: false
 
+  /@mdx-js/react/2.0.0-rc.2_react@17.0.2:
+    resolution: {integrity: sha512-WHksgPnvKyDDNq0RQvTnKboe+wxUcq5A7xD12Ob+ASfUR3NRFo/h//k8fjv3t8dgzWX5M0UeU5jsccjykosDEQ==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.1
+      '@types/react': 17.0.35
+      react: 17.0.2
+    dev: false
+
   /@mdx-js/util/1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
     dev: false
@@ -1882,16 +1879,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/mdx/12.0.4_f56c41adb6190c4680be4a1c0222355d:
-    resolution: {integrity: sha512-WsiuZkzhECLp91ZGErhPKzASsFSRwcoHATOeZZvrkyjXiBodem/M3qFev6GPe9g2Ejw5Kt2DdbwUlkELDpz8aw==}
-    peerDependencies:
-      '@mdx-js/loader': '>=0.15.0'
-      '@mdx-js/react': '*'
-    dependencies:
-      '@mdx-js/loader': 1.6.22_react@17.0.2
-      '@mdx-js/react': 1.6.22_react@17.0.2
-    dev: false
 
   /@next/polyfill-module/12.0.4:
     resolution: {integrity: sha512-mk9yCDNpfXINTJKFTZNgwYs7eqRFpc5D/49O/fKB59blihyKl1GY1sZ0l7a2bn5l1X/WuaZzcIfqnrwkneqeaQ==}
@@ -2655,7 +2642,6 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-    dev: true
 
   /@types/q/1.5.5:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==}
@@ -2679,7 +2665,6 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.10
-    dev: true
 
   /@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
@@ -2689,7 +2674,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
@@ -4400,7 +4384,6 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
-    dev: true
 
   /damerau-levenshtein/1.0.7:
     resolution: {integrity: sha512-VvdQIPGdWP0SqFXghj79Wf/5LArmreyMsGLa6FG6iC4t3j7j5s71TrwWmT/4akbDQIqjfACkLZmjXhA7g2oUZw==}
