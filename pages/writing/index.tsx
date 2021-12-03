@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { InferGetStaticPropsType } from "next";
 import Layout from "../../components/layout";
-import { Post, getAllPosts } from "../../lib/api";
+import { getAllPosts } from "../../lib/api";
 
 const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {
@@ -22,7 +23,9 @@ export async function getStaticProps() {
   };
 }
 
-export default function Writing({ posts }: { posts: Post[] }) {
+export default function Writing({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout meta={meta}>
       <div className="prose lg:prose-lg">
