@@ -19,7 +19,11 @@ const withNextra = nextra({
   theme: "./components/LayoutNextra.tsx",
   mdxOptions: {
     rehypePlugins: [mdxPrism],
-    remarkPlugins: [remarkExternalLinks, remarkSlug, remarkPrism],
+    remarkPlugins: [
+      //remarkExternalLinks,
+      remarkSlug,
+      remarkPrism,
+    ],
   },
 });
 
