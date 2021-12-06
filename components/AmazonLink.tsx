@@ -14,7 +14,7 @@ export default function AmazonLink({
 
   return (
     <a href={link} target="_blank" rel="noopener noreferrer" {...props}>
-      <i>{children}</i>
+      {children}
     </a>
   );
 }

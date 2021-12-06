@@ -8,7 +8,7 @@ import AmazonLink from "@components/AmazonLink";
 
 const components = {
   a: CustomLink,
-  amazon: AmazonLink,
+  Amazon: AmazonLink,
 };
 
 export default function Post({ source, data }) {
