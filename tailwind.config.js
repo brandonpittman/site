@@ -6,20 +6,11 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: "class",
-  mode: "jit",
-  purge: {
-    options: {
-      keyframes: true,
-      safelist: [/markdown/, /rich-text/, /primary/, /secondary/],
-    },
-    content: [
-      "./components/**/*.{js,jsx,ts,tsx}",
-      "./pages/**/*.{mdx,js,jsx,ts,tsx}",
-      "./content/**/*.{md,mdx}",
-    ],
-  },
-
+  content: [
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./pages/**/*.{mdx,js,jsx,ts,tsx}",
+    "./content/**/*.{md,mdx}",
+  ],
   theme: {
     extend: {
       animation: {
@@ -130,16 +121,6 @@ module.exports = {
         body: {
           overscrollBehavior: "none",
           color: colors.gray["500"],
-        },
-        ".markdown": {
-          "img, pre": {
-            marginLeft: "-1rem",
-            marginRight: "-1rem",
-            "@media (min-width: 640px)": {
-              marginLeft: "0",
-              marginRight: "0",
-            },
-          },
         },
       });
     },
