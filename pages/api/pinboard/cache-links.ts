@@ -3,7 +3,7 @@ import { updateCache } from "./unread";
 
 export default CronJob(
   "api/pinboard/cache-links",
-  "0 10-23,0-2 * * *",
+  ["0 7-23/2 * * *", "Asia/Tokyo"],
   async () => {
     await updateCache();
   }
