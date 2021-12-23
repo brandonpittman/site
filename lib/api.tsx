@@ -14,34 +14,41 @@ export type Post = {
   content: string;
 };
 
+const endsWithMdx = (file: string) => file.endsWith(".mdx");
+const isNotArchived = (post: Post) => !post.data.archived;
+const byDate = (a: Post, b: Post) =>
+  b.data.date.getTime() - a.data.date.getTime();
+const serializeable = (post: Post) => ({
+  content: post.content,
+  data: {
+    ...post.data,
+    date: post.data.date.toISOString(),
+    timeToRead: readingTime(post.content).text,
+  },
+});
+
+const withPath = (file: string) =>
+  join(process.cwd(), "pages", "writing", file);
+const withContent = (file: string) => fs.readFileSync(withPath(file), "utf8");
+const withSlug = (file: string) => {
+  let fm = matter(withContent(file));
+  return {
+    content: fm.content,
+    data: {
+      ...fm.data,
+      slug: `/writing/${basename(file, ".mdx")}`,
+    },
+  };
+};
+
 export async function getPostMetadata() {
   const files = fs.readdirSync(join(process.cwd(), "pages", "writing"));
   const posts = files
-    .filter((file) => file.endsWith(".mdx"))
-    .map((file) => {
-      let fm = matter(
-        fs.readFileSync(join(process.cwd(), "pages", "writing", file), "utf8")
-      );
-      return {
-        content: fm.content,
-        data: {
-          ...fm.data,
-          slug: `/writing/${basename(file, ".mdx")}`,
-        },
-      };
-    })
-    .filter((post: Post) => !post.data.archived)
-    .sort((post1: any, post2: any) =>
-      post1.data.date > post2.data.date ? -1 : 1
-    )
-    .map((post: Post) => ({
-      content: post.content,
-      data: {
-        ...post.data,
-        date: post.data.date.toISOString(),
-        timeToRead: readingTime(post.content).text,
-      },
-    }));
+    .filter(endsWithMdx)
+    .map(withSlug)
+    .filter(isNotArchived)
+    .sort(byDate)
+    .map(serializeable);
 
   return posts;
 }
