@@ -35,13 +35,13 @@ export default function Writing({
       <ul className="grid gap-6">
         {posts.map((post: any) => (
           <li
-            key={post.data.slug}
+            key={post.slug}
             className="flex flex-col sm:flex-row sm:items-center sm:gap-3 focus-within:ring rounded ring-gray-300"
           >
             <span className="block text-gray-500 w-[9.5rem] text-sm sm:text-base sm:text-right">
               {formatDate(post.data.date)}
             </span>
-            <Link href="/writing/[slug]" as={"/writing/" + post.data.slug}>
+            <Link href={post.data.slug}>
               <a className="block font-bold text-gray-900 focus:outline-none">
                 {post.data.title}
               </a>

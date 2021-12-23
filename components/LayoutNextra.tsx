@@ -51,9 +51,11 @@ export default function Layout({
 
               <OldPostWarning date={meta.date} />
 
-              <p className="pl-4 border-l-4 border-blue-500 border-opacity-50 lead">
-                {meta.description}
-              </p>
+              {meta.description ? (
+                <p className="pl-4 border-l-4 border-blue-500 border-opacity-50 lead">
+                  {meta.description}
+                </p>
+              ) : null}
 
               <div className="overflow-auto prose lg:prose-lg">{children}</div>
             </div>
