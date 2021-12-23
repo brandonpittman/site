@@ -47,7 +47,7 @@ specifiers:
   next-pwa: ^5.4.4
   next-svgr: 0.0.2
   next-themes: 0.0.15
-  nextra: 2.0.0-beta.4
+  nextra: 2.0.0-beta.5
   node-pinboard: ^2.0.1
   picocolors: ^1.0.0
   postcss: ^8.4.4
@@ -100,7 +100,7 @@ dependencies:
   next-pwa: 5.4.4_next@12.0.7
   next-svgr: 0.0.2
   next-themes: 0.0.15_d837ce8f3acb2f60f8b7454672a9bcea
-  nextra: 2.0.0-beta.4_react@17.0.2
+  nextra: 2.0.0-beta.5_react@17.0.2
   node-pinboard: 2.0.1
   quirrel: 1.7.4
   react: 17.0.2
@@ -9071,8 +9071,8 @@ packages:
       - webpack
     dev: false
 
-  /nextra/2.0.0-beta.4_react@17.0.2:
-    resolution: {integrity: sha512-NEqMd+NW+LQYXiJmZ9/3pYqxzeWjZNFNCm6NukP0CGG3srDO59ncY94cW2P9rJj64WhXu5MRlTFeBoVWSEPIYg==}
+  /nextra/2.0.0-beta.5_react@17.0.2:
+    resolution: {integrity: sha512-RYhD/wMfTFXzshqe1GOovQR9n0YsvgW/TLsUzu0arTix+A9Eugl/urFVvtGFRahOWxWFOS9/YgYKjp4nRIuMhw==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:

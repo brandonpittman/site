@@ -21,7 +21,7 @@ auth(process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN);
 
 export const setLinks = async (links: PinboardItem[]) => {
   const { data: unread } = await set("unread", JSON.stringify(links));
-  const { data: updated } = await set("updated", new Date());
+  const { data: updated } = await set("updated", new Date().toISOString());
   return { unread, updated };
 };
 

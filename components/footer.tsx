@@ -15,7 +15,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between items-center gap-4 py-8 mx-auto text-gray-700 max-w-prose w-full">
+    <footer className="flex justify-between items-center gap-4 pt-16 pb-8 mx-auto text-gray-700 max-w-prose w-full">
       <ul className="flex flex-wrap w-full text-sm gap-4">
         {links.map((link) => (
           <li key={link.href}>

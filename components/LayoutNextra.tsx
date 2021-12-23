@@ -6,18 +6,13 @@ import * as React from "react";
 import clsx from "clsx";
 import SEO from "@components/seo";
 import { useRouter } from "next/router";
-import useSWR from "swr";
-
-const fetcher = (url: string) => fetch(url).then((r) => r.text());
 
 export default function Layout({
   className,
   meta,
-  filename,
+  route,
 }: {
-  children?: React.ReactNode;
   className?: string;
-  filename: string;
   meta: {
     title: string;
     description: string;
@@ -28,10 +23,8 @@ export default function Layout({
   const classes = clsx("flex-1 focus:outline-none", className);
   const router = useRouter();
   const mdxClasses = clsx("py-8 prose lg:prose-lg", classes);
-  const url = `/api/time/${encodeURIComponent(filename)}`;
-  const { data: timeToRead } = useSWR(url, fetcher);
 
-  return function Notes({ children }) {
+  return function Notes({ children, ...rest }) {
     return router.pathname.startsWith("/writing") ? (
       <>
         <SEO title={meta.title} description={meta.description} />
@@ -53,7 +46,7 @@ export default function Layout({
                 <h1 className="text-gray-900 text-5xl font-bold ">
                   {meta.title}
                 </h1>
-                <PostMeta post={{ data: { ...meta, timeToRead } }} />
+                <PostMeta post={{ data: meta }} />
               </div>
 
               <OldPostWarning date={meta.date} />

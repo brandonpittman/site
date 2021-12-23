@@ -9,8 +9,10 @@ export default function PostMeta({ post }) {
         <span>
           Last updated in {season} {new Date(post.data.date).getFullYear()}
         </span>
+        {/*
         <span> • </span>
         <span> {post.data.timeToRead} </span>
+         */}
       </p>
     </div>
   );

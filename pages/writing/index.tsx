@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { InferGetStaticPropsType } from "next";
 import Layout from "../../components/layout";
-import { getAllPosts } from "../../lib/api";
+import { getPostMetadata } from "../../lib/api";
 
 const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {
@@ -16,7 +16,7 @@ export const meta = {
 };
 
 export async function getStaticProps() {
-  const posts = await getAllPosts({ queryWithContent: false });
+  const posts = await getPostMetadata();
 
   return {
     props: { posts },
@@ -33,7 +33,7 @@ export default function Writing({
       </div>
 
       <ul className="grid gap-6">
-        {posts.map((post) => (
+        {posts.map((post: any) => (
           <li
             key={post.data.slug}
             className="flex flex-col sm:flex-row sm:items-center sm:gap-3 focus-within:ring rounded ring-gray-300"
