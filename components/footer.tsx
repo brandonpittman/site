@@ -2,7 +2,6 @@ import Link from "@components/Link";
 
 const links = [
   { label: "About", href: "/about" },
-  { label: "Now", href: "/now" },
   { label: "Stoicism", href: "/stoic" },
   { label: "Writing", href: "/writing" },
   { label: "Reading", href: "/reading" },
