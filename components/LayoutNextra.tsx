@@ -24,7 +24,7 @@ export default function Layout({
   const router = useRouter();
   const mdxClasses = clsx("py-8 prose lg:prose-lg", classes);
 
-  return function Notes({ children, ...rest }) {
+  return function Notes({ children }) {
     return router.pathname.startsWith("/writing") ? (
       <>
         <SEO title={meta.title} description={meta.description} />
