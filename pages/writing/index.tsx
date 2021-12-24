@@ -35,7 +35,7 @@ export default function Writing({
       <ul className="grid gap-6">
         {posts.map((post: any) => (
           <li
-            key={post.slug}
+            key={post.data.slug}
             className="flex flex-col sm:flex-row sm:items-center sm:gap-3 focus-within:ring rounded ring-gray-300"
           >
             <span className="block text-gray-500 w-[9.5rem] text-sm sm:text-base sm:text-right">
