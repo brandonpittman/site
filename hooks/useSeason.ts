@@ -1,16 +1,32 @@
-export const useSeason = (date: Date) => {
-  const md = (month, day) => ({ month, day });
-  const toMd = (date) => md(date.getMonth(), date.getDate());
+export type MonthDate = {
+  month: number;
+  day: number;
+};
 
-  const before = (md1, md2) =>
+export const useSeason = (date: Date) => {
+  const md = (month: number, day: number): MonthDate => ({ month, day });
+  const toMd = (date: Date) => md(date.getMonth(), date.getDate());
+
+  const before = (md1: MonthDate, md2: MonthDate) =>
     md1.month < md2.month || (md1.month === md2.month && md1.day <= md2.day);
 
-  const after = (md1, md2) => !before(md1, md2);
+  const after = (md1: MonthDate, md2: MonthDate) => !before(md1, md2);
 
-  const between = (mdX, mdLow, mdHigh) =>
+  const between = (mdX: MonthDate, mdLow: MonthDate, mdHigh: MonthDate) =>
     after(mdX, mdLow) && before(mdX, mdHigh);
 
-  const season = (date, seasons) =>
+  const seasons = {
+    Spring: (d: MonthDate) => between(d, MARCH_EQUINOX, JUNE_SOLSTICE),
+    Summer: (d: MonthDate) => between(d, JUNE_SOLSTICE, SEPTEMBER_EQUINOX),
+    Fall: (d: MonthDate) => between(d, SEPTEMBER_EQUINOX, DECEMBER_SOLSTICE),
+    Winter: (d: MonthDate) =>
+      between(d, DECEMBER_SOLSTICE, NEW_YEAR) ||
+      between(d, NEW_YEAR, MARCH_EQUINOX),
+  };
+
+  type Seasons = typeof seasons;
+
+  const season = (date: Date, seasons: Seasons) =>
     ((md = toMd(date)) =>
       Object.keys(seasons).find((season) => seasons[season](md)))();
 
@@ -20,16 +36,7 @@ export const useSeason = (date: Date) => {
   const DECEMBER_SOLSTICE = md(11, 21);
   const NEW_YEAR = md(0, 1);
 
-  const seasons = {
-    Spring: (d) => between(d, MARCH_EQUINOX, JUNE_SOLSTICE),
-    Summer: (d) => between(d, JUNE_SOLSTICE, SEPTEMBER_EQUINOX),
-    Fall: (d) => between(d, SEPTEMBER_EQUINOX, DECEMBER_SOLSTICE),
-    Winter: (d) =>
-      between(d, DECEMBER_SOLSTICE, NEW_YEAR) ||
-      between(d, NEW_YEAR, MARCH_EQUINOX),
-  };
-
-  return season(date, seasons);
+  return season(date, seasons) || "Winter";
 };
 
 export default useSeason;
