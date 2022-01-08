@@ -8,10 +8,10 @@ import React, { useEffect } from "react";
 import Ogp from "@components/Ogp";
 import MDXProvider from "@components/MDXProvider";
 
-const blacklist = ["/reading"];
+const blacklist = ["/reading/pinboard"];
 
 const trackPageview = (url: string) => {
-  if (!blacklist.includes(url)) Fathom.trackPageview();
+  if (!blacklist.some((v) => url.startsWith(v))) Fathom.trackPageview();
 };
 
 Router.events.on("routeChangeComplete", trackPageview);
