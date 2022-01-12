@@ -4,7 +4,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(req.body);
+  console.log({ keys: Object.keys(req) });
   res.status(200).json({
     message: "OK",
   });
