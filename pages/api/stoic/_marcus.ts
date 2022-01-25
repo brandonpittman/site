@@ -61,6 +61,10 @@ Which means making sure that the power within stays safe and free from assault, 
     source: "Meditations (Book 3)",
     text: `Don’t waste the rest of your time here worrying about other people—unless it affects the common good. It will keep you from doing anything useful. You’ll be too preoccupied with what so-and-so is doing, and why, and what they’re saying, and what they’re thinking, and what they’re up to, and all the other things that throw you off and keep you from focusing on your own mind.`,
   },
+  {
+    source: "Meditations 6.20",
+    text: `If, while taking exercise, someone scratches us with his nails or butts us with his head as he breaks out of a hold, we don't blame him or take offense or suspect him subsequently of wishing us ill. True, we exercise caution and try to avoid being hurt again, but in a kindly fashion, not because we regard him as malicious or suspect him of anything. That's how we should behave in the rest of our lives as well. We should overlook much of what those whom we could call our wrestling partners do. After all, as I said, one may avoid trouble without being suspicious or hostile.`,
+  },
 ];
 
 export default quotes.map((quote) => ({
