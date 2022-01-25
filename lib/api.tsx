@@ -14,6 +14,7 @@ export type Post = {
   content: string;
 };
 
+// Filters
 const endsWithMdx = (file: string) => file.endsWith(".mdx");
 const isNotArchived = (post: Post) => !post.data.archived;
 const byDate = (a: Post, b: Post) =>
@@ -27,6 +28,7 @@ const serializeable = (post: Post) => ({
   },
 });
 
+// Filesystem helpers
 const withPath = (file: string) =>
   join(process.cwd(), "pages", "writing", file);
 const withContent = (file: string) => fs.readFileSync(withPath(file), "utf8");
