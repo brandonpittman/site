@@ -45,3 +45,6 @@ public/sw.js*
 
 workbox-*.js
 .eslintcache
+
+pages/api/hello.ts
+pages/api/consume.ts
