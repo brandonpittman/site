@@ -48,3 +48,4 @@ workbox-*.js
 
 pages/api/hello.ts
 pages/api/consume.ts
+.github/workflows/cron.yaml
