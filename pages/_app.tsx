@@ -4,9 +4,9 @@ import "../css/prism-night-owl.css";
 
 import * as Fathom from "fathom-client";
 import Router from "next/router";
-import React, { useEffect } from "react";
 import Ogp from "@components/Ogp";
 import MDXProvider from "@components/MDXProvider";
+import useFathom from "@/hooks/useFathom";
 
 const blacklist = ["/reading/pinboard"];
 
@@ -17,17 +17,7 @@ const trackPageview = (url: string) => {
 Router.events.on("routeChangeComplete", trackPageview);
 
 export default function App({ Component, pageProps }) {
-  useEffect(() => {
-    Fathom.load("EXCJWHRT", {
-      includedDomains: [
-        "blp.is",
-        "www.blp.is",
-        "brandonpittman.com",
-        "www.brandonpittman.com",
-      ],
-      url: "https://fortunate-attractive.blp.is/script.js",
-    });
-  }, []);
+  useFathom();
 
   return (
     <>
