@@ -1,7 +1,7 @@
 import * as Fathom from "fathom-client";
 import { useEffect } from "react";
 
-const useFathom = (): void => {
+export const useFathom = (): void => {
   useEffect(() => {
     Fathom.load("EXCJWHRT", {
       includedDomains: [
@@ -15,4 +15,8 @@ const useFathom = (): void => {
   }, []);
 };
 
-export default useFathom;
+const blacklist = ["/reading/pinboard"];
+
+export const trackPageview = (url: string) => {
+  if (!blacklist.some((v) => url.startsWith(v))) Fathom.trackPageview();
+};
