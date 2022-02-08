@@ -1,4 +1,4 @@
-import { useSSG } from 'nextra/ssg';
+import { useSSG } from "nextra/ssg";
 import { quotes, getRandomQuote } from "./api/stoic";
 import RandomStoicQuote from "@components/RandomStoicQuote";
 
@@ -7,23 +7,22 @@ export const meta = {
   description: "A small app that outputs a random Stoic quote.",
 };
 
-export const getStaticProps = ({params}) => {
-  const quote = getRandomQuote(quotes)
+export const getStaticProps = ({ params }) => {
+  const quote = getRandomQuote(quotes);
   return {
     revalidate: 1,
     props: {
       ssg: {
-        quote
-      }
-    }
-  }
-}
+        quote,
+      },
+    },
+  };
+};
 
 export const Quote = () => {
-  const {quote} = useSSG()
-  return <RandomStoicQuote quote={quote} />
-}
-
+  const { quote } = useSSG();
+  return <RandomStoicQuote quote={quote} />;
+};
 
 ## Why Stoicism?
 
@@ -53,7 +52,6 @@ thoughts, speech, and action of others as much as we can affect tomorrow's
 weather forecast. The only power we have here is in our _perception_ of the
 perceived wrong. If we tell ourselves, "you don't control anything but _you_
 feel", we are more likely to avoid anger, resentment, and bitterness.
-
 
 ---
 

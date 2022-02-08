@@ -32,7 +32,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
   };
 
   return (
-    <div className="container py-8 mx-auto prose">
+    <div className="py-8 mx-auto prose container ">
       <Head>
         <title>Unread Pinboard Links</title>
       </Head>
