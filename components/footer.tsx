@@ -14,8 +14,8 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between items-center gap-4 pt-16 pb-8 mx-auto text-gray-700 max-w-prose w-full">
-      <ul className="flex flex-wrap w-full text-sm gap-4">
+    <footer className="mx-auto flex w-full max-w-prose items-center justify-between gap-4 pt-16 pb-8 text-gray-700">
+      <ul className="flex w-full flex-wrap gap-4 text-sm">
         {links.map((link) => (
           <li key={link.href}>
             <Link href={link.href} className="transition hover:text-gray-900">

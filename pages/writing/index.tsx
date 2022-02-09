@@ -36,9 +36,9 @@ export default function Writing({
         {posts.map((post: any) => (
           <li
             key={post.data.slug}
-            className="flex flex-col sm:flex-row sm:items-center sm:gap-3 focus-within:ring rounded ring-gray-300"
+            className="flex flex-col rounded ring-gray-300 focus-within:ring sm:flex-row sm:items-center sm:gap-3"
           >
-            <span className="block text-gray-500 w-[9.5rem] text-sm sm:text-base sm:text-right">
+            <span className="block w-[9.5rem] text-sm text-gray-500 sm:text-right sm:text-base">
               {formatDate(post.data.date)}
             </span>
             <Link href={post.data.slug}>

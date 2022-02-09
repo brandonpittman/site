@@ -22,10 +22,10 @@ export default function Layout({
     <>
       <SEO title={meta.title} description={meta.description} />
       <div>
-        <div className="container mx-auto min-h-screen flex flex-col flex-1">
+        <div className="container mx-auto flex min-h-screen flex-1 flex-col">
           <a
             href="#skip-content-target"
-            className="sr-only m-4 focus:not-sr-only focus:!fixed bg-white rounded-md z-50 shadow left-4 top-4 focus:ring hover:ring focus:outline-none !p-1"
+            className="sr-only left-4 top-4 z-50 m-4 rounded-md bg-white !p-1 shadow hover:ring focus:not-sr-only focus:!fixed focus:outline-none focus:ring"
           >
             Skip to main content
           </a>
@@ -33,7 +33,7 @@ export default function Layout({
           <main
             tabIndex={-1}
             id="skip-content-target"
-            className={clsx(classes, "max-w-prose w-full mx-auto")}
+            className={clsx(classes, "mx-auto w-full max-w-prose")}
           >
             {children}
           </main>

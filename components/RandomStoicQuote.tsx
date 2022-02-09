@@ -21,7 +21,7 @@ export default function RandomStoicQuote({ quote }: StoicProps) {
         <button
           className={clsx(
             isValidating ? "animate-spin-reverse" : "focus:ring",
-            "px-2 py-1 my-4 text-xs font-medium border border-transparent rounded-md focus:outline-none"
+            "my-4 rounded-md border border-transparent px-2 py-1 text-xs font-medium focus:outline-none"
           )}
           onClick={() => mutate()}
         >
@@ -30,7 +30,7 @@ export default function RandomStoicQuote({ quote }: StoicProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            className="w-5 h-5"
+            className="h-5 w-5"
           >
             <path
               fillRule="evenodd"

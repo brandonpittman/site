@@ -32,7 +32,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
   };
 
   return (
-    <div className="py-8 mx-auto prose container ">
+    <div className="container prose mx-auto py-8">
       <Head>
         <title>Unread Pinboard Links</title>
       </Head>
@@ -51,9 +51,9 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
               </a>
               {link.tags ? (
                 <div className="flex items-center gap-2">
-                  <ul className="flex flex-wrap leading-none list-none gap-2 !m-0">
+                  <ul className="!m-0 flex list-none flex-wrap gap-2 leading-none">
                     {link.tags.split(" ").map((tag) => (
-                      <li key={tag} className="before:!hidden !p-0 !m-0">
+                      <li key={tag} className="!m-0 !p-0 before:!hidden">
                         <span className="">{tag}</span>
                       </li>
                     ))}

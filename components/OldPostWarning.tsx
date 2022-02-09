@@ -12,7 +12,7 @@ const OldPostWarning = ({
     <aside
       className={clsx(
         className,
-        "p-4 text-sm text-yellow-700 bg-yellow-200 border-l-4 border-yellow-500 rounded-r-md shadow-sm"
+        "rounded-r-md border-l-4 border-yellow-500 bg-yellow-200 p-4 text-sm text-yellow-700 shadow-sm"
       )}
       role="alert"
     >

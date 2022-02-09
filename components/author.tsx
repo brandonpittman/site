@@ -13,8 +13,8 @@ const trackDribbbleGoal = () => trackGoal("EGN48GIU", 0);
 export default function Author() {
   return (
     <Card className="mt-32">
-      <aside className="max-w-md p-8 mx-auto">
-        <div className="relative w-32 h-32 mx-auto overflow-hidden rounded-full ring ring-gray-300">
+      <aside className="mx-auto max-w-md p-8">
+        <div className="relative mx-auto h-32 w-32 overflow-hidden rounded-full ring ring-gray-300">
           <Image
             src={ProfileImg}
             height={128}
@@ -24,7 +24,7 @@ export default function Author() {
           />
         </div>
 
-        <div className="mt-8 prose sm:prose-lg">
+        <div className="prose mt-8 sm:prose-lg">
           <p>
             Hello, there! I'm Brandon. I'm originally from Ohio, but now I live
             in Nagoya, Japan. I love the Web, programming, coffee, cooking and{" "}
@@ -74,14 +74,14 @@ export default function Author() {
             .
           </p>
 
-          <div className="flex justify-center mt-6">
+          <div className="mt-6 flex justify-center">
             <a
               onClick={trackTwitterGoal}
               href="http://twitter.com/brandonpittman"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <TwitterIcon className="w-8 h-8 mr-4 text-blue-400 fill-current" />
+              <TwitterIcon className="mr-4 h-8 w-8 fill-current text-blue-400" />
             </a>
 
             <a
@@ -90,7 +90,7 @@ export default function Author() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GithubIcon className="w-8 h-8 mr-4 text-gray-900 fill-current" />
+              <GithubIcon className="mr-4 h-8 w-8 fill-current text-gray-900" />
             </a>
 
             <a
@@ -99,7 +99,7 @@ export default function Author() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <DribbbleIcon className="w-8 h-8 mr-4 text-gray-900 fill-current" />
+              <DribbbleIcon className="mr-4 h-8 w-8 fill-current text-gray-900" />
             </a>
           </div>
         </div>

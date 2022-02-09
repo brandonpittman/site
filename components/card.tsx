@@ -12,7 +12,7 @@ export default function Card({
       style={style}
       className={`${
         className || ""
-      } flex flex-col overflow-hidden bg-white rounded-lg shadow-lg`}
+      } flex flex-col overflow-hidden rounded-lg bg-white shadow-lg`}
     >
       {children}
     </div>

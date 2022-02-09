@@ -28,10 +28,10 @@ export default function Layout({
     return router.pathname.startsWith("/writing") ? (
       <>
         <SEO title={meta.title} description={meta.description} />
-        <div className="container flex flex-col min-h-screen">
+        <div className="container flex min-h-screen flex-col">
           <a
             href="#skip-content-target"
-            className="sr-only m-4 focus:not-sr-only focus:!fixed bg-white rounded-md z-50 shadow left-4 top-4 focus:ring hover:ring focus:outline-none !p-1"
+            className="sr-only left-4 top-4 z-50 m-4 rounded-md bg-white !p-1 shadow hover:ring focus:not-sr-only focus:!fixed focus:outline-none focus:ring"
           >
             Skip to main content
           </a>
@@ -39,11 +39,11 @@ export default function Layout({
           <main
             tabIndex={-1}
             id="skip-content-target"
-            className={clsx("w-full flex-1 max-w-prose mx-auto")}
+            className={clsx("mx-auto w-full max-w-prose flex-1")}
           >
-            <div className="py-8 grid gap-12">
+            <div className="grid gap-12 py-8">
               <div className="grid gap-2">
-                <h1 className="text-gray-900 text-5xl font-bold ">
+                <h1 className="text-5xl font-bold text-gray-900 ">
                   {meta.title}
                 </h1>
                 <PostMeta post={{ data: meta }} />
@@ -52,12 +52,12 @@ export default function Layout({
               <OldPostWarning date={meta.date} />
 
               {meta.description ? (
-                <p className="pl-4 border-l-4 border-blue-500 border-opacity-50 lead">
+                <p className="lead border-l-4 border-blue-500 border-opacity-50 pl-4">
                   {meta.description}
                 </p>
               ) : null}
 
-              <div className="overflow-auto prose lg:prose-lg">{children}</div>
+              <div className="prose overflow-auto lg:prose-lg">{children}</div>
             </div>
           </main>
           <Footer />
@@ -66,10 +66,10 @@ export default function Layout({
     ) : (
       <>
         <SEO title={meta.title} description={meta.description} />
-        <div className="container flex flex-col min-h-screen">
+        <div className="container flex min-h-screen flex-col">
           <a
             href="#skip-content-target"
-            className="sr-only m-4 focus:not-sr-only focus:!fixed bg-white rounded-md z-50 shadow left-4 top-4 focus:ring hover:ring focus:outline-none !p-1"
+            className="sr-only left-4 top-4 z-50 m-4 rounded-md bg-white !p-1 shadow hover:ring focus:not-sr-only focus:!fixed focus:outline-none focus:ring"
           >
             Skip to main content
           </a>
@@ -77,7 +77,7 @@ export default function Layout({
           <main
             tabIndex={-1}
             id="skip-content-target"
-            className={clsx("w-full flex-1 max-w-prose mx-auto")}
+            className={clsx("mx-auto w-full max-w-prose flex-1")}
           >
             <div className={mdxClasses}>{children}</div>
           </main>
