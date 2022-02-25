@@ -7,12 +7,15 @@ description: Use the ARGC and ARGV built-in variables to run through loops in Aw
 If you need to loop over a list of commandline args, Awk has pretty standard
 loops. Use the `ARGC` built-in variable to get the _count_ of the arguments.
 
-```sh
+```bash
 awk '
 BEGIN {
   for (i = 1; i < ARGC; ++i) {
     print ARGV[i]
   }
 }' One Two Three
-# output: One\nTwo\nThree
+# output:
+# One
+# Two
+# Three
 ```
