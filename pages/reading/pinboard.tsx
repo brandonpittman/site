@@ -49,6 +49,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
               >
                 {link.description}
               </a>
+              {/*
               {link.tags ? (
                 <div className="flex items-center gap-2">
                   <ul className="!m-0 flex list-none flex-wrap gap-2 leading-none">
@@ -60,6 +61,7 @@ export default function ReadingPage({ data }: { data: PinboardItem[] }) {
                   </ul>
                 </div>
               ) : null}
+                */}
             </li>
           ))}
         </ul>
