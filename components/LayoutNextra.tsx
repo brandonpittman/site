@@ -48,16 +48,22 @@ export default function Layout({
                 </h1>
                 <PostMeta post={{ data: meta }} />
               </div>
-
               <OldPostWarning date={meta.date} />
-
               {meta.description ? (
                 <p className="lead border-l-4 border-blue-500 border-opacity-50 pl-4">
                   {meta.description}
                 </p>
               ) : null}
-
               <div className="prose overflow-auto lg:prose-lg">{children}</div>
+              <hr />
+
+              <p>
+                Have thoughts about what you just read?
+                <span> </span>
+                <a href="mailto:hey@blp.is" className="text-gray-900 underline">
+                  Send me an email.
+                </a>
+              </p>
             </div>
           </main>
           <Footer />
