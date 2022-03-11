@@ -60,7 +60,10 @@ export default function Layout({
               <p>
                 Have thoughts about what you just read?
                 <span> </span>
-                <a href="mailto:hey@blp.is" className="text-gray-900 underline">
+                <a
+                  href={`mailto:hey@blp.is?subject=${meta.title}`}
+                  className="text-gray-900 underline"
+                >
                   Send me an email.
                 </a>
               </p>
