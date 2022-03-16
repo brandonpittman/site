@@ -16,9 +16,6 @@ export default function App({ Component, pageProps }) {
     <>
       <Ogp />{" "}
       <MDXProvider>
-        <div className="h-8 w-screen bg-[linear-gradient(180deg,#005BBB_49.9%,#FFD500_50%)]">
-          <p className="sr-only">Long live, Ukraine.</p>
-        </div>
         <Component {...pageProps} />
       </MDXProvider>
     </>
