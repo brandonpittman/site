@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { InferGetStaticPropsType } from "next";
 import Layout from "../../components/layout";
-import { getPostMetadata } from "../../lib/api";
+import { getPostMetadata } from "@helpers/post.helpers";
 
 const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {

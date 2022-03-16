@@ -5,7 +5,7 @@ import "../css/prism-night-owl.css";
 import Router from "next/router";
 import Ogp from "@components/Ogp";
 import MDXProvider from "@components/MDXProvider";
-import { useFathom, trackPageview } from "@/hooks/useFathom";
+import { useFathom, trackPageview } from "@/hooks/use-fathom";
 
 Router.events.on("routeChangeComplete", trackPageview);
 

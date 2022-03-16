@@ -7,3 +7,12 @@ export function reviver(_key: string, value: string) {
 
   return value;
 }
+
+export function isFunction<T>(x: T): T extends Function ? true : false;
+export function isFunction(x: any) {
+  return !!x && {}.toString.call(x) === "[object Function]";
+}
+
+export function isInBrowser() {
+  return typeof window === "object" && typeof document === "object";
+}

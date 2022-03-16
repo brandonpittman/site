@@ -1,4 +1,4 @@
-import useSeason from "@/hooks/useSeason";
+import useSeason from "@/hooks/use-season";
 
 export default function PostMeta({ post }) {
   const season = useSeason(new Date(post.data.date));
