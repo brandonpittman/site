@@ -1,5 +1,19 @@
-# Next.js Site for [blp.is](https://blp.is)
+# Brandon Pittman's personal site
 
-## Next Actions
+- [Live site](https://blp.is)
 
-- [ ] Transition from blog to a more _documents_-style presentation
+## Stack
+
+- Remix
+- React
+- Tailwind CSS
+- Prettier
+- ESLint
+- Vercel (for deployment)
+
+## To-do
+
+- Generate blog index automatically
+- Reimplement old Next.js site's random Stoic quote
+- Move to Cloudflare Workers
+- Try Cloudflare KV, Durable Objects, and Images

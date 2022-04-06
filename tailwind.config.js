@@ -7,9 +7,7 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
-    "./components/**/*.{js,jsx,ts,tsx}",
-    "./pages/**/*.{mdx,js,jsx,ts,tsx}",
-    "./content/**/*.{md,mdx}",
+    "./app/**/*.{mdx,js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -130,3 +128,4 @@ module.exports = {
     lineClamp,
   ],
 };
+
