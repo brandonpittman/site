@@ -5,11 +5,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "remix";
+} from "@remix-run/react";
 import { useEffect, useRef } from "react";
 import * as Fathom from "fathom-client";
 import { useLocation } from "react-router-dom";
-import type { MetaFunction, LinksFunction } from "remix";
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import styles from "./tailwind.css";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";

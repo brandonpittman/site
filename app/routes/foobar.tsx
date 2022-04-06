@@ -1,6 +1,7 @@
-import { useLoaderData, json, Link } from "remix";
+import { useLoaderData, Link } from "@remix-run/react";
 import { useState, useEffect } from "react";
-import type { LoaderFunction } from "remix";
+import type { LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 
 type FamilyMember = {
   name: string;

@@ -1,11 +1,10 @@
-import { useEffect } from "react";
-import {
+import type {
   ActionFunction,
   LoaderFunction,
   MetaFunction,
-  useTransition,
-} from "remix";
-import { json, useLoaderData, useFetcher } from "remix";
+} from "@remix-run/node";
+import { useLoaderData, useFetcher } from "@remix-run/react";
+import { json } from "@remix-run/node";
 import { pinboardPassword } from "~/cookies";
 import { markAsRead, fetchUnread, PinboardItem } from "~/helpers/pinboard";
 

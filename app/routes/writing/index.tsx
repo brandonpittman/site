@@ -1,4 +1,5 @@
-import { json, useLoaderData, Link } from "remix";
+import { json } from "@remix-run/node";
+import { useLoaderData, Link } from "@remix-run/react";
 
 import * as OnDealingWithOthers from "~/routes/writing/on-dealing-with-others.mdx";
 import * as OnAwkLoops from "~/routes/writing/on-awk-loops.mdx";

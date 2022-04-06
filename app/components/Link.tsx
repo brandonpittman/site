@@ -1,5 +1,5 @@
-import { Link } from "remix";
-import type { LinkProps } from "remix";
+import { Link } from "@remix-run/react";
+import type { LinkProps } from "@remix-run/react";
 
 export default function CustomLink(props: LinkProps) {
   const { children, to } = props;
