@@ -27,7 +27,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "remark-gfm": "^3.0.1",
-    "remix-fathom": "^0.0.6"
+    "remix-fathom": "^0.0.6",
+    "remix-utils": "^3.0.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.3.4",
