@@ -6,13 +6,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { useEffect, useRef } from "react";
-import * as Fathom from "fathom-client";
-import { useLocation } from "react-router-dom";
 import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import styles from "./tailwind.css";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
+import { useFathom } from "remix-fathom";
 
 let sizesApple = [57, 60, 72, 76, 114, 120, 144, 152, 180].map((s) => ({
   rel: "apple-touch-icon",
@@ -43,28 +41,14 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
-  let fathomLoaded = useRef(false);
-  let location = useLocation();
-
-  useEffect(
-    function setupFathom() {
-      if (!fathomLoaded.current) {
-        Fathom.load("EXCJWHRT", {
-          includedDomains: [
-            "blp.is",
-            "www.blp.is",
-            "brandonpittman.com",
-            "www.brandonpittman.com",
-          ],
-        });
-
-        fathomLoaded.current = true;
-      } else {
-        Fathom.trackPageview();
-      }
-    },
-    [location]
-  );
+  useFathom("EXCJWHRT", {
+    includedDomains: [
+      "blp.is",
+      "www.blp.is",
+      "brandonpittman.com",
+      "www.brandonpittman.com",
+    ],
+  });
 
   return (
     <html lang="en">
@@ -72,7 +56,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="container mx-auto flex flex-col min-h-screen">
+      <body className="container flex flex-col min-h-screen mx-auto">
         <Header />
 
         <div className="max-w-prose mx-auto w-full py-4 flex-1">
