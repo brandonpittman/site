@@ -29,6 +29,7 @@
     "react-dom": "^18.0.0",
     "remark-gfm": "^3.0.1",
     "remix-fathom": "^0.0.7",
+    "remix-seo": "^0.1.0",
     "remix-utils": "^3.0.0"
   },
   "devDependencies": {
