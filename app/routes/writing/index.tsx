@@ -1,5 +1,6 @@
 import { json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
+import { getSeoMeta } from "~/seo";
 
 import * as OnDealingWithOthers from "~/routes/writing/on-dealing-with-others.mdx";
 import * as OnAwkLoops from "~/routes/writing/on-awk-loops.mdx";
@@ -21,8 +22,10 @@ const formatDate = (date: Date) =>
   }).format(new Date(date));
 
 export let meta = () => ({
-  title: "Brandon's Blog",
-  description: "Recent blog posts from Brandon Pittman.",
+  ...getSeoMeta({
+    title: "Writing",
+    description: "Recent blog posts from Brandon Pittman.",
+  }),
 });
 
 type Post = {
