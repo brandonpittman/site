@@ -1,4 +1,6 @@
 import { createCookie } from "@remix-run/node";
+
+const SECONDS_IN_DAY = 86400;
 export const pinboardPassword = createCookie("pinboard-password", {
-  maxAge: 604_800, // one week
+  maxAge: SECONDS_IN_DAY * 31,
 });

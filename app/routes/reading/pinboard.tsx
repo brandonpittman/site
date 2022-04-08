@@ -6,7 +6,11 @@ import type {
 import { useLoaderData, useFetcher } from "@remix-run/react";
 import { json } from "@remix-run/node";
 import { pinboardPassword } from "~/cookies";
-import { markAsRead, fetchUnread, PinboardItem } from "~/helpers/pinboard";
+import {
+  markAsRead,
+  fetchUnread,
+  PinboardItem,
+} from "~/helpers/pinboard.server";
 
 export let meta: MetaFunction = () => ({
   title: "Unread Pinboard Links",
