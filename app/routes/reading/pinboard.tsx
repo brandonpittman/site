@@ -4,13 +4,10 @@ import type {
   MetaFunction,
 } from "@remix-run/node";
 import { useLoaderData, useFetcher } from "@remix-run/react";
-import { json } from "@remix-run/node";
+import { json } from "@remix-run/cloudflare";
 import { pinboardPassword } from "~/cookies";
-import {
-  markAsRead,
-  fetchUnread,
-  PinboardItem,
-} from "~/helpers/pinboard.server";
+import type { PinboardItem } from "~/helpers/pinboard.server";
+import { markAsRead, fetchUnread } from "~/helpers/pinboard.server";
 
 export let meta: MetaFunction = () => ({
   title: "Unread Pinboard Links",
@@ -20,17 +17,14 @@ export let loader: LoaderFunction = async ({ request }) => {
   const password = url.searchParams.get("password");
   const cookieHeader = request.headers.get("Cookie");
   const cookie = (await pinboardPassword.parse(cookieHeader)) || {};
-  if (
-    password !== process.env.PINBOARD_PASSWORD &&
-    cookie.password !== process.env.PINBOARD_PASSWORD
-  ) {
+  if (password !== PINBOARD_PASSWORD && cookie.password !== PINBOARD_PASSWORD) {
     throw new Response("Not Found", {
       status: 404,
     });
   } else {
     const links = await fetchUnread();
 
-    cookie.password = process.env.PINBOARD_PASSWORD;
+    cookie.password = PINBOARD_PASSWORD;
     return json(links, {
       headers: {
         "Set-Cookie": await pinboardPassword.serialize(cookie),

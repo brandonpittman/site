@@ -1,4 +1,4 @@
-import { Redis } from "@upstash/redis";
+import { Redis } from "@upstash/redis/cloudflare";
 
 export type PinboardItem = {
   href: string;
@@ -12,15 +12,32 @@ export type PinboardItem = {
   tags: string;
 };
 
-let Pinboard = require("node-pinboard").default;
-let token = process.env.PINBOARD_TOKEN;
-let pinboard = new Pinboard(token);
+// const { get, set } = Redis.fromEnv();
 
-const { get, set } = Redis.fromEnv();
+const { get, set } = new Redis({
+  url: UPSTASH_REDIS_REST_URL,
+  token: UPSTASH_REDIS_REST_TOKEN,
+});
+
+const getEndpoint = (method: string, params = "") =>
+  `https://api.pinboard.in/v1/${method}?auth_token=${PINBOARD_TOKEN}&format=json${params}`;
 
 export let markAsRead = async (item: PinboardItem) => {
-  await pinboard.delete(item.href);
-  await pinboard.add({ ...item, url: item.href });
+  await fetch(getEndpoint("posts/delete", `&url=${item.href}`));
+  let reducer = (acc: string, cur: [string, string]) => {
+    switch (cur[0]) {
+      case "href":
+        return `${acc}&url=${cur[1]}`;
+      case "toread":
+        return `${acc}&toread=no`;
+      case "description":
+        return `${acc}&description=${encodeURIComponent(cur[1])}`;
+      default:
+        return `${acc}&${cur[0]}=${cur[1]}`;
+    }
+  };
+  let result = Object.entries(item).reduce(reducer, "");
+  await fetch(getEndpoint("posts/add", result));
 };
 
 export let setLinks = async (links: PinboardItem[]) => {
@@ -30,7 +47,8 @@ export let setLinks = async (links: PinboardItem[]) => {
 };
 
 export let fetchAll = async () => {
-  return await pinboard.all();
+  let data = await fetch(getEndpoint("posts/all"));
+  return await data.json();
 };
 
 export let updateCache = async () => {
@@ -40,6 +58,8 @@ export let updateCache = async () => {
 };
 
 export let fetchUnread = async () => {
+  // let all: PinboardItem[] = await fetchAll();
+  // return all.filter((v) => v.toread === "yes");
   await updateCache();
   return await get("unread");
 };

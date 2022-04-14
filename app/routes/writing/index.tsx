@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { json } from "@remix-run/cloudflare";
 import { useLoaderData, Link } from "@remix-run/react";
 import { getSeoMeta } from "~/seo";
 
