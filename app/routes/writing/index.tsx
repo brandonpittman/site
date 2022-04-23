@@ -70,7 +70,7 @@ export default function Writing() {
   return (
     <>
       <div className="prose lg:prose-lg">
-        <h1 className="py-8 text-4xl font-bold">Writing</h1>
+        <h1>Writing</h1>
       </div>
 
       <ul className="!pl-0">
