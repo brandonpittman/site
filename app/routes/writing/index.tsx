@@ -73,7 +73,7 @@ export default function Writing() {
         <h1 className="py-8 text-4xl font-bold">Writing</h1>
       </div>
 
-      <ul className="grid gap-2 !pl-0">
+      <ul className="!pl-0">
         {posts.map((post: any) => (
           <li
             key={post.slug}

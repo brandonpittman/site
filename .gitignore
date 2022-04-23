@@ -1,12 +1,10 @@
 node_modules
 
-.cache
-.env
-.vercel
-.output
-
-/build/
+build
+/api
+/.cache
+/functions/\[\[path\]\].js
+/functions/\[\[path\]\].js.map
 /public/build
-/api/index.js
-
-/app/tailwind.css
+.env
+wrangler.toml

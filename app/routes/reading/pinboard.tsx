@@ -12,19 +12,22 @@ import { markAsRead, fetchUnread } from "~/helpers/pinboard.server";
 export let meta: MetaFunction = () => ({
   title: "Unread Pinboard Links",
 });
-export let loader: LoaderFunction = async ({ request }) => {
+export let loader: LoaderFunction = async ({ request, context }) => {
   const url = new URL(request.url);
   const password = url.searchParams.get("password");
   const cookieHeader = request.headers.get("Cookie");
   const cookie = (await pinboardPassword.parse(cookieHeader)) || {};
-  if (password !== PINBOARD_PASSWORD && cookie.password !== PINBOARD_PASSWORD) {
+  if (
+    password !== context.PINBOARD_PASSWORD &&
+    cookie.password !== context.PINBOARD_PASSWORD
+  ) {
     throw new Response("Not Found", {
       status: 404,
     });
   } else {
-    const links = await fetchUnread();
+    const links = await fetchUnread(context);
 
-    cookie.password = PINBOARD_PASSWORD;
+    cookie.password = context.PINBOARD_PASSWORD;
     return json(links, {
       headers: {
         "Set-Cookie": await pinboardPassword.serialize(cookie),

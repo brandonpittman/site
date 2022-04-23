@@ -12,18 +12,17 @@ export type PinboardItem = {
   tags: string;
 };
 
-// const { get, set } = Redis.fromEnv();
+const redis = (context) =>
+  new Redis({
+    url: context.UPSTASH_REDIS_REST_URL,
+    token: context.UPSTASH_REDIS_REST_TOKEN,
+  });
 
-const { get, set } = new Redis({
-  url: UPSTASH_REDIS_REST_URL,
-  token: UPSTASH_REDIS_REST_TOKEN,
-});
+const getEndpoint = (context, method: string, params = "") =>
+  `https://api.pinboard.in/v1/${method}?auth_token=${context.PINBOARD_TOKEN}&format=json${params}`;
 
-const getEndpoint = (method: string, params = "") =>
-  `https://api.pinboard.in/v1/${method}?auth_token=${PINBOARD_TOKEN}&format=json${params}`;
-
-export let markAsRead = async (item: PinboardItem) => {
-  await fetch(getEndpoint("posts/delete", `&url=${item.href}`));
+export let markAsRead = async (context, item: PinboardItem) => {
+  await fetch(getEndpoint(context, "posts/delete", `&url=${item.href}`));
   let reducer = (acc: string, cur: [string, string]) => {
     switch (cur[0]) {
       case "href":
@@ -37,29 +36,31 @@ export let markAsRead = async (item: PinboardItem) => {
     }
   };
   let result = Object.entries(item).reduce(reducer, "");
-  await fetch(getEndpoint("posts/add", result));
+  await fetch(getEndpoint(context, "posts/add", result));
 };
 
-export let setLinks = async (links: PinboardItem[]) => {
+export let setLinks = async (context, links: PinboardItem[]) => {
+  const { set } = redis(context);
   let unread = await set("unread", JSON.stringify(links));
   let updated = await set("updated", new Date().toISOString());
   return { unread, updated };
 };
 
-export let fetchAll = async () => {
-  let data = await fetch(getEndpoint("posts/all"));
+export let fetchAll = async (context) => {
+  let data = await fetch(getEndpoint(context, "posts/all"));
   return await data.json();
 };
 
-export let updateCache = async () => {
-  let all: PinboardItem[] = await fetchAll();
+export let updateCache = async (context) => {
+  let all: PinboardItem[] = await fetchAll(context);
   let toRead = all.filter((v) => v.toread === "yes");
-  return setLinks(toRead);
+  return setLinks(context, toRead);
 };
 
-export let fetchUnread = async () => {
+export let fetchUnread = async (context) => {
   // let all: PinboardItem[] = await fetchAll();
   // return all.filter((v) => v.toread === "yes");
-  await updateCache();
+  const { get } = redis(context);
+  await updateCache(context);
   return await get("unread");
 };
