@@ -6,12 +6,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { MetaFunction, LinksFunction } from "@remix-run/cloudflare";
+import type {
+  MetaFunction,
+  LinksFunction,
+  LoaderFunction,
+} from "@remix-run/cloudflare";
 import styles from "./tailwind.css";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import { useFathom } from "remix-fathom";
 import { getSeo } from "~/seo";
+import { setPagesContext } from "remix-pages-context";
 
 let [seoMeta, seoLinks] = getSeo();
 
@@ -41,6 +46,11 @@ export const meta: MetaFunction = () => ({
   charset: "utf-8",
   viewport: "width=device-width,initial-scale=1",
 });
+
+export const loader: LoaderFunction = ({ context }) => {
+  setPagesContext(context);
+  return null;
+};
 
 export default function App() {
   useFathom("EXCJWHRT", {

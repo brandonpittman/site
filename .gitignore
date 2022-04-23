@@ -8,3 +8,5 @@ build
 /public/build
 .env
 wrangler.toml
+
+app/tailwind.css

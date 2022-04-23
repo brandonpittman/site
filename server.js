@@ -4,13 +4,11 @@ import * as build from "@remix-run/dev/server-build";
 const handleRequest = createPagesFunctionHandler({
   build,
   mode: process.env.NODE_ENV,
-  getLoadContext: (context) => {
-    // context.data = {
-    //   ...context.data,
-    //   date: new Date(),
-    //   msg: "Hi, there!",
-    // };
-    return context.env;
+  getLoadContext: ({ data, env }) => {
+    return {
+      data,
+      env,
+    };
   },
 });
 
