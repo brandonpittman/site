@@ -1,2 +1,3 @@
-- add Document component 
+- add Document component
 - add catch and error boundaries
+- add GTD trigger list
