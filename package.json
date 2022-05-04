@@ -33,6 +33,7 @@
     "remix-fathom": "^0.0.9",
     "remix-pages-context": "^0.1.2",
     "remix-seo": "^0.1.0",
+    "tiny-invariant": "^1.2.0",
     "wrangler": "^0.0.26"
   },
   "devDependencies": {
