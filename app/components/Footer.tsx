@@ -5,6 +5,7 @@ const footerLinks = [
   { label: "Stoicism", href: "/stoic" },
   { label: "Writing", href: "/writing" },
   { label: "Reading", href: "/reading" },
+  { label: "Productivity", href: "/productive" },
   { label: "Patronage", href: "/grateful" },
   {
     label: "Analytics",
