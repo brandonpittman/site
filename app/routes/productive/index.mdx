@@ -1,5 +1,28 @@
-# Productivity
+---
+meta:
+  title: Productivity
+  last_updated: 2020-05-04 11:30:00 +9
+---
+
+import { Link } from "@remix-run/react";
+import invariant from "tiny-invariant";
+
+export const docLinks = {
+  triggerList: "/productive/trigger-list",
+};
+
+export const MdxLink = ({ children, to }) => {
+  invariant(to, '"to" prop required.')
+  return(
+  <Link to={to} prefetch="intent">
+    {children}
+  </Link>
+  )
+
+};
+
+# {attributes.meta.title}
 
 ## Resources
 
-- [Trigger List](/productive/trigger-list)
+- <MdxLink to={docLinks.triggerList}>Trigger List</MdxLink>
