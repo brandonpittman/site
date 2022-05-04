@@ -6,8 +6,8 @@ const handleRequest = createPagesFunctionHandler({
   mode: process.env.NODE_ENV,
   getLoadContext: ({ data, env }) => {
     return {
-      data,
-      env,
+      ...data,
+      ...env,
     };
   },
 });

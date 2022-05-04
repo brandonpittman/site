@@ -16,7 +16,7 @@ export type PinboardItem = {
 let context: any;
 
 const redis = () => {
-  context = getPagesContext().env;
+  context = getPagesContext();
   return new Redis({
     url: context.UPSTASH_REDIS_REST_URL,
     token: context.UPSTASH_REDIS_REST_TOKEN,
