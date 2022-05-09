@@ -13,6 +13,7 @@ import * as OnMinimalstGtd from "~/routes/writing/on-minimalist-gtd.mdx";
 import * as OnProductivityAndPhilosophy from "~/routes/writing/on-productivity-and-philosophy.mdx";
 import * as OnSquashingCommits from "~/routes/writing/on-squashing-commits.mdx";
 import * as OnTheDomainsOfLife from "~/routes/writing/on-the-domains-of-life.mdx";
+import * as OnLearningHaskell from "~/routes/writing/on-learning-haskell.mdx";
 
 const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {
@@ -60,6 +61,7 @@ export async function loader() {
       postFromModule(OnProductivityAndPhilosophy),
       postFromModule(OnMinimalstGtd),
       postFromModule(OnMinimalistFinancialTracking),
+      postFromModule(OnLearningHaskell),
     ].sort((a, b) => b.date.getTime() - a.date.getTime())
   );
 }
@@ -69,9 +71,7 @@ export default function Writing() {
 
   return (
     <>
-      <div className="prose lg:prose-lg">
-        <h1>Writing</h1>
-      </div>
+      <h1>Writing</h1>
 
       <ul className="!pl-0">
         {posts.map((post: any) => (
