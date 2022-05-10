@@ -33,7 +33,7 @@ specifiers:
   remark-gfm: ^3.0.1
   remix: ^1.4.3
   remix-fathom: ^0.0.9
-  remix-pages-context: ^0.1.2
+  remix-pages-context: ^0.1.6
   remix-seo: ^0.1.0
   rimraf: ^3.0.2
   simple-git-hooks: ^2.7.0
@@ -57,7 +57,7 @@ dependencies:
   remark-gfm: 3.0.1
   remix: 1.4.3
   remix-fathom: 0.0.9_46cmmunj7elcdwnjfeophrpztm
-  remix-pages-context: 0.1.5
+  remix-pages-context: 0.1.6
   remix-seo: 0.1.0_fvhqgy77vtu6tolxmyc6j2dtae
   tiny-invariant: 1.2.0
   wrangler: 0.0.26
@@ -7440,8 +7440,8 @@ packages:
       react: 18.1.0
     dev: false
 
-  /remix-pages-context/0.1.5:
-    resolution: {integrity: sha512-HZv+7Li5gOMomqBQ8aMphx8gQxGlqC5JMhhf5CN8DOodzkzTL08aYC/dcS8uouA+/d2/nNERH9fezv3mBv1vRQ==}
+  /remix-pages-context/0.1.6:
+    resolution: {integrity: sha512-ldQtavnvJpCbb33CF7A07GlBIaSN2bjiboaFPEVH0GQtJ3MSRI+o/4gb84gxwFs9dsw56b+1PxWKrmvW8UJBdA==}
     dev: false
 
   /remix-seo/0.1.0_fvhqgy77vtu6tolxmyc6j2dtae:
