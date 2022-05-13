@@ -81,6 +81,11 @@ export default function App() {
 
         <ScrollRestoration />
         <Scripts />
+        <script
+          data-goatcounter="https://blp.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
         <LiveReload />
       </body>
     </html>
