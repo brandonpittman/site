@@ -29,10 +29,7 @@ const Box = ({ count }: { count: number }) => {
 
   return (
     <p
-      className={classNames(
-        "scale-0 opacity-0",
-        isPresent ? "animate-fade-in" : "animate-fade-out"
-      )}
+      className={classNames(isPresent ? "animate-fade-in" : "animate-fade-out")}
       onAnimationEnd={onAnimationEnd}
     >
       Hello, there! I'm #{count}.
