@@ -1,0 +1,33 @@
+---
+date: 2022-05-16
+meta:
+  title: On Remix and Slow Transitions
+  description: Use this hook to check if your transition is taking a while and add some progressive enhancment.
+---
+
+# {attributes.meta.title}
+
+<p className="lead">{attributes.meta.description}</p>
+
+When progressively enhancing a Remix app, you can use `useTransition` to let the user know if a form is being submitted. Here's a handy hook that only returns true if the transition is taking long enough that a loading spinner (or something like that) is really necessary.
+
+```ts
+import { useTransition } from "@remix-run/react";
+import { useState, useEffect } from "react";
+
+export function useIsSlowTransition(ms = 300) {
+  let { state } = useTransition();
+  let [isSlow, setIsSlow] = useState(false);
+
+  useEffect(() => {
+    if (state === "loading") {
+      let id = setTimeout(() => setIsSlow(true), ms);
+      return () => clearTimeout(id);
+    } else {
+      setIsSlow(false);
+    }
+  }, [state, ms]);
+
+  return isSlow;
+}
+```
