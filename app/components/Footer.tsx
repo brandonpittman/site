@@ -4,12 +4,6 @@ const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Writing", href: "/writing" },
   { label: "Reading", href: "/reading" },
-  // { label: "Productivity", href: "/productive" },
-  // { label: "Patronage", href: "/grateful" },
-  {
-    label: "Analytics",
-    href: "https://app.usefathom.com/share/excjwhrt/blp.is",
-  },
 ];
 
 export default function Footer() {
@@ -23,16 +17,6 @@ export default function Footer() {
             </Link>
           </li>
         ))}
-        {/*
-          <li>
-            <Link
-              to="mailto:hey@blp.is"
-              className="transition hover:text-gray-900"
-            >
-              Email
-            </Link>
-          </li>
-            */}
         <li className="md:ml-auto">
           <Link to="/colophon" className="transition hover:text-gray-900">
             Colophon
