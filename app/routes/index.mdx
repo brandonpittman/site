@@ -4,7 +4,7 @@ meta:
   description: "Brandon Pittman's personal website on Cloudflare Pages."
 ---
 
-import { MailIcon } from "@heroicons/react/outline";
+import { EmailMe } from "~/components/EmailMe";
 
 Pages you may be interested in:
 
@@ -22,8 +22,4 @@ you'd like to say "thanks" for something of mine that you used or read that
 gave you some benefit, then consider [buying me a
 coffee](https://buymeacoffee.com/blp).
 
-<div id="contact" className="flex gap-1 items-center mt-16">
-  <MailIcon className="w-5 h-5 lg:w-6 lg:h-6 text-gray-400" />
-
-  <a href="mailto:hey@blp.is" className="leading-none">Shoot me an email</a>
-</div>
+<EmailMe />
