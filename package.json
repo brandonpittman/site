@@ -28,11 +28,13 @@
     "fathom-client": "^3.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-use-clipboard": "^1.0.8",
     "remark-gfm": "^3.0.1",
     "remix": "^1.4.3",
     "remix-fathom": "^0.0.9",
     "remix-pages-context": "^0.1.6",
     "remix-seo": "^0.1.0",
+    "remix-utils": "^3.2.0",
     "tiny-invariant": "^1.2.0",
     "wrangler": "^0.0.26"
   },
