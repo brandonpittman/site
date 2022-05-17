@@ -13,6 +13,7 @@ specifiers:
   '@remix-run/eslint-config': ^1.4.3
   '@remix-run/react': ^1.4.3
   '@remix-run/serve': ^1.4.3
+  '@remix-run/server-runtime': ^1.1.1
   '@tailwindcss/aspect-ratio': ^0.4.0
   '@tailwindcss/forms': ^0.5.0
   '@tailwindcss/line-clamp': ^0.3.1
@@ -23,14 +24,13 @@ specifiers:
   autoprefixer: ^10.4.4
   eslint: ^8.12.0
   fathom-client: ^3.4.1
+  framer-motion: ^6.3.3
   miniflare: ^2.1.0
-  motion: ^10.8.2
   nano-staged: ^0.6.0
   npm-run-all: ^4.1.5
   postcss: ^8.4.12
   react: ^18.0.0
   react-dom: ^18.0.0
-  react-hook-clipboard: ^1.0.3
   reading-time: ^1.5.0
   remark-gfm: ^3.0.1
   remix: ^1.4.3
@@ -53,18 +53,18 @@ dependencies:
   '@remix-run/cloudflare': 1.4.3_qbegehhsvwasqwkw3dq3lzcnji
   '@remix-run/cloudflare-pages': 1.4.3_qbegehhsvwasqwkw3dq3lzcnji
   '@remix-run/react': 1.4.3_ef5jwxihqo6n7gxfmzogljlgcm
+  '@remix-run/server-runtime': 1.4.3_ef5jwxihqo6n7gxfmzogljlgcm
   '@upstash/redis': 1.3.1
   fathom-client: 3.4.1
-  motion: 10.8.2_ef5jwxihqo6n7gxfmzogljlgcm
+  framer-motion: 6.3.3_ef5jwxihqo6n7gxfmzogljlgcm
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
-  react-hook-clipboard: 1.0.3_react@18.1.0
   remark-gfm: 3.0.1
   remix: 1.4.3
   remix-fathom: 0.0.9_46cmmunj7elcdwnjfeophrpztm
   remix-pages-context: 0.1.6
   remix-seo: 0.1.0_fvhqgy77vtu6tolxmyc6j2dtae
-  remix-utils: 3.2.0_24sm67u5rl2x66kapxc2gjbuoa
+  remix-utils: 3.2.0_v5agwqd2lv6akbepn6epa3b6pu
   tiny-invariant: 1.2.0
   wrangler: 0.0.26
 
@@ -1511,6 +1511,19 @@ packages:
     resolution: {integrity: sha512-juyc/T+0QlwB4p7mTPoxS87RlHjceXJdCWwbGAQ5l3dO5xSDymW41wYx6f6LYe51fLccpjibj56UvqKeec2SSw==}
     dev: true
 
+  /@emotion/is-prop-valid/0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
+  /@emotion/memoize/0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    dev: false
+    optional: true
+
   /@esbuild-plugins/node-modules-polyfill/0.1.4_esbuild@0.14.22:
     resolution: {integrity: sha512-uZbcXi0zbmKC/050p3gJnne5Qdzw8vkXIv+c2BW0Lsc1ji1SkrxbKPUy5Efr0blbTu1SL8w4eyfpnSdPg3G0Qg==}
     peerDependencies:
@@ -1744,85 +1757,6 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-
-  /@motionone/animation/10.8.2:
-    resolution: {integrity: sha512-5PjHMiGC5PzJVBW3BTaykKEJbunS/M9ZSi+SyufR/UgyKUXA2dHhqZSoftTm0HEz9TNQLk3nxzYCzzmQKqquUA==}
-    dependencies:
-      '@motionone/easing': 10.8.2
-      '@motionone/types': 10.8.2
-      '@motionone/utils': 10.8.2
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/dom/10.8.2:
-    resolution: {integrity: sha512-Wr6EM+TWVxE3rR6YFtsYsjhJErmph0C4AjEmHowDdvzlmYxLA4adPadJIzAz7RaUfMxTnRa9yMXp2gxT864tQg==}
-    dependencies:
-      '@motionone/animation': 10.8.2
-      '@motionone/generators': 10.8.2
-      '@motionone/types': 10.8.2
-      '@motionone/utils': 10.8.2
-      hey-listen: 1.0.8
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/easing/10.8.2:
-    resolution: {integrity: sha512-5ZlWinM3Ph14vNRA25dPmNDI4hjcTEUG1HtJZuxhj6MuDX+22wUVxlge19M2L6DEwRdeR1dfkOnfrt9KNO9FQw==}
-    dependencies:
-      '@motionone/utils': 10.8.2
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/generators/10.8.2:
-    resolution: {integrity: sha512-72KNf71ccL/sQ0MPyahLRRZpZwAJQ1YPotqqW9V5uvvlPLDdRrHegDve+wOLPTkAGDTyvVS1NfFr4cFYw22GkQ==}
-    dependencies:
-      '@motionone/types': 10.8.2
-      '@motionone/utils': 10.8.2
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/react/10.8.2_ef5jwxihqo6n7gxfmzogljlgcm:
-    resolution: {integrity: sha512-ghCphPC4jaUQvPoDRuSk75gbw5uZ7+PGuZ6fTjmwL/w9V5BIQkEzc1N41ywnPfQf7Ve/fnujf/NR6n7Wu88kXg==}
-    peerDependencies:
-      react: ^17.0.2
-      react-dom: ^17.0.2
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@motionone/dom': 10.8.2
-      hey-listen: 1.0.8
-      react: 18.1.0
-      react-dom: 18.1.0_react@18.1.0
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/svelte/10.8.2:
-    resolution: {integrity: sha512-fT7UQ+0fz/MQuHdaRuWPzl/7O8G1o/xLXkF1DzXS7aGKuA13/aaqgT8JinJmAf99drHH5TruC7BM/vu1oP0HUA==}
-    dependencies:
-      '@motionone/dom': 10.8.2
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/types/10.8.2:
-    resolution: {integrity: sha512-JHOOQw/8XG2j8pbtH8PbkVJk7cbjdFg06UXzAWWGyS02KBU66kCouFFtARChzahTu4y/9ssYI1N3Zvdz5HsmnA==}
-    dev: false
-
-  /@motionone/utils/10.8.2:
-    resolution: {integrity: sha512-nP2D8h7+4QWvkhFZFRwglonfiH3IxrwCdihtl2iHS5IvKOWz8pvIlC9pgzzSsxWPkCrNp9mnjihyLE1VBwcSKg==}
-    dependencies:
-      '@motionone/types': 10.8.2
-      hey-listen: 1.0.8
-      tslib: 2.4.0
-    dev: false
-
-  /@motionone/vue/10.8.2:
-    resolution: {integrity: sha512-Nh+0Mp++BOc8b6iCF7XW6oFwB1NH0CRTpadalHbwX54lOgBleUilFEjiH2DGmd5vv0d1Yesrp9u4chn+c4b0Iw==}
-    dependencies:
-      '@motionone/dom': 10.8.2
-      tslib: 2.4.0
-    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4839,6 +4773,29 @@ packages:
       map-cache: 0.2.2
     dev: true
 
+  /framer-motion/6.3.3_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-wo0dCnoq5vn4L8YVOPO9W54dliH78vDaX0Lj+bSPUys6Nt5QaehrS3uaYa0q5eVeikUgtTjz070UhQ94thI5Sw==}
+    peerDependencies:
+      react: '>=16.8 || ^17.0.0 || ^18.0.0'
+      react-dom: '>=16.8 || ^17.0.0 || ^18.0.0'
+    dependencies:
+      framesync: 6.0.1
+      hey-listen: 1.0.8
+      popmotion: 11.0.3
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+      style-value-types: 5.0.0
+      tslib: 2.4.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
+  /framesync/6.0.1:
+    resolution: {integrity: sha512-fUY88kXvGiIItgNC7wcTOl0SNRCVXMKSWW2Yzfmn7EKNc+MpCzcz9DhdHcdjbrtN3c6R4H5dTY2jiCpPdysEjA==}
+    dependencies:
+      tslib: 2.4.0
+    dev: false
+
   /fresh/0.5.2:
     resolution: {integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=}
     engines: {node: '>= 0.6'}
@@ -6659,20 +6616,6 @@ packages:
       - supports-color
     dev: true
 
-  /motion/10.8.2_ef5jwxihqo6n7gxfmzogljlgcm:
-    resolution: {integrity: sha512-F2v+4vwzLoRNKTSCV9sqIwboO2h9ByRlXiwuPoEK7gxZP1PhImYlYoEgncQO0xEr7IoN7+qsg5r7zOXnw+gVQg==}
-    dependencies:
-      '@motionone/animation': 10.8.2
-      '@motionone/dom': 10.8.2
-      '@motionone/react': 10.8.2_ef5jwxihqo6n7gxfmzogljlgcm
-      '@motionone/svelte': 10.8.2
-      '@motionone/types': 10.8.2
-      '@motionone/vue': 10.8.2
-    transitivePeerDependencies:
-      - react
-      - react-dom
-    dev: false
-
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -7189,6 +7132,15 @@ packages:
       find-up: 3.0.0
     dev: true
 
+  /popmotion/11.0.3:
+    resolution: {integrity: sha512-Y55FLdj3UxkR7Vl3s7Qr4e9m0onSnP8W7d/xQLsoJM40vs6UKHFdygs6SWryasTZYqugMjm3BepCF4CWXDiHgA==}
+    dependencies:
+      framesync: 6.0.1
+      hey-listen: 1.0.8
+      style-value-types: 5.0.0
+      tslib: 2.4.0
+    dev: false
+
   /posix-character-classes/0.1.1:
     resolution: {integrity: sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=}
     engines: {node: '>=0.10.0'}
@@ -7398,14 +7350,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.1.0
       scheduler: 0.22.0
-    dev: false
-
-  /react-hook-clipboard/1.0.3_react@18.1.0:
-    resolution: {integrity: sha512-LuvMPkvX9FWhudrkjQ/AJGtnRkGdjbF6F2OySukMb29KLCXKhocxEzCRu0vQu8rC8pn2bwFyfR67rHnbcYbexg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
-    dependencies:
-      react: 18.1.0
     dev: false
 
   /react-is/16.13.1:
@@ -7661,7 +7605,7 @@ packages:
       remix: 1.4.3
     dev: false
 
-  /remix-utils/3.2.0_24sm67u5rl2x66kapxc2gjbuoa:
+  /remix-utils/3.2.0_v5agwqd2lv6akbepn6epa3b6pu:
     resolution: {integrity: sha512-jNtaqq5kWs1vfXlcKK6biLaFlyJa/2tnaVoTBOiymkiajEa9OamCapFjcrmRGuTA3vcOeeBvgzp7oOS40ycQNA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -7670,6 +7614,7 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@remix-run/react': 1.4.3_ef5jwxihqo6n7gxfmzogljlgcm
+      '@remix-run/server-runtime': 1.4.3_ef5jwxihqo6n7gxfmzogljlgcm
       intl-parse-accept-language: 1.0.0
       is-ip: 3.1.0
       react: 18.1.0
@@ -8283,6 +8228,13 @@ packages:
     dependencies:
       inline-style-parser: 0.1.1
     dev: true
+
+  /style-value-types/5.0.0:
+    resolution: {integrity: sha512-08yq36Ikn4kx4YU6RD7jWEv27v4V+PUsOGa4n/as8Et3CuODMJQ00ENeAVXAeydX4Z2j1XHZF1K2sX4mGl18fA==}
+    dependencies:
+      hey-listen: 1.0.8
+      tslib: 2.4.0
+    dev: false
 
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
