@@ -1,4 +1,4 @@
-import { useAnimation, m, LazyMotion, domAnimation } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
 import { useHydrated } from "remix-utils";
 
 import type { MouseEventHandler } from "react";
@@ -23,15 +23,13 @@ const CopyButton = () => {
   };
 
   return (
-    <LazyMotion features={domAnimation}>
-      <m.button
-        onClick={onClick}
-        className="bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
-        animate={controls}
-      >
-        Copy
-      </m.button>
-    </LazyMotion>
+    <motion.button
+      onClick={onClick}
+      className="bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
+      animate={controls}
+    >
+      Copy
+    </motion.button>
   );
 };
 
