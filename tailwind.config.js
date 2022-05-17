@@ -12,7 +12,7 @@ module.exports = {
       animation: {
         "spin-reverse": "spin-reverse 1s linear infinite",
         flash: "flash 500ms ease-out",
-        "fade-in": "fade-in 300ms ease-out",
+        "fade-in": "fade-in 150ms ease-out",
       },
       keyframes: {
         "spin-reverse": {

@@ -1,32 +1,26 @@
-import { animate, spring } from "motion";
 import { useHydrated } from "remix-utils";
+import { useCallback } from "react";
+import { useBool } from "@kyleshevlin/use-common";
 
-import type { MouseEventHandler } from "react";
-
-const onClick: MouseEventHandler = ({ target }) => {
-  navigator.clipboard
-    .writeText("hey@blp.is")
-    .then(() => {
-      animate(
-        target as HTMLButtonElement,
-        {
-          opacity: [1, 0.5, 1],
-          scale: [1, 1.1, 1],
-        },
-        {
-          duration: 1,
-          easing: spring(),
-        }
-      );
-    })
-    .catch(console.error);
-};
+import { classNames } from "~/helpers/class-names";
 
 const CopyButton = () => {
+  const [isAnimated, { on, off }] = useBool(false);
+
+  const onClick = useCallback(() => {
+    navigator.clipboard.writeText("hey@blp.is").then(() => {
+      on();
+    });
+  }, [on]);
+
   return (
     <button
       onClick={onClick}
-      className="bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
+      onAnimationEnd={off}
+      className={classNames(
+        isAnimated && "animate-flash",
+        "bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
+      )}
     >
       Copy
     </button>
