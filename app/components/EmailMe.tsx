@@ -1,19 +1,28 @@
-import useClipboard from "react-use-clipboard";
+import { animate } from "motion";
 import { useHydrated } from "remix-utils";
-import { classNames } from "~/helpers/class-names";
+
+import type { MouseEventHandler } from "react";
+
+const onClick: MouseEventHandler = ({ target }) => {
+  navigator.clipboard
+    .writeText("hey@blp.is")
+    .then(() => {
+      animate(
+        target as HTMLButtonElement,
+        {
+          opacity: [0.5, 1],
+        },
+        { duration: 1 }
+      );
+    })
+    .catch(console.error);
+};
 
 const CopyButton = () => {
-  let [isCopied, setCopied] = useClipboard("hey@blp.is", {
-    successDuration: 1000,
-  });
-
   return (
     <button
-      onClick={setCopied}
-      className={classNames(
-        isCopied && "animate-flash",
-        "transition relative bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
-      )}
+      onClick={onClick}
+      className="bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
     >
       Copy
     </button>

@@ -6,4 +6,8 @@ cacheAssets().catch((error) => {
   console.error(error);
 });
 
+caches.open("assets").then((cache) => {
+  return cache.addAll(["/", "/gaming"]);
+});
+
 hydrate(<RemixBrowser />, document);
