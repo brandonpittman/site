@@ -6,18 +6,34 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  content: [
-    "./app/**/*.{mdx,js,jsx,ts,tsx}",
-  ],
+  content: ["./app/**/*.{mdx,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       animation: {
         "spin-reverse": "spin-reverse 1s linear infinite",
+        flash: "flash 500ms ease-out",
+        "fade-in": "fade-in 300ms ease-out",
       },
       keyframes: {
         "spin-reverse": {
           to: {
             transform: "rotate(-1turn)",
+          },
+        },
+        "fade-in": {
+          from: {
+            opacity: 0,
+          },
+          to: {
+            opacity: 1,
+          },
+        },
+        flash: {
+          "50%": {
+            backgroundColor: colors.gray["600"],
+          },
+          "100%": {
+            backgroundColor: colors.gray["900"],
           },
         },
       },
@@ -128,4 +144,3 @@ module.exports = {
     lineClamp,
   ],
 };
-
