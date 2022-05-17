@@ -1,4 +1,4 @@
-import { animate } from "motion";
+import { animate, spring } from "motion";
 import { useHydrated } from "remix-utils";
 
 import type { MouseEventHandler } from "react";
@@ -10,9 +10,13 @@ const onClick: MouseEventHandler = ({ target }) => {
       animate(
         target as HTMLButtonElement,
         {
-          opacity: [0.5, 1],
+          opacity: [1, 0.5, 1],
+          scale: [1, 1.1, 1],
         },
-        { duration: 1 }
+        {
+          duration: 1,
+          easing: spring(),
+        }
       );
     })
     .catch(console.error);
