@@ -1,35 +1,31 @@
-import { useAnimation, motion } from "framer-motion";
+import { animate } from "motion";
 import { useHydrated } from "remix-utils";
 
 import type { MouseEventHandler } from "react";
 
-const EMAIL = "hey@blp.is";
+const onClick: MouseEventHandler = ({ target }) => {
+  navigator.clipboard
+    .writeText("hey@blp.is")
+    .then(() => {
+      animate(
+        target as HTMLButtonElement,
+        {
+          opacity: [0.5, 1],
+        },
+        { duration: 1 }
+      );
+    })
+    .catch(console.error);
+};
 
 const CopyButton = () => {
-  const controls = useAnimation();
-
-  const onClick: MouseEventHandler = () => {
-    navigator.clipboard
-      .writeText(EMAIL)
-      .then(() => {
-        controls.start(
-          {
-            opacity: [0.5, 1],
-          },
-          { duration: 1 }
-        );
-      })
-      .catch(console.error);
-  };
-
   return (
-    <motion.button
+    <button
       onClick={onClick}
       className="bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
-      animate={controls}
     >
       Copy
-    </motion.button>
+    </button>
   );
 };
 
@@ -41,7 +37,7 @@ export const EmailMe = () => {
       <p>
         Email me at{" "}
         <a href="mailto:hey@blp.is" className="leading-none">
-          {EMAIL}
+          hey@blp.is
         </a>
       </p>
       {isHydrated ? <CopyButton /> : null}
