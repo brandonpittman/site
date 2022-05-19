@@ -14,7 +14,6 @@ import * as OnProductivityAndPhilosophy from "~/routes/writing/on-productivity-a
 import * as OnSquashingCommits from "~/routes/writing/on-squashing-commits.mdx";
 import * as OnTheDomainsOfLife from "~/routes/writing/on-the-domains-of-life.mdx";
 import * as OnLearningHaskell from "~/routes/writing/on-learning-haskell.mdx";
-import * as OnUsePresence from "~/routes/writing/on-use-presence.mdx";
 import * as OnRemixSlowTransitions from "~/routes/writing/on-remix-slow-transitions.mdx";
 
 const formatDate = (date: Date) =>
@@ -64,7 +63,11 @@ export async function loader() {
       postFromModule(OnMinimalstGtd),
       postFromModule(OnMinimalistFinancialTracking),
       postFromModule(OnLearningHaskell),
-      postFromModule(OnUsePresence),
+      {
+        date: new Date(),
+        slug: "on-use-presence",
+        meta: { title: "On Use Presence" },
+      },
       postFromModule(OnRemixSlowTransitions),
     ].sort((a, b) => b.date.getTime() - a.date.getTime())
   );

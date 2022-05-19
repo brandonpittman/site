@@ -5,14 +5,6 @@ meta:
   description: "How to use Framer Motion's usePresence with Tailwind CSS."
 ---
 
-# {attributes.meta.title}
-
-<p className="lead">
-  Use Framer Motion's `AnimatePresence` component and `usePresence` hook to
-  trigger CSS animations without paying the bundle cost of importing
-  `motion.div`.
-</p>
-
 Framer Motion has a page about [reducing bundle size][]. That page states that if you only import `AnimatePresence` and `usePresence`, to just do exit animations with CSS animations, you'd only import 1.4Kb of JavaScript. But they don't provide any example of that. Here you go:
 
 ```tsx
