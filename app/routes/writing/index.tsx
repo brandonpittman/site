@@ -49,10 +49,6 @@ function postFromModule(mod: Post) {
 }
 
 export async function loader() {
-  const res = await fetch("https://github-md.com/brandonpittman/site/main");
-  const data = await res.json();
-  console.log(data);
-
   return json(
     [
       postFromModule(OnDealingWithOthers),

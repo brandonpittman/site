@@ -17,16 +17,20 @@ export const loader: LoaderFunction = async ({ params }) => {
     `https://github-md.com/brandonpittman/site/main/blog/${params.slug}.md`
   );
   const data: LoaderData = await res.json();
-  console.log({ data });
   return json<LoaderData>(data);
 };
 export default function Post() {
-  const { attributes, html } = useLoaderData() as LoaderData;
+  const {
+    attributes: {
+      meta: { title, description },
+    },
+    html,
+  } = useLoaderData() as LoaderData;
 
   return (
     <>
-      <h1>{attributes.meta.title}</h1>
-      <p className="lead">{attributes.meta.description}</p>
+      <h1>{title}</h1>
+      {description ? <p className="lead">{description}</p> : null}
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </>
   );
