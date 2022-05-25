@@ -64,7 +64,7 @@ export async function loader() {
       postFromModule(OnMinimalistFinancialTracking),
       postFromModule(OnLearningHaskell),
       {
-        date: new Date(),
+        date: new Date(2022, 4, 15),
         slug: "on-use-presence",
         meta: { title: "On Use Presence" },
       },
