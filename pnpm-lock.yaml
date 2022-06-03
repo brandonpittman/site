@@ -15,7 +15,7 @@ specifiers:
   '@remix-run/serve': ^1.5.1
   '@remix-run/server-runtime': ^1.5.1
   '@tailwindcss/aspect-ratio': ^0.4.0
-  '@tailwindcss/forms': ^0.5.1
+  '@tailwindcss/forms': ^0.5.2
   '@tailwindcss/line-clamp': ^0.4.0
   '@tailwindcss/typography': ^0.5.2
   '@types/react': ^18.0.9
@@ -41,7 +41,7 @@ specifiers:
   rimraf: ^3.0.2
   simple-git-hooks: ^2.7.0
   tailwindcss: ^3.0.24
-  tailwindcss-plugin-fancy: ^3.2.2
+  tailwindcss-plugin-fancy: ^3.2.4
   tiny-invariant: ^1.2.0
   typescript: ^4.6.4
   wrangler: ^2.0.5
@@ -76,7 +76,7 @@ devDependencies:
   '@remix-run/eslint-config': 1.5.1_t4cqyaxwbtpsab7uej7nin732q
   '@remix-run/serve': 1.5.1_ef5jwxihqo6n7gxfmzogljlgcm
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.24
-  '@tailwindcss/forms': 0.5.1_tailwindcss@3.0.24
+  '@tailwindcss/forms': 0.5.2_tailwindcss@3.0.24
   '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
   '@types/react': 18.0.9
@@ -91,7 +91,7 @@ devDependencies:
   rimraf: 3.0.2
   simple-git-hooks: 2.7.0
   tailwindcss: 3.0.24
-  tailwindcss-plugin-fancy: 3.2.2_tf57n46exsmyavmrn7rkkfbjbm
+  tailwindcss-plugin-fancy: 3.2.4_tf57n46exsmyavmrn7rkkfbjbm
   typescript: 4.6.4
 
 packages:
@@ -2161,8 +2161,8 @@ packages:
       tailwindcss: 3.0.24
     dev: true
 
-  /@tailwindcss/forms/0.5.1_tailwindcss@3.0.24:
-    resolution: {integrity: sha512-QSwsFORnC2BAP0lRzQkz1pw+EzIiiPdk4e27vGQjyXkwJPeC7iLIRVndJzf9CJVbcrrIcirb/TfxF3gRTyFEVA==}
+  /@tailwindcss/forms/0.5.2_tailwindcss@3.0.24:
+    resolution: {integrity: sha512-pSrFeJB6Bg1Mrg9CdQW3+hqZXAKsBrSG9MAfFLKy1pVA4Mb4W7C0k7mEhlmS2Dfo/otxrQOET7NJiJ9RrS563w==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
     dependencies:
@@ -8247,8 +8247,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss-plugin-fancy/3.2.2_tf57n46exsmyavmrn7rkkfbjbm:
-    resolution: {integrity: sha512-8xmBV3pi46/tHfZEp6AX9ByStelLx4uKl5PsYMHLkgYNPtpporQvCeSQw24oED0fBlg7syb3lrQcixPgLRFmww==}
+  /tailwindcss-plugin-fancy/3.2.4_tf57n46exsmyavmrn7rkkfbjbm:
+    resolution: {integrity: sha512-pfc5UU0KPmsy+yEgE2V2x6JaP5peoVjoLegah8V6B6obTQKAqtKnT93wyrgiKybYSMZeCPP9bczxBjJwU+7+qA==}
     engines: {node: '>=10'}
     peerDependencies:
       postcss: ^8.2.8
