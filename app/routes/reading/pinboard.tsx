@@ -2,10 +2,10 @@ import type {
   ActionFunction,
   LoaderFunction,
   MetaFunction,
-} from "@remix-run/node";
+} from "@remix-run/cloudflare";
 import { useLoaderData, useFetcher } from "@remix-run/react";
 import { json } from "@remix-run/cloudflare";
-import { pinboardPassword } from "~/cookies";
+import { commitSession, getSession } from "~/sessions";
 import type { PinboardItem } from "~/helpers/pinboard.server";
 import { markAsRead, fetchUnread } from "~/helpers/pinboard.server";
 
@@ -15,11 +15,11 @@ export let meta: MetaFunction = () => ({
 export let loader: LoaderFunction = async ({ request, context }) => {
   const url = new URL(request.url);
   const password = url.searchParams.get("password");
-  const cookieHeader = request.headers.get("Cookie");
-  const cookie = (await pinboardPassword.parse(cookieHeader)) || {};
+  const session = await getSession(request.headers.get("Cookie"));
+
   if (
     password !== context.PINBOARD_PASSWORD &&
-    cookie.password !== context.PINBOARD_PASSWORD
+    session.get("password") !== context.PINBOARD_PASSWORD
   ) {
     throw new Response("Not Found", {
       status: 404,
@@ -27,10 +27,10 @@ export let loader: LoaderFunction = async ({ request, context }) => {
   } else {
     const links = await fetchUnread();
 
-    cookie.password = context.PINBOARD_PASSWORD;
+    session.set("password", context.PINBOARD_PASSWORD);
     return json(links, {
       headers: {
-        "Set-Cookie": await pinboardPassword.serialize(cookie),
+        "Set-Cookie": await commitSession(session),
       },
     });
   }
