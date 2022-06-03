@@ -1,8 +1,9 @@
-import type { LoaderFunction } from "@remix-run/server-runtime";
 import { json } from "@remix-run/server-runtime";
 import { useLoaderData } from "@remix-run/react";
 
-type LoaderData = {
+import type { LoaderFunction } from "@remix-run/server-runtime";
+
+export type LoaderData = {
   attributes: {
     meta: {
       title: string;
@@ -19,6 +20,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   const data: LoaderData = await res.json();
   return json<LoaderData>(data);
 };
+
 export default function Post() {
   const {
     attributes: {
