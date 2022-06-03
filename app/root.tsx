@@ -47,11 +47,6 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
-export const loader: LoaderFunction = ({ context }) => {
-  setPagesContext(context);
-  return null;
-};
-
 export default function App() {
   useFathom("EXCJWHRT", {
     includedDomains: [
@@ -71,7 +66,7 @@ export default function App() {
       <body className="container flex flex-col min-h-screen mx-auto">
         <Header />
 
-        <div className="max-w-prose mx-auto w-full py-4 flex-1">
+        <div className="flex-1 w-full py-4 mx-auto max-w-prose">
           <main className="prose lg:prose-lg">
             <Outlet />
           </main>

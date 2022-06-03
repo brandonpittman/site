@@ -33,7 +33,7 @@
     "remark-gfm": "^3.0.1",
     "remix": "^1.5.1",
     "remix-fathom": "^0.0.9",
-    "remix-pages-context": "^0.1.6",
+    "remix-pages-context": "^0.1.7",
     "remix-seo": "^0.1.0",
     "remix-utils": "^3.2.0",
     "tiny-invariant": "^1.2.0",

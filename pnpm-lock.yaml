@@ -35,7 +35,7 @@ specifiers:
   remark-gfm: ^3.0.1
   remix: ^1.5.1
   remix-fathom: ^0.0.9
-  remix-pages-context: ^0.1.6
+  remix-pages-context: ^0.1.7
   remix-seo: ^0.1.0
   remix-utils: ^3.2.0
   rimraf: ^3.0.2
@@ -62,7 +62,7 @@ dependencies:
   remark-gfm: 3.0.1
   remix: 1.5.1
   remix-fathom: 0.0.9_naf6rqgbk3mmd4h6kefiuyzuke
-  remix-pages-context: 0.1.6
+  remix-pages-context: 0.1.7
   remix-seo: 0.1.0_cdchifclvbxcdbyj2qaegd6tpu
   remix-utils: 3.2.0_jqpyrofeue3hlyulwssyu2bhfm
   tiny-invariant: 1.2.0
@@ -7620,8 +7620,8 @@ packages:
       react: 18.1.0
     dev: false
 
-  /remix-pages-context/0.1.6:
-    resolution: {integrity: sha512-ldQtavnvJpCbb33CF7A07GlBIaSN2bjiboaFPEVH0GQtJ3MSRI+o/4gb84gxwFs9dsw56b+1PxWKrmvW8UJBdA==}
+  /remix-pages-context/0.1.7:
+    resolution: {integrity: sha512-zMZygr/TGkA5nl2eENhJ5KO68Bpg76yvFxHQpdRE8pwsqJNhGgRmWJ30lXRbveQ+2fDIMZiCn6tcWETx/LaoSA==}
     dev: false
 
   /remix-seo/0.1.0_cdchifclvbxcdbyj2qaegd6tpu:
