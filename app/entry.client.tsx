@@ -1,13 +1,11 @@
-import { hydrate } from "react-dom";
 import { RemixBrowser } from "@remix-run/react";
+import { hydrateRoot } from "react-dom/client";
 import { cacheAssets } from "remix-utils";
 
-cacheAssets().catch((error) => {
-  console.error(error);
-});
+cacheAssets().catch(console.error);
 
-caches.open("assets").then((cache) => {
-  return cache.addAll(["/", "/gaming"]);
-});
+// caches.open("assets").then((cache) => {
+//   return cache.addAll(["/", "/gaming"]);
+// });
 
-hydrate(<RemixBrowser />, document);
+hydrateRoot(document, <RemixBrowser />);
