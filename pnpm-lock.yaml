@@ -34,7 +34,7 @@ specifiers:
   remark-gfm: ^3.0.1
   remix: ^1.5.1
   remix-fathom: ^0.0.9
-  remix-pages-context: ^0.1.15
+  remix-pages-context: ^0.1.20
   remix-seo: ^0.1.0
   remix-utils: ^3.3.0
   rimraf: ^3.0.2
@@ -60,7 +60,7 @@ dependencies:
   remark-gfm: 3.0.1
   remix: 1.5.1
   remix-fathom: 0.0.9_naf6rqgbk3mmd4h6kefiuyzuke
-  remix-pages-context: 0.1.15_jfzn3ewof4xcs2nlh4ch5h3aci
+  remix-pages-context: 0.1.20_jfzn3ewof4xcs2nlh4ch5h3aci
   remix-seo: 0.1.0_cdchifclvbxcdbyj2qaegd6tpu
   remix-utils: 3.3.0_jqpyrofeue3hlyulwssyu2bhfm
   tiny-invariant: 1.2.0
@@ -7521,8 +7521,8 @@ packages:
       react: 18.1.0
     dev: false
 
-  /remix-pages-context/0.1.15_jfzn3ewof4xcs2nlh4ch5h3aci:
-    resolution: {integrity: sha512-vnrbGLMYk8Qg70QayWuKrngmNrg1/Ohp+mepJQ/1gU6yfzixTCnfxVHSMkxFbLcz603nRFP7IW/bJWuc88YbdQ==}
+  /remix-pages-context/0.1.20_jfzn3ewof4xcs2nlh4ch5h3aci:
+    resolution: {integrity: sha512-sgEdebscnvA1zgXkyeHNP7hxzgD1cF1YsczxSr5jrDduVIuZaTK9hEZ9322YowTsNQPJJJ7j+NK34nY/IjxPGQ==}
     peerDependencies:
       '@cloudflare/workers-types': ^3.11.0
       '@remix-run/cloudflare': ^1.5.1
