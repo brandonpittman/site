@@ -5,7 +5,7 @@ import type {
 } from "@remix-run/cloudflare";
 import { useLoaderData, useFetcher } from "@remix-run/react";
 import { json } from "@remix-run/cloudflare";
-import { commitSession, getSession } from "remix-pages-context";
+import { commitSession, getSession } from "~/session";
 import type { PinboardItem } from "~/helpers/pinboard.server";
 import { markAsRead, fetchUnread } from "~/helpers/pinboard.server";
 
