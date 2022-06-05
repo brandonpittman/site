@@ -34,9 +34,9 @@ specifiers:
   remark-gfm: ^3.0.1
   remix: ^1.5.1
   remix-fathom: ^0.0.9
-  remix-pages-context: ^0.1.13
+  remix-pages-context: ^0.1.15
   remix-seo: ^0.1.0
-  remix-utils: ^3.2.0
+  remix-utils: ^3.3.0
   rimraf: ^3.0.2
   simple-git-hooks: ^2.8.0
   tailwindcss: ^3.0.24
@@ -60,9 +60,9 @@ dependencies:
   remark-gfm: 3.0.1
   remix: 1.5.1
   remix-fathom: 0.0.9_naf6rqgbk3mmd4h6kefiuyzuke
-  remix-pages-context: 0.1.13_jfzn3ewof4xcs2nlh4ch5h3aci
+  remix-pages-context: 0.1.15_jfzn3ewof4xcs2nlh4ch5h3aci
   remix-seo: 0.1.0_cdchifclvbxcdbyj2qaegd6tpu
-  remix-utils: 3.2.0_jqpyrofeue3hlyulwssyu2bhfm
+  remix-utils: 3.3.0_jqpyrofeue3hlyulwssyu2bhfm
   tiny-invariant: 1.2.0
   wrangler: 2.0.7
 
@@ -7521,8 +7521,8 @@ packages:
       react: 18.1.0
     dev: false
 
-  /remix-pages-context/0.1.13_jfzn3ewof4xcs2nlh4ch5h3aci:
-    resolution: {integrity: sha512-SEfcQKGVM/VibLi2iK6S6/Q5V2eP7dZykBGPjbfh4Jlw/0KUHjobOPepM8bFE/9xEgeAeNd7X4v6TKATgTiqBA==}
+  /remix-pages-context/0.1.15_jfzn3ewof4xcs2nlh4ch5h3aci:
+    resolution: {integrity: sha512-vnrbGLMYk8Qg70QayWuKrngmNrg1/Ohp+mepJQ/1gU6yfzixTCnfxVHSMkxFbLcz603nRFP7IW/bJWuc88YbdQ==}
     peerDependencies:
       '@cloudflare/workers-types': ^3.11.0
       '@remix-run/cloudflare': ^1.5.1
@@ -7546,8 +7546,8 @@ packages:
       remix: 1.5.1
     dev: false
 
-  /remix-utils/3.2.0_jqpyrofeue3hlyulwssyu2bhfm:
-    resolution: {integrity: sha512-jNtaqq5kWs1vfXlcKK6biLaFlyJa/2tnaVoTBOiymkiajEa9OamCapFjcrmRGuTA3vcOeeBvgzp7oOS40ycQNA==}
+  /remix-utils/3.3.0_jqpyrofeue3hlyulwssyu2bhfm:
+    resolution: {integrity: sha512-jqqFcUH8DNTgcw8rje0q1Ra3w0TBa8B8c39BArXIweWsNX12MVwBY9NET3c+IXj0iQlzRk4GNObuOe4r5UrJIg==}
     engines: {node: '>=14'}
     peerDependencies:
       '@remix-run/react': ^1.1.1

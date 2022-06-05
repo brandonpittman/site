@@ -3,24 +3,24 @@ import type {
   LoaderFunction,
   MetaFunction,
 } from "@remix-run/cloudflare";
+
 import { useLoaderData, useFetcher } from "@remix-run/react";
+import { commitSession, getSession } from "remix-pages-context";
 import { json } from "@remix-run/cloudflare";
-import { commitSession, getSession } from "~/session";
+
 import type { PinboardItem } from "~/helpers/pinboard.server";
 import { markAsRead, fetchUnread } from "~/helpers/pinboard.server";
 
 export let meta: MetaFunction = () => ({
   title: "Unread Pinboard Links",
 });
+
 export let loader: LoaderFunction = async ({ request, context }) => {
   const url = new URL(request.url);
   const password = url.searchParams.get("password");
   const session = await getSession(request.headers.get("Cookie"));
 
-  if (
-    password !== context.PINBOARD_PASSWORD &&
-    session.get("password") !== context.PINBOARD_PASSWORD
-  ) {
+  if (password !== context.PINBOARD_PASSWORD && !session.id) {
     throw new Response("Not Found", {
       status: 404,
     });
