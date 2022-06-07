@@ -27,11 +27,13 @@ const getEndpoint = (method: string, params = "") =>
   `https://api.pinboard.in/v1/${method}?auth_token=${context.PINBOARD_TOKEN}&format=json${params}`;
 
 export let markAsRead = async (item: PinboardItem) => {
-  await fetch(getEndpoint("posts/delete", `&url=${item.href}`));
+  await fetch(
+    getEndpoint("posts/delete", `&url=${encodeURIComponent(item.href)}`)
+  );
   let reducer = (acc: string, cur: [string, string]) => {
     switch (cur[0]) {
       case "href":
-        return `${acc}&url=${cur[1]}`;
+        return `${acc}&url=${encodeURIComponent(cur[1])}`;
       case "toread":
         return `${acc}&toread=no`;
       case "description":
