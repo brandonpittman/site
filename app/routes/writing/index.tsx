@@ -77,7 +77,7 @@ export default function Writing() {
   let posts = useLoaderData();
 
   return (
-    <>
+    <div>
       <h1>Writing</h1>
 
       <ul className="!pl-0">
@@ -99,6 +99,6 @@ export default function Writing() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
