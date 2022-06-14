@@ -92,7 +92,7 @@ export default function Writing() {
             <Link
               to={post.slug}
               prefetch="intent"
-              className="block no-underline font-bold text-gray-900 focus:outline-none"
+              className="block font-bold text-gray-900 no-underline focus:outline-none"
             >
               {post.meta.title}
             </Link>
