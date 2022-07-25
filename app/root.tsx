@@ -6,17 +6,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type {
-  MetaFunction,
-  LinksFunction,
-  LoaderFunction,
-} from "@remix-run/cloudflare";
+import type { MetaFunction, LinksFunction } from "@remix-run/cloudflare";
 import styles from "./tailwind.css";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
-import { useFathom } from "remix-fathom";
 import { getSeo } from "~/seo";
-import { setPagesContext } from "remix-pages-context";
 
 let [seoMeta, seoLinks] = getSeo();
 
@@ -48,15 +42,6 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
-  useFathom("EXCJWHRT", {
-    includedDomains: [
-      "blp.is",
-      "www.blp.is",
-      "brandonpittman.com",
-      "www.brandonpittman.com",
-    ],
-  });
-
   return (
     <html lang="en">
       <head>

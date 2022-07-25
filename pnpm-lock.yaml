@@ -23,7 +23,6 @@ specifiers:
   '@upstash/redis': ^1.6.1
   autoprefixer: ^10.4.7
   eslint: ^8.16.0
-  fathom-client: ^3.4.1
   miniflare: ^2.4.0
   nano-staged: ^0.8.0
   npm-run-all: ^4.1.5
@@ -33,7 +32,6 @@ specifiers:
   reading-time: ^1.5.0
   remark-gfm: ^3.0.1
   remix: ^1.6.5
-  remix-fathom: ^0.0.9
   remix-pages-context: ^0.1.22
   remix-seo: ^0.1.0
   remix-utils: ^3.3.0
@@ -54,12 +52,10 @@ dependencies:
   '@remix-run/react': 1.6.5_biqbaboplfbrettd7655fr4n2y
   '@remix-run/server-runtime': 1.6.5_biqbaboplfbrettd7655fr4n2y
   '@upstash/redis': 1.6.1
-  fathom-client: 3.4.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   remark-gfm: 3.0.1
   remix: 1.6.5
-  remix-fathom: 0.0.9_bkf52n6flt5hp7x75npmy2jsbq
   remix-pages-context: 0.1.22_wjb57tnkanj535cyx6mrtubgei
   remix-seo: 0.1.0_etiwl7ka6zimf7pxvf66mmmbae
   remix-utils: 3.3.0_r375uierzekmrxrizhpa4xlxnm
@@ -5631,10 +5627,6 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fathom-client/3.4.1:
-    resolution: {integrity: sha512-iQFKx9B9RDeGLzgNqsaXWg3Fvu7yfq1Z8GjpAG3DP8IoGoPRWOOktpM7DUKiUzoE3d37hdvDQvkqUHfNzVwimg==}
-    dev: false
-
   /fault/2.0.1:
     resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==}
     dependencies:
@@ -8398,18 +8390,6 @@ packages:
       mdast-util-to-hast: 11.3.0
       unified: 10.1.2
     dev: true
-
-  /remix-fathom/0.0.9_bkf52n6flt5hp7x75npmy2jsbq:
-    resolution: {integrity: sha512-lM+Ph3eE0DlyUmeZ+ocuwPN2VeKp3hCR/xex0IrkoOPRg/4y3bBBtzdLNw+cisUtgjMhSoXSPr+GiNZW6b6Fjw==}
-    peerDependencies:
-      '@remix-run/react': ^1.3.5
-      fathom-client: ^3.4.1
-      react: ^18.0.0
-    dependencies:
-      '@remix-run/react': 1.6.5_biqbaboplfbrettd7655fr4n2y
-      fathom-client: 3.4.1
-      react: 18.2.0
-    dev: false
 
   /remix-pages-context/0.1.22_wjb57tnkanj535cyx6mrtubgei:
     resolution: {integrity: sha512-bN8EzeaX3tx3ls7sFEMHECtLBhaQ2FD9L29xjvSj4q4D+2V9Cr4fgwaqhSG8J4Hq+dkFPjA+9Gam5nz3WdsM+A==}
