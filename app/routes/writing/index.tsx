@@ -86,7 +86,7 @@ export default function Writing() {
             key={post.slug}
             className="flex flex-col rounded ring-gray-300 focus-within:ring sm:flex-row sm:items-center sm:gap-3"
           >
-            <span className="block w-[9.5rem] text-sm text-gray-500 sm:text-right sm:text-base">
+            <span className="block w-[9.5rem] text-sm text-gray-500 whitespace-nowrap sm:text-right sm:text-base">
               {formatDate(post.date)}
             </span>
             <Link
