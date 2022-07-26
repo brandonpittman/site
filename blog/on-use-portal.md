@@ -43,4 +43,16 @@ export let usePortal = (el: Element = document.body) => {
 };
 ```
 
+## Example
+
+```tsx
+import { usePortal } from "somewhere";
+
+let Foo = () => {
+  let Portal = usePortal(/* maybe a document.querySelector call */);
+
+  return <Portal>{/* something */}</Portal>;
+};
+```
+
 [gist]: https://gist.github.com/brandonpittman/41c19d9cd900f8f8d4ebdc9bc6486a43

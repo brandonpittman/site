@@ -66,7 +66,12 @@ export async function loader() {
       {
         date: new Date(2022, 4, 15),
         slug: "on-use-presence",
-        meta: { title: "On Use Presence" },
+        meta: { title: "On usePresence" },
+      },
+      {
+        date: new Date(2022, 6, 27),
+        slug: "on-use-portal",
+        meta: { title: "On usePortal" },
       },
       postFromModule(OnRemixSlowTransitions),
     ].sort((a, b) => b.date.getTime() - a.date.getTime())
