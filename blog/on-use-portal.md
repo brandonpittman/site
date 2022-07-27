@@ -31,13 +31,13 @@ export let usePortal = (el: Element = document.body) => {
   }, []);
 
   useEffect(() => {
-    if (el) portal.remove();
+    if (el) unmountComponentAtNode(el);
     let newPortal = createPortal(el);
     setPortal(createPortal(el));
     return () => {
       newPortal.remove();
     };
-  }, [el, createPortal, portal]);
+  }, [el, createPortal]);
 
   return portal.render;
 };
