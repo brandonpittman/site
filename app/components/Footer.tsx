@@ -8,17 +8,23 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mx-auto flex w-full max-w-prose items-center justify-between gap-4 pt-16 pb-8 text-gray-700">
-      <ul className="flex w-full flex-wrap gap-4 text-sm">
+    <footer className="flex items-center justify-between w-full pt-16 pb-8 mx-auto text-gray-700 max-w-prose gap-4">
+      <ul className="flex flex-wrap w-full text-sm gap-4">
         {footerLinks.map((link) => (
           <li key={link.href}>
-            <Link to={link.href} className="transition hover:text-gray-900">
+            <Link
+              to={link.href}
+              className="text-gray-500 rounded transition hover:text-gray-900 focus:outline-none focus:ring focus:ring-offset-2"
+            >
               {link.label}
             </Link>
           </li>
         ))}
         <li className="md:ml-auto">
-          <Link to="/colophon" className="transition hover:text-gray-900">
+          <Link
+            to="/colophon"
+            className="text-gray-500 rounded transition hover:text-gray-900 focus:outline-none focus:ring focus:ring-offset-2"
+          >
             Colophon
           </Link>
         </li>
