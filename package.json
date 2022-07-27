@@ -30,7 +30,7 @@
     "react-dom": "18.2.0",
     "remark-gfm": "^3.0.1",
     "remix": "^1.6.5",
-    "remix-pages-context": "^0.1.22",
+    "remix-pages-context": "^0.1.23",
     "remix-seo": "^0.1.0",
     "remix-utils": "^3.3.0",
     "tiny-invariant": "^1.2.0",
