@@ -1,20 +1,27 @@
 ---
 date: 2022-08-08
 meta:
-	title: On Learning Latin
-	description: How to learn Latin on your own.
+  title: On Learning Latin
+  description: "How to learn Latin on your own."
 ---
-
-# On Learning Latin
 
 ## First things first
 
 - Watch [ScorpioMatianus' first _Familia Romana_ video][video]
 
+This video will show you the pages from the first chapter of _Familia Romana_
+and let you hear what classical Latin should sound like. You should be able to
+understand all of the Latin and you'll probably feel empowered.
+
 ## If you enjoy it, buy the following:
 
 - [Lingua Latina per se Illustrata, Pars I: Familia Romana][textbook]
 - [Colloquia Personarum][colloquia]
+
+These two books are the most important. The textbook is the basis of everything
+and _Colloquia Personarum_ gives you extra practice with recently learned
+vocabulary and grammar as well as filling in the story of characters in the
+main text.
 
 ## When you start struggling, buy the following:
 
@@ -23,9 +30,19 @@ meta:
 - [Exercitia Latina I: Exercises for Familia Romana][exercitia]
 - [Lingua Latina Per Se Illustrata: Teachers' Materials & Answer Keys for Pars I & II][key]
 
+These books aren't required but they enhance your learning experience. The
+glossary is great for figuring out what more esoteric words mean. The grammar
+book is a helpful reference to all the different forms you'll encounter. The
+exercises are helpful for reinforcing what you learn and the teacher's
+materials are the only way to check if you actually got the right answers. I
+waited too long to buy these four books and I regretted not buying them sooner.
+
 ## If you hit chapter 20 and are still enjoying it, buy:
 
 - [Fabulae Syrae][fabulae]
+
+_Colloquia Personarum_ runs out after chapter 24, so if you want more practice
+in that style, buy _Fabulae Syrae_.
 
 <!-- Links -->
 
