@@ -69,6 +69,11 @@ export async function loader() {
         meta: { title: "On usePresence" },
       },
       {
+        date: new Date(2022, 7, 8),
+        slug: "on-learning-latin",
+        meta: { title: "On Learning Latin" },
+      },
+      {
         date: new Date(2022, 6, 27),
         slug: "on-use-portal",
         meta: { title: "On usePortal" },
