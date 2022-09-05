@@ -31,7 +31,7 @@ export const EmailMe = () => {
   let isHydrated = useHydrated();
 
   return (
-    <div id="contact" className="flex gap-2 items-center mt-16">
+    <div id="contact" className="flex gap-2 items-center">
       <p>
         Email me at{" "}
         <a href="mailto:hey@blp.is" className="leading-none">

@@ -9,18 +9,6 @@ const links = [
     title: "Writing",
     to: "/writing",
   },
-  {
-    title: "Reading",
-    to: "/reading",
-  },
-  {
-    title: "Playing",
-    to: "/playing",
-  },
-  {
-    title: "Stoicism",
-    to: "/stoic",
-  },
 ];
 export default function Header() {
   return (
