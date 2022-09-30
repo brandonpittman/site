@@ -31,6 +31,7 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   { rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" },
   { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+  { rel: "me", href: "https://github.com/brandonpittman" },
   ...sizesApple,
   ...sizesPng,
 ];
