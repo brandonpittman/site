@@ -32,6 +32,8 @@ export const links: LinksFunction = () => [
   { rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" },
   { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
   { rel: "me", href: "https://github.com/brandonpittman" },
+  { rel: "webmention", href: "https://webmention.io/blp.is/webmention" },
+  { rel: "pingback", href: "https://webmention.io/blp.is/xmlrpc" },
   ...sizesApple,
   ...sizesPng,
 ];
