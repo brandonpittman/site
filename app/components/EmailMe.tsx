@@ -34,7 +34,7 @@ export const EmailMe = () => {
     <div id="contact" className="flex gap-2 items-center">
       <p>
         Email me at{" "}
-        <a href="mailto:hey@blp.is" className="leading-none">
+        <a href="mailto:hey@blp.is" rel="me" className="leading-none">
           hey@blp.is
         </a>
       </p>
