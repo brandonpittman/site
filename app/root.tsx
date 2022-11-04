@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 import type { MetaFunction, LinksFunction } from "@remix-run/cloudflare";
 import styles from "./tailwind.css";
@@ -45,27 +46,35 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
+  let location = useLocation();
+
   return (
     <html lang="en">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="container flex flex-col min-h-screen mx-auto">
-        <Header />
+      {location.pathname === "/distracted" ? (
+        <body>
+          <Outlet />
+        </body>
+      ) : (
+        <body className="container flex flex-col min-h-screen mx-auto">
+          <Header />
 
-        <div className="flex-1 w-full py-4 mx-auto max-w-prose">
-          <main className="prose lg:prose-lg">
-            <Outlet />
-          </main>
-        </div>
+          <div className="flex-1 w-full py-4 mx-auto max-w-prose">
+            <main className="prose lg:prose-lg">
+              <Outlet />
+            </main>
+          </div>
 
-        <Footer />
+          <Footer />
 
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </body>
+      )}
     </html>
   );
 }
