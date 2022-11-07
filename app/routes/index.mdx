@@ -4,7 +4,31 @@ meta:
   description: "Brandon Pittman's personal website on Cloudflare Pages."
 ---
 
-import { EmailMe } from "~/components/EmailMe";
+import { useCallback, useState } from "react";
+import { classNames } from "~/helpers/class-names";
+
+export let CopyButton = () => {
+  const [isAnimated, setIsAnimated] = useState(false);
+
+const onClick = useCallback(() => {
+navigator.clipboard.writeText("hey@blp.is").then(() => {
+setIsAnimated(true);
+});
+}, []);
+
+return (
+
+<button
+  onClick={onClick}
+  onAnimationEnd={() => setIsAnimated(false)}
+  className={classNames(
+    isAnimated && "animate-flash",
+    "bg-gray-900 text-sm text-white font-medium rounded flex py-1 px-2"
+  )}
+>
+  Copy
+</button>
+); };
 
 Hey there! Thanks for stopping by. My name is Brandon Pittman. I build web
 sites and apps, study [traditional Stoicism][], and I train Brazilian
@@ -17,7 +41,10 @@ you'd like to say "thanks" for something of mine that you used or read that
 gave you some benefit, then consider [buying me a
 coffee](https://buymeacoffee.com/blp).
 
-<EmailMe />
+<div id="contact" className="flex gap-2 items-center">
+  Email me at [hey@blp.is](mailto:hey@blp.is)
+  <CopyButton />
+</div>
 
 [traditional stoicism]: https://traditionalstoicism.com/the-path-of-the-prokopton/
 [github]: https://github.com/brandonpittman
