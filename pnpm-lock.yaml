@@ -31,9 +31,9 @@ specifiers:
   reading-time: ^1.5.0
   remark-gfm: ^3.0.1
   remix: ^1.6.5
-  remix-pages-context: ^0.1.23
+  remix-pages-context: ^0.1.26
   remix-seo: ^0.1.0
-  remix-utils: ^3.3.0
+  remix-utils: ^3.4.0
   rimraf: ^3.0.2
   simple-git-hooks: ^2.8.1
   tailwindcss: ^3.2.2
@@ -55,9 +55,9 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   remark-gfm: 3.0.1
   remix: 1.6.5
-  remix-pages-context: 0.1.23_buvcpri7dvrp53k2hqjghbv2oi
+  remix-pages-context: 0.1.26_buvcpri7dvrp53k2hqjghbv2oi
   remix-seo: 0.1.0_etiwl7ka6zimf7pxvf66mmmbae
-  remix-utils: 3.3.0_do2z5xxkx2bpmnfsjtviewhzvm
+  remix-utils: 3.4.0_do2z5xxkx2bpmnfsjtviewhzvm
   tiny-invariant: 1.3.1
   wrangler: 2.1.15
 
@@ -8620,13 +8620,13 @@ packages:
       unified: 10.1.2
     dev: true
 
-  /remix-pages-context/0.1.23_buvcpri7dvrp53k2hqjghbv2oi:
-    resolution: {integrity: sha512-vH9IWs3u778B8NGHffAjGQptOaIumgu0lB3hE1iAgEBycY7U8TyHxoujlRK7QEEcFucH3MO5FqVLWDgFM1e+4A==}
+  /remix-pages-context/0.1.26_buvcpri7dvrp53k2hqjghbv2oi:
+    resolution: {integrity: sha512-48cn7AJjdu+c3/IjJdPcKraLKGbw4mbmMyW6u7yVtBwBvI+A7BTlvo8cXb3aN3AREdff5B2JCGGcCXWgiuLgug==}
     peerDependencies:
-      '@cloudflare/workers-types': ^3.11.0
-      '@remix-run/cloudflare': ^1.5.1
-      react: ^18.1.0
-      react-dom: ^18.1.0
+      '@cloudflare/workers-types': ^3.18.0
+      '@remix-run/cloudflare': ^1.7.5
+      react: ^18.2.0
+      react-dom: ^18.2.0
     dependencies:
       '@cloudflare/workers-types': 3.18.0
       '@remix-run/cloudflare': 1.6.5_dp7lsxfcjoxmh2gy56a7syibgu
@@ -8646,8 +8646,8 @@ packages:
       remix: 1.6.5
     dev: false
 
-  /remix-utils/3.3.0_do2z5xxkx2bpmnfsjtviewhzvm:
-    resolution: {integrity: sha512-jqqFcUH8DNTgcw8rje0q1Ra3w0TBa8B8c39BArXIweWsNX12MVwBY9NET3c+IXj0iQlzRk4GNObuOe4r5UrJIg==}
+  /remix-utils/3.4.0_do2z5xxkx2bpmnfsjtviewhzvm:
+    resolution: {integrity: sha512-rfRZlqUj49jmsqm/T7lKG/TDCf3WD3r+CzbkPxwTxX52YQULWLY55+jfS7OwuQ/H9+iJS+YG0N+P1+dml3o02A==}
     engines: {node: '>=14'}
     peerDependencies:
       '@remix-run/react': ^1.1.1
