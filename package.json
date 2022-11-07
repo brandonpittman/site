@@ -1,12 +1,9 @@
 {
-  "name": "brandon-pittman",
+  "name": "site",
   "private": true,
-  "description": "",
-  "license": "",
-  "main": ".",
   "sideEffects": false,
   "scripts": {
-    "build": "rimraf public/build && npm run build:css && npm run build:remix",
+    "build": "rimraf public/build && rimfar functions && npm run build:css && npm run build:remix",
     "build:css": "npm run generate:css -- --minify",
     "build:remix": "remix build",
     "dev": "remix build && run-p dev:*",
@@ -34,7 +31,7 @@
     "remix-seo": "^0.1.0",
     "remix-utils": "^3.3.0",
     "tiny-invariant": "^1.2.0",
-    "wrangler": "^2.0.7"
+    "wrangler": "^2.1.15"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
