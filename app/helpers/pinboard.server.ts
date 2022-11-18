@@ -14,16 +14,16 @@ export type PinboardItem = {
 };
 
 const redis = () => {
-  let context = getPagesContext();
+  let { env } = getPagesContext();
   return new Redis({
-    url: context.UPSTASH_REDIS_REST_URL,
-    token: context.UPSTASH_REDIS_REST_TOKEN,
+    url: env.UPSTASH_REDIS_REST_URL,
+    token: env.UPSTASH_REDIS_REST_TOKEN,
   });
 };
 
 const getEndpoint = (method: string, params = "") => {
-  let context = getPagesContext();
-  return `https://api.pinboard.in/v1/${method}?auth_token=${context.PINBOARD_TOKEN}&format=json${params}`;
+  let { env } = getPagesContext();
+  return `https://api.pinboard.in/v1/${method}?auth_token=${env.PINBOARD_TOKEN}&format=json${params}`;
 };
 
 export let markAsRead = async (item: PinboardItem) => {

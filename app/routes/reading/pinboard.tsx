@@ -16,24 +16,25 @@ export let meta: MetaFunction = () => ({
 });
 
 export let loader: LoaderFunction = async ({ request }) => {
-  let context = getPagesContext();
+  let {
+    env,
+    sessionStorage: { getSession, commitSession },
+  } = getPagesContext();
   const url = new URL(request.url);
   const password = url.searchParams.get("password");
-  const session = await context.sessionStorage.getSession(
-    request.headers.get("Cookie")
-  );
+  const session = await getSession(request.headers.get("Cookie"));
 
-  if (password !== context.PINBOARD_PASSWORD && !session.id) {
+  if (password !== env.PINBOARD_PASSWORD && !session.id) {
     throw new Response("Not Found", {
       status: 404,
     });
   } else {
     const links = await fetchUnread();
 
-    session.set("password", context.PINBOARD_PASSWORD);
+    session.set("password", env.PINBOARD_PASSWORD);
     return json(links, {
       headers: {
-        "Set-Cookie": await context.sessionStorage.commitSession(session),
+        "Set-Cookie": await commitSession(session),
       },
     });
   }

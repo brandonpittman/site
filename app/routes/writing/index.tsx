@@ -15,6 +15,7 @@ import * as OnSquashingCommits from "~/routes/writing/on-squashing-commits.mdx";
 import * as OnTheDomainsOfLife from "~/routes/writing/on-the-domains-of-life.mdx";
 import * as OnLearningHaskell from "~/routes/writing/on-learning-haskell.mdx";
 import * as OnRemixSlowTransitions from "~/routes/writing/on-remix-slow-transitions.mdx";
+import { getPagesContext, setPagesContext } from "server";
 
 const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {
@@ -49,6 +50,8 @@ function postFromModule(mod: Post) {
 }
 
 export async function loader() {
+  let context = getPagesContext();
+  console.log(context);
   return json(
     [
       postFromModule(OnDealingWithOthers),
