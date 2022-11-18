@@ -1,5 +1,5 @@
 import { Redis } from "@upstash/redis/cloudflare";
-import { getPagesContext } from "remix-pages-context";
+import { getPagesContext } from "server";
 
 export type PinboardItem = {
   href: string;
@@ -13,18 +13,18 @@ export type PinboardItem = {
   tags: string;
 };
 
-let context: any;
-
 const redis = () => {
-  context = getPagesContext();
+  let context = getPagesContext();
   return new Redis({
     url: context.UPSTASH_REDIS_REST_URL,
     token: context.UPSTASH_REDIS_REST_TOKEN,
   });
 };
 
-const getEndpoint = (method: string, params = "") =>
-  `https://api.pinboard.in/v1/${method}?auth_token=${context.PINBOARD_TOKEN}&format=json${params}`;
+const getEndpoint = (method: string, params = "") => {
+  let context = getPagesContext();
+  return `https://api.pinboard.in/v1/${method}?auth_token=${context.PINBOARD_TOKEN}&format=json${params}`;
+};
 
 export let markAsRead = async (item: PinboardItem) => {
   await fetch(
@@ -55,10 +55,11 @@ export let setLinks = async (links: PinboardItem[]) => {
 
 export let fetchAll = async () => {
   let data = await fetch(getEndpoint("posts/all"));
-  return await data.json();
+  return (await data.json()) as PinboardItem[];
 };
 
 export let updateCache = async () => {
+  redis();
   let all: PinboardItem[] = await fetchAll();
   let toRead = all.filter((v) => v.toread === "yes");
   return setLinks(toRead);
