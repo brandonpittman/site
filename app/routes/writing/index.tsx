@@ -2,9 +2,6 @@ import { json } from "@remix-run/cloudflare";
 import { useLoaderData, Link } from "@remix-run/react";
 import { getSeoMeta } from "~/seo";
 
-import { getPagesContext, schema } from "server";
-import type { z } from "zod";
-
 import * as OnDealingWithOthers from "~/routes/writing/on-dealing-with-others.mdx";
 import * as OnAwkLoops from "~/routes/writing/on-awk-loops.mdx";
 import * as OnBecomingStoic from "~/routes/writing/on-becoming-a-stoic.mdx";
