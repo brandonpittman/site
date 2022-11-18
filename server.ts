@@ -12,7 +12,9 @@ export let schema = z.object({
 });
 
 export let { getLoadContext, getPagesContext } =
-  createTypedPagesContextWithSession(schema);
+  createTypedPagesContextWithSession(schema, {
+    schema: z.object({ password: z.string().optional() }),
+  });
 
 const handleRequest = createPagesFunctionHandler({
   build,
