@@ -20,6 +20,6 @@ const handleRequest = createPagesFunctionHandler({
   getLoadContext,
 });
 
-export function onRequest(context) {
+export function onRequest(context: EventContext<any, any, any>) {
   return handleRequest(context);
 }
