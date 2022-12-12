@@ -50,8 +50,6 @@ function postFromModule(mod: Post) {
 }
 
 export async function loader() {
-  let context = getPagesContext();
-  console.log(context);
   return json(
     [
       postFromModule(OnDealingWithOthers),
