@@ -9,6 +9,10 @@ const links = [
     title: "Writing",
     to: "/writing",
   },
+  {
+    title: "Reading",
+    to: "/reading",
+  },
 ];
 export default function Header() {
   return (
@@ -28,6 +32,7 @@ export default function Header() {
             {links.map((link) => (
               <li key={link.title}>
                 <Link
+                  prefetch="intent"
                   to={link.to}
                   className="block block rounded-md font-medium transition transition hover:text-gray-900 focus:outline-none focus:ring"
                 >

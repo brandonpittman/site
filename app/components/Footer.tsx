@@ -3,7 +3,7 @@ import Link from "~/components/Link";
 const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Writing", href: "/writing" },
-  // { label: "Reading", href: "/reading" },
+  { label: "Reading", href: "/reading" },
 ];
 
 export default function Footer() {
@@ -13,6 +13,7 @@ export default function Footer() {
         {footerLinks.map((link) => (
           <li key={link.href}>
             <Link
+              prefetch="intent"
               to={link.href}
               className="text-gray-500 rounded transition hover:text-gray-900 focus:outline-none focus:ring focus:ring-offset-2"
             >
@@ -22,6 +23,7 @@ export default function Footer() {
         ))}
         <li className="md:ml-auto">
           <Link
+            prefetch="intent"
             to="/colophon"
             className="text-gray-500 rounded transition hover:text-gray-900 focus:outline-none focus:ring focus:ring-offset-2"
           >
