@@ -1,4 +1,2 @@
-- Move blog to Fly.io
 - add Document component
 - add catch and error boundaries
-- add GTD trigger list
