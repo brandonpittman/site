@@ -15,7 +15,6 @@ import * as OnSquashingCommits from "~/routes/writing/on-squashing-commits.mdx";
 import * as OnTheDomainsOfLife from "~/routes/writing/on-the-domains-of-life.mdx";
 import * as OnLearningHaskell from "~/routes/writing/on-learning-haskell.mdx";
 import * as OnRemixSlowTransitions from "~/routes/writing/on-remix-slow-transitions.mdx";
-import { getPagesContext, setPagesContext } from "server";
 
 const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {
@@ -64,10 +63,16 @@ export async function loader() {
       postFromModule(OnMinimalstGtd),
       postFromModule(OnMinimalistFinancialTracking),
       postFromModule(OnLearningHaskell),
+      postFromModule(OnRemixSlowTransitions),
       {
         date: new Date(2022, 4, 15),
         slug: "on-use-presence",
         meta: { title: "On usePresence" },
+      },
+      {
+        date: new Date(2022, 6, 27),
+        slug: "on-use-portal",
+        meta: { title: "On usePortal" },
       },
       {
         date: new Date(2022, 7, 8),
@@ -75,11 +80,10 @@ export async function loader() {
         meta: { title: "On Learning Latin" },
       },
       {
-        date: new Date(2022, 6, 27),
-        slug: "on-use-portal",
-        meta: { title: "On usePortal" },
+        date: new Date(2022, 11, 23),
+        slug: "on-deferring-documents",
+        meta: { title: "On Deferring Documents" },
       },
-      postFromModule(OnRemixSlowTransitions),
     ].sort((a, b) => b.date.getTime() - a.date.getTime())
   );
 }
