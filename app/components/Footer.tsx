@@ -8,7 +8,10 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-between w-full pt-16 pb-8 mx-auto text-gray-700 max-w-prose gap-4">
+    <footer
+      role="contentinfo"
+      className="flex items-center justify-between w-full pt-16 pb-8 mx-auto text-gray-700 max-w-prose gap-4"
+    >
       <ul className="flex flex-wrap w-full text-sm gap-4">
         {footerLinks.map((link) => (
           <li key={link.href}>

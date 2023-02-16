@@ -16,7 +16,7 @@ const links = [
 ];
 export default function Header() {
   return (
-    <header>
+    <header role="banner">
       <nav className="mx-auto w-full max-w-prose bg-white py-4 pb-4">
         <div className="flex flex-wrap gap-4 w-full items-center justify-between">
           <h1>
