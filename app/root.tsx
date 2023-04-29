@@ -13,7 +13,7 @@ import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import { getSeo } from "~/seo";
 
-let [seoMeta, seoLinks] = getSeo();
+//let [seoMeta, seoLinks] = getSeo();
 
 let sizesApple = [57, 60, 72, 76, 114, 120, 144, 152, 180].map((s) => ({
   rel: "apple-touch-icon",
@@ -28,7 +28,7 @@ let sizesPng = [16, 32, 96, 192].map((s) => ({
   href: `/favicon-${s}x${s}.png`,
 }));
 export const links: LinksFunction = () => [
-  ...seoLinks,
+  //...seoLinks,
   { rel: "stylesheet", href: styles },
   { rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" },
   { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -39,11 +39,16 @@ export const links: LinksFunction = () => [
   ...sizesPng,
 ];
 
-export const meta: MetaFunction = () => ({
-  ...seoMeta,
-  charset: "utf-8",
-  viewport: "width=device-width,initial-scale=1",
-});
+export const meta = () => [
+  {
+    property: "charset",
+    content: "utf-8",
+  },
+  {
+    property: "viewport",
+    content: "width=device-width,initial-scale=1",
+  },
+];
 
 export default function App() {
   let location = useLocation();
