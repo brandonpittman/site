@@ -23,12 +23,15 @@ const formatDate = (date: Date) =>
     day: "2-digit",
   }).format(new Date(date));
 
-export let meta = () => ({
-  ...getSeoMeta({
+export let meta = () => [
+  {
     title: "Writing",
-    description: "Recent blog posts from Brandon Pittman.",
-  }),
-});
+  },
+  {
+    name: "description",
+    content: "Recent blog posts from Brandon Pittman.",
+  },
+];
 
 type Post = {
   filename: string;
