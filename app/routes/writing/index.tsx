@@ -1,20 +1,5 @@
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData, Link } from "@remix-run/react";
-import { getSeoMeta } from "~/seo";
-
-import * as OnDealingWithOthers from "~/routes/writing/on-dealing-with-others.mdx";
-import * as OnAwkLoops from "~/routes/writing/on-awk-loops.mdx";
-import * as OnBecomingStoic from "~/routes/writing/on-becoming-a-stoic.mdx";
-import * as OnEmbracingFinitude from "~/routes/writing/on-embracing-your-finitude.mdx";
-import * as OnKeepingNodeScriptsAlive from "~/routes/writing/on-keeping-node-scripts-alive.mdx";
-import * as OnLearningFunctionalProgramming from "~/routes/writing/on-learning-functional-programming.mdx";
-import * as OnMinimalistFinancialTracking from "~/routes/writing/on-minimalist-financial-tracking.mdx";
-import * as OnMinimalstGtd from "~/routes/writing/on-minimalist-gtd.mdx";
-import * as OnProductivityAndPhilosophy from "~/routes/writing/on-productivity-and-philosophy.mdx";
-import * as OnSquashingCommits from "~/routes/writing/on-squashing-commits.mdx";
-import * as OnTheDomainsOfLife from "~/routes/writing/on-the-domains-of-life.mdx";
-import * as OnLearningHaskell from "~/routes/writing/on-learning-haskell.mdx";
-import * as OnRemixSlowTransitions from "~/routes/writing/on-remix-slow-transitions.mdx";
 
 const formatDate = (date: Date) =>
   Intl.DateTimeFormat("en", {
@@ -33,40 +18,9 @@ export let meta = () => [
   },
 ];
 
-type Post = {
-  filename: string;
-  attributes: {
-    date: Date;
-    meta: {
-      title: string;
-      description: string;
-    };
-  };
-};
-
-function postFromModule(mod: Post) {
-  return {
-    slug: mod.filename.replace(/\.mdx?$/, ""),
-    ...mod.attributes,
-  };
-}
-
 export async function loader() {
   return json(
     [
-      postFromModule(OnDealingWithOthers),
-      postFromModule(OnAwkLoops),
-      postFromModule(OnLearningFunctionalProgramming),
-      postFromModule(OnBecomingStoic),
-      postFromModule(OnEmbracingFinitude),
-      postFromModule(OnKeepingNodeScriptsAlive),
-      postFromModule(OnTheDomainsOfLife),
-      postFromModule(OnSquashingCommits),
-      postFromModule(OnProductivityAndPhilosophy),
-      postFromModule(OnMinimalstGtd),
-      postFromModule(OnMinimalistFinancialTracking),
-      postFromModule(OnLearningHaskell),
-      postFromModule(OnRemixSlowTransitions),
       {
         date: new Date(2022, 4, 15),
         slug: "on-use-presence",
@@ -86,6 +40,16 @@ export async function loader() {
         date: new Date(2022, 11, 23),
         slug: "on-deferring-documents",
         meta: { title: "On Deferring Documents" },
+      },
+      {
+        date: new Date(2022, 11, 23),
+        slug: "on-minimalist-financial-tracking",
+        meta: { title: "On Minimalist Finance Tracking" },
+      },
+      {
+        date: new Date(2022, 11, 23),
+        slug: "on-the-domains-of-life",
+        meta: { title: "On the Domains of Life" },
       },
     ].sort((a, b) => b.date.getTime() - a.date.getTime())
   );
