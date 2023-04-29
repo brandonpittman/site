@@ -21,6 +21,16 @@ export const loader: LoaderFunction = async ({ params }) => {
   return json<LoaderData>(data);
 };
 
+export let meta = ({ matches }) => {
+  let { title, description } = matches[matches.length - 1].data.attributes.meta;
+  return [
+    {
+      title,
+    },
+    { name: "description", content: description },
+  ];
+};
+
 export default function Post() {
   const {
     attributes: {
