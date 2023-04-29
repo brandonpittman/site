@@ -1,8 +1,8 @@
 ---
 date: 2022-03-04
 meta:
-  - title: On Minimalist Financial Tracking
-  - description: It doesn't matter if you know how much you spent on groceries nine months ago.
+  title: On Minimalist Financial Tracking
+  description: It doesn't matter if you know how much you spent on groceries nine months ago.
 ---
 
 # On Minimalist Financial Tracking

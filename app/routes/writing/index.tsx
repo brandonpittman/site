@@ -42,12 +42,12 @@ export async function loader() {
         meta: { title: "On Deferring Documents" },
       },
       {
-        date: new Date(2022, 11, 23),
+        date: new Date(2022, 2, 4),
         slug: "on-minimalist-financial-tracking",
         meta: { title: "On Minimalist Finance Tracking" },
       },
       {
-        date: new Date(2022, 11, 23),
+        date: new Date(2021, 8, 21),
         slug: "on-the-domains-of-life",
         meta: { title: "On the Domains of Life" },
       },

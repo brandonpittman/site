@@ -22,7 +22,8 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export let meta = ({ matches }) => {
-  let { title, description } = matches[matches.length - 1].data.attributes.meta;
+  let { title, description } =
+    matches[matches.length - 1].data?.attributes?.meta;
   return [
     {
       title,
