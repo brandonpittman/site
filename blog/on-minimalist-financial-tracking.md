@@ -5,8 +5,6 @@ meta:
   description: It doesn't matter if you know how much you spent on groceries nine months ago.
 ---
 
-# On Minimalist Financial Tracking
-
 The same people who obsess over their task management systems are likely the same people who micromanage their finances.
 It's good to know what's happening with your money, but knowing the amount you spent on groceries in a given month last year isn't useful.
 What's useful is knowing how much you have, how much you owe, and if you're comfortable with sum of those two numbers.

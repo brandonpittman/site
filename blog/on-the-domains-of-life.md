@@ -5,8 +5,6 @@ meta:
   title: On the Domains of Life
 ---
 
-# On the Domains of Life
-
 Recently, I've been trying to wrangle the different areas of my life for the purposes of task/time management. The goal was inspired by Oliver Burkeman's _4,000 Weeks_, where he suggests drafting 4–5 domains of life and each day choosing the most impactful thing you can do relating to each one. To that end, I thought of the following domains in English:
 
 - Home life
