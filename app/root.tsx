@@ -7,13 +7,10 @@ import {
   ScrollRestoration,
   useLocation,
 } from "@remix-run/react";
-import type { MetaFunction, LinksFunction } from "@remix-run/cloudflare";
+import type { LinksFunction } from "@remix-run/cloudflare";
 import styles from "./tailwind.css";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
-import { getSeo } from "~/seo";
-
-//let [seoMeta, seoLinks] = getSeo();
 
 let sizesApple = [57, 60, 72, 76, 114, 120, 144, 152, 180].map((s) => ({
   rel: "apple-touch-icon",
@@ -28,7 +25,6 @@ let sizesPng = [16, 32, 96, 192].map((s) => ({
   href: `/favicon-${s}x${s}.png`,
 }));
 export const links: LinksFunction = () => [
-  //...seoLinks,
   { rel: "stylesheet", href: styles },
   { rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" },
   { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -39,23 +35,14 @@ export const links: LinksFunction = () => [
   ...sizesPng,
 ];
 
-export const meta = () => [
-  {
-    property: "charset",
-    content: "utf-8",
-  },
-  {
-    property: "viewport",
-    content: "width=device-width,initial-scale=1",
-  },
-];
-
 export default function App() {
   let location = useLocation();
 
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>
