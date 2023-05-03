@@ -6,12 +6,16 @@ const links = [
     to: "/about",
   },
   {
-    title: "Writing",
-    to: "/writing",
+    title: "Blog",
+    to: "/blog",
   },
   {
     title: "Reading",
     to: "/reading",
+  },
+  {
+    title: "Playing",
+    to: "/Playing",
   },
 ];
 export default function Header() {

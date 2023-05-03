@@ -2,8 +2,9 @@ import Link from "~/components/Link";
 
 const footerLinks = [
   { label: "About", href: "/about" },
-  { label: "Writing", href: "/writing" },
+  { label: "Blog", href: "/blog" },
   { label: "Reading", href: "/reading" },
+  { label: "Playing", href: "/playing" },
 ];
 
 export default function Footer() {

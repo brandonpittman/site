@@ -5,7 +5,7 @@ import { cacheAssets } from "remix-utils";
 cacheAssets().catch(console.error);
 
 caches.open("assets").then((cache) => {
-  return cache.addAll(["/", "/writing", "/reading", "/playing"]);
+  return cache.addAll(["/", "/blog", "/reading", "/playing"]);
 });
 
 hydrateRoot(document, <RemixBrowser />);

@@ -10,7 +10,7 @@ const formatDate = (date: Date) =>
 
 export let meta = () => [
   {
-    title: "Writing",
+    title: "Blog",
   },
   {
     name: "description",
@@ -55,12 +55,12 @@ export async function loader() {
   );
 }
 
-export default function Writing() {
+export default function Blog() {
   let posts = useLoaderData();
 
   return (
     <div>
-      <h1>Writing</h1>
+      <h1>Blog</h1>
 
       <ul className="!pl-0">
         {posts.map((post: any) => (
