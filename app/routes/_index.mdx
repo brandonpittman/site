@@ -11,7 +11,7 @@ export let CopyButton = () => {
   const [isAnimated, setIsAnimated] = useState(false);
 
 const onClick = useCallback(() => {
-navigator.clipboard.writeText("hey@blp.is").then(() => {
+navigator.clipboard.writeText("hey@brandonpittman.com").then(() => {
 setIsAnimated(true);
 });
 }, []);
@@ -42,7 +42,7 @@ gave you some benefit, then consider [buying me a
 coffee](https://buymeacoffee.com/blp).
 
 <div id="contact" className="flex gap-2 items-center">
-  Email me at [hey@blp.is](mailto:hey@blp.is)
+  Email me at [hey@brandonpittman.com](mailto:hey@brandonpittman.com)
   <CopyButton />
 </div>
 

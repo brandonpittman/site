@@ -6,7 +6,7 @@ export let CopyButton = () => {
   const [isAnimated, setIsAnimated] = useState(false);
 
   const onClick = useCallback(() => {
-    navigator.clipboard.writeText("hey@blp.is").then(() => {
+    navigator.clipboard.writeText("hey@brandonpittman.com").then(() => {
       setIsAnimated(true);
     });
   }, []);
@@ -29,8 +29,8 @@ export const EmailMe = () => {
   return (
     <div id="contact" className="flex gap-1.5 items-center">
       <span>Email me at</span>
-      <a href="mailto:hey@blp.is" rel="me" className="leading-none">
-        hey@blp.is
+      <a href="mailto:hey@brandonpittman.com" rel="me" className="leading-none">
+        hey@brandonpittman.com
       </a>
       <CopyButton />
     </div>
