@@ -22,14 +22,9 @@ export async function loader() {
   return json(
     [
       {
-        date: new Date(2022, 4, 15),
-        slug: "on-use-presence",
-        meta: { title: "On usePresence" },
-      },
-      {
-        date: new Date(2022, 6, 27),
-        slug: "on-use-portal",
-        meta: { title: "On usePortal" },
+        date: new Date(2023, 4, 21),
+        slug: "on-vanilla-extract",
+        meta: { title: "On Vanilla Extract" },
       },
       {
         date: new Date(2022, 7, 8),
@@ -40,6 +35,16 @@ export async function loader() {
         date: new Date(2022, 11, 23),
         slug: "on-deferring-documents",
         meta: { title: "On Deferring Documents" },
+      },
+      {
+        date: new Date(2022, 6, 27),
+        slug: "on-use-portal",
+        meta: { title: "On usePortal" },
+      },
+      {
+        date: new Date(2022, 4, 15),
+        slug: "on-use-presence",
+        meta: { title: "On usePresence" },
       },
       {
         date: new Date(2022, 2, 4),
