@@ -23,7 +23,7 @@ It encourages you, by its lack of style purging, to use utilities sparingly.
 It reminds me of the "U" in [CUBE CSS][cubecss].
 
 A great feature of Vanilla Extract, when used with Sprinkles, is that you can compose styles using Vanilla Extract's `style` function and your pre-compiled sprinkles.
-A function like this:
+Consider a class like this:
 
 ```ts
 let component = style([
