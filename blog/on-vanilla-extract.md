@@ -33,11 +33,13 @@ let component = style([
   }),
   {
     borderRadius: "7px",
+    paddingBlock: ".75rem",
+    paddingInline: "1rem"
   },
 ]);
 ```
 
-When this `component` class is created, it will be a string of three classes: two utilities and a scoped one-off class that handles the border-radius.
+When this `component` class is created, it will be a string of three classes: two utilities and a scoped one-off class that handles the border-radius and padding (as a single class).
 Used this way, your sprinkles can be used everywhere—reducing bundle size—while allowing for logical grouping and creating the occaissional one-off style block.
 
 [ve]: https://vanilla-extract.style
