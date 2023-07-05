@@ -13,18 +13,22 @@ let { pathname } = Astro.url;
 <style>
   a {
     text-decoration: none;
-    border-radius: var(--border-radius-sm);
-    padding-inline: var(--space-2xs);
-    padding-block: var(--space-3xs);
-  }
-
-  /* This is to account for the shift caused by the padding around the links. */
-  li:first-child {
-    margin-inline-start: calc(var(--space-2xs) * -1);
+    position: relative;
   }
 
   [data-active] {
-    background-color: var(--color-base-dark);
     color: var(--color-base-light);
+  }
+
+  [data-active]::before {
+    content: "";
+    position: absolute;
+    inset-inline: calc(var(--space-2xs) * -1);
+    inset-block: calc(var(--space-3xs) * -1);
+    z-index: -1;
+    border-radius: var(--border-radius-sm);
+    padding-inline: var(--space-2xs);
+    padding-block: var(--space-3xs);
+    background-color: var(--color-base-dark);
   }
 </style>

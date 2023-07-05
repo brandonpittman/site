@@ -60,6 +60,14 @@
     --gutter: var(--space-3xs);
   }
 
+  .gutter-2xs {
+    --gutter: var(--space-2xs);
+  }
+
+  .gutter-xs {
+    --gutter: var(--space-xs);
+  }
+
   .region {
     padding-block: var(--region-space, var(--space-l-xl));
   }
