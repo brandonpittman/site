@@ -1,0 +1,49 @@
+@layer blocks {
+  /* https://cube.fyi/block.html */
+
+  /* TL;DR: Components styles */
+
+  .header {
+    max-inline-size: var(--content-measure);
+    padding-block-start: var(--space-m);
+  }
+
+  .hero {
+    /* margin-block-start: var(--space-l-2xl); */
+  }
+
+  .hero :is(h1, h2) {
+    text-transform: uppercase;
+  }
+
+  .hero a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .hero a:hover {
+    text-decoration: underline;
+  }
+
+  .features {
+    --gutter: var(--space-l);
+  }
+
+  .post {
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta {
+    border: none;
+    background-color: var(--color-base-dark);
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem;
+    font-size: var(--size-step--1);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-base-light);
+  }
+}

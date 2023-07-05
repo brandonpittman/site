@@ -1,0 +1,172 @@
+@layer utility {
+  /* https://cube.fyi/utility.html */
+
+  /* TL;DR: Utility classes (yes, like Tailwind) */
+
+  .inline-block {
+    display: inline-block;
+  }
+
+  .mx-auto {
+    margin-inline: auto;
+  }
+
+  .prose {
+    line-height: 1.75;
+  }
+
+  .flow > * + *,
+  .prose > * + * {
+    margin-block-start: var(--flow-space, var(--space-s-m));
+  }
+
+  .prose :is(pre, pre + *, figure, figure + *, h2, h3, h4, h5, h6) {
+    --flow-space: var(--space-l-xl);
+  }
+
+  .prose :is(h2 + *, h3 + *, h4 + *, h5 + *, h6 + *) {
+    --flow-space: var(--space-s);
+  }
+
+  .wrapper {
+    width: clamp(16rem, 95vw, 75rem);
+    margin-inline: auto;
+    padding-inline: var(--gutter, 1rem);
+    position: relative;
+  }
+
+  .repel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gutter, var(--space-s-m));
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: var(--wrap, wrap);
+    flex-direction: var(--direction, row);
+    justify-content: var(--justify, flex-start);
+    align-items: var(--align, center);
+    gap: var(--gutter, var(--space-s-m));
+  }
+
+  .gutter-s {
+    --gutter: var(--space-s);
+  }
+
+  .gutter-3xs {
+    --gutter: var(--space-3xs);
+  }
+
+  .region {
+    padding-block: var(--region-space, var(--space-l-xl));
+  }
+
+  .prose {
+    max-inline-size: var(--content-measure);
+  }
+
+  .object-fit-cover {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .font-mono {
+    font-family: monospace;
+  }
+
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .text-xs {
+    font-size: var(--size-step-0);
+  }
+
+  .sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .color-gray-light {
+    color: var(--color-gray-light);
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    border: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .bg-accent-light {
+    background-color: var(--color-accent-light);
+  }
+
+  .border-none {
+    border: none;
+  }
+
+  .flow-s {
+    --flow-space: var(--space-s);
+  }
+
+  .flow-m {
+    --flow-space: var(--space-m);
+  }
+
+  .flow-xs {
+    --flow-space: var(--space-xs);
+  }
+
+  .flow-2xs {
+    --flow-space: var(--space-2xs);
+  }
+
+  .flow-3xs {
+    --flow-space: var(--space-3xs);
+  }
+
+  .wrap-balance {
+    text-wrap: balance;
+  }
+
+  /* === FOR DEBUGGING PURPOSES ONLY! === */
+  /*
+* {
+  background: rgb(0 100 0 / 0.05) !important;
+} */
+}

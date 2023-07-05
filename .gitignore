@@ -1,13 +1,20 @@
-node_modules
+# build output
+dist/
+.output/
 
-build
-/api
-/.cache
-/functions/\[\[path\]\].js
-/functions/\[\[path\]\].js.map
-/public/build
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
 .env
-wrangler.toml
+.env.production
 
-app/tailwind.css
-.mf
+# macOS-specific files
+.DS_Store

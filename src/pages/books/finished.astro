@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@layouts/Layout.astro";
+
+import "core-js/proposals/array-grouping-v2";
+
+let books = await getCollection("books");
+
+let isFinished = (b) => !!b.data.completed;
+
+let finished = books
+  .filter(isFinished)
+  .sort((a, b) => (a.data.completed < b.data.completed ? -1 : 1));
+
+let grouped = Object.groupBy(finished, (f) => f.data.completed.getFullYear());
+---
+
+<Layout title="Finished - Brandon Pittman">
+  <main class="region wrapper prose flow">
+    <h1>Finished</h1>
+    <ul role="list" class="flow">
+      {
+        Object.entries(grouped)
+          .reverse()
+          .map(([year, groupedBooks]) => (
+            <li class="flow flow-m">
+              <h2>{year}</h2>
+              <ul
+                role="list"
+                class="flow"
+                style="--flow-space: var(--space-3xs)"
+              >
+                {groupedBooks.map((book) => (
+                  <li class="flow-3xs">
+                    <a href={`/books/${book.slug}`}>{book.data.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    flex: 1 1 0%;
+  }
+
+  li > a {
+    --gutter: var(--space-xs);
+  }
+
+  /* details > ul {
+    margin-block-start: 1rem;
+  }
+
+  summary {
+    @media (min-width: 640px) {
+      inline-size: 11rem;
+      text-align: end;
+    }
+  } */
+</style>

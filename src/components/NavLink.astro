@@ -1,0 +1,30 @@
+---
+let { href } = Astro.props;
+
+let { pathname } = Astro.url;
+---
+
+<li>
+  <a href={href} data-active={pathname.match(href) ? true : undefined}>
+    <slot />
+  </a>
+</li>
+
+<style>
+  a {
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    padding-inline: var(--space-2xs);
+    padding-block: var(--space-3xs);
+  }
+
+  /* This is to account for the shift caused by the padding around the links. */
+  li:first-child {
+    margin-inline-start: calc(var(--space-2xs) * -1);
+  }
+
+  [data-active] {
+    background-color: var(--color-base-dark);
+    color: var(--color-base-light);
+  }
+</style>

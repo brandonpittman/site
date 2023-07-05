@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@layouts/Layout.astro";
+
+import "core-js/proposals/array-grouping-v2";
+
+let games = await getCollection("games");
+
+let isUnfinished = (b) => !b.data.completed;
+
+let unfinished = games
+  .filter(isUnfinished)
+  .sort((a, b) => (a.data.started < b.data.started ? -1 : 1));
+---
+
+<Layout title="Unfinished - Brandon Pittman">
+  <main class="region wrapper prose flow">
+    <h1>Unfinished</h1>
+    <ul role="list" class="flow flow-m">
+      {
+        unfinished.map((book) => (
+          <li class="flow-3xs">
+            <a href={`/games/${book.slug}`}>{book.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    flex: 1 1 0%;
+  }
+
+  li > a {
+    --gutter: var(--space-xs);
+  }
+
+  /* details > ul {
+    margin-block-start: 1rem;
+  }
+
+  summary {
+    @media (min-width: 640px) {
+      inline-size: 11rem;
+      text-align: end;
+    }
+  } */
+</style>

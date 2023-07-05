@@ -1,7 +1,1 @@
-# Brandon's Homepage
-
-## Getting Started
-
-```sh
-npm run dev
-```
+# Brandon Pittman's Personal Site

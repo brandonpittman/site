@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@layouts/Layout.astro";
+
+let books = await getCollection("books");
+
+let isUnread = (b) => !b.data.started && !b.data.completed;
+
+let unread = books.filter(isUnread);
+//.sort((a, b) => (a.data.started < b.data.started ? -1 : 1));
+---
+
+<Layout title="Unfinished - Brandon Pittman">
+  <main class="region wrapper prose flow">
+    <h1>Unread</h1>
+    <ul role="list" class="flow flow-m">
+      {
+        unread.map((book) => (
+          <li class="flow-3xs">
+            <a href={`/books/${book.slug}`}>{book.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    flex: 1 1 0%;
+  }
+
+  li > a {
+    --gutter: var(--space-xs);
+  }
+
+  /* details > ul {
+    margin-block-start: 1rem;
+  }
+
+  summary {
+    @media (min-width: 640px) {
+      inline-size: 11rem;
+      text-align: end;
+    }
+  } */
+</style>

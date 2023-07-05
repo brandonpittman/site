@@ -1,2 +1,0 @@
-- add Document component
-- add catch and error boundaries

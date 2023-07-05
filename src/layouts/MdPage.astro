@@ -1,0 +1,14 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const {
+  frontmatter: { title },
+} = Astro.frontmatter || Astro.props;
+---
+
+<Layout title={`${title} - Brandon Pittman`}>
+  <h1 class="visually-hidden">{title}</h1>
+  <main class="region prose wrapper flow-xs">
+    <slot />
+  </main>
+</Layout>
