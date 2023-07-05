@@ -5,8 +5,6 @@ updated: 2023-07-05
 layout: "../layouts/MdPage.astro"
 ---
 
-# Trigger List
-
 ## Professional
 
 - Projects started, not completed
