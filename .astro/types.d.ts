@@ -189,6 +189,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"books": {
+"a-rulebook-for-arguments.md": {
+	id: "a-rulebook-for-arguments.md";
+  slug: "a-rulebook-for-arguments";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
 "baptism-of-fire.md": {
 	id: "baptism-of-fire.md";
   slug: "baptism-of-fire";
@@ -346,6 +353,13 @@ declare module 'astro:content' {
 "the-montessori-toddler.md": {
 	id: "the-montessori-toddler.md";
   slug: "the-montessori-toddler";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
+"the-practicing-stoic.md": {
+	id: "the-practicing-stoic.md";
+  slug: "the-practicing-stoic";
   body: string;
   collection: "books";
   data: InferEntrySchema<"books">
