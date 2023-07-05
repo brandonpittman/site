@@ -12,7 +12,7 @@ let formatDate = (d: number) => dateFormatter.format(Date.parse(d));
 
 <li>
   <a rel="prefetch" href={`/notes/${post.slug}`} class="no-underline cluster">
-    <span class="color-gray-light">
+    <span class="color-gray-light white-space-nowrap">
       {formatDate(post.data.date)}
     </span>
     <span class="font-bold">{post.data.title}</span>

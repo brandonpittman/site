@@ -172,6 +172,10 @@
     text-wrap: balance;
   }
 
+  .white-space-nowrap {
+    white-space: nowrap;
+  }
+
   /* === FOR DEBUGGING PURPOSES ONLY! === */
   /*
 * {

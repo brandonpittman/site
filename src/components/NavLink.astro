@@ -5,7 +5,7 @@ let { pathname } = Astro.url;
 ---
 
 <li>
-  <a href={href} data-active={pathname.match(href) ? true : undefined}>
+  <a href={href} aria-current={pathname.match(href) ? "page" : undefined}>
     <slot />
   </a>
 </li>
@@ -16,11 +16,11 @@ let { pathname } = Astro.url;
     position: relative;
   }
 
-  [data-active] {
+  [aria-current="page"] {
     color: var(--color-base-light);
   }
 
-  [data-active]::before {
+  [aria-current="page"]::before {
     content: "";
     position: absolute;
     inset-inline: calc(var(--space-2xs) * -1);
@@ -32,7 +32,7 @@ let { pathname } = Astro.url;
     background-color: var(--color-base-dark);
   }
 
-  [data-active]:focus-visible {
+  [aria-current="page"]:focus-visible {
     outline-offset: 0.6rem;
   }
 </style>
