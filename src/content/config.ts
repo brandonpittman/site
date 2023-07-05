@@ -1,13 +1,11 @@
 import { z, defineCollection } from "astro:content";
 
 let notesCollection = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.date(),
-    /* tags: z.array(z.string()),
-    image: z.string().optional(), */
   }),
 });
 
@@ -33,7 +31,6 @@ let gamesCollection = defineCollection({
   }),
 });
 
-// 3. Export a single `collections` object to register your collection(s)
 export let collections = {
   notes: notesCollection,
   books: booksCollection,
