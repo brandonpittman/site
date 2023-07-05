@@ -37,7 +37,7 @@
 
   h1 {
     font-family: var(--font-heading);
-    /* font-weight: var(--font-weight-heading-1); */
+    font-weight: var(--font-weight-heading-1);
   }
 
   h2,
@@ -89,10 +89,6 @@
   }
 
   /* Generic elements */
-
-  em {
-    color: var(--accent-color);
-  }
 
   blockquote:not([class]) {
     font-family: var(--font-heading);
