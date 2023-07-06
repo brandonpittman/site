@@ -40,7 +40,7 @@ let gamesCollection = defineCollection({
       "DC",
       "iOS",
     ]),
-    genre: z.enum(["FPS", "RPG"]).optional(),
+    genre: z.enum(["FPS", "RPG", "Action", "Adventure"]).optional(),
     started: z.date().optional(),
     completed: z.date().optional(),
     abandoned: z.boolean().optional(),
