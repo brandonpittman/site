@@ -1115,6 +1115,76 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "games": {
+"2.md": {
+	id: "2.md";
+  slug: "2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"3.md": {
+	id: "3.md";
+  slug: "3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"4.md": {
+	id: "4.md";
+  slug: "4";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"another-code-r.md": {
+	id: "another-code-r.md";
+  slug: "another-code-r";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-2.md": {
+	id: "assassin's-creed-2.md";
+  slug: "assassins-creed-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-3-the-tyranny-of-king-washington-episode-one:-the-infamy.md": {
+	id: "assassin's-creed-3-the-tyranny-of-king-washington-episode-one:-the-infamy.md";
+  slug: "assassins-creed-3-the-tyranny-of-king-washington-episode-one-the-infamy";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-3-the-tyranny-of-king-washington-episode-three:-the-redemption.md": {
+	id: "assassin's-creed-3-the-tyranny-of-king-washington-episode-three:-the-redemption.md";
+  slug: "assassins-creed-3-the-tyranny-of-king-washington-episode-three-the-redemption";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-3-the-tyranny-of-king-washington-episode-two:-the-betrayal.md": {
+	id: "assassin's-creed-3-the-tyranny-of-king-washington-episode-two:-the-betrayal.md";
+  slug: "assassins-creed-3-the-tyranny-of-king-washington-episode-two-the-betrayal";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-3.md": {
+	id: "assassin's-creed-3.md";
+  slug: "assassins-creed-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-brotherhood.md": {
+	id: "assassin's-creed-brotherhood.md";
+  slug: "assassins-creed-brotherhood";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "assassin's-creed-odyssey.md": {
 	id: "assassin's-creed-odyssey.md";
   slug: "assassins-creed-odyssey";
@@ -1125,6 +1195,90 @@ declare module 'astro:content' {
 "assassin's-creed-origins.md": {
 	id: "assassin's-creed-origins.md";
   slug: "assassins-creed-origins";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-revelations.md": {
+	id: "assassin's-creed-revelations.md";
+  slug: "assassins-creed-revelations";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed.md": {
+	id: "assassin's-creed.md";
+  slug: "assassins-creed";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-chronicles-china.md": {
+	id: "assassins-creed-chronicles-china.md";
+  slug: "assassins-creed-chronicles-china";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-iv-black-flag-aveline.md": {
+	id: "assassins-creed-iv-black-flag-aveline.md";
+  slug: "assassins-creed-iv-black-flag-aveline";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-iv-black-flag-freedom-cry.md": {
+	id: "assassins-creed-iv-black-flag-freedom-cry.md";
+  slug: "assassins-creed-iv-black-flag-freedom-cry";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-iv-black-flag.md": {
+	id: "assassins-creed-iv-black-flag.md";
+  slug: "assassins-creed-iv-black-flag";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-liberation-hd.md": {
+	id: "assassins-creed-liberation-hd.md";
+  slug: "assassins-creed-liberation-hd";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-rogue.md": {
+	id: "assassins-creed-rogue.md";
+  slug: "assassins-creed-rogue";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-syndicate-jack-the-ripper.md": {
+	id: "assassins-creed-syndicate-jack-the-ripper.md";
+  slug: "assassins-creed-syndicate-jack-the-ripper";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-syndicate.md": {
+	id: "assassins-creed-syndicate.md";
+  slug: "assassins-creed-syndicate";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-unity-dead-kings.md": {
+	id: "assassins-creed-unity-dead-kings.md";
+  slug: "assassins-creed-unity-dead-kings";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-unity.md": {
+	id: "assassins-creed-unity.md";
+  slug: "assassins-creed-unity";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
@@ -1150,9 +1304,156 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"batman-arkham-asylum.md": {
+	id: "batman-arkham-asylum.md";
+  slug: "batman-arkham-asylum";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"batman-arkham-city.md": {
+	id: "batman-arkham-city.md";
+  slug: "batman-arkham-city";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"batman-arkham-knight.md": {
+	id: "batman-arkham-knight.md";
+  slug: "batman-arkham-knight";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"batman-arkham-origins.md": {
+	id: "batman-arkham-origins.md";
+  slug: "batman-arkham-origins";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"bioshock-infinite-burial-at-sea.md": {
+	id: "bioshock-infinite-burial-at-sea.md";
+  slug: "bioshock-infinite-burial-at-sea";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"bioshock-infinite.md": {
+	id: "bioshock-infinite.md";
+  slug: "bioshock-infinite";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"bioshock.md": {
+	id: "bioshock.md";
+  slug: "bioshock";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"brothers-a-tale-of-two-sons.md": {
+	id: "brothers-a-tale-of-two-sons.md";
+  slug: "brothers-a-tale-of-two-sons";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"burnout-paradise.md": {
+	id: "burnout-paradise.md";
+  slug: "burnout-paradise";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"call-of-juarez-bound-in-blood.md": {
+	id: "call-of-juarez-bound-in-blood.md";
+  slug: "call-of-juarez-bound-in-blood";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"chaos-rings.md": {
+	id: "chaos-rings.md";
+  slug: "chaos-rings";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"chrono-trigger.md": {
+	id: "chrono-trigger.md";
+  slug: "chrono-trigger";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "cyberpunk.md": {
 	id: "cyberpunk.md";
   slug: "cyberpunk";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"dear-esther.md": {
+	id: "dear-esther.md";
+  slug: "dear-esther";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"dragon-quest-ix.md": {
+	id: "dragon-quest-ix.md";
+  slug: "dragon-quest-ix";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"enslaved-odyssey-to-the-west.md": {
+	id: "enslaved-odyssey-to-the-west.md";
+  slug: "enslaved-odyssey-to-the-west";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"eternal-darkness.md": {
+	id: "eternal-darkness.md";
+  slug: "eternal-darkness";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"firewatch.md": {
+	id: "firewatch.md";
+  slug: "firewatch";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"gears-of-war-2.md": {
+	id: "gears-of-war-2.md";
+  slug: "gears-of-war-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"gears-of-war-3.md": {
+	id: "gears-of-war-3.md";
+  slug: "gears-of-war-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"gears-of-war.md": {
+	id: "gears-of-war.md";
+  slug: "gears-of-war";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"ghost-trick.md": {
+	id: "ghost-trick.md";
+  slug: "ghost-trick";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
@@ -1164,6 +1465,62 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"gungrave.md": {
+	id: "gungrave.md";
+  slug: "gungrave";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"halo-2-anniversary.md": {
+	id: "halo-2-anniversary.md";
+  slug: "halo-2-anniversary";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"halo-2.md": {
+	id: "halo-2.md";
+  slug: "halo-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"halo-3-odst.md": {
+	id: "halo-3-odst.md";
+  slug: "halo-3-odst";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"halo-3.md": {
+	id: "halo-3.md";
+  slug: "halo-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"halo-4.md": {
+	id: "halo-4.md";
+  slug: "halo-4";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"halo-5.md": {
+	id: "halo-5.md";
+  slug: "halo-5";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"halo-combat-evolved-anniversary.md": {
+	id: "halo-combat-evolved-anniversary.md";
+  slug: "halo-combat-evolved-anniversary";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "halo-infinite.md": {
 	id: "halo-infinite.md";
   slug: "halo-infinite";
@@ -1171,9 +1528,100 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"halo-reach.md": {
+	id: "halo-reach.md";
+  slug: "halo-reach";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"heavenly-sword.md": {
+	id: "heavenly-sword.md";
+  slug: "heavenly-sword";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"ico.md": {
+	id: "ico.md";
+  slug: "ico";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"journey.md": {
+	id: "journey.md";
+  slug: "journey";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"just-cause-3.md": {
+	id: "just-cause-3.md";
+  slug: "just-cause-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"klonoa.md": {
+	id: "klonoa.md";
+  slug: "klonoa";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"l.a.-noire.md": {
+	id: "l.a.-noire.md";
+  slug: "la-noire";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"legend-of-zelda-phantom-hourglass.md": {
+	id: "legend-of-zelda-phantom-hourglass.md";
+  slug: "legend-of-zelda-phantom-hourglass";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"legend-of-zelda-spirit-tracks.md": {
+	id: "legend-of-zelda-spirit-tracks.md";
+  slug: "legend-of-zelda-spirit-tracks";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"legend-of-zelda-twilight-princess.md": {
+	id: "legend-of-zelda-twilight-princess.md";
+  slug: "legend-of-zelda-twilight-princess";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"little-big-planet.md": {
+	id: "little-big-planet.md";
+  slug: "little-big-planet";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"mark-of-the-ninja.md": {
+	id: "mark-of-the-ninja.md";
+  slug: "mark-of-the-ninja";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "mass-effect-2.md": {
 	id: "mass-effect-2.md";
   slug: "mass-effect-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"mass-effect-3-the-citadel.md": {
+	id: "mass-effect-3-the-citadel.md";
+  slug: "mass-effect-3-the-citadel";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
@@ -1192,6 +1640,90 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"metal-gear-solid-2-sons-of-liberty.md": {
+	id: "metal-gear-solid-2-sons-of-liberty.md";
+  slug: "metal-gear-solid-2-sons-of-liberty";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"metal-gear-solid-3-snake-eater.md": {
+	id: "metal-gear-solid-3-snake-eater.md";
+  slug: "metal-gear-solid-3-snake-eater";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"metal-gear-solid-4-guns-of-the-patriots.md": {
+	id: "metal-gear-solid-4-guns-of-the-patriots.md";
+  slug: "metal-gear-solid-4-guns-of-the-patriots";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"metal-gear-solid-v-ground-zeroes.md": {
+	id: "metal-gear-solid-v-ground-zeroes.md";
+  slug: "metal-gear-solid-v-ground-zeroes";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"metal-gear-solid-v-the-phantom-pain.md": {
+	id: "metal-gear-solid-v-the-phantom-pain.md";
+  slug: "metal-gear-solid-v-the-phantom-pain";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"metal-gear-solid.md": {
+	id: "metal-gear-solid.md";
+  slug: "metal-gear-solid";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"mirror's-edge.md": {
+	id: "mirror's-edge.md";
+  slug: "mirrors-edge";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"new-super-mario-bros..md": {
+	id: "new-super-mario-bros..md";
+  slug: "new-super-mario-bros";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"no-more-heroes.md": {
+	id: "no-more-heroes.md";
+  slug: "no-more-heroes";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"phoenix-wright-ace-attorney.md": {
+	id: "phoenix-wright-ace-attorney.md";
+  slug: "phoenix-wright-ace-attorney";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"portal-2.md": {
+	id: "portal-2.md";
+  slug: "portal-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"portal.md": {
+	id: "portal.md";
+  slug: "portal";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "red-dead-redemption-2.md": {
 	id: "red-dead-redemption-2.md";
   slug: "red-dead-redemption-2";
@@ -1206,9 +1738,156 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"rise-of-the-tomb-raider.md": {
+	id: "rise-of-the-tomb-raider.md";
+  slug: "rise-of-the-tomb-raider";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"shadow-complex.md": {
+	id: "shadow-complex.md";
+  slug: "shadow-complex";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"shadows-of-the-colossus.md": {
+	id: "shadows-of-the-colossus.md";
+  slug: "shadows-of-the-colossus";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"shenmue-ii.md": {
+	id: "shenmue-ii.md";
+  slug: "shenmue-ii";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"shenmue.md": {
+	id: "shenmue.md";
+  slug: "shenmue";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "south-park-the-fractured-but-whole.md": {
 	id: "south-park-the-fractured-but-whole.md";
   slug: "south-park-the-fractured-but-whole";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"south-park-the-stick-of-truth.md": {
+	id: "south-park-the-stick-of-truth.md";
+  slug: "south-park-the-stick-of-truth";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"splinter-cell-blacklist.md": {
+	id: "splinter-cell-blacklist.md";
+  slug: "splinter-cell-blacklist";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"splinter-cell-conviction.md": {
+	id: "splinter-cell-conviction.md";
+  slug: "splinter-cell-conviction";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"super-mario-galaxy-2.md": {
+	id: "super-mario-galaxy-2.md";
+  slug: "super-mario-galaxy-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"super-mario-galaxy.md": {
+	id: "super-mario-galaxy.md";
+  slug: "super-mario-galaxy";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"super-paper-mario.md": {
+	id: "super-paper-mario.md";
+  slug: "super-paper-mario";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"superhot.md": {
+	id: "superhot.md";
+  slug: "superhot";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"tales-from-the-borderlands.md": {
+	id: "tales-from-the-borderlands.md";
+  slug: "tales-from-the-borderlands";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"teslagrad.md": {
+	id: "teslagrad.md";
+  slug: "teslagrad";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-last-of-us-remastered.md": {
+	id: "the-last-of-us-remastered.md";
+  slug: "the-last-of-us-remastered";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-stanley-parable.md": {
+	id: "the-stanley-parable.md";
+  slug: "the-stanley-parable";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-swapper.md": {
+	id: "the-swapper.md";
+  slug: "the-swapper";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-walking-dead-400-days.md": {
+	id: "the-walking-dead-400-days.md";
+  slug: "the-walking-dead-400-days";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-walking-dead-season-1.md": {
+	id: "the-walking-dead-season-1.md";
+  slug: "the-walking-dead-season-1";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-walking-dead-season-two.md": {
+	id: "the-walking-dead-season-two.md";
+  slug: "the-walking-dead-season-two";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-walking-dead-seasons-1-and-2.md": {
+	id: "the-walking-dead-seasons-1-and-2.md";
+  slug: "the-walking-dead-seasons-1-and-2";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
@@ -1234,9 +1913,72 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
-"witcher-3.md": {
-	id: "witcher-3.md";
-  slug: "witcher-3";
+"the-witcher.md": {
+	id: "the-witcher.md";
+  slug: "the-witcher";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-wolf-among-us.md": {
+	id: "the-wolf-among-us.md";
+  slug: "the-wolf-among-us";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"titanfall-2.md": {
+	id: "titanfall-2.md";
+  slug: "titanfall-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"titanfall.md": {
+	id: "titanfall.md";
+  slug: "titanfall";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"tomb-raider-definitive-edition.md": {
+	id: "tomb-raider-definitive-edition.md";
+  slug: "tomb-raider-definitive-edition";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"trauma.md": {
+	id: "trauma.md";
+  slug: "trauma";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"uncharted-2.md": {
+	id: "uncharted-2.md";
+  slug: "uncharted-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"valiant-hearts-the-great-war.md": {
+	id: "valiant-hearts-the-great-war.md";
+  slug: "valiant-hearts-the-great-war";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"way-of-the-samurai.md": {
+	id: "way-of-the-samurai.md";
+  slug: "way-of-the-samurai";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"wolfenstein-the-new-order.md": {
+	id: "wolfenstein-the-new-order.md";
+  slug: "wolfenstein-the-new-order";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">

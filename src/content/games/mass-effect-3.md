@@ -1,5 +1,5 @@
 ---
 title: "Mass Effect 3"
-platform: Xbox Series X
-completed: 2021-12-31
+platform: Xbox 360
+completed: 2019-12-31
 ---
