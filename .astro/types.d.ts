@@ -1115,6 +1115,20 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "games": {
+"assassin's-creed-valhalla-the-seige-of-paris.md": {
+	id: "assassin's-creed-valhalla-the-seige-of-paris.md";
+  slug: "assassins-creed-valhalla-the-seige-of-paris";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-valhalla-wrath-of-the-druids.md": {
+	id: "assassin's-creed-valhalla-wrath-of-the-druids.md";
+  slug: "assassins-creed-valhalla-wrath-of-the-druids";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "cyberpunk.md": {
 	id: "cyberpunk.md";
   slug: "cyberpunk";
@@ -1122,9 +1136,37 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"guardians-of-the-galaxy.md": {
+	id: "guardians-of-the-galaxy.md";
+  slug: "guardians-of-the-galaxy";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "halo-infinite.md": {
 	id: "halo-infinite.md";
   slug: "halo-infinite";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"mass-effect-2.md": {
+	id: "mass-effect-2.md";
+  slug: "mass-effect-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"mass-effect-3.md": {
+	id: "mass-effect-3.md";
+  slug: "mass-effect-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"mass-effect.md": {
+	id: "mass-effect.md";
+  slug: "mass-effect";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">

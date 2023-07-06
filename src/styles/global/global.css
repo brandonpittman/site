@@ -145,6 +145,10 @@
     padding-inline-end: env(safe-area-inset-right);
   }
 
+  ::marker {
+    color: var(--color-gray-subtle-dark);
+  }
+
   /* main,
 header,
 aside {
