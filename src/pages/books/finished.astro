@@ -5,8 +5,6 @@ import Layout from "@layouts/Layout.astro";
 
 import "core-js/proposals/array-grouping-v2";
 
-let url = new URL(Astro.url);
-let searchParams = url.searchParams;
 
 let books = await getCollection("books");
 
@@ -16,6 +14,8 @@ let finished = books
   .filter(isFinished)
   .sort((a, b) => (a.data.completed > b.data.completed ? -1 : 1));
 
+let url = new URL(Astro.url);
+let searchParams = url.searchParams;
 let q = searchParams.get("q")?.trim();
 
 if (q) {

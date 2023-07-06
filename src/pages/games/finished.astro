@@ -9,32 +9,50 @@ let games = await getCollection("games");
 
 let isFinished = (b) => !!b.data.completed;
 
-let finished = games
-  .filter(isFinished)
-  .sort((a, b) => (a.data.completed < b.data.completed ? -1 : 1));
+let finished = games.filter(isFinished);
 
-let grouped = Object.groupBy(finished, (f) => f.data.completed.getFullYear());
+let url = new URL(Astro.url);
+let searchParams = url.searchParams;
+let q = searchParams.get("q")?.trim();
+
+if (q) {
+  let regex = new RegExp(q, "i");
+  finished = finished.filter(
+    (v) =>
+      v.data.title.match(regex) ||
+      v.data?.genre?.match(regex) ||
+      v.data?.platform?.match(regex)
+  );
+}
+
+let grouped = finished
+  .sort((a, b) => (a.data.completed < b.data.completed ? -1 : 1))
+  .reverse();
 ---
 
 <Layout title="Finished - Brandon Pittman">
   <main class="region wrapper prose flow">
     <h1>Finished</h1>
-    <ul role="list" class="flow">
+    <form>
+      <label for="search" class="visually-hidden">Title</label>
+      <div class="cluster gutter-2xs" style="--align: stretch">
+        <input
+          id="search"
+          type="search"
+          name="q"
+          placeholder="Search by title, genre, or platform…"
+          style="inline-size: var(--size-14)"
+        />
+        <button type="submit" class="cta">Search</button>
+      </div>
+    </form>
+    <ul class="flow">
       {
-        Object.entries(grouped)
-          .reverse()
-          .map(([year, groupedgames]) => (
-            <li class="flow flow-m">
-              <h2>{year === "2019" ? "Pre-2020" : year}</h2>
-              <ul class="flow" style="--flow-space: var(--space-3xs)">
-                {groupedgames.map((book) => (
-                  <li class="flow-3xs">
-                    <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))
+        grouped.map((book) => (
+          <li class="flow-3xs">
+            <a href={`/games/${book.slug}`}>{book.data.title}</a>
+          </li>
+        ))
       }
     </ul>
   </main>

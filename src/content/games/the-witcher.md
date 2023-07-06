@@ -1,6 +1,6 @@
 ---
 title: The Witcher
 genre: RPG
-completed: 2019-01-01
+completed: 2019-12-31
 platform: PC
 ---

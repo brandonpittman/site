@@ -39,9 +39,9 @@ const { Content } = await entry.render();
           }
           {entry.data.genre ? <span>{" · " + entry.data.genre}</span> : null}
           {
-            entry.data.completed ? (
+            entry.data.completed && typeof entry.data.completed === "object" ? (
               <span>
-                {` · Read ${
+                {` · Last read ${
                   entry.data.completed.getFullYear() === 2020
                     ? "before 2021"
                     : "in " + entry.data.completed.getFullYear()

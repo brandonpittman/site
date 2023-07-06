@@ -17,7 +17,7 @@ let booksCollection = defineCollection({
     translator: z.string().optional(),
     genre: z.enum(["History", "Fiction", "Philosophy", "Writing"]).optional(),
     started: z.date().optional(),
-    completed: z.date().optional(),
+    completed: z.union([z.boolean(), z.date()]).optional(),
     abandoned: z.boolean().optional(),
   }),
 });
@@ -43,7 +43,7 @@ let gamesCollection = defineCollection({
     ]),
     genre: z.enum(["FPS", "RPG", "Action", "Adventure"]).optional(),
     started: z.date().optional(),
-    completed: z.date().optional(),
+    completed: z.union([z.boolean(), z.date()]).optional(),
     abandoned: z.boolean().optional(),
   }),
 });

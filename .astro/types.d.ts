@@ -1192,27 +1192,6 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "games": {
-"2.md": {
-	id: "2.md";
-  slug: "2";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".md"] };
-"3.md": {
-	id: "3.md";
-  slug: "3";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".md"] };
-"4.md": {
-	id: "4.md";
-  slug: "4";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".md"] };
 "another-code-r.md": {
 	id: "another-code-r.md";
   slug: "another-code-r";
@@ -1619,6 +1598,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"hogwarts-legacy.md": {
+	id: "hogwarts-legacy.md";
+  slug: "hogwarts-legacy";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "ico.md": {
 	id: "ico.md";
   slug: "ico";
@@ -1818,6 +1804,34 @@ declare module 'astro:content' {
 "rise-of-the-tomb-raider.md": {
 	id: "rise-of-the-tomb-raider.md";
   slug: "rise-of-the-tomb-raider";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"ryu-ga-gotoku-2.md": {
+	id: "ryu-ga-gotoku-2.md";
+  slug: "ryu-ga-gotoku-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"ryu-ga-gotoku-3.md": {
+	id: "ryu-ga-gotoku-3.md";
+  slug: "ryu-ga-gotoku-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"ryu-ga-gotoku-4.md": {
+	id: "ryu-ga-gotoku-4.md";
+  slug: "ryu-ga-gotoku-4";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"ryu-ga-gotoku.md": {
+	id: "ryu-ga-gotoku.md";
+  slug: "ryu-ga-gotoku";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
