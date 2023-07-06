@@ -1,5 +1,6 @@
-@import "https://unpkg.com/open-props/easings.min.css" layer(props);
-@import "https://unpkg.com/open-props/animations.min.css" layer(props);
+@import "https://unpkg.com/open-props" layer(props);
+/* @import "https://unpkg.com/open-props/easings.min.css" layer(props);
+@import "https://unpkg.com/open-props/animations.min.css" layer(props); */
 
 @layer props {
   :root {

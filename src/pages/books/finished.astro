@@ -5,6 +5,9 @@ import Layout from "@layouts/Layout.astro";
 
 import "core-js/proposals/array-grouping-v2";
 
+let url = new URL(Astro.url);
+let searchParams = url.searchParams;
+
 let books = await getCollection("books");
 
 let isFinished = (b) => !!b.data.completed;
@@ -13,12 +16,33 @@ let finished = books
   .filter(isFinished)
   .sort((a, b) => (a.data.completed > b.data.completed ? -1 : 1));
 
+if (searchParams.get("q")) {
+  finished = finished.filter(
+    (v) =>
+      v.data.title.match(new RegExp(searchParams.get("q"), "i")) ||
+      v.data.author.match(new RegExp(searchParams.get("q"), "i"))
+  );
+}
+
 let grouped = Object.groupBy(finished, (f) => f.data.completed.getFullYear());
 ---
 
 <Layout title="Finished - Brandon Pittman">
-  <main class="region wrapper prose flow">
+  <main class="region wrapper prose flow flox-xs">
     <h1>Finished</h1>
+    <form>
+      <label for="search" class="visually-hidden">Title</label>
+      <div class="cluster gutter-2xs">
+        <input
+          id="search"
+          type="search"
+          name="q"
+          placeholder="Search by title or author…"
+          style="inline-size: var(--size-13)"
+        />
+        <button type="submit" class="cta">Search</button>
+      </div>
+    </form>
     <ul role="list" class="flow">
       {
         Object.entries(grouped)

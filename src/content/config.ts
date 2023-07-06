@@ -14,6 +14,7 @@ let booksCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     author: z.string(),
+    translator: z.string().optional(),
     genre: z.enum(["History", "Fiction", "Philosophy", "Writing"]).optional(),
     started: z.date().optional(),
     completed: z.date().optional(),

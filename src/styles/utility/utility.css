@@ -3,6 +3,10 @@
 
   /* TL;DR: Utility classes (yes, like Tailwind) */
 
+  .block {
+    display: block;
+  }
+
   .inline-block {
     display: inline-block;
   }
@@ -109,6 +113,10 @@
 
   .text-xs {
     font-size: var(--size-step-0);
+  }
+
+  .uppercase {
+    text-transform: uppercase;
   }
 
   .sr-only {

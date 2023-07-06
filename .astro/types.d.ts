@@ -721,16 +721,16 @@ declare module 'astro:content' {
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
-"meditations-waterfield.md": {
-	id: "meditations-waterfield.md";
-  slug: "meditations-waterfield";
+"meditations-hayes.md": {
+	id: "meditations-hayes.md";
+  slug: "meditations-hayes";
   body: string;
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
-"meditations.md": {
-	id: "meditations.md";
-  slug: "meditations";
+"meditations-waterfield.md": {
+	id: "meditations-waterfield.md";
+  slug: "meditations-waterfield";
   body: string;
   collection: "books";
   data: InferEntrySchema<"books">
