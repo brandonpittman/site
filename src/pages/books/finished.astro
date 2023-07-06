@@ -16,11 +16,12 @@ let finished = books
   .filter(isFinished)
   .sort((a, b) => (a.data.completed > b.data.completed ? -1 : 1));
 
-if (searchParams.get("q")) {
+let q = searchParams.get("q")?.trim();
+
+if (q) {
+  let regex = new RegExp(q, "i");
   finished = finished.filter(
-    (v) =>
-      v.data.title.match(new RegExp(searchParams.get("q"), "i")) ||
-      v.data.author.match(new RegExp(searchParams.get("q"), "i"))
+    (v) => v.data.title.match(regex) || v.data.author.match(regex)
   );
 }
 
@@ -32,7 +33,7 @@ let grouped = Object.groupBy(finished, (f) => f.data.completed.getFullYear());
     <h1>Finished</h1>
     <form>
       <label for="search" class="visually-hidden">Title</label>
-      <div class="cluster gutter-2xs">
+      <div class="cluster gutter-2xs" style="--align: stretch">
         <input
           id="search"
           type="search"
