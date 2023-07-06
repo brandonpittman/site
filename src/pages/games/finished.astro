@@ -25,12 +25,8 @@ let grouped = Object.groupBy(finished, (f) => f.data.completed.getFullYear());
           .reverse()
           .map(([year, groupedgames]) => (
             <li class="flow flow-m">
-              <h2>{year}</h2>
-              <ul
-                role="list"
-                class="flow"
-                style="--flow-space: var(--space-3xs)"
-              >
+              <h2>{year === "2019" ? "Pre-2020" : year}</h2>
+              <ul class="flow" style="--flow-space: var(--space-3xs)">
                 {groupedgames.map((book) => (
                   <li class="flow-3xs">
                     <a href={`/games/${book.slug}`}>{book.data.title}</a>
