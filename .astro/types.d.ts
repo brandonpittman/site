@@ -1115,15 +1115,15 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "games": {
-"assassin's-creed-valhalla-the-seige-of-paris.md": {
-	id: "assassin's-creed-valhalla-the-seige-of-paris.md";
+"assassins-creed-valhalla-the-seige-of-paris.md": {
+	id: "assassins-creed-valhalla-the-seige-of-paris.md";
   slug: "assassins-creed-valhalla-the-seige-of-paris";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
-"assassin's-creed-valhalla-wrath-of-the-druids.md": {
-	id: "assassin's-creed-valhalla-wrath-of-the-druids.md";
+"assassins-creed-valhalla-wrath-of-the-druids.md": {
+	id: "assassins-creed-valhalla-wrath-of-the-druids.md";
   slug: "assassins-creed-valhalla-wrath-of-the-druids";
   body: string;
   collection: "games";
