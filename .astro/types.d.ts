@@ -259,6 +259,13 @@ declare module 'astro:content' {
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
+"antifragile.md": {
+	id: "antifragile.md";
+  slug: "antifragile";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
 "at-the-existentialist-cafe.md": {
 	id: "at-the-existentialist-cafe.md";
   slug: "at-the-existentialist-cafe";
@@ -490,6 +497,13 @@ declare module 'astro:content' {
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
+"fooled-by-randomness.md": {
+	id: "fooled-by-randomness.md";
+  slug: "fooled-by-randomness";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
 "from-bash-to-z-shell.md": {
 	id: "from-bash-to-z-shell.md";
   slug: "from-bash-to-z-shell";
@@ -546,6 +560,13 @@ declare module 'astro:content' {
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
+"hellenistic-lives.md": {
+	id: "hellenistic-lives.md";
+  slug: "hellenistic-lives";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
 "hellenistic-philsophy.md": {
 	id: "hellenistic-philsophy.md";
   slug: "hellenistic-philsophy";
@@ -598,6 +619,13 @@ declare module 'astro:content' {
 "in-fifty-years-we'll-all-be-chicks.md": {
 	id: "in-fifty-years-we'll-all-be-chicks.md";
   slug: "in-fifty-years-well-all-be-chicks";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
+"invisible-monsters-remix.md": {
+	id: "invisible-monsters-remix.md";
+  slug: "invisible-monsters-remix";
   body: string;
   collection: "books";
   data: InferEntrySchema<"books">
@@ -833,6 +861,13 @@ declare module 'astro:content' {
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
+"roman-lives.md": {
+	id: "roman-lives.md";
+  slug: "roman-lives";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
 "season-of-storms.md": {
 	id: "season-of-storms.md";
   slug: "season-of-storms";
@@ -847,9 +882,23 @@ declare module 'astro:content' {
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
+"shady-characters.md": {
+	id: "shady-characters.md";
+  slug: "shady-characters";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
 "shape-up.md": {
 	id: "shape-up.md";
   slug: "shape-up";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
+"skin-in-the-game.md": {
+	id: "skin-in-the-game.md";
+  slug: "skin-in-the-game";
   body: string;
   collection: "books";
   data: InferEntrySchema<"books">
@@ -903,6 +952,13 @@ declare module 'astro:content' {
   collection: "books";
   data: InferEntrySchema<"books">
 } & { render(): Render[".md"] };
+"tell-all.md": {
+	id: "tell-all.md";
+  slug: "tell-all";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
 "text-processing-with-ruby.md": {
 	id: "text-processing-with-ruby.md";
   slug: "text-processing-with-ruby";
@@ -927,6 +983,20 @@ declare module 'astro:content' {
 "the-antidote.md": {
 	id: "the-antidote.md";
   slug: "the-antidote";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
+"the-bed-of-procrustes.md": {
+	id: "the-bed-of-procrustes.md";
+  slug: "the-bed-of-procrustes";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
+"the-black-swan.md": {
+	id: "the-black-swan.md";
+  slug: "the-black-swan";
   body: string;
   collection: "books";
   data: InferEntrySchema<"books">
@@ -1053,6 +1123,13 @@ declare module 'astro:content' {
 "the-tower-of-swallows.md": {
 	id: "the-tower-of-swallows.md";
   slug: "the-tower-of-swallows";
+  body: string;
+  collection: "books";
+  data: InferEntrySchema<"books">
+} & { render(): Render[".md"] };
+"thucydides-the-war-of-the-peloponnesians-and-the-athenians.md": {
+	id: "thucydides-the-war-of-the-peloponnesians-and-the-athenians.md";
+  slug: "thucydides-the-war-of-the-peloponnesians-and-the-athenians";
   body: string;
   collection: "books";
   data: InferEntrySchema<"books">

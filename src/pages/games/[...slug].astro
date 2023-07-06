@@ -31,9 +31,12 @@ const { Content } = await entry.render();
           <span>
             {entry.data.platform}
           </span>
+          {entry.data.genre ? <span>{" · " + entry.data.genre}</span> : null}
           {
             entry.data.completed ? (
-              <span>{" · " + entry.data.completed.getFullYear()}</span>
+              <span>
+                {" · Played in " + entry.data.completed.getFullYear()}
+              </span>
             ) : null
           }
         </p>
