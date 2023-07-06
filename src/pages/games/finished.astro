@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 
 import Layout from "@layouts/Layout.astro";
+import SearchForm from "@components/FinishedSearchForm.astro";
 
 import "core-js/proposals/array-grouping-v2";
 
@@ -33,19 +34,7 @@ let grouped = finished
 <Layout title="Finished - Brandon Pittman">
   <main class="region wrapper prose flow">
     <h1>Finished</h1>
-    <form>
-      <label for="search" class="visually-hidden">Title</label>
-      <div class="cluster gutter-2xs" style="--align: stretch">
-        <input
-          id="search"
-          type="search"
-          name="q"
-          placeholder="Search by title, genre, or platform…"
-          style="inline-size: var(--size-14)"
-        />
-        <button type="submit" class="cta">Search</button>
-      </div>
-    </form>
+    <SearchForm>Title</SearchForm>
     <ul class="flow">
       {
         grouped.map((book) => (

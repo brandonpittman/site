@@ -1,0 +1,19 @@
+<form>
+  <label for="search" class:list={[{ "visually-hidden": true }]}>
+    <slot />
+  </label>
+  <div
+    class="sidebar"
+    data-dir="rtl"
+    style="--gutter: var(--space-2xs); --sidebar-min-inline-size: 80%; max-inline-size: var(--size-15)"
+  >
+    <input
+      autofocus
+      id="search"
+      type="search"
+      name="q"
+      placeholder="Search by title, genre, or platform…"
+    />
+    <button type="submit" class="cta"> Search</button>
+  </div>
+</form>
