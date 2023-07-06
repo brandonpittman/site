@@ -1115,6 +1115,20 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "games": {
+"assassin's-creed-odyssey.md": {
+	id: "assassin's-creed-odyssey.md";
+  slug: "assassins-creed-odyssey";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassin's-creed-origins.md": {
+	id: "assassin's-creed-origins.md";
+  slug: "assassins-creed-origins";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "assassins-creed-valhalla-the-seige-of-paris.md": {
 	id: "assassins-creed-valhalla-the-seige-of-paris.md";
   slug: "assassins-creed-valhalla-the-seige-of-paris";
@@ -1125,6 +1139,13 @@ declare module 'astro:content' {
 "assassins-creed-valhalla-wrath-of-the-druids.md": {
 	id: "assassins-creed-valhalla-wrath-of-the-druids.md";
   slug: "assassins-creed-valhalla-wrath-of-the-druids";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"assassins-creed-valhalla.md": {
+	id: "assassins-creed-valhalla.md";
+  slug: "assassins-creed-valhalla";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
@@ -1167,6 +1188,48 @@ declare module 'astro:content' {
 "mass-effect.md": {
 	id: "mass-effect.md";
   slug: "mass-effect";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"red-dead-redemption-2.md": {
+	id: "red-dead-redemption-2.md";
+  slug: "red-dead-redemption-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"red-dead-redemption.md": {
+	id: "red-dead-redemption.md";
+  slug: "red-dead-redemption";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"south-park-the-fractured-but-whole.md": {
+	id: "south-park-the-fractured-but-whole.md";
+  slug: "south-park-the-fractured-but-whole";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-witcher-2.md": {
+	id: "the-witcher-2.md";
+  slug: "the-witcher-2";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-witcher-3.md": {
+	id: "the-witcher-3.md";
+  slug: "the-witcher-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
+"the-witcher-thronebreaker.md": {
+	id: "the-witcher-thronebreaker.md";
+  slug: "the-witcher-thronebreaker";
   body: string;
   collection: "games";
   data: InferEntrySchema<"games">
