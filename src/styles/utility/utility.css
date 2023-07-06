@@ -52,6 +52,11 @@
     gap: var(--gutter, var(--space-s-m));
   }
 
+  .cluster[data-nowrap] {
+    --wrap: nowrap;
+    overflow: auto;
+  }
+
   .gutter-s {
     --gutter: var(--space-s);
   }
