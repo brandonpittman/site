@@ -35,7 +35,11 @@ const { Content } = await entry.render();
           {
             entry.data.completed ? (
               <span>
-                {" · Played in " + entry.data.completed.getFullYear()}
+                {` · Played ${
+                  entry.data.completed.getFullYear() === 2019
+                    ? "before 2020"
+                    : "in " + entry.data.completed.getFullYear()
+                }`}
               </span>
             ) : null
           }
