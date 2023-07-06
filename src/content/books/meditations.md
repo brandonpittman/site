@@ -1,5 +1,5 @@
 ---
 title: "Meditations"
-author: Marcus Aurelius and Robin Waterfield
-completed: 2021-12-31
+author: Marcus Aurelius and Gregory Hayes
+completed: 2020-12-31
 ---
