@@ -15,7 +15,6 @@ if (entry === undefined) {
 }
 // 4. (Optional) Render the entry to HTML in the template
 const { Content } = await entry.render();
-
 ---
 
 <Layout title={`${entry.data.title} - Brandon Pittman`}>
@@ -41,7 +40,13 @@ const { Content } = await entry.render();
           {entry.data.genre ? <span>{" · " + entry.data.genre}</span> : null}
           {
             entry.data.completed ? (
-              <span>{" · Read in " + entry.data.completed.getFullYear()}</span>
+              <span>
+                {` · Read ${
+                  entry.data.completed.getFullYear() === 2020
+                    ? "before 2021"
+                    : "in " + entry.data.completed.getFullYear()
+                }`}
+              </span>
             ) : null
           }
         </p>
