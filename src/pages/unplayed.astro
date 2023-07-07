@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "@layouts/Layout.astro";
 import SearchForm from "@components/FinishedSearchForm.astro";
+import UnplayedItem from "@components/UnplayedItem.astro";
 
 import "core-js/proposals/array-grouping-v2";
 
@@ -47,10 +48,8 @@ if (q) {
           <article id="unplayed" class="flow">
             <h2>Unplayed</h2>
             <ul class="flow">
-              {unplayed.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+              {unplayed.map((game) => (
+                <UnplayedItem {...game} />
               ))}
             </ul>
           </article>
@@ -62,10 +61,8 @@ if (q) {
           <article id="unbeaten" class="flow">
             <h2>Unbeaten</h2>
             <ul class="flow">
-              {unbeaten.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+              {unbeaten.map((game) => (
+                <UnplayedItem {...game} />
               ))}
             </ul>
           </article>
@@ -77,10 +74,8 @@ if (q) {
           <article id="beaten" class="flow">
             <h2>Beaten</h2>
             <ul class="flow">
-              {beaten.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+              {beaten.map((game) => (
+                <UnplayedItem {...game} />
               ))}
             </ul>
           </article>
@@ -92,10 +87,8 @@ if (q) {
           <article id="beaten" class="flow">
             <h2>Abandoned</h2>
             <ul class="flow">
-              {abandoned.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+              {abandoned.map((game) => (
+                <UnplayedItem {...game} />
               ))}
             </ul>
           </article>

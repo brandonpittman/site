@@ -1,19 +1,19 @@
 ---
 let {
   slug,
-  data: { title, author },
+  data: { title, platform },
 } = Astro.props;
 ---
 
 <li class="flow-3xs">
   <div class="cluster gutter-3xs" style="--align: baseline;">
-    <a href={`/books/${slug}`}>
+    <a href={`/games/${slug}`}>
       <span>
         {title}
       </span>
     </a>
-    <span class="color-gray-light text-2xs font-medium">
-      {author}
+    <span class="color-gray-light text-2xs white-space-nowrap font-medium">
+      {platform}
     </span>
   </div>
 </li>

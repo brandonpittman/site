@@ -1213,20 +1213,6 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
-"assassin's-creed-3-the-tyranny-of-king-washington-episode-three:-the-redemption.md": {
-	id: "assassin's-creed-3-the-tyranny-of-king-washington-episode-three:-the-redemption.md";
-  slug: "assassins-creed-3-the-tyranny-of-king-washington-episode-three-the-redemption";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".md"] };
-"assassin's-creed-3-the-tyranny-of-king-washington-episode-two:-the-betrayal.md": {
-	id: "assassin's-creed-3-the-tyranny-of-king-washington-episode-two:-the-betrayal.md";
-  slug: "assassins-creed-3-the-tyranny-of-king-washington-episode-two-the-betrayal";
-  body: string;
-  collection: "games";
-  data: InferEntrySchema<"games">
-} & { render(): Render[".md"] };
 "assassin's-creed-3.md": {
 	id: "assassin's-creed-3.md";
   slug: "assassins-creed-3";
