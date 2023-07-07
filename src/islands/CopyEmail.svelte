@@ -1,7 +1,7 @@
 <script lang="ts">
-export let isAnimated = false
+let isAnimated = false
 
-export let onClick = () => {
+let onClick = () => {
   navigator.clipboard.writeText("hey@brandonpittman.com").then(() => {
     isAnimated = true
   })}
