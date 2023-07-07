@@ -1,3 +1,9 @@
+---
+let url = new URL(Astro.url);
+let searchParams = url.searchParams;
+let q = searchParams.get("q")?.trim();
+---
+
 <form>
   <label for="search" class:list={[{ "visually-hidden": true }]}>
     <slot />
@@ -9,6 +15,7 @@
   >
     <input
       autofocus
+      value={q}
       id="search"
       type="search"
       name="q"

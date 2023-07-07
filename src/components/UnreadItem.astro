@@ -12,8 +12,11 @@ let {
         {title}
       </span>
     </a>
-    <span class="color-gray-light text-2xs font-medium">
+    <a
+      href={`/unread?q=${author}`}
+      class="no-underline color-gray-light text-2xs white-space-nowrap font-medium"
+    >
       {author}
-    </span>
+    </a>
   </div>
 </li>
