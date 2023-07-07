@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "@layouts/Layout.astro";
 import SearchForm from "@components/FinishedSearchForm.astro";
+import UnreadItem from "@components/UnreadItem.astro";
 
 import "core-js/proposals/array-grouping-v2";
 
@@ -38,7 +39,7 @@ if (q) {
 ---
 
 <Layout title="Unread - Brandon Pittman">
-  <main class="region wrapper prose flow flox-xs">
+  <main class="region wrapper prose flow w-full">
     <h1 class="visually-hidden">Books</h1>
 
     <SearchForm>Title</SearchForm>
@@ -50,9 +51,7 @@ if (q) {
             <h2>Unread</h2>
             <ul class="flow">
               {unread.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+                <UnreadItem {...book} />
               ))}
             </ul>
           </article>
@@ -64,9 +63,7 @@ if (q) {
             <h2>Reading</h2>
             <ul class="flow">
               {reading.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+                <UnreadItem {...book} />
               ))}
             </ul>
           </article>
@@ -79,9 +76,7 @@ if (q) {
             <h2>Read</h2>
             <ul class="flow">
               {read.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+                <UnreadItem {...book} />
               ))}
             </ul>
           </article>
@@ -94,9 +89,7 @@ if (q) {
             <h2>Abandoned</h2>
             <ul class="flow">
               {abandoned.map((book) => (
-                <li class="flow-3xs">
-                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
-                </li>
+                <UnreadItem {...book} />
               ))}
             </ul>
           </article>

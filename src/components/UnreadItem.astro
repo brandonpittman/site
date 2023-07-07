@@ -1,0 +1,19 @@
+---
+let {
+  slug,
+  data: { title, author },
+} = Astro.props;
+---
+
+<li class="flow-3xs">
+  <div class="flex" style="align-items: baseline; gap: .25rem">
+    <a href={`/books/${slug}`}>
+      <span>
+        {title}
+      </span>
+    </a>
+    <span class="color-gray-light text-2xs">
+      {author}
+    </span>
+  </div>
+</li>
