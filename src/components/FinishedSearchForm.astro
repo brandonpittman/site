@@ -19,7 +19,7 @@ let q = searchParams.get("q")?.trim();
       id="search"
       type="search"
       name="q"
-      placeholder="Search by title, genre, or platform…"
+      placeholder={Astro.props.placeholder}
     />
     <button type="submit" class="cta"> Search</button>
   </div>
