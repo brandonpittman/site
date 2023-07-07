@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import CopyEmail from "../islands/CopyEmail.svelte";
+import { CopyEmail } from "../islands/CopyEmail.tsx";
 
 let traditionStoicism =
   "https://traditionalstoicism.com/the-path-of-the-prokopton/";
@@ -46,7 +46,7 @@ let coffee = "https://buymeacoffee.com/blp";
           >hey@brandonpittman.com</a
         >
       </div>
-      <CopyEmail client:idle />
+      <CopyEmail client:only="solid-js" />
     </div>
   </main>
 </Layout>
