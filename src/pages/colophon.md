@@ -9,7 +9,7 @@ This site is maintained by Brandon Pittman. You can [email any feedback or
 questions](mailto:hey@brandonpittman.com). The source code for this site is [publicly
 available on GitHub](https://github.com/brandonpittman/site).
 
-This site is built with [Astro](https://astro.build).
+This site is built with [Astro](https://astro.build) and a tiny bit of [SolidJS](https://solidjs.com) just to try it out.
 All the styling is written using [CUBE CSS][cube].
 The one place with JavaScript is the email address copy button on the homepage.
 That's an Astro island built with Preact.
