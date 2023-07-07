@@ -1,11 +1,11 @@
 ---
-let { href } = Astro.props;
-
+let { href, matches = [] } = Astro.props;
 let { pathname } = Astro.url;
+let isCurrentPage = [href, ...matches].some((v) => pathname.match(v));
 ---
 
 <li>
-  <a href={href} aria-current={pathname.match(href) ? "page" : undefined}>
+  <a href={href} aria-current={isCurrentPage ? "page" : undefined}>
     <slot />
   </a>
 </li>

@@ -1,6 +1,6 @@
 ---
 title: Cyberpunk 2077
-started: 2021-11-01
+status: unbeaten
 genre: RPG
 platform: Xbox Series X
 ---

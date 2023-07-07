@@ -1,0 +1,127 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@layouts/Layout.astro";
+import SearchForm from "@components/FinishedSearchForm.astro";
+
+import "core-js/proposals/array-grouping-v2";
+
+let games = await getCollection("games");
+
+let isBeaten = (b) => b.data.status === "beaten";
+let beaten = games.filter(isBeaten);
+
+let isUnbeaten = (b) => b.data.status === "unbeaten";
+let unbeaten = games.filter(isUnbeaten);
+
+let isUnplayed = (b) => b.data.status === "unplayed";
+let unplayed = games.filter(isUnplayed);
+
+let isAbandoned = (b) => b.data.status === "abandoned";
+let abandoned = games.filter(isAbandoned);
+
+let url = new URL(Astro.url);
+let searchParams = url.searchParams;
+let q = searchParams.get("q")?.trim();
+
+if (q) {
+  let regex = new RegExp(q, "i");
+  let filterFn = (v) =>
+    v.data.title.match(regex) ||
+    v.data?.genre?.match(regex) ||
+    v.data?.platform?.match(regex);
+  unplayed = unplayed.filter(filterFn);
+  unbeaten = unbeaten.filter(filterFn);
+  beaten = beaten.filter(filterFn);
+  abandoned = abandoned.filter(filterFn);
+}
+---
+
+<Layout title="Finished - Brandon Pittman">
+  <main class="region wrapper prose flow">
+    <h1 class="visually-hidden">Games</h1>
+    <SearchForm>Title</SearchForm>
+    <section id="lists" class="flow">
+      {
+        unplayed.length ? (
+          <article id="unplayed" class="flow">
+            <h2>Unplayed</h2>
+            <ul class="flow">
+              {unplayed.map((book) => (
+                <li class="flow-3xs">
+                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ) : null
+      }
+
+      {
+        unbeaten.length ? (
+          <article id="unbeaten" class="flow">
+            <h2>Unbeaten</h2>
+            <ul class="flow">
+              {unbeaten.map((book) => (
+                <li class="flow-3xs">
+                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ) : null
+      }
+
+      {
+        beaten.length ? (
+          <article id="beaten" class="flow">
+            <h2>Beaten</h2>
+            <ul class="flow">
+              {beaten.map((book) => (
+                <li class="flow-3xs">
+                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ) : null
+      }
+
+      {
+        abandoned.length ? (
+          <article id="beaten" class="flow">
+            <h2>Abandoned</h2>
+            <ul class="flow">
+              {abandoned.map((book) => (
+                <li class="flow-3xs">
+                  <a href={`/games/${book.slug}`}>{book.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ) : null
+      }
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    flex: 1 1 0%;
+  }
+
+  li > a {
+    --gutter: var(--space-xs);
+  }
+
+  /* details > ul {
+    margin-block-start: 1rem;
+  }
+
+  summary {
+    @media (min-width: 640px) {
+      inline-size: 11rem;
+      text-align: end;
+    }
+  } */
+</style>

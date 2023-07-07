@@ -1,5 +1,5 @@
 ---
 title: "The Swapper"
 platform: PC
-completed: 2019-12-31
+status: beaten
 ---

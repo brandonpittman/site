@@ -1,7 +1,7 @@
 ---
 title: "Halo: Infinite"
 genre: FPS
-completed: 2022-06-01
+status: beaten
 platform: Xbox Series X
 ---
 

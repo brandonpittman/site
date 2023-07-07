@@ -103,6 +103,18 @@
     min-inline-size: var(--sidebar-min-inline-size, 50%);
   }
 
+  .full-bleed {
+    margin-left: calc(50% - 50vw);
+    max-width: none;
+    width: 100vw;
+  }
+
+  .full-bleed > * {
+    height: auto;
+    max-width: none;
+    width: 100%;
+  }
+
   .switcher {
     display: flex;
     flex-wrap: wrap;

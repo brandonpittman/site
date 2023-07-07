@@ -139,7 +139,7 @@
   main > ul[role="list"],
   header,
   section,
-  article > *,
+  article > *:not(ul, ol),
   aside {
     padding-inline-start: env(safe-area-inset-left);
     padding-inline-end: env(safe-area-inset-right);
