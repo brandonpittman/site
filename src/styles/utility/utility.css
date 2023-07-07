@@ -7,14 +7,6 @@
     display: block;
   }
 
-  .inline-block {
-    display: inline-block;
-  }
-
-  .mx-auto {
-    margin-inline: auto;
-  }
-
   .prose {
     line-height: 1.75;
   }
@@ -46,28 +38,6 @@
   .flex {
     display: flex;
     flex-direction: var(--flex-direction, row);
-  }
-
-  .repel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--gutter, var(--space-s-m));
-  }
-
-  .cluster {
-    display: flex;
-    flex-wrap: var(--wrap, wrap);
-    flex-direction: var(--direction, row);
-    justify-content: var(--justify, flex-start);
-    align-items: var(--align, center);
-    gap: var(--gutter, var(--space-s-m));
-  }
-
-  .cluster[data-nowrap] {
-    --wrap: nowrap;
-    overflow: auto;
   }
 
   .gutter-s {
@@ -112,12 +82,12 @@
     font-weight: 700;
   }
 
-  .italic {
-    font-style: italic;
-  }
-
   .font-mono {
     font-family: monospace;
+  }
+
+  .italic {
+    font-style: italic;
   }
 
   .flex-1 {
