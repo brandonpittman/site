@@ -86,60 +86,6 @@
     --gutter: var(--space-xs);
   }
 
-  .sidebar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gutter, var(--space-s));
-  }
-
-  .sidebar:not([data-dir]) > :first-child {
-    flex-grow: 1;
-  }
-
-  .sidebar:not([data-dir]) > :last-child {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-inline-size: 50%;
-  }
-
-  .sidebar[data-dir="rtl"] > :last-child {
-    flex-grow: 1;
-  }
-
-  .sidebar[data-dir="rtl"] > :first-child {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-inline-size: var(--sidebar-min-inline-size, 50%);
-  }
-
-  .full-bleed {
-    margin-left: calc(50% - 50vw);
-    max-width: none;
-    width: 100vw;
-  }
-
-  .full-bleed > * {
-    height: auto;
-    max-width: none;
-    width: 100%;
-  }
-
-  .switcher {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-s);
-  }
-
-  .switcher > * {
-    flex-grow: 1;
-    flex-basis: calc((--space-14 - 100%) * 999);
-  }
-
-  .switcher > :nth-last-child(n + 5),
-  .switcher > :nth-last-child(n + 5) ~ * {
-    flex-basis: 100%;
-  }
-
   .region {
     padding-block: var(--region-space, var(--space-l-xl));
   }
@@ -188,20 +134,6 @@
 
   .uppercase {
     text-transform: uppercase;
-  }
-
-  .sr-only {
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    -webkit-clip-path: inset(50%) !important;
-    clip-path: inset(50%) !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    margin: -1px !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
-    white-space: nowrap !important;
   }
 
   .text-center {
