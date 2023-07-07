@@ -37,7 +37,7 @@
     --duration-sm: 250ms;
     --duration-md: 500ms;
     --duration-lg: 700ms;
-    --iteration-once: 1;
+    --iteration-count: 1;
     --transition-base: var(--duration-sm) ease;
     --transition-movement: var(--duration-sm) linear;
     --transition-fade: var(--duration-md) ease;

@@ -17,7 +17,7 @@ export let CopyEmail = () => {
         isAnimated
           ? {
               animation: "var(--animation-blink)",
-              animationIterationCount: "var(--iteration-once)",
+              animationIterationCount: "var(--iteration-count)",
             }
           : {}
       }
