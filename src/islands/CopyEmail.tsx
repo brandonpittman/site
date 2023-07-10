@@ -13,15 +13,7 @@ export let CopyEmail = () => {
     <button
       onClick={onClick}
       onAnimationEnd={() => setIsAnimated(false)}
-      style={
-        isAnimated()
-          ? {
-              animation: "var(--animation-blink)",
-              "animation-iteration-count": "var(--iteration-count)",
-            }
-          : {}
-      }
-      class="cta"
+      class={`cta animate-once${isAnimated() ? " animation-blink" : ""}`}
     >
       Copy
     </button>

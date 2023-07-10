@@ -162,6 +162,14 @@
     white-space: nowrap;
   }
 
+  .animation-blink {
+    animation: var(--animation-blink);
+  }
+
+  .animate-once {
+    animation-iteration-count: 1;
+  }
+
   /* === FOR DEBUGGING PURPOSES ONLY! === */
   /*
 * {
