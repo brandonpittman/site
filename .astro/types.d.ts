@@ -1962,6 +1962,13 @@ declare module 'astro:content' {
   collection: "games";
   data: InferEntrySchema<"games">
 } & { render(): Render[".md"] };
+"the-walking-dead-season-3.md": {
+	id: "the-walking-dead-season-3.md";
+  slug: "the-walking-dead-season-3";
+  body: string;
+  collection: "games";
+  data: InferEntrySchema<"games">
+} & { render(): Render[".md"] };
 "the-walking-dead-season-two.md": {
 	id: "the-walking-dead-season-two.md";
   slug: "the-walking-dead-season-two";

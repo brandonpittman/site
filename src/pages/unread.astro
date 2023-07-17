@@ -9,6 +9,8 @@ import "core-js/proposals/array-grouping-v2";
 
 let books = await getCollection("books");
 
+let authors = [...new Set(books.map((b) => b.data.author))];
+
 let isRead = (b) => b.data.status === "read";
 let read = books.filter(isRead);
 
@@ -48,8 +50,7 @@ if (q) {
 
     <SearchForm placeholder="Search by title or author…">
       <datalist id="datalist">
-        <option value="Chuck Palahniuk"></option>
-        <option value="Seneca"></option>
+        {authors.map((a) => <option value={a} />)}
       </datalist>
       Title
     </SearchForm>

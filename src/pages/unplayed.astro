@@ -9,6 +9,8 @@ import "core-js/proposals/array-grouping-v2";
 
 let games = await getCollection("games");
 
+let platforms = [...new Set(games.map((g) => g.data.platform))].sort();
+
 let isBeaten = (b) => b.data.status === "beaten";
 let beaten = games.filter(isBeaten);
 
@@ -47,18 +49,7 @@ if (q) {
     <h1 class="visually-hidden">Games</h1>
     <SearchForm placeholder="Search by title, genre, or platform…">
       <datalist id="datalist">
-        <option value="Xbox Series X"></option>
-        <option value="Xbox One"></option>
-        <option value="Xbox 360"></option>
-        <option value="PS2"></option>
-        <option value="PS3"></option>
-        <option value="PS4"></option>
-        <option value="iOS"></option>
-        <option value="PC"></option>
-        <option value="DC"></option>
-        <option value="DS"></option>
-        <option value="Wii"></option>
-        <option value="GameCube"></option>
+        {platforms.map((p) => <option value={p} />)}
       </datalist>
       Title
     </SearchForm>
