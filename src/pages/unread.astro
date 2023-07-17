@@ -25,6 +25,10 @@ let url = new URL(Astro.url);
 let searchParams = url.searchParams;
 let q = searchParams.get("q")?.trim();
 
+if (q === "") {
+  return Astro.redirect("/unread");
+}
+
 if (q) {
   let regex = new RegExp(q, "i");
   let filterFn = (v) =>
