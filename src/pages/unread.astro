@@ -9,7 +9,7 @@ import "core-js/proposals/array-grouping-v2";
 
 let books = await getCollection("books");
 
-let authors = [...new Set(books.map((b) => b.data.author))];
+let authors = [...new Set(books.map((b) => b.data.author))].sort();
 
 let isRead = (b) => b.data.status === "read";
 let read = books.filter(isRead);
