@@ -2,6 +2,7 @@
 let url = new URL(Astro.url);
 let searchParams = url.searchParams;
 let q = searchParams.get("q")?.trim();
+let placeholder = Astro.props.placeholder;
 ---
 
 <form>
@@ -14,13 +15,20 @@ let q = searchParams.get("q")?.trim();
     style="--gutter: var(--space-2xs); --sidebar-min-inline-size: 80%; max-inline-size: var(--size-15)"
   >
     <input
+      list="datalist"
       autofocus
       value={q}
       id="search"
       type="search"
       name="q"
-      placeholder={Astro.props.placeholder}
+      placeholder={placeholder}
     />
     <button type="submit" class="cta"> Search</button>
   </div>
 </form>
+
+<style is:global>
+  ::marker {
+    display: none;
+  }
+</style>

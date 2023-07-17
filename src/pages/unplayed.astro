@@ -46,8 +46,23 @@ if (q) {
   <main class="region wrapper prose flow w-full">
     <h1 class="visually-hidden">Games</h1>
     <SearchForm placeholder="Search by title, genre, or platform…">
+      <datalist id="datalist">
+        <option value="Xbox Series X"></option>
+        <option value="Xbox One"></option>
+        <option value="Xbox 360"></option>
+        <option value="PS2"></option>
+        <option value="PS3"></option>
+        <option value="PS4"></option>
+        <option value="iOS"></option>
+        <option value="PC"></option>
+        <option value="DC"></option>
+        <option value="DS"></option>
+        <option value="Wii"></option>
+        <option value="GameCube"></option>
+      </datalist>
       Title
     </SearchForm>
+
     <section id="lists" class="flow">
       {
         unplayed.length ? (

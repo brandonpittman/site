@@ -41,6 +41,7 @@ let gamesCollection = defineCollection({
       "DS",
       "DC",
       "iOS",
+      "GameCube",
     ]),
     genre: z.enum(["FPS", "RPG", "Action", "Adventure"]).optional(),
     status: z.enum(["beaten", "unbeaten", "unplayed", "abandoned"]).optional(),

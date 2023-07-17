@@ -1,5 +1,6 @@
 ---
 title: "Eternal Darkness"
-platform: Wii
+platform: GameCube
 status: beaten
 ---
+

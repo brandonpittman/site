@@ -46,7 +46,13 @@ if (q) {
   <main class="region wrapper prose flow w-full">
     <h1 class="visually-hidden">Books</h1>
 
-    <SearchForm placeholder="Search by title or author…">Title</SearchForm>
+    <SearchForm placeholder="Search by title or author…">
+      <datalist id="datalist">
+        <option value="Chuck Palahniuk"></option>
+        <option value="Seneca"></option>
+      </datalist>
+      Title
+    </SearchForm>
 
     <section id="lists" class="flow">
       {
