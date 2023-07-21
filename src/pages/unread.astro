@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "@layouts/Layout.astro";
 import SearchForm from "@components/FinishedSearchForm.astro";
-import UnreadItem from "@components/UnreadItem.astro";
+import UnreadBlock from "@components/UnreadBlock.astro";
 
 import "core-js/proposals/array-grouping-v2";
 
@@ -48,66 +48,13 @@ if (q) {
   <main class="region wrapper prose flow w-full">
     <h1 class="visually-hidden">Books</h1>
 
-    <SearchForm placeholder="Search by title or author…">
-      {
-        /*<datalist id="datalist">
-        {authors.map((a) => <option value={a} />)}
-      </datalist> */
-      }
-      Title
-    </SearchForm>
+    <SearchForm placeholder="Search by title or author…">Title</SearchForm>
 
     <section id="lists" class="flow">
-      {
-        unread.length ? (
-          <article id="unread" class="flow">
-            <h2>Unread</h2>
-            <ul class="flow">
-              {unread.map((book) => (
-                <UnreadItem {...book} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
-      {
-        reading.length ? (
-          <article id="reading" class="flow">
-            <h2>Reading</h2>
-            <ul class="flow">
-              {reading.map((book) => (
-                <UnreadItem {...book} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
-
-      {
-        read.length ? (
-          <article id="read" class="flow">
-            <h2>Read</h2>
-            <ul class="flow">
-              {read.map((book) => (
-                <UnreadItem {...book} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
-
-      {
-        abandoned.length ? (
-          <article id="read" class="flow">
-            <h2>Abandoned</h2>
-            <ul class="flow">
-              {abandoned.map((book) => (
-                <UnreadItem {...book} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
+      <UnreadBlock list={reading} title="Reading" />
+      <UnreadBlock list={unread} title="Unread" />
+      <UnreadBlock list={read} title="Read" />
+      <UnreadBlock list={abandoned} title="Abandoned" />
     </section>
   </main>
 </Layout>

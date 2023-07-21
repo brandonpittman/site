@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import SearchForm from "@components/FinishedSearchForm.astro";
 import UnplayedItem from "@components/UnplayedItem.astro";
+import UnplayedBlock from "@components/UnplayedBlock.astro";
 
 import "core-js/proposals/array-grouping-v2";
 
@@ -48,68 +49,14 @@ if (q) {
   <main class="region wrapper prose flow w-full">
     <h1 class="visually-hidden">Games</h1>
     <SearchForm placeholder="Search by title, genre, or platform…">
-      {
-        /*
-      <datalist id="datalist">
-        {platforms.map((p) => <option value={p} />)}
-      </datalist>
-      */
-      }
       Title
     </SearchForm>
 
     <section id="lists" class="flow">
-      {
-        unplayed.length ? (
-          <article id="unplayed" class="flow">
-            <h2>Unplayed</h2>
-            <ul class="flow">
-              {unplayed.map((game) => (
-                <UnplayedItem {...game} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
-
-      {
-        unbeaten.length ? (
-          <article id="unbeaten" class="flow">
-            <h2>Unbeaten</h2>
-            <ul class="flow">
-              {unbeaten.map((game) => (
-                <UnplayedItem {...game} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
-
-      {
-        beaten.length ? (
-          <article id="beaten" class="flow">
-            <h2>Beaten</h2>
-            <ul class="flow">
-              {beaten.map((game) => (
-                <UnplayedItem {...game} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
-
-      {
-        abandoned.length ? (
-          <article id="beaten" class="flow">
-            <h2>Abandoned</h2>
-            <ul class="flow">
-              {abandoned.map((game) => (
-                <UnplayedItem {...game} />
-              ))}
-            </ul>
-          </article>
-        ) : null
-      }
+      <UnplayedBlock list={unbeaten} title="Unbeaten" />
+      <UnplayedBlock list={unplayed} title="Unplayed" />
+      <UnplayedBlock list={beaten} title="Beaten" />
+      <UnplayedBlock list={abandoned} title="Abandoned" />
     </section>
   </main>
 </Layout>

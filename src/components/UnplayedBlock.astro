@@ -1,0 +1,16 @@
+---
+import UnplayedItem from "@components/UnplayedItem.astro";
+---
+
+{
+  Astro.props.list.length ? (
+    <article id={Astro.props.title.toLowerCase()} class="flow">
+      <h2>{Astro.props.title}</h2>
+      <ul class="flow">
+        {Astro.props.list.map((item) => (
+          <UnplayedItem {...item} />
+        ))}
+      </ul>
+    </article>
+  ) : null
+}
