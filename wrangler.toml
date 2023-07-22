@@ -1,4 +1,0 @@
-# (in wrangler.toml)
-compatibility_date = "2023-07-05"
-compatibility_flags = [ "streams_enable_constructors" ]
-

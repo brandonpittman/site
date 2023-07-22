@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "brandon-pittman",
+  "short_name": "Brandon Pittman's Personal Site",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Brandon Pittman's little corner of the Internet."
+}

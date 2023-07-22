@@ -186,6 +186,9 @@ aside {
     padding: var(--space-2xs-xs);
     border-radius: var(--border-radius-sm);
     font-size: var(--size-step--1);
+    background-color: var(--color-base-dark);
+    color: var(--color-gray-subtle-light);
+    overflow-x: auto;
   }
 
   footer {
@@ -194,5 +197,9 @@ aside {
 
   summary {
     cursor: default;
+  }
+
+  ::marker {
+    display: none;
   }
 }
