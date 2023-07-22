@@ -147,6 +147,7 @@
 
   ::marker {
     color: var(--color-gray-subtle-dark);
+    display: none;
   }
 
   /* main,
@@ -197,9 +198,5 @@ aside {
 
   summary {
     cursor: default;
-  }
-
-  ::marker {
-    display: none;
   }
 }

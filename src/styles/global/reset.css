@@ -36,9 +36,9 @@
 
   ul,
   ol {
-    list-style: disc;
+    list-style: none;
     padding: 0;
-    padding-inline-start: 2ch;
+    padding-inline-start: 0;
   }
 
   /* Remove list styles on ul, ol elements with a list role,
