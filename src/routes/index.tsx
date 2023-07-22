@@ -22,7 +22,7 @@ export default component$(() => {
       <p>
         My name is Brandon Pittman. I build web sites and apps, study{" "}
         <a href={traditionStoicism}>traditional Stoicism</a>, and I train
-        Brazilian jiu-jitsu. I sometimes <a href="/notes">write</a>
+        Brazilian jiu-jitsu. I sometimes <a href="/notes">write</a>{" "}
         about programming, Stoic ideals, and managing time and attention. I
         don't use social media aside from <a href={github}>GitHub</a> or{" "}
         <a href={dribbble}>Dribbble</a>. My backstory is on the{" "}
