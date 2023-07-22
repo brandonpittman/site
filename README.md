@@ -4,6 +4,7 @@
 
 - [ ] Add syntax highlighting
 - [ ] Add dynamic Markdown loading
+- [ ] content validation with Zod
 
 ## Style Guide
 
