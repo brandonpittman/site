@@ -10,8 +10,6 @@ available on GitHub](https://github.com/brandonpittman/site).
 
 This site is built with [Qwik][qwik].
 All the styling is written using [CUBE CSS][cube].
-The one place with JavaScript is the email address copy button on the homepage.
-That's an Astro island built with Preact.
 The site is hosted on Cloudflare Pages.
 I wrote all the code with Neovim.
 
