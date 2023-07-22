@@ -6,7 +6,9 @@ const dateFormatter = new Intl.DateTimeFormat("en", {
   year: "numeric",
 });
 
-const formatDate = (d: string) => dateFormatter.format(Date.parse(d));
+function formatDate(d: string) {
+  return dateFormatter.format(Date.parse(d));
+}
 
 type PostLinkProps = {
   post: {
@@ -30,11 +32,7 @@ export const PostLink = component$<PostLinkProps>((props) => {
 `);
   return (
     <li>
-      <a
-        rel="prefetch"
-        href={`/notes/${props.post.slug}`}
-        class="no-underline cluster"
-      >
+      <a href={`/notes/${props.post.slug}`} class="no-underline cluster">
         <span class="color-gray-light white-space-nowrap">
           {formatDate(props.post.date)}
         </span>

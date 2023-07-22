@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import { SearchForm } from "~/components/SearchForm";
-import { UnreadBlock } from "~/components/UnreadBlock";
+import { SearchForm } from "~/components/search-form";
+import { UnreadBlock } from "~/components/unread-block";
 import { asyncMap } from "~/util/async-map";
 import { hideH1 } from "~/util/meta";
 
