@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead, DocumentHeadProps } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/SearchForm";
 import { UnplayedBlock } from "~/components/UnplayedBlock";
@@ -10,7 +10,7 @@ export const useLoader = routeLoader$(async (e) => {
   const modules = import.meta.glob("/src/content/games/*.md");
 
   const games = await asyncMap(Object.keys(modules), async (path) => {
-    const data = (await modules[path]()) as DocumentHeadProps;
+    const data = (await modules[path]()) as any;
     const chunks = path.split(".md")[0].split("/");
     const slug = chunks[chunks.length - 1];
 
@@ -23,16 +23,16 @@ export const useLoader = routeLoader$(async (e) => {
     };
   });
 
-  const isRead = (b) => b.status === "beaten";
+  const isRead = (b: any) => b.status === "beaten";
   let beaten = games.filter(isRead);
 
-  const isReading = (b) => b.status === "unbeaten";
+  const isReading = (b: any) => b.status === "unbeaten";
   let unbeaten = games.filter(isReading);
 
-  const isUnread = (b) => b.status === "unplayed";
+  const isUnread = (b: any) => b.status === "unplayed";
   let unplayed = games.filter(isUnread);
 
-  const isAbandoned = (b) => b.status === "abandoned";
+  const isAbandoned = (b: any) => b.status === "abandoned";
   let abandoned = games.filter(isAbandoned);
 
   const searchParams = e.url.searchParams;
@@ -44,7 +44,7 @@ export const useLoader = routeLoader$(async (e) => {
 
   if (q) {
     const regex = new RegExp(q, "i");
-    const filterFn = (v) =>
+    const filterFn = (v: any) =>
       v.title.match(regex) ||
       v?.platform.match(regex) ||
       v?.genre?.match(regex) ||

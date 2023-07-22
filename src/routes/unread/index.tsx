@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import type { DocumentHead, DocumentHeadProps } from "@builder.io/qwik-city";
+import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/SearchForm";
 import { UnreadBlock } from "~/components/UnreadBlock";
@@ -10,7 +10,7 @@ export const useLoader = routeLoader$(async (e) => {
   const modules = import.meta.glob("/src/content/books/*.md");
 
   const books = await asyncMap(Object.keys(modules), async (path) => {
-    const data = (await modules[path]()) as DocumentHeadProps;
+    const data = (await modules[path]()) as any;
     const chunks = path.split(".md")[0].split("/");
     const slug = chunks[chunks.length - 1];
 
@@ -22,16 +22,16 @@ export const useLoader = routeLoader$(async (e) => {
     };
   });
 
-  const isRead = (b) => b.status === "read";
+  const isRead = (b: any) => b.status === "read";
   let read = books.filter(isRead);
 
-  const isReading = (b) => b.status === "reading";
+  const isReading = (b: any) => b.status === "reading";
   let reading = books.filter(isReading);
 
-  const isUnread = (b) => b.status === "unread";
+  const isUnread = (b: any) => b.status === "unread";
   let unread = books.filter(isUnread);
 
-  const isAbandoned = (b) => b.status === "abandoned";
+  const isAbandoned = (b: any) => b.status === "abandoned";
   let abandoned = books.filter(isAbandoned);
 
   const searchParams = e.url.searchParams;
@@ -43,7 +43,7 @@ export const useLoader = routeLoader$(async (e) => {
 
   if (q) {
     const regex = new RegExp(q, "i");
-    const filterFn = (v) =>
+    const filterFn = (v: any) =>
       v.title.match(regex) || v?.genre?.match(regex) || v?.author?.match(regex);
     unread = unread.filter(filterFn);
     read = read.filter(filterFn);
