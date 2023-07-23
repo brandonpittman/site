@@ -16,11 +16,11 @@ const validator = z.array(
 );
 
 export const useNotes = routeLoader$(async () => {
-  const modules = import.meta.glob("/src/routes/notes/**/*.mdx");
+  const modules = import.meta.glob("/src/routes/notes/**/*.md");
 
   const notes = await asyncMap(Object.keys(modules), async (path) => {
     const data = (await modules[path]()) as DocumentHeadProps;
-    const chunks = path.split("/index.mdx")[0].split("/");
+    const chunks = path.split("/index.md")[0].split("/");
     const slug = chunks[chunks.length - 1];
 
     return {
