@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
-import { UnplayedBlock } from "~/components/unplayed-block";
+import { UnplayedBlock } from "./unplayed-block";
 import { asyncMap } from "~/util/async-map";
 import { hideH1 } from "~/util/meta";
 

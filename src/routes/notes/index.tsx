@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { PostList } from "~/components/post-list";
-import { PostLink } from "~/components/post-link";
+import { NoteList } from "./note-list";
+import { NoteLink } from "./note-link";
 import type { DocumentHead, DocumentHeadProps } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { asyncMap } from "~/util/async-map";
@@ -8,7 +8,7 @@ import { asyncMap } from "~/util/async-map";
 export const useNotes = routeLoader$(async () => {
   const modules = import.meta.glob("/src/content/notes/*.md");
 
-  const posts = await asyncMap(Object.keys(modules), async (path) => {
+  const notes = await asyncMap(Object.keys(modules), async (path) => {
     const data = (await modules[path]()) as DocumentHeadProps;
     const chunks = path.split(".md")[0].split("/");
     const slug = chunks[chunks.length - 1];
@@ -22,7 +22,7 @@ export const useNotes = routeLoader$(async () => {
     };
   });
 
-  return posts.sort((a, b) => {
+  return notes.sort((a, b) => {
     const dateA = new Date(a.date).getTime();
     const dateB = new Date(b.date).getTime();
 
@@ -54,12 +54,12 @@ export default component$(() => {
   } */
     `);
   return (
-    <article id="posts" class="prose flow-xs">
-      <PostList>
+    <article id="notes" class="prose flow-xs">
+      <NoteList>
         {notes.value.map((post) => (
-          <PostLink key={post.slug} post={post} />
+          <NoteLink key={post.slug} post={post} />
         ))}
-      </PostList>
+      </NoteList>
     </article>
   );
 });

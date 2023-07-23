@@ -10,7 +10,7 @@ function formatDate(d: string) {
   return dateFormatter.format(Date.parse(d));
 }
 
-type PostLinkProps = {
+type NoteLinkProps = {
   post: {
     slug: string;
     date: string;
@@ -18,7 +18,7 @@ type PostLinkProps = {
   };
 };
 
-export const PostLink = component$<PostLinkProps>((props) => {
+export const NoteLink = component$<NoteLinkProps>((props) => {
   useStylesScoped$(`
   li > a {
     --direction: column;
