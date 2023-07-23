@@ -48,6 +48,8 @@ export const useLoader = routeLoader$(async (e) => {
     };
   });
 
+  //games.sort((a, b) => (a.title < b.title ? -1 : 1));
+
   validator.parse(games);
 
   const isRead = (b: any) => b.status === "beaten";
