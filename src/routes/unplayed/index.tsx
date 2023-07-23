@@ -1,10 +1,35 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { z } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnplayedBlock } from "./unplayed-block";
 import { asyncMap } from "~/util/async-map";
 import { hideH1 } from "~/util/meta";
+
+const validator = z.array(
+  z.object({
+    title: z.string(),
+    platform: z.enum([
+      "PS1",
+      "PS2",
+      "PS3",
+      "PS4",
+      "Xbox",
+      "Xbox 360",
+      "Xbox One",
+      "Xbox Series X",
+      "GameCube",
+      "Wii",
+      "DS",
+      "iOS",
+      "PC",
+      "DC",
+    ]),
+    status: z.enum(["unbeaten", "unplayed", "beaten", "abandoned"]),
+    slug: z.string(),
+  })
+);
 
 export const useLoader = routeLoader$(async (e) => {
   const modules = import.meta.glob("/src/routes/games/**/*.md");
@@ -22,6 +47,8 @@ export const useLoader = routeLoader$(async (e) => {
       slug,
     };
   });
+
+  validator.parse(games);
 
   const isRead = (b: any) => b.status === "beaten";
   let beaten = games.filter(isRead);

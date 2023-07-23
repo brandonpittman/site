@@ -1,10 +1,20 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { z } from "@builder.io/qwik-city";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnreadBlock } from "./unread-block";
 import { asyncMap } from "~/util/async-map";
 import { hideH1 } from "~/util/meta";
+
+const validator = z.array(
+  z.object({
+    title: z.string(),
+    author: z.string(),
+    status: z.enum(["read", "unread", "reading", "abandoned"]),
+    slug: z.string(),
+  })
+);
 
 export const useLoader = routeLoader$(async (e) => {
   const modules = import.meta.glob("/src/routes/books/**/*.md");
@@ -21,6 +31,8 @@ export const useLoader = routeLoader$(async (e) => {
       slug,
     };
   });
+
+  validator.parse(books);
 
   const isRead = (b: any) => b.status === "read";
   let read = books.filter(isRead);
