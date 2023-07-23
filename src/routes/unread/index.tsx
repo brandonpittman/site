@@ -10,6 +10,8 @@ import { hideH1 } from "~/util/meta";
 const validator = z.array(
   z.object({
     title: z.string(),
+    subtitle: z.string().optional(),
+    translator: z.string().optional(),
     author: z.string(),
     status: z.enum(["read", "unread", "reading", "abandoned"]),
     slug: z.string(),
@@ -26,7 +28,9 @@ export const useLoader = routeLoader$(async (e) => {
 
     return {
       title: data.frontmatter.title || "",
+      subtitle: data.frontmatter.subtitle || "",
       author: data.frontmatter.author,
+      translator: data.frontmatter.translator,
       status: data.frontmatter.status,
       slug,
     };
@@ -56,7 +60,10 @@ export const useLoader = routeLoader$(async (e) => {
   if (q) {
     const regex = new RegExp(q, "i");
     const filterFn = (v: any) =>
-      v.title.match(regex) || v?.genre?.match(regex) || v?.author?.match(regex);
+      v.title.match(regex) ||
+      v?.genre?.match(regex) ||
+      v?.author?.match(regex) ||
+      v?.translator?.match(regex);
     unread = unread.filter(filterFn);
     read = read.filter(filterFn);
     reading = reading.filter(filterFn);

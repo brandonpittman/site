@@ -1,5 +1,5 @@
 ---
 title: "Batman: Year One"
-author: Frank Miller and David Mazzucchelli
+author: Frank Miller
 status: read
 ---

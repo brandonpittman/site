@@ -4,6 +4,7 @@ export type UnreadItemProps = {
   slug: string;
   title: string;
   author: string;
+  translator?: string;
 };
 
 export const UnreadItem = component$<UnreadItemProps>((props) => {
@@ -19,6 +20,19 @@ export const UnreadItem = component$<UnreadItemProps>((props) => {
         >
           {props.author}
         </a>
+        {props.translator ? (
+          <>
+            <span class="no-underline color-gray-light text-2xs white-space-nowrap font-medium">
+              &amp;
+            </span>
+            <a
+              href={`/unread?q=${props.translator}`}
+              class="no-underline color-gray-light text-2xs white-space-nowrap font-medium"
+            >
+              {props.translator}
+            </a>
+          </>
+        ) : null}
       </div>
     </li>
   );

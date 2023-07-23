@@ -9,7 +9,7 @@ export default component$(() => {
 
   return (
     <>
-      <p class="color-gray-light" style="margin-block-start: -.125rem">
+      <p class="color-gray-light" style="margin-block-start: 0">
         {platform}
         {genre ? ` · ${genre}` : ""}
       </p>

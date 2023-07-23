@@ -1,5 +1,5 @@
 ---
 title: "Batman: The Dark Knight Returns"
-author: Frank Miller and Klaus Janson
+author: Frank Miller
 status: read
 ---
