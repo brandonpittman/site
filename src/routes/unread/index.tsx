@@ -89,6 +89,6 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "unread",
+  title: "Unread",
   meta: [hideH1],
 };
