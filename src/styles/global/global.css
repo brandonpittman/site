@@ -188,7 +188,6 @@ aside {
     border-radius: var(--border-radius-sm);
     font-size: var(--size-step--1);
     background-color: var(--color-base-dark);
-    color: var(--color-gray-subtle-light);
     overflow-x: auto;
   }
 
