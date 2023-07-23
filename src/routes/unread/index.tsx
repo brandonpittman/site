@@ -7,11 +7,11 @@ import { asyncMap } from "~/util/async-map";
 import { hideH1 } from "~/util/meta";
 
 export const useLoader = routeLoader$(async (e) => {
-  const modules = import.meta.glob("/src/content/books/*.md");
+  const modules = import.meta.glob("/src/routes/books/**/*.md");
 
   const books = await asyncMap(Object.keys(modules), async (path) => {
     const data = (await modules[path]()) as any;
-    const chunks = path.split(".md")[0].split("/");
+    const chunks = path.split("/index.md")[0].split("/");
     const slug = chunks[chunks.length - 1];
 
     return {

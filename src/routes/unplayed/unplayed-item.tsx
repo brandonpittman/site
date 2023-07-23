@@ -10,8 +10,7 @@ export const UnplayedItem = component$<UnplayedItemProps>((props) => {
   return (
     <li class="flow-3xs">
       <div class="cluster gutter-3xs" style="--align: baseline;">
-        <span>{props.title}</span>
-        <a hidden href={`/games/${props.slug}`}>
+        <a href={`/games/${props.slug}`}>
           <span>{props.title}</span>
         </a>
         <a

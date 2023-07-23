@@ -10,8 +10,7 @@ export const UnreadItem = component$<UnreadItemProps>((props) => {
   return (
     <li class="flow-3xs">
       <div class="cluster gutter-3xs" style="--align: baseline;">
-        <span>{props.title}</span>
-        <a hidden href={`/games/${props.slug}`}>
+        <a href={`/books/${props.slug}`}>
           <span>{props.title}</span>
         </a>
         <a

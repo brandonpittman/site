@@ -6,11 +6,11 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 import { asyncMap } from "~/util/async-map";
 
 export const useNotes = routeLoader$(async () => {
-  const modules = import.meta.glob("/src/content/notes/*.md");
+  const modules = import.meta.glob("/src/routes/notes/**/*.md");
 
   const notes = await asyncMap(Object.keys(modules), async (path) => {
     const data = (await modules[path]()) as DocumentHeadProps;
-    const chunks = path.split(".md")[0].split("/");
+    const chunks = path.split("/index.md")[0].split("/");
     const slug = chunks[chunks.length - 1];
 
     return {
