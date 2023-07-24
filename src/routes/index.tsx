@@ -27,7 +27,7 @@ export default component$(() => {
         don't use social media aside from <a href={github}>GitHub</a> or{" "}
         <a href={dribbble}>Dribbble</a>. My backstory is on the{" "}
         <a href="/about">About</a> page. If you're interested in what I'm{" "}
-        <a href="/books">reading</a> or <a href="/games">playing</a>, those
+        <a href="/unread">reading</a> or <a href="/unplayed">playing</a>, those
         lists are available too.
       </p>
 
