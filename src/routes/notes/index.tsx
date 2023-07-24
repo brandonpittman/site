@@ -11,6 +11,7 @@ const validator = z.array(
     title: z.string(),
     description: z.string(),
     date: z.string().regex(/\d{4}-\d{2}-\d{2}/),
+    draft: z.boolean().optional(),
     slug: z.string(),
   })
 );
@@ -28,6 +29,7 @@ export const useNotes = routeLoader$(async () => {
       description:
         data.head.meta.find((m) => m.name === "description")?.content || "",
       date: data.head.frontmatter.date,
+      draft: data.head.frontmatter.draft,
       slug,
     };
   });
@@ -68,9 +70,11 @@ export default component$(() => {
   return (
     <article id="notes" class="prose flow-xs">
       <NoteList>
-        {notes.value.map((post) => (
-          <NoteLink key={post.slug} post={post} />
-        ))}
+        {notes.value
+          .filter((v) => !v.draft)
+          .map((post) => (
+            <NoteLink key={post.slug} post={post} />
+          ))}
       </NoteList>
     </article>
   );
