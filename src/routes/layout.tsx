@@ -25,6 +25,7 @@ export const useServerTimeLoader = routeLoader$(() => {
 
 export default component$(() => {
   const { title, meta } = useDocumentHead();
+  const isH1Hidden = meta.some((v) => v.name === hideH1Name);
 
   useStyles$(styles);
 
@@ -32,13 +33,7 @@ export default component$(() => {
     <>
       <Header />
       <main class="region wrapper prose w-full flow">
-        <h1
-          class={
-            meta.some((v) => v.name === hideH1Name) ? "visually-hidden" : ""
-          }
-        >
-          {title}
-        </h1>
+        <h1 class={{ "visually-hidden": isH1Hidden }}>{title}</h1>
         <Slot />
       </main>
     </>
