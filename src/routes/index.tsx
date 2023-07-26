@@ -52,7 +52,6 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Brandon Pittman's Personal Site",
   meta: [
     {
       name: "description",

@@ -96,9 +96,11 @@ export default component$(() => {
 
 export const name = "Brandon";
 
-export const head: DocumentHead = {
-  title: "Unread",
-  frontmatter: {
-    hideH1: true,
-  },
+export const head: DocumentHead = () => {
+  return {
+    title: "Unread",
+    frontmatter: {
+      hideH1: true,
+    },
+  };
 };

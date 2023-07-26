@@ -1,6 +1,6 @@
 import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import { routeLoader$, useDocumentHead } from "@builder.io/qwik-city";
-import type { RequestHandler } from "@builder.io/qwik-city";
+import type { RequestHandler, DocumentHead } from "@builder.io/qwik-city";
 
 import styles from "../styles/styles.css?inline";
 import { Header } from "~/components/header";
@@ -22,6 +22,9 @@ export const useServerTimeLoader = routeLoader$(() => {
   };
 });
 
+const baseName = "Brandon Pittman";
+const titleSuffix = " | " + baseName;
+
 export default component$(() => {
   const { title, frontmatter } = useDocumentHead();
   const isH1Hidden = frontmatter.hideH1;
@@ -32,9 +35,17 @@ export default component$(() => {
     <>
       <Header />
       <main class="region wrapper prose w-full flow">
-        <h1 class={{ "visually-hidden": isH1Hidden }}>{title}</h1>
+        <h1 class={{ "visually-hidden": isH1Hidden }}>
+          {title.replace(titleSuffix, "")}
+        </h1>
         <Slot />
       </main>
     </>
   );
 });
+
+export const head: DocumentHead = ({ head }) => {
+  return {
+    title: head.title ? head.title + titleSuffix : baseName,
+  };
+};
