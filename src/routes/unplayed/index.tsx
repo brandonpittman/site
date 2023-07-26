@@ -5,7 +5,6 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnplayedBlock } from "./unplayed-block";
 import { asyncMap } from "~/util/async-map";
-import { hideH1 } from "~/util/meta";
 
 const validator = z.array(
   z.object({
@@ -112,5 +111,7 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: "Unplayed",
-  meta: [hideH1],
+  frontmatter: {
+    hideH1: true,
+  },
 };

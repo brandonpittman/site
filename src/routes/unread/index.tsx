@@ -5,7 +5,6 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnreadBlock } from "./unread-block";
 import { asyncMap } from "~/util/async-map";
-import { hideH1 } from "~/util/meta";
 
 const validator = z.array(
   z.object({
@@ -95,7 +94,11 @@ export default component$(() => {
   );
 });
 
+export const name = "Brandon";
+
 export const head: DocumentHead = {
   title: "Unread",
-  meta: [hideH1],
+  frontmatter: {
+    hideH1: true,
+  },
 };

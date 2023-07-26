@@ -4,7 +4,6 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 
 import styles from "../styles/styles.css?inline";
 import { Header } from "~/components/header";
-import { hideH1Name } from "~/util/meta";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -24,8 +23,8 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export default component$(() => {
-  const { title, meta } = useDocumentHead();
-  const isH1Hidden = meta.some((v) => v.name === hideH1Name);
+  const { title, frontmatter } = useDocumentHead();
+  const isH1Hidden = frontmatter.hideH1;
 
   useStyles$(styles);
 

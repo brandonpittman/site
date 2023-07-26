@@ -2,7 +2,6 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 import { CopyEmail } from "~/components/copy-email";
-import { hideH1 } from "~/util/meta";
 
 const traditionStoicism =
   "https://traditionalstoicism.com/the-path-of-the-prokopton/";
@@ -22,9 +21,9 @@ export default component$(() => {
       <p>
         My name is Brandon Pittman. I build web sites and apps, study{" "}
         <a href={traditionStoicism}>traditional Stoicism</a>, and I train
-        Brazilian jiu-jitsu. I sometimes <a href="/notes">write</a>{" "}
-        about programming, Stoic ideals, and managing time and attention. I
-        don't use social media aside from <a href={github}>GitHub</a> or{" "}
+        Brazilian jiu-jitsu. I sometimes <a href="/notes">write</a> about
+        programming, Stoic ideals, and managing time and attention. I don't use
+        social media aside from <a href={github}>GitHub</a> or{" "}
         <a href={dribbble}>Dribbble</a>. My backstory is on the{" "}
         <a href="/about">About</a> page. If you're interested in what I'm{" "}
         <a href="/unread">reading</a> or <a href="/unplayed">playing</a>, those
@@ -59,6 +58,8 @@ export const head: DocumentHead = {
       name: "description",
       content: "Brandon Pittman's little corner of the Internet.",
     },
-    hideH1,
   ],
+  frontmatter: {
+    hideH1: true,
+  },
 };
