@@ -77,11 +77,21 @@ export const useLoader = routeLoader$(async (e) => {
   };
 });
 
+const libroHref =
+  "https://libro.fm/referral?rf_code=lfm486721?utm_source=Libro.fm&utm_medium=email&utm_campaign=Transactional_order_confirmation";
+
 export default component$(() => {
   const data = useLoader();
 
   return (
     <>
+      <p>
+        Interested in audiobooks? Check out{" "}
+        <a href={libroHref} target="_blank" rel="noopener noreferrer">
+          Libro.fm
+        </a>
+        .
+      </p>
       <SearchForm placeholder="Search by title or author…">Title</SearchForm>
 
       <section id="lists" class="flow">

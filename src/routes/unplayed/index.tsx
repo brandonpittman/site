@@ -109,9 +109,11 @@ export default component$(() => {
   );
 });
 
-export const head: DocumentHead = {
-  title: "Unplayed",
-  frontmatter: {
-    hideH1: true,
-  },
+export const head: DocumentHead = () => {
+  return {
+    title: "Unplayed",
+    frontmatter: {
+      hideH1: true,
+    },
+  };
 };
