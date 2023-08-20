@@ -1,5 +1,5 @@
 ---
 title: "Batman: The Long Halloween"
-author: J. Loeb
+author: Jeph Loeb
 status: read
 ---
