@@ -1,7 +1,8 @@
 ---
 title: What Remains of Edith Finch
 platform: Xbox Series X
-status: unbeaten
+status: beaten
 ---
 
-Interesting storytelling mechanics.
+- Interesting storytelling mechanics. 
+- All the achievements appeared to be bugged. None ever triggered. 
