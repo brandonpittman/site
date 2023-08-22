@@ -1,5 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { Form, useLocation } from "@builder.io/qwik-city";
+import { useLocation } from "@builder.io/qwik-city";
 
 export const SearchForm = component$<{ placeholder?: string }>(
   ({ placeholder }) => {
@@ -7,7 +7,7 @@ export const SearchForm = component$<{ placeholder?: string }>(
     const q = location.url.searchParams.get("q");
 
     return (
-      <Form
+      <form
         onInput$={async ({ target }, ev) => {
           if ((target as HTMLInputElement).value.trim() === "") {
             ev.submit();
@@ -36,7 +36,7 @@ export const SearchForm = component$<{ placeholder?: string }>(
             Search
           </button>
         </div>
-      </Form>
+      </form>
     );
   }
 );
