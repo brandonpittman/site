@@ -17,7 +17,12 @@ export default component$(() => {
         {translator ? ` & ${translator}` : ""}
         {genre ? ` · ${genre}` : ""}
       </p>
-      <Slot />
+      <div class="flow">
+        <Slot />
+        <a href="/unread" class="block">
+          &larr; Go back
+        </a>
+      </div>
     </>
   );
 });

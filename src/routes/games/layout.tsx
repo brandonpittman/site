@@ -14,7 +14,12 @@ export default component$(() => {
         {platform}
         {genre ? ` · ${genre}` : ""}
       </p>
-      <Slot />
+      <div class="flow">
+        <Slot />
+        <a href="/unplayed" class="block">
+          &larr; Go back
+        </a>
+      </div>
     </>
   );
 });

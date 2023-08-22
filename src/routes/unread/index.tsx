@@ -69,12 +69,18 @@ export const useLoader = routeLoader$(async (e) => {
     abandoned = abandoned.filter(filterFn);
   }
 
-  return {
-    reading,
-    unread,
-    read,
-    abandoned,
-  };
+  const found = [...read, ...unread, ...reading, ...abandoned];
+
+  if (found.length === 1) {
+    throw e.redirect(307, `/books/${found[0].slug}`);
+  } else {
+    return {
+      reading,
+      unread,
+      read,
+      abandoned,
+    };
+  }
 });
 
 const libroHref =

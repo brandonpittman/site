@@ -82,12 +82,19 @@ export const useLoader = routeLoader$(async (e) => {
     unbeaten = unbeaten.filter(filterFn);
     abandoned = abandoned.filter(filterFn);
   }
-  return {
-    unbeaten,
-    unplayed,
-    beaten,
-    abandoned,
-  };
+
+  const found = [...beaten, ...unbeaten, ...unplayed, ...abandoned];
+
+  if (found.length === 1) {
+    throw e.redirect(307, `/games/${found[0].slug}`);
+  } else {
+    return {
+      unbeaten,
+      unplayed,
+      beaten,
+      abandoned,
+    };
+  }
 });
 
 export default component$(() => {
