@@ -1,15 +1,15 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { z } from "@builder.io/qwik-city";
+import * as v from "valibot";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnplayedBlock } from "./unplayed-block";
 import { asyncMap } from "~/util/async-map";
 
-const validator = z.array(
-  z.object({
-    title: z.string(),
-    platform: z.enum([
+const validator = v.array(
+  v.object({
+    title: v.string(),
+    platform: v.enumType([
       "PS1",
       "PS2",
       "PS3",
@@ -25,8 +25,8 @@ const validator = z.array(
       "PC",
       "DC",
     ]),
-    status: z.enum(["unbeaten", "unplayed", "beaten", "abandoned"]),
-    slug: z.string(),
+    status: v.enumType(["unbeaten", "unplayed", "beaten", "abandoned"]),
+    slug: v.string(),
   })
 );
 
@@ -49,7 +49,7 @@ export const useLoader = routeLoader$(async (e) => {
 
   //games.sort((a, b) => (a.title < b.title ? -1 : 1));
 
-  validator.parse(games);
+  v.parse(validator, games);
 
   const isRead = (b: any) => b.status === "beaten";
   let beaten = games.filter(isRead);
