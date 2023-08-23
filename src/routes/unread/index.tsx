@@ -1,19 +1,19 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import * as v from "valibot";
+import { parse, object, string, enumType, optional, array } from "valibot";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnreadBlock } from "./unread-block";
 import { asyncMap } from "~/util/async-map";
 
-const validator = v.array(
-  v.object({
-    title: v.string(),
-    subtitle: v.optional(v.string()),
-    translator: v.optional(v.string()),
-    author: v.string(),
-    status: v.enumType(["read", "unread", "reading", "abandoned"]),
-    slug: v.string(),
+const validator = array(
+  object({
+    title: string(),
+    subtitle: optional(string()),
+    translator: optional(string()),
+    author: string(),
+    status: enumType(["read", "unread", "reading", "abandoned"]),
+    slug: string(),
   })
 );
 
@@ -35,7 +35,7 @@ export const useLoader = routeLoader$(async (e) => {
     };
   });
 
-  v.parse(validator, books);
+  parse(validator, books);
 
   const isRead = (b: any) => b.status === "read";
   let read = books.filter(isRead);

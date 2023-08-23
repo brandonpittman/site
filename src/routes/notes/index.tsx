@@ -2,17 +2,25 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { NoteList } from "./note-list";
 import { NoteLink } from "./note-link";
 import type { DocumentHead, DocumentHeadProps } from "@builder.io/qwik-city";
-import * as v from "valibot";
+import {
+  parse,
+  array,
+  object,
+  string,
+  regex,
+  boolean,
+  optional,
+} from "valibot";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { asyncMap } from "~/util/async-map";
 
-const validator = v.array(
-  v.object({
-    title: v.string(),
-    description: v.string(),
-    date: v.string([v.regex(/\d{4}-\d{2}-\d{2}/)]),
-    draft: v.optional(v.boolean()),
-    slug: v.string(),
+const validator = array(
+  object({
+    title: string(),
+    description: string(),
+    date: string([regex(/\d{4}-\d{2}-\d{2}/)]),
+    draft: optional(boolean()),
+    slug: string(),
   })
 );
 
@@ -34,7 +42,7 @@ export const useNotes = routeLoader$(async () => {
     };
   });
 
-  v.parse(validator, notes);
+  parse(validator, notes);
 
   return notes.sort((a, b) => {
     const dateA = new Date(a.date).getTime();
