@@ -29,12 +29,9 @@ and promoted the usage of atomic, functional, and utility-driven CSS whenever
 and wherever possible. Recently, I've lost my fervor for Tailwind and have been
 exploring [Vanilla Extract](http://vanilla-extract.style) for its type-safety.
 
-In 2022, I fell in love with Remix because of its use of React as a
-templating language and its embracing of web standards. I continue to love
-functional programming but I've learn to be happy with using it pragmatically
-within the confines of TypeScript. To fulfill my desire to learn a more
-academic version of functional programming, I play around with Haskell and
-other ML-like languages from time to time.
+In 2023, I fell in love with [Qwik](https://qwik.builder.io) because of it's focus on SSR and reducing how much JavaScript gets downloaded and when.
+I continue to love functional programming but I've learn to be happy with using it pragmatically within the confines of TypeScript.
+To fulfill my desire to learn a more academic version of functional programming, I play around with Haskell and other ML-like languages from time to time.
 
 All my open-source work is up on [Github](https://github.com/brandonpittman).
 
