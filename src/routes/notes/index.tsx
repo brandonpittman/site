@@ -16,11 +16,12 @@ import { asyncMap } from "~/util/async-map";
 
 const validator = array(
   object({
-    title: string(),
-    description: string(),
-    date: string([regex(/\d{4}-\d{2}-\d{2}/)]),
+    title: string("Title required"),
+    description: optional(string()),
+    date: string("Date required", [
+      regex(/^\d{4}-\d{2}-\d{2}$/, "ISO date required"),
+    ]),
     draft: optional(boolean()),
-    slug: string(),
   })
 );
 
