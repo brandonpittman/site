@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import { parse } from "valibot";
 import { readFileSync } from "fs";
 
-const configFiles = globSync("src/routes/*/validate.config.ts", {
+const configFiles = globSync("src/routes/*/schema.ts", {
   ignore: "node_modules/**",
 });
 
