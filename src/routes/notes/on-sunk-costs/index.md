@@ -1,6 +1,6 @@
 ---
 title: On Sunk Costs
-date: 2023-08-26
+date: "2023-08-26"
 ---
 
 We put a lot into things we imagine will go our way. These resources can be time, attention, or money, but they're finite resources all the same. Somewhere along the way, things stop going according to plan and we have to choose whether to abandon the plan or continue—Fate be damned. This pressing forward even in the face of looming failure is known as [the sunk cost fallacy][sunkcost]. It's when you go, "Yeah, I know I've lost $300 playing blackjack, but I might be able to win my money back if I just buy in for a little more…". There are versions of this that play out over longer timeframes too. You might continue trying to fix a car that you've put a lot of time and money into instead of giving up and buying a new one. You might stick it out in a destructive relationship because you've got too many years in it to give up now. These are things that snowball over time and are the more insidious version of the fallacy.

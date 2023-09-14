@@ -1,5 +1,5 @@
 ---
-date: 2022-05-15
+date: "2022-05-15"
 title: On usePresence
 description: "How to use Framer Motion's usePresence with Tailwind CSS."
 ---

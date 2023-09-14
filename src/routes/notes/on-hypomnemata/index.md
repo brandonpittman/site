@@ -1,6 +1,6 @@
 ---
 title: On Hypomnemata
-date: 2023-07-15
+date: "2023-07-15"
 description: An overview of my thoughts about the philosophical practice of hypomnemata.
 ---
 

@@ -1,5 +1,5 @@
 ---
-date: 2022-03-04
+date: "2022-03-04"
 title: On Minimalist Financial Tracking
 description: It doesn't matter if you know how much you spent on groceries nine months ago.
 ---

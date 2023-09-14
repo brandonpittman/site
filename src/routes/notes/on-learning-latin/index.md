@@ -1,5 +1,5 @@
 ---
-date: 2022-08-08
+date: "2022-08-08"
 title: On Learning Latin
 description: "How to learn Latin on your own."
 ---

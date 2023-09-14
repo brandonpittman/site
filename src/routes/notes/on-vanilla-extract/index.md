@@ -1,5 +1,5 @@
 ---
-date: 2023-05-21
+date: "2023-05-21"
 title: On Vanilla Extract
 description: "Notes on the CSS-in-TypeScript library Vanilla Extract"
 ---
