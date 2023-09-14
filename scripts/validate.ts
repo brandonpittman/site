@@ -1,6 +1,6 @@
 import { globSync } from "glob";
 import matter from "gray-matter";
-import { parse } from "valibot";
+import { parse, array } from "valibot";
 import { readFileSync } from "fs";
 
 const configFiles = globSync("src/routes/*/schema.ts", {
@@ -15,13 +15,30 @@ const mappedConfigFiles = configFiles.map((raw) => {
   };
 });
 
+mappedConfigFiles.map((f) => {
+  import("../" + f.raw).then(({ schema }) => {
+    const vs = Object.values(schema)[1];
+    Object.entries(vs).forEach((v) => {
+      console.log(
+        f.type,
+        v[0],
+        v[1].schema === "optional"
+          ? v[1].wrapped.schema + " (optional)"
+          : v[1].schema === "enum"
+          ? v[1].enum
+          : v[1].schema
+      );
+    });
+  });
+});
+
 mappedConfigFiles.forEach((f) => {
   const contentFiles = globSync(`src/routes/${f.type}/**/*.{md,mdx}`);
   const dataMap = contentFiles.map((v) => matter(readFileSync(v)).data);
 
   import("../" + f.raw)
     .then(({ schema }) => {
-      parse(schema, dataMap);
+      parse(array(schema), dataMap);
     })
     .catch((e: Error) => {
       if (
