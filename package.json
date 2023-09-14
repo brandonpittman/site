@@ -26,6 +26,7 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.2.11",
     "@builder.io/qwik-city": "^1.2.11",
+    "@clack/prompts": "^0.7.0",
     "@types/eslint": "8.44.2",
     "@types/node": "^20.4.0",
     "@typescript-eslint/eslint-plugin": "6.4.0",
@@ -56,6 +57,6 @@
   "dependencies": {
     "@vanilla-extract/sprinkles": "^1.6.1",
     "qwik-dessert": "^0.0.7",
-    "valibot": "^0.13.0"
+    "valibot": "^0.15.0"
   }
 }
