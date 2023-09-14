@@ -1,11 +1,12 @@
-import { object, array, string, optional, enumType } from "valibot";
+import { object, string, optional, enumType } from "valibot";
 
-export const schema = array(
-  object({
-    title: string(),
-    subtitle: optional(string()),
-    translator: optional(string()),
-    author: string(),
-    status: enumType(["read", "unread", "reading", "abandoned"]),
-  })
-);
+export const schema = object({
+  title: string(),
+  subtitle: optional(string()),
+  translator: optional(string()),
+  author: string(),
+  status: optional(
+    enumType(["read", "unread", "reading", "abandoned"]),
+    "unread"
+  ),
+});

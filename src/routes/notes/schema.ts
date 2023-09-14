@@ -1,10 +1,10 @@
-import { object, array, string, boolean, optional, date } from "valibot";
+import { object, string, boolean, optional, regex, minLength } from "valibot";
 
-export const schema = array(
-  object({
-    title: string("Title required"),
-    description: optional(string()),
-    date: date(),
-    draft: optional(boolean()),
-  })
-);
+export const schema = object({
+  title: string([minLength(1, "Title required.")]),
+  description: optional(string()),
+  date: string("Date required", [
+    regex(/^\d{4}-\d{2}-\d{2}$/, "ISO date required"),
+  ]),
+  draft: optional(boolean()),
+});

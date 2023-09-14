@@ -1,9 +1,9 @@
-import { array, object, string, enumType } from "valibot";
+import { object, string, enumType, optional } from "valibot";
 
-export const schema = array(
-  object({
-    title: string(),
-    platform: enumType([
+export const schema = object({
+  title: string(),
+  platform: optional(
+    enumType([
       "PS1",
       "PS2",
       "PS3",
@@ -19,6 +19,10 @@ export const schema = array(
       "PC",
       "DC",
     ]),
-    status: enumType(["unbeaten", "unplayed", "beaten", "abandoned"]),
-  })
-);
+    "Xbox Series X"
+  ),
+  status: optional(
+    enumType(["unbeaten", "unplayed", "beaten", "abandoned"]),
+    "unbeaten"
+  ),
+});
