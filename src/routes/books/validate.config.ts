@@ -7,6 +7,5 @@ export const schema = array(
     translator: optional(string()),
     author: string(),
     status: enumType(["read", "unread", "reading", "abandoned"]),
-    slug: string(),
   })
 );
