@@ -1,5 +1,5 @@
 import { globSync } from "glob";
-import { intro, outro, text, select } from "@clack/prompts";
+import { intro, outro, text, select, cancel, isCancel } from "@clack/prompts";
 import { safeParse } from "valibot";
 
 const capitalizeFirstLetter = (str: string) =>
@@ -55,6 +55,7 @@ for (let [key, subSchema] of entries) {
           { value: "false", label: "False" },
         ],
       });
+
       break;
     case "enum":
       metadata[key] = await select({
@@ -73,10 +74,15 @@ for (let [key, subSchema] of entries) {
           if (validated.success) {
             return;
           } else {
-            return capitalizeFirstLetter(key) + " is required.";
+            return validated.issues.at(0)?.message;
           }
         },
       });
+  }
+
+  if (isCancel(metadata[key])) {
+    cancel("Operation cancelled.");
+    process.exit(0);
   }
 }
 
