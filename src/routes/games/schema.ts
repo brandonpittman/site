@@ -1,7 +1,7 @@
-import { object, string, enumType } from "valibot";
+import { object, string, enumType, minLength } from "valibot";
 
 export const schema = object({
-  title: string(),
+  title: string([minLength(1, "Title required.")]),
   platform: enumType([
     "PS1",
     "PS2",
