@@ -1,4 +1,4 @@
-import { globSync, glob } from "glob";
+import { globSync } from "glob";
 import matter from "gray-matter";
 import { parse } from "valibot";
 import { readFileSync } from "fs";
@@ -16,23 +16,20 @@ const mappedConfigFiles = configFiles.map((raw) => {
 });
 
 mappedConfigFiles.forEach((f) => {
-  glob(`src/routes/${f.type}/**/*.{md,mdx}`).then((globbed) => {
-    const dataMap = globbed.map((v) => matter(readFileSync(v)).data);
+  const contentFiles = globSync(`src/routes/${f.type}/**/*.{md,mdx}`);
+  const dataMap = contentFiles.map((v) => matter(readFileSync(v)).data);
 
-    import("../" + f.raw)
-      .then(({ schema }) => {
-        parse(schema, dataMap);
-      })
-      .catch((e: Error) => {
-        if (
-          e.message === "Cannot read properties of undefined (reading '_parse')"
-        ) {
-          console.error(
-            `Module "${f.raw}" does not contain a "schema" export.`
-          );
-        } else {
-          throw e;
-        }
-      });
-  });
+  import("../" + f.raw)
+    .then(({ schema }) => {
+      parse(schema, dataMap);
+    })
+    .catch((e: Error) => {
+      if (
+        e.message === "Cannot read properties of undefined (reading '_parse')"
+      ) {
+        console.error(`Module "${f.raw}" does not contain a "schema" export.`);
+      } else {
+        throw e;
+      }
+    });
 });
