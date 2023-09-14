@@ -38,7 +38,7 @@ All my open-source work is up on [Github](https://github.com/brandonpittman).
 I'm married to a lovely woman whom I met by total chance at Oktoberfest in
 Nagoya one lovely day in 2014. She's gorgeous, smart, and most importantly,
 funny. We keep each other laughing on a daily basis and I'm lucky to have her.
-My son, Marcus, was born in September 2021.
+My son, Marcus, was born in September 2021. Our second child is due April 2024.
 
 When I have time for myself, I study philosophy, train jiu-jitsu, play video
 games, cook, drink natural wine, craft beer, and good
