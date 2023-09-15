@@ -1,7 +1,7 @@
 import { execSync } from "node:child_process";
 import { globSync } from "glob";
 import { intro, outro, text, select, cancel, isCancel } from "@clack/prompts";
-import { regex, safeParse, string, minLength, flatten } from "valibot";
+import { regex, safeParse, string, minLength } from "valibot";
 import { existsSync, writeFileSync } from "node:fs";
 
 const capitalizeFirstLetter = (str: string) =>
@@ -52,7 +52,7 @@ if (schema.schema !== "object") {
 
 const entries = Object.entries(schema.object);
 
-const metadata = {};
+const metadata: Record<string, string | Symbol> = {};
 
 const filename = await text({
   message: "Filename?",
@@ -66,7 +66,7 @@ const filename = await text({
       value
     );
     if (validated.success) {
-      var writePath = `src/routes/${resource.type}/${
+      const writePath = `src/routes/${resource.type}/${
         value.split(".")[0]
       }/index.md`;
 
@@ -88,10 +88,12 @@ const writePath = `src/routes/${resource.type}/${
   (filename as string).split(".")[0]
 }/index.md`;
 
-for (let [key, subSchema] of entries) {
-  let isOptional = subSchema.schema === "optional";
-  let initialValue = subSchema.default;
-  let parsedSchema =
+for (const [key, subSchema] of entries as [
+  [string, { schema: any; default?: any; wrapped?: any }]
+]) {
+  const isOptional = subSchema.schema === "optional";
+  const initialValue = subSchema.default;
+  const parsedSchema =
     subSchema.schema === "optional" ? subSchema.wrapped : subSchema;
 
   switch ((parsedSchema as any).schema) {
@@ -110,7 +112,7 @@ for (let [key, subSchema] of entries) {
       metadata[key] = await select({
         message: capitalizeFirstLetter(key) + "?",
         initialValue,
-        options: parsedSchema.enum.map((v) => ({ value: v, label: v })),
+        options: parsedSchema.enum.map((v: string) => ({ value: v, label: v })),
       });
       break;
     default:
@@ -119,7 +121,7 @@ for (let [key, subSchema] of entries) {
         initialValue,
         validate(value) {
           if (isOptional) return;
-          let validated = safeParse(parsedSchema, value);
+          const validated = safeParse(parsedSchema, value);
           if (validated.success) {
             return;
           } else {
@@ -140,7 +142,7 @@ console.log(command.toString());
 
 const output = `---
 ${Object.entries(metadata)
-  .filter(([_, v]) => v)
+  .filter(([, v]) => v)
   .map(
     ([k, v]) =>
       `${k}: ${
