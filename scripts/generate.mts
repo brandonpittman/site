@@ -1,8 +1,17 @@
 import { execSync } from "node:child_process";
 import { globSync } from "glob";
-import { intro, outro, text, select, cancel, isCancel } from "@clack/prompts";
+import {
+  intro,
+  outro,
+  text,
+  select,
+  cancel,
+  isCancel,
+  confirm,
+} from "@clack/prompts";
 import { regex, safeParse, string, minLength } from "valibot";
 import { existsSync, writeFileSync } from "node:fs";
+import clipboard from "clipboardy";
 
 const capitalizeFirstLetter = (str: string) =>
   str.charAt(0).toUpperCase() + str.slice(1);
@@ -153,5 +162,13 @@ ${Object.entries(metadata)
 ---`;
 
 writeFileSync(writePath, output);
+
+const shouldCopy = await confirm({
+  message: "Copy new file path to clipboard?",
+});
+
+if (shouldCopy === true) {
+  clipboard.writeSync(writePath);
+}
 
 outro("All done!");
