@@ -17,8 +17,16 @@ const mappedConfigFiles = configFiles.map((raw) => {
   };
 });
 
+const handleCancel = (valueToCheck: unknown, message = "Goodbye!") => {
+  if (isCancel(valueToCheck)) {
+    cancel(message);
+    process.exit(0);
+  }
+};
+
 type Resource = { raw: string; type: string };
 
+console.clear();
 intro("Create new resource");
 
 const resource = (await select({
@@ -28,6 +36,8 @@ const resource = (await select({
     label: capitalizeFirstLetter(v.type),
   })),
 })) as Resource;
+
+handleCancel(resource);
 
 const { schema } = await import("../" + resource.raw);
 
@@ -80,10 +90,7 @@ for (let [key, subSchema] of entries) {
       });
   }
 
-  if (isCancel(metadata[key])) {
-    cancel("Operation cancelled.");
-    process.exit(0);
-  }
+  handleCancel(metadata[key]);
 }
 
 console.log(metadata);
