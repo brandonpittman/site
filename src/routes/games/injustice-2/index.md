@@ -1,5 +1,5 @@
 ---
 title: Injustice 2
 platform: Xbox One
-status: unplayed
+status: unbeaten
 ---
