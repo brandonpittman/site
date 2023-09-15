@@ -138,8 +138,7 @@ const command = execSync(
 
 console.log(command.toString());
 
-const output = `
----
+const output = `---
 ${Object.entries(metadata)
   .filter(([_, v]) => v)
   .map(
