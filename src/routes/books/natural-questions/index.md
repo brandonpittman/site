@@ -1,5 +1,5 @@
 ---
 title: Natural Questions
 author: Seneca
-status: unread
+status: reading
 ---
