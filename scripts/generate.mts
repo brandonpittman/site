@@ -1,6 +1,8 @@
+import { execSync } from "node:child_process";
 import { globSync } from "glob";
 import { intro, outro, text, select, cancel, isCancel } from "@clack/prompts";
-import { safeParse } from "valibot";
+import { regex, safeParse, string, minLength, flatten } from "valibot";
+import { existsSync, writeFileSync } from "node:fs";
 
 const capitalizeFirstLetter = (str: string) =>
   str.charAt(0).toUpperCase() + str.slice(1);
@@ -23,6 +25,9 @@ const handleCancel = (valueToCheck: unknown, message = "Goodbye!") => {
     process.exit(0);
   }
 };
+
+const validSlug = /^[a-z0-9]+(?:-[a-z0-9]+)*(\.(mdx?))?$/g;
+const validExtension = /\.(mdx?)$/g;
 
 type Resource = { raw: string; type: string };
 
@@ -48,6 +53,40 @@ if (schema.schema !== "object") {
 const entries = Object.entries(schema.object);
 
 const metadata = {};
+
+const filename = await text({
+  message: "Filename?",
+  validate(value) {
+    const validated = safeParse(
+      string([
+        minLength(1, "Filename cannot be empty"),
+        regex(validSlug, "Invalid filename slug"),
+        regex(validExtension, "Extension must be .md or .mdx"),
+      ]),
+      value
+    );
+    if (validated.success) {
+      var writePath = `src/routes/${resource.type}/${
+        value.split(".")[0]
+      }/index.md`;
+
+      const pathExists = existsSync(writePath);
+
+      if (pathExists) {
+        return "Path already exists";
+      }
+      return;
+    } else {
+      return validated.issues[0].message;
+    }
+  },
+});
+
+handleCancel(filename);
+
+const writePath = `src/routes/${resource.type}/${
+  (filename as string).split(".")[0]
+}/index.md`;
 
 for (let [key, subSchema] of entries) {
   let isOptional = subSchema.schema === "optional";
@@ -93,6 +132,25 @@ for (let [key, subSchema] of entries) {
   handleCancel(metadata[key]);
 }
 
-console.log(metadata);
+const command = execSync(
+  `npm run qwik new /${resource.type}/${filename as string}`
+);
+
+console.log(command.toString());
+
+const output = `
+---
+${Object.entries(metadata)
+  .filter(([_, v]) => v)
+  .map(
+    ([k, v]) =>
+      `${k}: ${
+        ["true", "false"].includes(v as "true" | "false") ? `${v}` : `"${v}"`
+      }`
+  )
+  .join("\n")}
+---`;
+
+writeFileSync(writePath, output);
 
 outro("All done!");
