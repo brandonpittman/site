@@ -39,7 +39,7 @@
     "gray-matter": "^4.0.3",
     "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
-    "qwik-markdown": "^0.0.9",
+    "qwik-markdown": "^0.0.11",
     "simple-git-hooks": "^2.8.1",
     "styled-vanilla-extract": "^0.5.4",
     "tsx": "^3.12.10",
