@@ -2,8 +2,8 @@
 
 ## To-dos
 
-- [ ] Add shell script to generate pre-populated Markdown files
-- [ ] Add build time Markdown frontmatter validation
+- [x] Add shell script to generate pre-populated Markdown files
+- [x] Add build time Markdown frontmatter validation
 
 ## Style Guide
 
