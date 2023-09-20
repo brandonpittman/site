@@ -13,6 +13,10 @@
     text-size-adjust: none;
   }
 
+  body {
+    overscroll-behavior: none;
+  }
+
   /* Remove default margin in favour of better control in authored CSS */
   body,
   h1,
@@ -22,6 +26,8 @@
   p,
   figure,
   blockquote,
+  ol,
+  ul,
   dl,
   dd {
     margin: 0;
@@ -33,12 +39,12 @@
     list-style: none;
   }
 
-  /* ul,
+  ul,
   ol {
     list-style: disc;
     padding: 0;
     padding-inline-start: 2ch;
-  } */
+  }
 
   /* Set core body defaults */
   body {
