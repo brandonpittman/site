@@ -3,17 +3,9 @@ import { useSignal, component$, $ } from "@builder.io/qwik";
 export const CopyEmail = component$(() => {
   const isAnimated = useSignal(false);
 
-  const onClick = $(() => {
-    // For Safari…
-    // https://wolfgangrittner.dev/how-to-use-clipboard-api-in-firefox/
-    const email = new ClipboardItem({
-      "text/plain": new Blob(["hey@brandonpittman.com"], {
-        type: "text/plain",
-      }),
-    });
-    navigator.clipboard.write([email]).then(() => {
-      isAnimated.value = true;
-    });
+  const onClick = $(async () => {
+    await navigator.clipboard.writeText("hey@brandonpittman.com");
+    isAnimated.value = true;
   });
 
   return (
