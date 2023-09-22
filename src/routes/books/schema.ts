@@ -5,5 +5,5 @@ export const schema = object({
   subtitle: optional(string()),
   translator: optional(string()),
   author: string(),
-  status: enumType(["read", "unread", "reading", "abandoned"]),
+  status: enumType(["read", "unread", "reading", "abandoned", "rereading"]),
 });

@@ -18,5 +18,11 @@ export const schema = object({
     "PC",
     "DC",
   ]),
-  status: enumType(["unbeaten", "unplayed", "beaten", "abandoned"]),
+  status: enumType([
+    "unbeaten",
+    "unplayed",
+    "beaten",
+    "abandoned",
+    "replaying",
+  ]),
 });
