@@ -162,6 +162,14 @@
     white-space: nowrap;
   }
 
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Animations */
+
   .animation-blink {
     animation: var(--animation-blink);
   }

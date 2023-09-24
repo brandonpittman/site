@@ -185,10 +185,20 @@ aside {
 
   pre {
     padding: var(--space-2xs-xs);
-    border-radius: var(--border-radius-sm);
     font-size: var(--size-step--1);
     background-color: var(--color-base-dark);
+    color: var(--color-base-light);
     overflow-x: auto;
+    width: 100vw;
+    margin-inline-start: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: 640px) {
+      width: revert;
+      margin-inline-start: revert;
+      transform: revert;
+      border-radius: var(--border-radius-sm);
+    }
   }
 
   footer {
