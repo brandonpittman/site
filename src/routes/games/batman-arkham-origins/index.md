@@ -1,5 +1,5 @@
 ---
 title: "Batman: Arkham Origins"
-platform: PS3
+platform: Xbox 360
 status: replaying
 ---

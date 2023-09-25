@@ -25,7 +25,13 @@ const validator = array(
       "PC",
       "DC",
     ]),
-    status: enumType(["unbeaten", "unplayed", "beaten", "abandoned"]),
+    status: enumType([
+      "unbeaten",
+      "unplayed",
+      "beaten",
+      "abandoned",
+      "replaying",
+    ]),
     slug: string(),
   })
 );
@@ -63,6 +69,9 @@ export const useLoader = routeLoader$(async (e) => {
   const isAbandoned = (b: any) => b.status === "abandoned";
   let abandoned = games.filter(isAbandoned);
 
+  const isReplaying = (b: any) => b.status === "replaying";
+  let replaying = games.filter(isReplaying);
+
   const searchParams = e.url.searchParams;
   const q = searchParams.get("q")?.trim();
 
@@ -81,6 +90,7 @@ export const useLoader = routeLoader$(async (e) => {
     beaten = beaten.filter(filterFn);
     unbeaten = unbeaten.filter(filterFn);
     abandoned = abandoned.filter(filterFn);
+    replaying = replaying.filter(filterFn);
   }
 
   const found = [...beaten, ...unbeaten, ...unplayed, ...abandoned];
@@ -93,6 +103,7 @@ export const useLoader = routeLoader$(async (e) => {
       unplayed,
       beaten,
       abandoned,
+      replaying,
     };
   }
 });
@@ -107,6 +118,7 @@ export default component$(() => {
       </SearchForm>
 
       <section id="lists" class="flow">
+        <UnplayedBlock list={data.value.replaying} title="Replaying" />
         <UnplayedBlock list={data.value.unbeaten} title="Unbeaten" />
         <UnplayedBlock list={data.value.unplayed} title="Unplayed" />
         <UnplayedBlock list={data.value.beaten} title="Beaten" />

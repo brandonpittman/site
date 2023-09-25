@@ -12,7 +12,7 @@ const validator = array(
     subtitle: optional(string()),
     translator: optional(string()),
     author: string(),
-    status: enumType(["read", "unread", "reading", "abandoned"]),
+    status: enumType(["read", "unread", "reading", "abandoned", "rereading"]),
     slug: string(),
   })
 );
@@ -43,6 +43,9 @@ export const useLoader = routeLoader$(async (e) => {
   const isReading = (b: any) => b.status === "reading";
   let reading = books.filter(isReading);
 
+  const isRereading = (b: any) => b.status === "rereading";
+  let rereading = books.filter(isRereading);
+
   const isUnread = (b: any) => b.status === "unread";
   let unread = books.filter(isUnread);
 
@@ -67,6 +70,7 @@ export const useLoader = routeLoader$(async (e) => {
     read = read.filter(filterFn);
     reading = reading.filter(filterFn);
     abandoned = abandoned.filter(filterFn);
+    rereading = rereading.filter(filterFn);
   }
 
   const found = [...read, ...unread, ...reading, ...abandoned];
@@ -79,6 +83,7 @@ export const useLoader = routeLoader$(async (e) => {
       unread,
       read,
       abandoned,
+      rereading,
     };
   }
 });
@@ -101,6 +106,7 @@ export default component$(() => {
       <SearchForm placeholder="Search by title or author…">Title</SearchForm>
 
       <section id="lists" class="flow">
+        <UnreadBlock list={data.value.rereading} title="Rereading" />
         <UnreadBlock list={data.value.reading} title="Reading" />
         <UnreadBlock list={data.value.unread} title="Unread" />
         <UnreadBlock list={data.value.read} title="Read" />
