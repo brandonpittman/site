@@ -39,7 +39,6 @@
     "gray-matter": "^4.0.3",
     "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
-    "qwik-markdown": "^0.0.12",
     "simple-git-hooks": "^2.8.1",
     "styled-vanilla-extract": "^0.5.4",
     "tsx": "^3.12.10",
@@ -47,6 +46,7 @@
     "undici": "5.22.1",
     "vite": "4.4.0",
     "vite-tsconfig-paths": "4.2.0",
+    "qwik-markdown": "^0.0.13",
     "wrangler": "^3.0.0"
   },
   "simple-git-hooks": {
