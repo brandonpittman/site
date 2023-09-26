@@ -1,8 +1,7 @@
 ---
 title: "About"
 description: "What I'm all about."
-updated: 2023-02-17
-layout: "../layouts/MdPage.astro"
+updated: 2023-09-26
 ---
 
 I'm a frontend engineer and I live Nagoya, Japan but I'm originally from
@@ -29,7 +28,7 @@ and promoted the usage of atomic, functional, and utility-driven CSS whenever
 and wherever possible. Recently, I've lost my fervor for Tailwind and have been
 exploring [Vanilla Extract](http://vanilla-extract.style) for its type-safety.
 
-In 2023, I fell in love with [Qwik](https://qwik.builder.io) because of it's focus on SSR and reducing how much JavaScript gets downloaded and when.
+In 2023, I fell in love with [Qwik](https://qwik.builder.io) because of its focus on SSR and reducing how much JavaScript gets downloaded and when.
 I continue to love functional programming but I've learn to be happy with using it pragmatically within the confines of TypeScript.
 To fulfill my desire to learn a more academic version of functional programming, I play around with Haskell and other ML-like languages from time to time.
 
