@@ -2,48 +2,37 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { NoteList } from "./note-list";
 import { NoteLink } from "./note-link";
 import type { DocumentHead, DocumentHeadProps } from "@builder.io/qwik-city";
-import {
-  parse,
-  array,
-  object,
-  string,
-  regex,
-  boolean,
-  optional,
-} from "valibot";
+import type { Input } from "valibot";
+import { parse, array } from "valibot";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { asyncMap } from "~/util/async-map";
+import { schema } from "./schema";
 
-const validator = array(
-  object({
-    title: string("Title required"),
-    description: optional(string()),
-    date: string("Date required", [
-      regex(/^\d{4}-\d{2}-\d{2}$/, "ISO date required"),
-    ]),
-    draft: optional(boolean()),
-  })
-);
+export type Note = Input<typeof schema>;
+type SluggedNote = Note & { slug: string };
 
 export const useNotes = routeLoader$(async () => {
   const modules = import.meta.glob("/src/routes/notes/**/*.md");
 
-  const notes = await asyncMap(Object.keys(modules), async (path) => {
-    const data = (await modules[path]()) as DocumentHeadProps;
-    const chunks = path.split("/index.md")[0].split("/");
-    const slug = chunks[chunks.length - 1];
+  const notes: SluggedNote[] = await asyncMap(
+    Object.keys(modules),
+    async (path) => {
+      const data = (await modules[path]()) as DocumentHeadProps;
+      const chunks = path.split("/index.md")[0].split("/");
+      const slug = chunks[chunks.length - 1];
 
-    return {
-      title: data.head.title || "",
-      description:
-        data.head.meta.find((m) => m.name === "description")?.content || "",
-      date: data.head.frontmatter.date,
-      draft: data.head.frontmatter.draft,
-      slug,
-    };
-  });
+      return {
+        title: data.head.title || "",
+        description:
+          data.head.meta.find((m) => m.name === "description")?.content || "",
+        date: data.head.frontmatter.date,
+        draft: data.head.frontmatter.draft,
+        slug,
+      };
+    }
+  );
 
-  parse(validator, notes);
+  parse(array(schema), notes);
 
   return notes.sort((a, b) => {
     const dateA = new Date(a.date).getTime();
