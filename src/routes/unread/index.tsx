@@ -1,21 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { parse, object, string, enumType, optional, array } from "valibot";
+import type { Input } from "valibot";
+import { parse, array } from "valibot";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnreadBlock } from "./unread-block";
 import { asyncMap } from "~/util/async-map";
+import { schema } from "../books/schema";
 
-const validator = array(
-  object({
-    title: string(),
-    subtitle: optional(string()),
-    translator: optional(string()),
-    author: string(),
-    status: enumType(["read", "unread", "reading", "abandoned", "rereading"]),
-    slug: string(),
-  })
-);
+export type Book = Input<typeof schema>;
+
+const isStatus = (status: Book["status"]) => (book: Book) =>
+  book.status === status;
 
 export const useLoader = routeLoader$(async (e) => {
   const modules = import.meta.glob("/src/routes/books/**/*.md");
@@ -35,22 +31,13 @@ export const useLoader = routeLoader$(async (e) => {
     };
   });
 
-  parse(validator, books);
+  parse(array(schema), books);
 
-  const isRead = (b: any) => b.status === "read";
-  let read = books.filter(isRead);
-
-  const isReading = (b: any) => b.status === "reading";
-  let reading = books.filter(isReading);
-
-  const isRereading = (b: any) => b.status === "rereading";
-  let rereading = books.filter(isRereading);
-
-  const isUnread = (b: any) => b.status === "unread";
-  let unread = books.filter(isUnread);
-
-  const isAbandoned = (b: any) => b.status === "abandoned";
-  let abandoned = books.filter(isAbandoned);
+  let read = books.filter(isStatus("read"));
+  let reading = books.filter(isStatus("reading"));
+  let rereading = books.filter(isStatus("rereading"));
+  let unread = books.filter(isStatus("unread"));
+  let abandoned = books.filter(isStatus("abandoned"));
 
   const searchParams = e.url.searchParams;
   const q = searchParams.get("q")?.trim();
@@ -73,7 +60,7 @@ export const useLoader = routeLoader$(async (e) => {
     rereading = rereading.filter(filterFn);
   }
 
-  const found = [...read, ...unread, ...reading, ...abandoned];
+  const found = [...read, ...rereading, ...unread, ...reading, ...abandoned];
 
   if (found.length === 1) {
     throw e.redirect(307, `/books/${found[0].slug}`);
