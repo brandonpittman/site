@@ -1,40 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { parse, array, object, string, enumType } from "valibot";
+import type { Input } from "valibot";
+import { parse, array } from "valibot";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { SearchForm } from "~/components/search-form";
 import { UnplayedBlock } from "./unplayed-block";
 import { asyncMap } from "~/util/async-map";
+import { schema } from "../games/schema";
 
-const validator = array(
-  object({
-    title: string(),
-    platform: enumType([
-      "PS1",
-      "PS2",
-      "PS3",
-      "PS4",
-      "Xbox",
-      "Xbox 360",
-      "Xbox One",
-      "Xbox Series X",
-      "GameCube",
-      "Wii",
-      "DS",
-      "iOS",
-      "PC",
-      "DC",
-    ]),
-    status: enumType([
-      "unbeaten",
-      "unplayed",
-      "beaten",
-      "abandoned",
-      "replaying",
-    ]),
-    slug: string(),
-  })
-);
+export type Game = Input<typeof schema>;
+
+const isStatus = (status: Game["status"]) => (book: Game) =>
+  book.status === status;
 
 export const useLoader = routeLoader$(async (e) => {
   const modules = import.meta.glob("/src/routes/games/**/*.md");
@@ -53,24 +30,13 @@ export const useLoader = routeLoader$(async (e) => {
     };
   });
 
-  //games.sort((a, b) => (a.title < b.title ? -1 : 1));
+  parse(array(schema), games);
 
-  parse(validator, games);
-
-  const isRead = (b: any) => b.status === "beaten";
-  let beaten = games.filter(isRead);
-
-  const isReading = (b: any) => b.status === "unbeaten";
-  let unbeaten = games.filter(isReading);
-
-  const isUnread = (b: any) => b.status === "unplayed";
-  let unplayed = games.filter(isUnread);
-
-  const isAbandoned = (b: any) => b.status === "abandoned";
-  let abandoned = games.filter(isAbandoned);
-
-  const isReplaying = (b: any) => b.status === "replaying";
-  let replaying = games.filter(isReplaying);
+  let beaten = games.filter(isStatus("beaten"));
+  let unbeaten = games.filter(isStatus("unbeaten"));
+  let unplayed = games.filter(isStatus("unplayed"));
+  let abandoned = games.filter(isStatus("abandoned"));
+  let replaying = games.filter(isStatus("replaying"));
 
   const searchParams = e.url.searchParams;
   const q = searchParams.get("q")?.trim();
@@ -93,7 +59,13 @@ export const useLoader = routeLoader$(async (e) => {
     replaying = replaying.filter(filterFn);
   }
 
-  const found = [...beaten, ...unbeaten, ...unplayed, ...abandoned];
+  const found = [
+    ...replaying,
+    ...beaten,
+    ...unbeaten,
+    ...unplayed,
+    ...abandoned,
+  ];
 
   if (found.length === 1) {
     throw e.redirect(307, `/games/${found[0].slug}`);
