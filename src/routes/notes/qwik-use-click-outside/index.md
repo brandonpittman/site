@@ -1,5 +1,5 @@
 ---
-title: "useClickOutside for Qwik"
+title: "On useClickOutside for Qwik"
 date: "2023-10-13"
 ---
 
