@@ -1,5 +1,5 @@
 ---
-title: "The Killing Joke"
+title: "Batman: The Killing Joke"
 author: "Alan Moore"
 status: read
 ---
