@@ -4,6 +4,7 @@
 
 - [x] Add shell script to generate pre-populated Markdown files
 - [x] Add build time Markdown frontmatter validation
+- [ ] Slugify title and add `.md` suffix automatically
 
 ## Style Guide
 
