@@ -1,5 +1,5 @@
 ---
 title: "Batman: The Court of Owls"
-author: Scott Snyder
+author: "Scott Snyder"
 status: read
 ---
