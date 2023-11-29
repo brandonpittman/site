@@ -1,5 +1,5 @@
 ---
-title: "Batman: One Bad Day - The Penguin"
+title: "Batman: One Bad Day: Penguin"
 author: "John Ridley"
 status: read
 ---
