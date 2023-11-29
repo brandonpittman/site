@@ -1,5 +1,5 @@
 ---
-title: "THE JOKER: YEAR OF THE VILLAIN #1"
+title: "The Joker: Year of the Villain #1"
 author: "John Carpenter"
 status: read
 ---
