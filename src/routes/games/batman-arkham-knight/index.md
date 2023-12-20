@@ -1,5 +1,5 @@
 ---
 title: "Batman: Arkham Knight"
-platform: PS4
-status: beaten
+platform: Xbox Series X
+status: unbeaten
 ---
