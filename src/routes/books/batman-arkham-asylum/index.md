@@ -1,5 +1,6 @@
 ---
 title: "Batman: Arkham Asylum"
-author: Grant Morrison
+subtitle: A Serious House on a Serious Earth
+author: "Grant Morrison"
 status: read
 ---
