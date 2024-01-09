@@ -4,4 +4,4 @@ author: "Frank Miller"
 status: read
 ---
 
-Loved this book. It gets a bad wrap from wimps you can't take a joke.
+Loved this book. It gets a bad wrap from wimps who can't take a joke.
