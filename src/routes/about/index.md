@@ -15,7 +15,7 @@ Ruby and then Rails in hopes of turning my hobby into a career.
 
 After struggling to find enjoyment with the backend, I realized how much I
 enjoyed the frontend. While learning a bit of Laravel, I discovered
-[Vue.js](https://vuejs.org) and quickly fell in love. I left my job as a
+[Vue.js][] and quickly fell in love. I left my job as a
 teacher and began working in frontend development. Recently interested in
 functional programming, I got into [ReasonML](https://reasonml.github.io) and
 then [ReasonReact](https://reasonml.github.io/reason-react/). With my newfound
@@ -25,8 +25,7 @@ than Vue did, beginning my love affair with React.
 For a time, I was deeply passionate about Tailwind. I've written a [number of
 Tailwind plugins](https://github.com/brandonpittman/tailwindcss-plugin-fancy)
 and promoted the usage of atomic, functional, and utility-driven CSS whenever
-and wherever possible. Recently, I've lost my fervor for Tailwind and have been
-exploring [Vanilla Extract](http://vanilla-extract.style) for its type-safety.
+and wherever possible. Recently, I've lost my fervor for Tailwind and now use [Vanilla Extract](http://vanilla-extract.style) for its type-safety.
 
 In 2023, I fell in love with [Qwik](https://qwik.builder.io) because of its focus on SSR and reducing how much JavaScript gets downloaded and when.
 I continue to love functional programming but I've learn to be happy with using it pragmatically within the confines of TypeScript.
@@ -37,8 +36,11 @@ All my open-source work is up on [Github](https://github.com/brandonpittman).
 I'm married to a lovely woman whom I met by total chance at Oktoberfest in
 Nagoya one lovely day in 2014. She's gorgeous, smart, and most importantly,
 funny. We keep each other laughing on a daily basis and I'm lucky to have her.
-My son, Marcus, was born in September 2021. Our second child is due April 2024.
+My son, Marcus, was born in September 2021. My second son, Lucas, is due April 2024.
 
-When I have time for myself, I study philosophy, train jiu-jitsu, play video
-games, cook, drink natural wine, craft beer, and good
-whisky.
+When I have time for myself, I study traditional Stoicism (mentoring at [The
+College of Stoic Philosophers][cosp]), train jiu-jitsu, play video games, cook,
+drink natural wine, craft beer, and good whisky.
+
+[Vue.js]: https://vuejs.org
+[cosp]: https://collegeofstoicphilosophers.org
