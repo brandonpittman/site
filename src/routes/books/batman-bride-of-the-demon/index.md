@@ -1,5 +1,5 @@
 ---
-title: "Batman: Son of the Demon"
+title: "Batman: Bride of the Demon"
 author: "Mike Barr"
 status: read
 ---
