@@ -23,7 +23,6 @@ export const SearchForm = component$<{ placeholder?: string }>(
           style="--gutter: var(--space-2xs); --sidebar-min-inline-size: 80%; max-inline-size: var(--size-15)"
         >
           <input
-            list="datalist"
             autoFocus
             value={q}
             id="search"

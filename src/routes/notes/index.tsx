@@ -14,23 +14,20 @@ type SluggedNote = Note & { slug: string };
 export const useNotes = routeLoader$(async () => {
   const modules = import.meta.glob("/src/routes/notes/**/*.md");
 
-  const notes: SluggedNote[] = await asyncMap(
-    Object.keys(modules),
-    async (path) => {
-      const data = (await modules[path]()) as DocumentHeadProps;
-      const chunks = path.split("/index.md")[0].split("/");
-      const slug = chunks[chunks.length - 1];
+  const notes = (await asyncMap(Object.keys(modules), async (path) => {
+    const data = (await modules[path]()) as DocumentHeadProps;
+    const chunks = path.split("/index.md")[0].split("/");
+    const slug = chunks[chunks.length - 1];
 
-      return {
-        title: data.head.title || "",
-        description:
-          data.head.meta.find((m) => m.name === "description")?.content || "",
-        date: data.head.frontmatter.date,
-        draft: data.head.frontmatter.draft,
-        slug,
-      };
-    }
-  );
+    return {
+      title: data.head.title || "",
+      description:
+        data.head.meta.find((m) => m.name === "description")?.content || "",
+      date: data.head.frontmatter.date,
+      draft: data.head.frontmatter.draft,
+      slug,
+    };
+  })) as SluggedNote[];
 
   parse(array(schema), notes);
 
