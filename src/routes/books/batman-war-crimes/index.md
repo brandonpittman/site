@@ -1,5 +1,5 @@
 ---
 title: "Batman: War Crimes"
-author: "Andersen Gabrych"
+author: "Bill Willingham"
 status: read
 ---
