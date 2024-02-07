@@ -7,12 +7,15 @@ import { parse, array } from "valibot";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { asyncMap } from "~/util/async-map";
 import { schema } from "./schema";
+import { isDev } from "@builder.io/qwik/build";
 
 export type Note = Input<typeof schema>;
 type SluggedNote = Note & { slug: string };
 
 export const useNotes = routeLoader$(async () => {
-  const modules = import.meta.glob("/src/routes/notes/**/*.md");
+  const modules = import.meta.glob("/src/routes/notes/**/*.md", {
+    eager: isDev ? false : true,
+  });
 
   const notes = (await asyncMap(Object.keys(modules), async (path) => {
     const data = (await modules[path]()) as DocumentHeadProps;

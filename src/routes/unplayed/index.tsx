@@ -7,6 +7,7 @@ import { SearchForm } from "~/components/search-form";
 import { UnplayedBlock } from "./unplayed-block";
 import { asyncMap } from "~/util/async-map";
 import { schema } from "../games/schema";
+import { isDev } from "@builder.io/qwik/build";
 
 export type Game = Input<typeof schema>;
 
@@ -14,7 +15,9 @@ const isStatus = (status: Game["status"]) => (book: Game) =>
   book.status === status;
 
 export const useLoader = routeLoader$(async (e) => {
-  const modules = import.meta.glob("/src/routes/games/**/*.md");
+  const modules = import.meta.glob("/src/routes/games/**/*.md", {
+    eager: isDev ? false : true,
+  });
 
   const games = await asyncMap(Object.keys(modules), async (path) => {
     const data = (await modules[path]()) as any;
