@@ -1,5 +1,5 @@
 ---
 title: "Babylon's Ashes"
 author: "James S. A. Corey"
-status: reading
+status: read
 ---
