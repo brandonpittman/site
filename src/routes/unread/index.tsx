@@ -8,17 +8,13 @@ import { UnreadBlock } from "./unread-block";
 import { asyncMap } from "~/util/async-map";
 import { schema } from "../books/schema";
 
-import { isDev } from "@builder.io/qwik/build";
-
 export type Book = Input<typeof schema>;
 
 const isStatus = (status: Book["status"]) => (book: Book) =>
   book.status === status;
 
 export const useLoader = routeLoader$(async (e) => {
-  const modules = import.meta.glob("/src/routes/books/**/*.md", {
-    eager: isDev ? false : true,
-  });
+  const modules = import.meta.glob("/src/routes/books/**/*.md");
 
   const books = await asyncMap(Object.keys(modules), async (path) => {
     const data = (await modules[path]()) as any;
