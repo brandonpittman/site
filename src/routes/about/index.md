@@ -39,8 +39,7 @@ funny. We keep each other laughing on a daily basis and I'm lucky to have her.
 My first son, Marcus, was born in September 2021 and my second son, Lucas, was born in March 2024.
 
 When I have time for myself, I study traditional Stoicism (mentoring at [The
-College of Stoic Philosophers][cosp]), train jiu-jitsu, play video games, cook,
-drink natural wine, craft beer, and good whisky.
+College of Stoic Philosophers][cosp]), train jiu-jitsu, study Latin, and read comics.
 
 [Vue.js]: https://vuejs.org
 [cosp]: https://collegeofstoicphilosophers.org
