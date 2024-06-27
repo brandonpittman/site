@@ -110,6 +110,10 @@
     text-align: center;
   }
 
+  .align-center {
+    align-items: center;
+  }
+
   .color-gray-light {
     color: var(--color-gray-light);
   }
