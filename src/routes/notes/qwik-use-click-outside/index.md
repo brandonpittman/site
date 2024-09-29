@@ -1,6 +1,6 @@
 ---
 title: "On useClickOutside for Qwik"
-date: "2023-10-13"
+date: "2024-09-29"
 ---
 
 Everybody needs a click outside helper eventually.
@@ -10,9 +10,11 @@ Here's one for Qwik that I lifted this from [here](https://code.build/p/RUGSxMmS
 import type { QRL, Signal } from "@builder.io/qwik";
 import { $, useOnDocument } from "@builder.io/qwik";
 
+type Ref = Signal<HTMLElement | undefined>;
+
 export const useClickOutside = (
-  ref: Signal<HTMLElement | undefined>,
-  onClickOut: QRL<(event: Event) => void>
+  ref: Ref,
+  onClickOut: QRL<(event: Event, ref: Ref) => void>
 ) => {
   useOnDocument(
     "click",
@@ -22,7 +24,7 @@ export const useClickOutside = (
       }
       const target = event.target as HTMLElement;
       if (!ref.value.contains(target)) {
-        onClickOut(event);
+        onClickOut(event, ref);
       }
     })
   );
