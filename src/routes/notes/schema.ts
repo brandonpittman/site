@@ -1,7 +1,7 @@
 import {
   object,
   string,
-  boolean,
+  //boolean,
   optional,
   minLength,
   isoDate,
@@ -15,5 +15,5 @@ export const schema = object({
     string("Date required", [isoDate("ISO date required")]),
     new Date().toISOString().substring(0, 10)
   ),
-  draft: optional(boolean()),
+  //draft: optional(boolean()),
 });
