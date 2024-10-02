@@ -66,7 +66,7 @@ export default component$(() => {
     <article id="notes" class="prose flow-xs">
       <NoteList>
         {notes.value
-          .filter((v) => process.env.NODE_ENV === "development" || !v.draft)
+          //.filter((v) => process.env.NODE_ENV === "development" || !v.draft)
           .map((post) => (
             <NoteLink key={post.slug} post={post} />
           ))}
