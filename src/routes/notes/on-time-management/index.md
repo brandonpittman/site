@@ -4,8 +4,6 @@ description: Where I'm at with managing tasks and time.
 date: "2024-10-14"
 ---
 
-import List from "../../../images/closed-list.svg";
-
 ## Lists
 
 Things basically get filed into one of two lists—Open and Closed—taken from Oliver Burkeman's book [4,000 Weeks][4000weeks].
@@ -17,7 +15,7 @@ Things that will definitely not get touched in the next six weeks goes in Someda
 
 ### Closed List
 
-<img src={List} />
+![Closed List example](/images/closed-list.svg)
 
 My Closed List is based off of [Burkeman's _3/3/3_ idea for relaxed todo lists][333].
 
