@@ -12,12 +12,6 @@ export const Header = component$(() => {
       <ul role="list" class="cluster font-bold gutter-s">
         <NavLink href="/about">About</NavLink>
         <NavLink href="/notes">Notes</NavLink>
-        <NavLink href="/unread" matches={["books"]}>
-          Unread
-        </NavLink>
-        <NavLink href="/unplayed" matches={["games"]}>
-          Unplayed
-        </NavLink>
         <NavLink href="/colophon">Colophon</NavLink>
       </ul>
     </header>
