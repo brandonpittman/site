@@ -1,5 +1,7 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+
+import foo from "../styles/foo.less?inline";
 
 const traditionStoicism =
   "https://traditionalstoicism.com/the-path-of-the-prokopton/";
@@ -8,6 +10,8 @@ const dribbble = "https://dribbble.com/pittman";
 const coffee = "https://buymeacoffee.com/blp";
 
 export default component$(() => {
+  useStyles$(foo);
+
   return (
     <>
       <p>

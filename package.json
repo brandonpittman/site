@@ -39,6 +39,7 @@
     "eslint-plugin-qwik": "^1.8.0",
     "glob": "^10.3.4",
     "gray-matter": "^4.0.3",
+    "less": "^4.2.0",
     "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
     "qwik-markdown": "^0.0.20",

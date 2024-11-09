@@ -11,8 +11,7 @@
     line-height: 1.75;
   }
 
-  .flow > * + *,
-  .prose > * + * {
+  .flow > :not([hidden]) ~ :not([hidden]) {
     margin-block-start: var(--flow-space, var(--space-s-m));
   }
 
