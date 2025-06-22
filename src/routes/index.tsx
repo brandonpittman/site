@@ -42,6 +42,15 @@ export default component$(() => {
         .
       </p>
 
+      <p>
+        If you wanna listen to some music I've been digging lately-ish, here's
+        my{" "}
+        <a href="https://music.apple.com/us/playlist/hot-shit/pl.u-GgLNRT738Pa">
+          Hot Shit playlist
+        </a>{" "}
+        in Apple Music.
+      </p>
+
       <div id="contact" class="cluster gutter-3xs align-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
