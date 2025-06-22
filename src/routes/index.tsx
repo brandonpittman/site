@@ -46,9 +46,9 @@ export default component$(() => {
         If you wanna listen to some music I've been digging lately-ish, here's
         my{" "}
         <a href="https://music.apple.com/us/playlist/hot-shit/pl.u-GgLNRT738Pa">
-          Hot Shit playlist
+          Preferred Indifferents
         </a>{" "}
-        in Apple Music.
+        playlist in Apple Music.
       </p>
 
       <div id="contact" class="cluster gutter-3xs align-center">
