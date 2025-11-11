@@ -1,0 +1,189 @@
+@layer utility {
+  /* https://cube.fyi/utility.html */
+
+  /* TL;DR: Utility classes (yes, like Tailwind) */
+
+  .block {
+    display: block;
+  }
+
+  .prose {
+    line-height: 1.75;
+  }
+
+  .flow > :not([hidden]) ~ :not([hidden]) {
+    margin-block-start: var(--flow-space, var(--space-s-m));
+  }
+
+  .prose :is(pre, pre + *, figure, figure + *, h2, h3, h4, h5, h6) {
+    --flow-space: var(--space-l-xl);
+  }
+
+  .prose :is(h2 + *, h3 + *, h4 + *, h5 + *, h6 + *) {
+    --flow-space: var(--space-s);
+  }
+
+  .w-full {
+    inline-size: 100%;
+  }
+
+  .wrapper {
+    max-inline-size: clamp(16rem, var(--wrapper-max-width, 100vw), 80rem);
+    margin-inline: auto;
+    padding-inline: var(--gutter, var(--space-s));
+    position: relative;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: var(--flex-direction, row);
+  }
+
+  .gutter-s {
+    --gutter: var(--space-s);
+  }
+
+  .gutter-3xs {
+    --gutter: var(--space-3xs);
+  }
+
+  .gutter-2xs {
+    --gutter: var(--space-2xs);
+  }
+
+  .gutter-xs {
+    --gutter: var(--space-xs);
+  }
+
+  .region {
+    padding-block: var(--region-space, var(--space-l-xl));
+  }
+
+  .prose {
+    max-inline-size: var(--content-measure);
+  }
+
+  .object-fit-cover {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  .font-medium {
+    font-weight: 500;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .font-mono {
+    font-family: monospace;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .text-xs {
+    font-size: var(--size-step-0);
+  }
+
+  .text-2xs {
+    font-size: var(--size-step--1);
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .color-gray-light {
+    color: var(--color-gray-light);
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    border: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .bg-accent-light {
+    background-color: var(--color-accent-light);
+  }
+
+  .border-none {
+    border: none;
+  }
+
+  .flow-s {
+    --flow-space: var(--space-s);
+  }
+
+  .flow-m {
+    --flow-space: var(--space-m);
+  }
+
+  .flow-xs {
+    --flow-space: var(--space-xs);
+  }
+
+  .flow-2xs {
+    --flow-space: var(--space-2xs);
+  }
+
+  .flow-3xs {
+    --flow-space: var(--space-3xs);
+  }
+
+  .wrap-balance {
+    text-wrap: balance;
+  }
+
+  .white-space-nowrap {
+    white-space: nowrap;
+  }
+
+  .full-bleed {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Animations */
+
+  .animation-blink {
+    animation: var(--animation-blink);
+  }
+
+  .animate-once {
+    animation-iteration-count: 1;
+  }
+
+  /* === FOR DEBUGGING PURPOSES ONLY! === */
+  /*
+* {
+  background: rgb(0 100 0 / 0.05) !important;
+} */
+}
