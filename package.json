@@ -1,7 +1,7 @@
 {
   "name": "brandon-pittman",
   "description": "Brandon Pittman's personal site",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "type": "module",
   "private": true,
   "engines": {

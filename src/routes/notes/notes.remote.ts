@@ -1,37 +1,39 @@
-'use server';
+"use server";
 
 export type Note = {
-	slug: string;
-	title: string;
-	description: string;
-	date: string;
-	draft?: boolean;
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  draft?: boolean;
 };
 
 export async function getNotes(): Promise<Note[]> {
-	const modules = import.meta.glob('/content/notes/*.md', { eager: true });
+  const modules = import.meta.glob("/content/notes/*.md", { eager: true });
 
-	const notes: Note[] = [];
+  console.log(modules);
 
-	for (const path in modules) {
-		const mod = modules[path] as any;
-		const filename = path.split('/').pop()?.replace('.md', '') || '';
+  const notes: Note[] = [];
 
-		notes.push({
-			slug: filename,
-			title: mod.metadata?.title || '',
-			description: mod.metadata?.description || '',
-			date: mod.metadata?.date || '',
-			draft: mod.metadata?.draft
-		});
-	}
+  for (const path in modules) {
+    const mod = modules[path] as any;
+    const filename = path.split("/").pop()?.replace(".md", "") || "";
 
-	// Sort by date, newest first
-	notes.sort((a, b) => {
-		const dateA = new Date(a.date).getTime();
-		const dateB = new Date(b.date).getTime();
-		return dateB - dateA;
-	});
+    notes.push({
+      slug: filename,
+      title: mod.metadata?.title || "",
+      description: mod.metadata?.description || "",
+      date: mod.metadata?.date || "",
+      draft: mod.metadata?.draft,
+    });
+  }
 
-	return notes;
+  // Sort by date, newest first
+  notes.sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    return dateB - dateA;
+  });
+
+  return notes;
 }
