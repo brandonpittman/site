@@ -10,21 +10,23 @@ export type Note = {
 };
 
 export const getNotes = query(() => {
-  const modules = import.meta.glob("/content/notes/*.md", { eager: true });
+  const modules = import.meta.glob("./**/+page.md", { eager: true });
 
   const notes: Note[] = [];
 
   for (const path in modules) {
     const mod = modules[path] as any;
-    const filename = path.split("/").pop()?.replace(".md", "") || "";
+    const slug = path.split("/").slice(-2, -1)[0];
 
-    notes.push({
-      slug: filename,
-      title: mod.metadata?.title || "",
-      description: mod.metadata?.description || "",
-      date: mod.metadata?.date || "",
-      draft: mod.metadata?.draft,
-    });
+    if (slug && slug !== "[slug]") {
+      notes.push({
+        slug: slug,
+        title: mod.metadata?.title || "",
+        description: mod.metadata?.description || "",
+        date: mod.metadata?.date || "",
+        draft: mod.metadata?.draft,
+      });
+    }
   }
 
   // Sort by date, newest first
@@ -35,17 +37,4 @@ export const getNotes = query(() => {
   });
 
   return notes;
-});
-
-export const getNote = query(z.string(), async (slug) => {
-  const modules = import.meta.glob("/content/notes/*.md", {
-    eager: true,
-    import: "default",
-  });
-
-  const markdown = modules[`/content/notes/${slug}.md`];
-
-  console.log(markdown);
-
-  return markdown;
 });
