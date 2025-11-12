@@ -1,7 +1,7 @@
 ---
-title: "On Time Management"
+title: 'On Time Management'
 description: Where I'm at with managing tasks and time.
-date: "2024-10-14"
+date: '2024-10-14'
 ---
 
 ## Lists
@@ -14,8 +14,6 @@ The one exception to this rule is the Someday/Maybe List.
 Things that will definitely not get touched in the next six weeks goes in Someday/Maybe.
 
 ### Closed List
-
-![Closed List example](/images/closed-list.svg)
 
 My Closed List is based off of [Burkeman's _3/3/3_ idea for relaxed todo lists][333].
 
