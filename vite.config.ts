@@ -1,16 +1,17 @@
-import { defineConfig } from "vite";
-import { qwikVite } from "@builder.io/qwik/optimizer";
-import { qwikCity } from "@builder.io/qwik-city/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
-import { vanillaExtractPlugin } from "styled-vanilla-extract/vite";
+import devtoolsJson from 'vite-plugin-devtools-json';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig, searchForWorkspaceRoot } from 'vite';
 
-export default defineConfig(() => {
-  return {
-    plugins: [qwikCity(), qwikVite({devTools: {clickToSource: false}}), tsconfigPaths(), vanillaExtractPlugin()],
-    preview: {
-      headers: {
-        "Cache-Control": "public, max-age=600",
-      },
-    },
-  };
+export default defineConfig({
+  plugins: [sveltekit(), devtoolsJson()],
+  server: {
+    fs: {
+      allow: [
+        // search up for workspace root
+        searchForWorkspaceRoot(process.cwd()),
+        // your custom rules
+        './content'
+      ]
+    }
+  }
 });

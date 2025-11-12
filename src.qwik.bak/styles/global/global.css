@@ -1,0 +1,211 @@
+@layer global {
+  body {
+    --bg-color: var(--color-base-light);
+    --fg-color: var(--color-base-dark);
+    --bg-color-subtle: var(--color-gray-subtle-light);
+    --fg-color-subtle: var(--color-gray-light);
+    --accent-color: var(--color-accent-light);
+
+    font-family: var(--font-base);
+    font-size: var(--size-step-0);
+    font-weight: var(--font-weight-base);
+    line-height: var(--line-height-base);
+    background: var(--bg-color);
+    color: var(--fg-color);
+    letter-spacing: var(--tracking);
+    display: flex;
+    flex-direction: column;
+  }
+
+  [data-theme="light"] body {
+    --bg-color: var(--color-base-light);
+    --fg-color: var(--color-base-dark);
+    --bg-color-subtle: var(--color-gray-subtle-light);
+    --fg-color-subtle: var(--color-gray-light);
+    --accent-color: var(--color-accent-light);
+  }
+
+  [data-theme="dark"] body {
+    --bg-color: var(--color-base-dark);
+    --fg-color: var(--color-base-light);
+    --bg-color-subtle: var(--color-gray-subtle-dark);
+    --fg-color-subtle: var(--color-gray-dark);
+    --accent-color: var(--color-accent-dark);
+  }
+
+  /* Base typesetting */
+
+  h1 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading-1);
+  }
+
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading-2);
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-base);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--tracking-l);
+    max-inline-size: 24ch;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: var(--size-step-3);
+  }
+
+  h2 {
+    font-size: var(--size-step-2);
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: var(--size-step-1);
+  }
+
+  /* Set line lengths */
+
+  p,
+  li,
+  h4,
+  h5,
+  h6,
+  blockquote:not([class]) {
+    max-width: var(--content-measure);
+  }
+
+  /* Generic elements */
+
+  blockquote:not([class]) {
+    font-family: var(--font-heading);
+    font-size: var(--size-step-1);
+    font-style: italic;
+    padding-block: var(--space-m);
+    color: var(--color-gray-light);
+  }
+
+  blockquote:not([class]) p:last-of-type {
+    font-family: var(--font-base);
+    font-size: var(--size-step-1);
+    font-weight: normal;
+  }
+
+  svg {
+    height: 2.5ex;
+    width: auto;
+    flex: none;
+  }
+
+  [role="list"] {
+    padding: 0;
+  }
+
+  a {
+    color: var(--color-base-dark);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  :target {
+    scroll-margin-top: 2ex;
+  }
+
+  main:focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: var(--outline-size) solid;
+    outline-offset: var(--outline-offset);
+    outline-color: var(--fg-color);
+  }
+
+  main > ul[role="list"],
+  header,
+  section,
+  article > *:not(ul, ol),
+  aside {
+    padding-inline-start: env(safe-area-inset-left);
+    padding-inline-end: env(safe-area-inset-right);
+  }
+
+  ::marker {
+    color: var(--color-gray-subtle-dark);
+    display: none;
+  }
+
+  /* main,
+header,
+aside {
+  margin-block-end: var(--space-xl-2xl);
+} */
+
+  input[type="text"],
+  input[type="search"] {
+    appearance: none;
+    border: 1px solid var(--color-base-dark);
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-block: var(--space-3xs);
+    padding-inline: var(--space-2xs);
+    border-radius: var(--border-radius-sm);
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: var(--bg-color-subtle);
+  }
+
+  p > code,
+  li > code,
+  a > code {
+    padding: 2px 4px;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--bg-color-subtle);
+    color: var(--accent-color);
+    font-size: var(--size-step-0);
+  }
+
+  pre {
+    padding: var(--space-2xs-xs);
+    font-size: var(--size-step--1);
+    background-color: var(--color-base-dark);
+    color: var(--color-base-light);
+    overflow-x: auto;
+    width: 100vw;
+    margin-inline-start: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: 640px) {
+      width: revert;
+      margin-inline-start: revert;
+      transform: revert;
+      border-radius: var(--border-radius-sm);
+    }
+  }
+
+  footer {
+    margin-block-start: var(--space-xl-2xl);
+  }
+
+  summary {
+    cursor: default;
+  }
+}

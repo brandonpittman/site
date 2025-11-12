@@ -1,68 +1,49 @@
 {
-  "name": "brandon-pittman",
-  "description": "Brandon Pittman's personal site",
-  "engines": {
-    "node": ">=15.0.0"
-  },
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "build": "npm run build.validate && qwik build",
-    "build.client": "vite build",
-    "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
-    "build.types": "tsc --incremental --noEmit",
-    "build.validate": "npx qwik-markdown v",
-    "deploy": "wrangler pages publish ./dist",
-    "dev": "vite --mode ssr",
-    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "fmt": "prettier --write .",
-    "fmt.check": "prettier --check .",
-    "g": "npx qwik-markdown g",
-    "lint": "eslint \"src/**/*.ts*\"",
-    "preview": "qwik build preview && vite preview --open",
-    "serve": "wrangler pages dev ./dist",
-    "start": "vite --open --mode ssr",
-    "qwik": "qwik"
-  },
-  "devDependencies": {
-    "@builder.io/qwik": "^1.11.0",
-    "@builder.io/qwik-city": "^1.11.0",
-    "@clack/prompts": "^0.7.0",
-    "@types/eslint": "8.44.2",
-    "@types/node": "^20.4.0",
-    "@typescript-eslint/eslint-plugin": "6.4.0",
-    "@typescript-eslint/parser": "6.4.0",
-    "@vanilla-extract/css": "^1.11.1",
-    "clipboardy": "^3.0.0",
-    "eslint": "8.47.0",
-    "eslint-plugin-qwik": "^1.11.0",
-    "glob": "^10.3.4",
-    "gray-matter": "^4.0.3",
-    "less": "^4.2.0",
-    "lint-staged": "^13.2.3",
-    "prettier": "^2.8.8",
-    "qwik-markdown": "^0.0.20",
-    "simple-git-hooks": "^2.8.1",
-    "styled-vanilla-extract": "^0.5.4",
-    "tsx": "^4.7.0",
-    "typescript": "5.1.6",
-    "undici": "5.22.1",
-    "vite": "5.1.5",
-    "vite-tsconfig-paths": "4.2.0",
-    "wrangler": "^3.0.0"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "pre-push": "npm run build"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
-  },
-  "dependencies": {
-    "@vanilla-extract/sprinkles": "^1.6.1",
-    "og-img": "^0.2.0",
-    "qwik-dessert": "^0.0.8",
-    "valibot": "^0.21.0"
-  }
+	"name": "brandon-pittman",
+	"description": "Brandon Pittman's personal site",
+	"version": "2.0.0",
+	"type": "module",
+	"private": true,
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"fmt": "prettier --write .",
+		"fmt.check": "prettier --check .",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint ."
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.4.0",
+		"@eslint/js": "^9.38.0",
+		"@sveltejs/adapter-cloudflare": "^7.2.4",
+		"@sveltejs/kit": "^2.8.5",
+		"@sveltejs/vite-plugin-svelte": "^4.0.1",
+		"@types/node": "^22",
+		"@vanilla-extract/css": "^1.17.4",
+		"@vanilla-extract/sprinkles": "^1.6.5",
+		"eslint": "^9.38.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-svelte": "^3.12.4",
+		"globals": "^16.4.0",
+		"mdsvex": "^0.12.6",
+		"prettier": "^3.6.2",
+		"prettier-plugin-svelte": "^3.4.0",
+		"shiki": "^1.22.2",
+		"svelte": "^5.2.7",
+		"svelte-check": "^4.0.8",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.46.1",
+		"vite": "^5.4.11",
+		"vite-plugin-devtools-json": "^1.0.0",
+		"wrangler": "^4.46.0"
+	},
+	"dependencies": {
+		"zod": "^4.1.12"
+	}
 }
