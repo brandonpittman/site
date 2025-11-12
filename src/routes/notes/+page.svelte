@@ -1,14 +1,8 @@
 <script lang="ts">
 	import NoteLink from './NoteLink.svelte';
-	import { getNotes, type Note } from './notes.remote';
+	import { getNotes } from './notes.remote';
 
-	let notes = $state<Note[]>([]);
-
-	$effect(() => {
-		getNotes().then((result) => {
-			notes = result;
-		});
-	});
+	const notes = await getNotes();
 </script>
 
 <svelte:head>

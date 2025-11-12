@@ -1,16 +1,16 @@
 <script lang="ts">
 	import '../styles/styles.css';
 	import Header from '$lib/components/Header.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	let { children } = $props();
 
 	// Get title from page data meta or use default
-	const baseName = "Brandon Pittman";
-	const titleSuffix = " | " + baseName;
+	const baseName = 'Brandon Pittman';
+	const titleSuffix = ' | ' + baseName;
 
-	const pageTitle = $derived($page.data.title || '');
-	const hideH1 = $derived($page.data.hideH1 || false);
+	const pageTitle = $derived(page.data.title || '');
+	const hideH1 = $derived(page.data.hideH1 || false);
 </script>
 
 <svelte:head>
