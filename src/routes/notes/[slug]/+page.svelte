@@ -1,29 +1,23 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { getNote } from '../notes.remote';
+  import { page } from "$app/state";
+  import { getNote } from "../notes.remote";
 
-	let noteData = $state<{ content: any; metadata: any } | null>(null);
-
-	$effect(() => {
-		const slug = $page.params.slug;
-		getNote(slug).then((result) => {
-			noteData = result;
-		});
-	});
+  const slug = page.params.slug;
+  const note = await getNote(slug);
 </script>
 
 <svelte:head>
-	{#if noteData}
-		<title>{noteData.metadata.title} | Brandon Pittman</title>
-		{#if noteData.metadata.description}
-			<meta name="description" content={noteData.metadata.description} />
-		{/if}
-	{/if}
+  {#if note.metadata.title}
+    <title>{note.metadata.title} | Brandon Pittman</title>
+    {#if note.metadata.description}
+      <meta name="description" content={note.metadata.description} />
+    {/if}
+  {/if}
 </svelte:head>
 
-{#if noteData}
-	<article class="prose flow">
-		<h1>{noteData.metadata.title}</h1>
-		<noteData.content />
-	</article>
+{#if note}
+  <article class="prose flow">
+    <h1>{note.metadata.title}</h1>
+    <note.content />
+  </article>
 {/if}

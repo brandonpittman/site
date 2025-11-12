@@ -1,4 +1,5 @@
-"use server";
+import { query } from "$app/server";
+import * as z from "zod/mini";
 
 export type Note = {
   slug: string;
@@ -8,10 +9,8 @@ export type Note = {
   draft?: boolean;
 };
 
-export async function getNotes(): Promise<Note[]> {
+export const getNotes = query(() => {
   const modules = import.meta.glob("/content/notes/*.md", { eager: true });
-
-  console.log(modules);
 
   const notes: Note[] = [];
 
@@ -36,21 +35,17 @@ export async function getNotes(): Promise<Note[]> {
   });
 
   return notes;
-}
+});
 
-export async function getNote(slug: string) {
-  const modules = import.meta.glob("/content/notes/*.md", { eager: true });
+export const getNote = query(z.string(), async (slug) => {
+  const modules = import.meta.glob("/content/notes/*.md", {
+    eager: true,
+    import: "default",
+  });
 
-  for (const path in modules) {
-    const filename = path.split("/").pop()?.replace(".md", "") || "";
-    if (filename === slug) {
-      const mod = modules[path] as any;
-      return {
-        content: mod.default,
-        metadata: mod.metadata,
-      };
-    }
-  }
+  const markdown = modules[`/content/notes/${slug}.md`];
 
-  throw new Error(`Note not found: ${slug}`);
-}
+  console.log(markdown);
+
+  return markdown;
+});
