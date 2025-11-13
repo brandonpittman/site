@@ -24,7 +24,6 @@ const noteModules = import.meta.glob('/content/notes/*.md', {
 const allNotes = Object.entries(noteModules).map(([path, content]) => {
 	const fm = matter(content as Input);
 	const { data, content: md } = fm;
-	console.log(md);
 	const slug = path.match(/\/([^/]+)\.md$/)?.[1];
 	return { slug, ...data, content: md };
 }) as Note[];
