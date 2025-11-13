@@ -1,4 +1,7 @@
 import { query } from '$app/server';
+import { error } from '@sveltejs/kit';
+import matter, { type Input } from 'gray-matter';
+import { marked } from 'marked';
 import * as z from 'zod/mini';
 
 export type Note = {
@@ -7,34 +10,42 @@ export type Note = {
 	description: string;
 	date: string;
 	draft?: boolean;
+	content: string;
 };
 
-export const getNotes = query(() => {
-	const modules = import.meta.glob('./**/+page.md', { eager: true });
+// Load all posts at module scope
+const noteModules = import.meta.glob('/content/notes/*.md', {
+	eager: true,
+	query: '?raw',
+	import: 'default'
+});
 
-	const notes: Note[] = [];
+// Parse once at module scope
+const allNotes = Object.entries(noteModules).map(([path, content]) => {
+	const fm = matter(content as Input);
+	const { data, content: md } = fm;
+	console.log(md);
+	const slug = path.match(/\/([^/]+)\.md$/)?.[1];
+	return { slug, ...data, content: md };
+}) as Note[];
 
-	for (const path in modules) {
-		const mod = modules[path] as any;
-		const slug = path.split('/').slice(-2, -1)[0];
+// Get all posts
+export const getNotes = query(async () => {
+	return allNotes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+});
 
-		if (slug && slug !== '[slug]') {
-			notes.push({
-				slug: slug,
-				title: mod.metadata?.title || '',
-				description: mod.metadata?.description || '',
-				date: mod.metadata?.date || '',
-				draft: mod.metadata?.draft
-			});
-		}
-	}
+// Get single post by slug
+export const getNote = query(z.string(), async (slug) => {
+	const path = `/content/notes/${slug}.md`;
+	const content = noteModules[path];
 
-	// Sort by date, newest first
-	notes.sort((a, b) => {
-		const dateA = new Date(a.date).getTime();
-		const dateB = new Date(b.date).getTime();
-		return dateB - dateA;
-	});
+	if (!content) error(404, 'Post not found');
 
-	return notes;
+	const { data, content: markdown } = matter(content as Input);
+
+	return {
+		slug,
+		meta: data,
+		content: marked(markdown)
+	};
 });
