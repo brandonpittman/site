@@ -8,8 +8,11 @@
 	const abandoned = get_game_list('abandoned');
 </script>
 
-{#await beaten then data}
-	<h1>Beaten</h1>
+{#await unplayed then data}
+	<h1>Unplayed</h1>
+
+	<small>A shortlist for potential future play.</small>
+
 	{#if data}
 		<GameList game_list={data} />
 	{/if}
@@ -17,13 +20,15 @@
 
 {#await unbeaten then data}
 	<h1>Unbeaten</h1>
+	<small>But not abandoned. Yet. Yet?</small>
 	{#if data}
 		<GameList game_list={data} />
 	{/if}
 {/await}
 
-{#await unplayed then data}
-	<h1>Unplayed</h1>
+{#await beaten then data}
+	<h1>Beaten</h1>
+	<small>Some more thoroughly—or more times—than others.</small>
 	{#if data}
 		<GameList game_list={data} />
 	{/if}
@@ -31,6 +36,7 @@
 
 {#await abandoned then data}
 	<h1>Abandoned</h1>
+	<small>Not necessarily bad, just maybe not for me.</small>
 	{#if data}
 		<GameList game_list={data} />
 	{/if}
