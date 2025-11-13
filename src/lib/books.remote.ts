@@ -4,6 +4,7 @@ import * as z from 'zod/mini';
 export type Book = {
 	title: string;
 	author: string;
+	note?: string;
 };
 
 export type BookList = {
@@ -20,13 +21,14 @@ const book_modules = import.meta.glob('/content/unread/*.md', {
 
 // Parse book entry line
 function parse_book_line(line: string): Book | null {
-	// Match: "- Title (Author)" or "* Title (Author)"
-	const match = line.match(/^[*-]\s+(.+?)\s+\(([^)]+)\)$/);
+	// Match: "- Title (Author)" or "- Title (Author) (Note)"
+	const match = line.match(/^[*-]\s+(.+?)\s+\(([^)]+)\)(?:\s+\(([^)]+)\))?$/);
 	if (!match) return null;
 
 	return {
 		title: match[1].trim(),
-		author: match[2].trim()
+		author: match[2].trim(),
+		note: match[3]?.trim()
 	};
 }
 

@@ -9,6 +9,9 @@
 		<li>
 			{book.title}
 			<span>{book.author}</span>
+			{#if book.note}
+				<span>{book.note}</span>
+			{/if}
 		</li>
 	{/each}
 </ul>
@@ -38,5 +41,13 @@
 	span {
 		color: #999;
 		font-size: 9px;
+	}
+
+	span + span {
+		font-size: 11px;
+		line-height: 13px;
+		display: block;
+		position: relative;
+		top: -2px;
 	}
 </style>
