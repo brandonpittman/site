@@ -27,7 +27,7 @@ async function configure_marked() {
 	marked.use({
 		async: true,
 		renderer: {
-			code(code, lang) {
+			async code(code, lang) {
 				const language = lang || 'text';
 				try {
 					// Load language if not already loaded
