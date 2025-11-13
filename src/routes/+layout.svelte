@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../styles/styles.css';
+	import 'highlight.js/styles/github-dark.css';
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
 
