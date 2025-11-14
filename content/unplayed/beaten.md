@@ -4,6 +4,8 @@
 - Alan Wake 2 (Xbox Series X) (Best game I played in 2025.)
 - Control (Xbox Series X) (Made me fall in love with Remedy.)
 - Quantum Break (Xbox Series X) (Game/TV idea worked better than I expected. Looked forward to the episodes.)
+- Dead Reset (Xbox Series X)
+- Assassin's Creed: Mirage (Xbox Series X)
 - Another Code: R (Wii)
 - Assassin’s Creed 2 (PS3)
 - Assassin’s Creed 3: The Tyranny of King Washington (Xbox 360)
