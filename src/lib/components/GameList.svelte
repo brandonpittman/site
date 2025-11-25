@@ -24,7 +24,7 @@
 
 	li {
 		list-style: none;
-		padding: 0 0 0 16px;
+		padding: 0 0 0 1rem;
 		position: relative;
 	}
 
@@ -33,9 +33,9 @@
 		content: '-';
 		font-weight: bold;
 		position: absolute;
-		top: -2px;
-		left: 0;
-		font-size: 24px;
+		inset-block-start: -.5ch;
+		inset-inline-start: 0;
+		font-size: 1.5rem;
 	}
 
 	span {
