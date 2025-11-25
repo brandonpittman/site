@@ -96,6 +96,8 @@
 - Red Dead Redemption 2 (Xbox One)
 - Red Dead Redemption (PS3)
 - Rise of the Tomb Raider (Xbox One)
+- Robocop: Rogue City (Xbox Series X)
+- RoboCop: Rogue City: Unfinished Business (Xbox Series X)
 - 龍が如く 2 (PS2)
 - 龍が如く 3 (PS3)
 - 龍が如く 4 (PS3)
