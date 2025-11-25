@@ -1,5 +1,6 @@
 # Beaten
 
+- The Forgotten City (Xbox Series X) (Third character I spoke with quoted Seneca to me.)
 - Alan Wake: Remastered (Xbox Series X) (Can't believe I never finished the Xbox 360 version.)
 - Alan Wake 2 (Xbox Series X) (Best game I played in 2025.)
 - Control (Xbox Series X) (Made me fall in love with Remedy.)
@@ -46,9 +47,9 @@
 - Enslaved: Odyssey to the West (Xbox 360)
 - Eternal Darkness (GameCube)
 - Firewatch (Xbox One)
+- Gears of War (Xbox 360)
 - Gears of War 2 (Xbox 360)
 - Gears of War 3 (Xbox 360)
-- Gears of War (Xbox 360)
 - Ghost Trick (DS)
 - Gotham Knights (Xbox Series X)
 - Guardians of the Galaxy (Xbox Series X)
@@ -96,8 +97,8 @@
 - Red Dead Redemption 2 (Xbox One)
 - Red Dead Redemption (PS3)
 - Rise of the Tomb Raider (Xbox One)
-- Robocop: Rogue City (Xbox Series X)
-- RoboCop: Rogue City: Unfinished Business (Xbox Series X)
+- Robocop: Rogue City (Xbox Series X) (Surprisingly philosophical and I loved it.)
+- RoboCop: Rogue City: Unfinished Business (Xbox Series X) (Felt like an unstoppable tank at the end of the game.)
 - 龍が如く 2 (PS2)
 - 龍が如く 3 (PS3)
 - 龍が如く 4 (PS3)
