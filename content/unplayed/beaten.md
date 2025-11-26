@@ -1,5 +1,11 @@
 # Beaten
 
+- Lego Batman (Xbox 360)
+- Lego Batman 2 (Xbox 360)
+- Lego Batman 3: Beyond Gotham (Xbox One)
+- Lego Harry Potter (Xbox Series X)
+- Lego Star Wars: Skywalker Sage (Xbox Series X)
+- Lego Marvel: Avengers (Xbox One)
 - The Forgotten City (Xbox Series X) (Third character I spoke with quoted Seneca to me.)
 - Alan Wake: Remastered (Xbox Series X) (Can't believe I never finished the Xbox 360 version.)
 - Alan Wake 2 (Xbox Series X) (Best game I played in 2025.)
