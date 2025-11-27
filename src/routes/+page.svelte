@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	const traditionStoicism = 'https://traditionalstoicism.com/the-path-of-the-prokopton/';
 	const github = 'https://github.com/brandonpittman';
 	const coffee = 'https://buymeacoffee.com/blp';
@@ -19,7 +21,11 @@
 	<a href={traditionStoicism}>traditional Stoicism</a>, and I train Brazilian jiu-jitsu. I sometimes
 	<a href="/notes">write</a>
 	about programming, Stoic ideals, and managing time and attention. I don't use social media aside from
-	<a href={github}>GitHub</a>. My backstory is on the <a href="/about">About</a> page.
+	<a href={github}>GitHub</a>. My backstory is on the <a href="/about">About</a> page. You may also
+	find something interesting in the interested in what
+	<a href={resolve('/unplayed')}>games I play</a>
+	or
+	<a href={resolve('/unread')}>books I read</a>.
 </p>
 
 <p>
