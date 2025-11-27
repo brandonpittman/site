@@ -1,3 +1,3 @@
 # Abandoned
 
-* Batman: A Lot of Lil' Gotham (Dustin Nguyen)
+- Batman: A Lot of Lil' Gotham (Dustin Nguyen)

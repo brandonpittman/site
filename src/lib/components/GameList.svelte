@@ -1,10 +1,11 @@
 <script lang="ts">
 	import type { GameList } from '$lib/games.remote';
+	import '$lib/styles/list.css';
 
 	let { game_list }: { game_list: GameList } = $props();
 </script>
 
-<ul>
+<ul class="item-list">
 	{#each game_list.games as game}
 		<li>
 			{game.title}
@@ -15,39 +16,3 @@
 		</li>
 	{/each}
 </ul>
-
-<style>
-	ul {
-		padding: 0;
-		margin: 0;
-	}
-
-	li {
-		list-style: none;
-		padding: 0 0 0 1rem;
-		position: relative;
-	}
-
-	li:before {
-		display: block;
-		content: '-';
-		font-weight: bold;
-		position: absolute;
-		inset-block-start: -.5ch;
-		inset-inline-start: 0;
-		font-size: 1.5rem;
-	}
-
-	span {
-		color: #999;
-		font-size: 9px;
-	}
-
-	span + span {
-		font-size: 11px;
-		line-height: 13px;
-		display: block;
-		position: relative;
-		top: -2px;
-	}
-</style>
