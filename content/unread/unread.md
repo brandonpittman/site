@@ -2,8 +2,8 @@
 
 - Cato: A Tragedy and Selected Essays (Joseph Addison)
 - Cato the Younger: Life and Death at the End of the Roman Republic (Fred K. Drogula)
-- The Complete Tragedies (Volume 1) (Seneca)
-- The Complete Tragedies (Volume 2) (Seneca)
+- The Complete Tragedies: Volume 1 (Seneca)
+- The Complete Tragedies: Volume 2 (Seneca)
 - Hardship & Happiness (Seneca)
 - Hellenistic Lives (Plutarch)
 - Roman Lives (Plutarch)
