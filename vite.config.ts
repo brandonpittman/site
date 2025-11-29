@@ -4,6 +4,14 @@ import { defineConfig, searchForWorkspaceRoot } from 'vite';
 
 export default defineConfig({
   plugins: [sveltekit(), devtoolsJson()],
+  resolve: {
+    alias: {
+      buffer: 'buffer/'
+    }
+  },
+  define: {
+    'global.Buffer': 'Buffer'
+  },
   server: {
     fs: {
       allow: [

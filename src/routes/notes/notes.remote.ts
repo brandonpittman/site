@@ -1,6 +1,6 @@
 import { query } from '$app/server';
-import { dev } from '$app/environment';
 import { error } from '@sveltejs/kit';
+import { Buffer } from 'buffer';
 import matter, { type Input } from 'gray-matter';
 import { Marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
@@ -47,7 +47,7 @@ export const getNotes = query(async () => {
 	let notes = allNotes;
 
 	// Only filter in production
-	if (!dev) {
+	if (!import.meta.env.DEV) {
 		const now = new Date();
 		notes = notes.filter((note) => {
 			// Filter out drafts
