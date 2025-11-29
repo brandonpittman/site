@@ -1,4 +1,5 @@
 import { query } from '$app/server';
+import { dev } from '$app/environment';
 import { error } from '@sveltejs/kit';
 import matter, { type Input } from 'gray-matter';
 import { Marked } from 'marked';
@@ -43,7 +44,21 @@ const allNotes = Object.entries(noteModules).map(([path, content]) => {
 
 // Get all posts
 export const getNotes = query(async () => {
-	return allNotes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	let notes = allNotes;
+
+	// Only filter in production
+	if (!dev) {
+		const now = new Date();
+		notes = notes.filter((note) => {
+			// Filter out drafts
+			if (note.draft === true) return false;
+			// Filter out future-dated notes
+			if (new Date(note.date) > now) return false;
+			return true;
+		});
+	}
+
+	return notes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 });
 
 // Get single post by slug
