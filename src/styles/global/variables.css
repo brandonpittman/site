@@ -17,10 +17,8 @@
 
     /* Fonts */
 
-    --font-base: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-      Arial, sans-serif;
-    --font-heading: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-      Arial, sans-serif;
+    --font-base: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+    --font-heading: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
     --font-weight-heading-1: 700;
     --font-weight-heading-2: 500;
     --font-weight-base: 400;
