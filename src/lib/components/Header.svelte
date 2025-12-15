@@ -3,7 +3,7 @@
 </script>
 
 <header class="header wrapper repel w-full">
-	<a href="/" class="cluster gutter-3xs no-underline font-bold">
+	<a href="/" class="no-underline font-bold">
 		<span>🏛</span>
 		<span>Brandon Pittman</span>
 	</a>
