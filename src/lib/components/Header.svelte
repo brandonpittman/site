@@ -3,8 +3,8 @@
 </script>
 
 <header class="header wrapper repel w-full">
-	<a href="/" class="no-underline font-bold">
-		<span>🏛</span>
+	<a href="/" class="with-icon no-underline font-bold">
+		<span class="icon">🏛</span>
 		<span>Brandon Pittman</span>
 	</a>
 
