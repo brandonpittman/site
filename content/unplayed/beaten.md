@@ -1,5 +1,6 @@
 # Beaten
 
+- A Way Out (Xbox One) (Played with my wife. Had a great time with it. Great story. Lame ending.)
 - The Council (Xbox Series X) (Telltale-style game with RPG elements. Very janky, but very fun.)
 - Alan Wake: Remastered (Xbox Series X) (Can't believe I never finished the Xbox 360 version.)
 - Alan Wake 2 (Xbox Series X) (Best game I played in 2025.)
