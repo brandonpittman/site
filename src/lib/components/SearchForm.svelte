@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 
 	type Props = {
@@ -9,7 +9,7 @@
 
 	let { placeholder, children }: Props = $props();
 
-	const q = $derived($page.url.searchParams.get('q') || '');
+	const q = $derived(page.url.searchParams.get('q') || '');
 
 	async function handleInput(event: Event) {
 		const target = event.target as HTMLInputElement;

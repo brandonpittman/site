@@ -43,7 +43,7 @@ const allNotes = Object.entries(noteModules).map(([path, content]) => {
 }) as Note[];
 
 // Get all posts
-export const getNotes = query(async () => {
+export const getNotes = query(z.string(), async (q = '') => {
 	let notes = allNotes;
 
 	// Only filter in production
@@ -55,6 +55,15 @@ export const getNotes = query(async () => {
 			// Filter out future-dated notes
 			if (new Date(note.date) > now) return false;
 			return true;
+		});
+	}
+
+	// Apply search filter if query provided
+	const searchQuery = q.toLowerCase();
+	if (searchQuery) {
+		notes = notes.filter((note) => {
+			const searchableText = `${note.title} ${note.content}`.toLowerCase();
+			return searchableText.includes(searchQuery);
 		});
 	}
 
