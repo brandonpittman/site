@@ -14,6 +14,7 @@
 			slug: string;
 			date: string;
 			title: string;
+			deprecated?: boolean;
 		};
 	};
 
@@ -23,9 +24,9 @@
 <li>
 	<a href={`/notes/${post.slug}`} class="no-underline cluster">
 		<span class="color-gray-light white-space-nowrap">
-			{formatDate(post.date)}
+			{formatDate(post.date)}{post.deprecated ? ' (Deprecated)' : ''}
 		</span>
-		<span class="font-bold">{post.title}</span>
+		<span class="font-bold" class:deprecated={post.deprecated}>{post.title}</span>
 	</a>
 </li>
 
@@ -38,5 +39,9 @@
 
 	li > a > span:first-child {
 		font-size: var(--size-step--1);
+	}
+
+	.deprecated {
+		color: var(--color-gray-light);
 	}
 </style>

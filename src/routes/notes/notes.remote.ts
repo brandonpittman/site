@@ -13,6 +13,8 @@ export type Note = {
 	description: string;
 	date: string;
 	draft?: boolean;
+	deprecated?: boolean;
+	successor?: string;
 	content: string;
 };
 

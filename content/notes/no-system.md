@@ -1,6 +1,7 @@
 ---
 title: No System
 date: 2026-01-19
+deprecated: true
 ---
 
 I've tried every productivity system. GTD, Zettelkasten (both analog and digital), elaborate folder hierarchies, atomic notes, the works. They all eventually collapsed under their own ceremony weight. The maintenance became the work.

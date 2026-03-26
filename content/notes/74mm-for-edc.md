@@ -1,9 +1,8 @@
 ---
 title: 74mm Victorinox Knives for EDC
 date: 2026-02-03
+deprecated: true
 ---
-
-# The 74mm Victorinox Experiment
 
 The 74mm Swiss Army Knife occupies an interesting middle ground: bigger than the toy-sized 58mm Classic SD, smaller than the substantial 84mm Cadet. It seemed like the Goldilocks zone - big enough to grip comfortably but svelte enough for truly minimal pocket carry.
 

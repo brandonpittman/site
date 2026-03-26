@@ -8,4 +8,13 @@
 
 <h1>{note.meta.title}</h1>
 
+{#if note.meta.deprecated}
+	<p class="color-gray-light"><em>
+		This note no longer reflects my current thinking, but I'm leaving it up for posterity.
+		{#if note.meta.successor}
+			See <a href={`/notes/${note.meta.successor}`}>the updated note</a> for my current thoughts.
+		{/if}
+	</em></p>
+{/if}
+
 {@html note.content}

@@ -2,6 +2,7 @@
 title: 'On Time Management'
 description: Where I'm at with managing tasks and time.
 date: '2024-10-14'
+deprecated: true
 ---
 
 ## Lists

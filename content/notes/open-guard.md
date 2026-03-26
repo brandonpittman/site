@@ -3,8 +3,6 @@ title: Danaher Open Guard Principles
 date: 2026-01-27
 ---
 
-# Danaher Open Guard Principles
-
 Notes from John Danaher's "Go Further Faster" open guard series.
 
 ## Default Positions and Entry
