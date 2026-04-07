@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { getNote } from '../notes.remote';
+	import MessageMe from '$lib/components/MessageMe.svelte';
 
 	let param = $derived(page.params.slug);
 	let note = $derived(await getNote(param!));
@@ -28,3 +29,5 @@
 {/if}
 
 {@html note.content}
+
+<MessageMe />

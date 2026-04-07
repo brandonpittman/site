@@ -4,7 +4,10 @@
       "Bash(mkdir:*)",
       "Bash(cat:*)",
       "mcp__svelte__list-sections",
-      "mcp__svelte__get-documentation"
+      "mcp__svelte__get-documentation",
+      "Bash(ls:*)",
+      "Bash(pnpm add:*)",
+      "mcp__svelte__svelte-autofixer"
     ]
   },
   "enableAllProjectMcpServers": true,

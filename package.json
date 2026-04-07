@@ -48,6 +48,7 @@
 		"highlight.js": "^11.11.1",
 		"marked": "^17.0.0",
 		"marked-highlight": "^2.2.3",
+		"resend": "^6.10.0",
 		"zod": "^4.1.12"
 	}
 }
