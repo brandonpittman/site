@@ -18,7 +18,7 @@
 				aria-hidden="true"
 				class="honeypot"
 			/>
-			<input {...send_message.fields.from_page} type="hidden" value={title} />
+			<input type="hidden" name="from_page" value={title} />
 			<textarea {...send_message.fields.message.as('text')} rows="4"></textarea>
 			<button class="cta">Send</button>
 		</form>
@@ -52,7 +52,7 @@
 
 	textarea {
 		align-self: stretch;
-		font-size: var(--size-step--1);
+		font-size: max(1rem, var(--size-step--1));
 		padding: var(--space-3xs) var(--space-2xs);
 		resize: vertical;
 		border-radius: var(--border-radius-sm);
