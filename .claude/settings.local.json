@@ -7,7 +7,11 @@
       "mcp__svelte__get-documentation",
       "Bash(ls:*)",
       "Bash(pnpm add:*)",
-      "mcp__svelte__svelte-autofixer"
+      "mcp__svelte__svelte-autofixer",
+      "Bash(jj bookmark:*)",
+      "Bash(jj git:*)",
+      "Bash(jj diff:*)",
+      "Bash(jj describe:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

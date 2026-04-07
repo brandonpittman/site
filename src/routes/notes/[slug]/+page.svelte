@@ -30,4 +30,4 @@
 
 {@html note.content}
 
-<MessageMe />
+<MessageMe title={note.meta.title} />

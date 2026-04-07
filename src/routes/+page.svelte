@@ -41,4 +41,4 @@
 	playlist in Apple Music.
 </p>
 
-<MessageMe />
+<MessageMe title="brandonpittman.com home page" />
