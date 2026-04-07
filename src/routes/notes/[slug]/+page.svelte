@@ -6,15 +6,25 @@
 	let note = $derived(await getNote(param!));
 </script>
 
+<svelte:head>
+	<title>{note.meta.title} | Brandon Pittman</title>
+
+	{#if note.meta.description}
+		<meta name="description" content={note.meta.description} />
+	{/if}
+</svelte:head>
+
 <h1>{note.meta.title}</h1>
 
 {#if note.meta.deprecated}
-	<p class="color-gray-light"><em>
-		This note no longer reflects my current thinking, but I'm leaving it up for posterity.
-		{#if note.meta.successor}
-			See <a href={`/notes/${note.meta.successor}`}>the updated note</a> for my current thoughts.
-		{/if}
-	</em></p>
+	<p class="color-gray-light">
+		<em>
+			This note no longer reflects my current thinking, but I'm leaving it up for posterity.
+			{#if note.meta.successor}
+				See <a href={`/notes/${note.meta.successor}`}>the updated note</a> for my current thoughts.
+			{/if}
+		</em>
+	</p>
 {/if}
 
 {@html note.content}
