@@ -44,4 +44,4 @@ I don't like the look of these scales and at first I didn't get why Victorinox w
 
 ## 7. Worth the Trade-offs?
 
-To me, as an at-home knife, getting the toolset was worth the tradeoffs in having a pocket clip I didn't really need, having a liner lock that I didn't really need, and having skeltonized scales that I don't like (although the silver scales deemphasize the cut-outs).
+To me, as an at-home knife, getting the toolset was worth the tradeoffs in having a pocket clip I didn't really need, having a liner lock that I didn't really need, and having skeletonized scales that I don't like (although the silver scales deemphasize the cut-outs).
