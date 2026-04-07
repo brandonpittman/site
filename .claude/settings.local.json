@@ -11,7 +11,8 @@
       "Bash(jj bookmark:*)",
       "Bash(jj git:*)",
       "Bash(jj diff:*)",
-      "Bash(jj describe:*)"
+      "Bash(jj describe:*)",
+      "Bash(git rm:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

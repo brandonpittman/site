@@ -18,7 +18,7 @@
 				aria-hidden="true"
 				class="honeypot"
 			/>
-			<input type="hidden" name="from_page" value={title} />
+			<input {...send_message.fields.from_page.as('hidden', title)} />
 			<textarea {...send_message.fields.message.as('text')} rows="4"></textarea>
 			<button class="cta">Send</button>
 		</form>
