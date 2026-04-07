@@ -17,7 +17,7 @@ export const send_message = form(
 		await resend.emails.send({
 			from: 'contact@stoicdev.org',
 			to: 'hey@brandonpittman.com',
-			subject: `message from ${from_page ?? '/'} on brandonpittman.com`,
+			subject: `Message from ${from_page ?? ''} on brandonpittman.com`,
 			html: message
 		});
 
