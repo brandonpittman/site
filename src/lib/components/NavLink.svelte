@@ -10,7 +10,7 @@
 	let { href, matches = [], children }: Props = $props();
 
 	const isCurrentPage = $derived(
-		[href, ...matches].some((v) => $page.url.pathname.match(v))
+		[href, ...matches].some((v) => page.url.pathname.match(v))
 	);
 </script>
 
