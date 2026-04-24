@@ -3,7 +3,7 @@ title: Pocket Overflow
 date: 2026-04-24
 ---
 
-Let's talk pocket carry. Mine is a phone, keys, wallet, and a Victorinox MiniChamp. 90% of my outings are short: kids' pickup and drop-off, grocery store, or jiu-jitsu practice. I have minimal needs—almost no needs. My MiniChamp is an insurance policy—wide coverage and low fidelity.
+Let's talk pocket carry. Mine is a phone, keys, a wallet, and a Victorinox MiniChamp. 90% of my outings are short: kids' pickup and drop-off, grocery store, or jiu-jitsu practice. I have minimal needs—almost no needs. My MiniChamp is an insurance policy—wide coverage and low fidelity.
 
 Most people look at small slings as pocket dump—a replacement for normal pockets with a spot for the phone and a spot for the wallet and a spot for the knife and a dedicated loop for the pen. They want everything consolidated in one place. It feels like control.
 
