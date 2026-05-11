@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: The Phenomenology of Ephemerality
 date: 2026-01-21
 ---

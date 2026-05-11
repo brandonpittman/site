@@ -1,4 +1,5 @@
 ---
+location: Japan
 date: 2026-04-06
 title: Swiss Army Knife Design Decisions
 description: 'An analysis of design decisions surrounding Victorinox Swiss Army Knives and how those decisions affect your relationship with the tools.'

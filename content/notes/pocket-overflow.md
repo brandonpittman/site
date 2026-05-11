@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: Pocket Overflow
 date: 2026-04-24
 ---

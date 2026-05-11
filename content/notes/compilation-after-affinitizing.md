@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: Compilation After Affinitizing
 date: 2026-01-20
 ---

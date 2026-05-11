@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: "On Pre-Crisis Batman: The Game"
 description: A design doc for a game starring Pre-Crisis Batman.
 date: "2024-10-30"

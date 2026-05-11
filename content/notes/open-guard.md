@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: Danaher Open Guard Principles
 date: 2026-01-27
 ---

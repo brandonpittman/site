@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: Voice Interfaces Need Absolute Reliability
 date: 2026-01-28
 ---

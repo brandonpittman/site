@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: On Friction
 date: '2023-07-24'
 ---

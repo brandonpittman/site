@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: "On Replacing TV with Comics"
 description: "How I swapped watching TV for reading comic books."
 date: "2023-11-20"

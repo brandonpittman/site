@@ -15,6 +15,7 @@ export type Note = {
 	draft?: boolean;
 	deprecated?: boolean;
 	successor?: string;
+	location?: string;
 	content: string;
 };
 

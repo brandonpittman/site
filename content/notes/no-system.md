@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: No System
 date: 2026-01-19
 deprecated: true

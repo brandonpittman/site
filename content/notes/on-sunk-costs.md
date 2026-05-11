@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: On Sunk Costs
 date: "2023-08-26"
 ---

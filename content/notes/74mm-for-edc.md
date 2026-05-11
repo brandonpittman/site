@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: 74mm Victorinox Knives for EDC
 date: 2026-02-03
 deprecated: true

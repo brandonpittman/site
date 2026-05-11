@@ -13,7 +13,10 @@
       "Bash(jj diff:*)",
       "Bash(jj describe:*)",
       "Bash(git rm:*)",
-      "Bash(npx *)"
+      "Bash(npx *)",
+      "Read(//Users/blp/Sites/stoicdev/src/lib/components/**)",
+      "Read(//Users/blp/Sites/stoicdev/src/lib/**)",
+      "Bash(python3 *)"
     ]
   },
   "enableAllProjectMcpServers": true,

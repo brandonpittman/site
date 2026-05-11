@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: "On the Benevolence of the Cosmos"
 description: I work through if the Cosmos is benevolent or not.
 date: "2024-11-14"

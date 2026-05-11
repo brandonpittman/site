@@ -31,7 +31,7 @@
 
 {@html note.content}
 
-<NoteSignature date={new Date(note.meta.date)} />
+<NoteSignature date={new Date(note.meta.date)} location={note.meta.location} />
 
 <hr />
 

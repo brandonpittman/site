@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: Smart Devices and the Unix Philosophy
 date: 2026-01-27
 ---

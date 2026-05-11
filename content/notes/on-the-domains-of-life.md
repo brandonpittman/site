@@ -1,4 +1,5 @@
 ---
+location: Japan
 date: "2021-09-21"
 description: Meaningful terms for the various areas of our life helps us map where things go and how to decide what next to do.
 title: On the Domains of Life

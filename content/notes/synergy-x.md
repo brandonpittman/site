@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: Synergy X Review
 description: 'A review of the Victorinox Synergy X that addresses design tradeoffs and criticisms leveled against them.'
 date: 2026-04-07

@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: "On Batman and Stoicism"
 description: Follow-up to my appearance on The College of Stoic Philosophers Podcast.
 date: "2024-12-20"

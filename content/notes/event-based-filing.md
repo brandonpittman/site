@@ -1,4 +1,5 @@
 ---
+location: Japan
 title: Event-Based File Organization
 date: 2026-01-22
 ---
