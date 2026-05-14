@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛</text></svg>"
+			type="image/svg+xml"
+		/>
+		<title>Brandon Pittman CMS</title>
+	</head>
+	<body>
+		<!-- Self-hosted bundle copied from the @sveltia/cms npm dep by
+		     scripts/copy-cms.js (gitignored); no CDN. Bump the dep to update. -->
+		<script src="./sveltia-cms.js"></script>
+		<!-- Sveltia overrides document.title to "Sveltia CMS" and injects a
+		     <link rel="icon"> bound to logo_url. Pin both back to this app's. -->
+		<script>
+			(function () {
+				var TITLE = 'Brandon Pittman CMS';
+				var ICON =
+					'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏛</text></svg>';
+				function pin() {
+					if (document.title !== TITLE) document.title = TITLE;
+					document.querySelectorAll('link[rel~="icon"]').forEach(function (link) {
+						if (link.getAttribute('href') !== ICON) {
+							link.setAttribute('href', ICON);
+							link.setAttribute('type', 'image/svg+xml');
+						}
+					});
+				}
+				pin();
+				new MutationObserver(pin).observe(document.head, {
+					childList: true,
+					subtree: true,
+					attributes: true,
+					characterData: true
+				});
+			})();
+		</script>
+	</body>
+</html>

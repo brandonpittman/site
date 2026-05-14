@@ -1,3 +1,6 @@
-# Abandoned
+---
+books:
+  - title: 'Batman: A Lot of Lil'' Gotham'
+    author: Dustin Nguyen
+---
 
-- Batman: A Lot of Lil' Gotham (Dustin Nguyen)

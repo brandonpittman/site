@@ -1,0 +1,27 @@
+{
+  "firstStartTime": "2026-05-14T06:12:37.897Z",
+  "opusProMigrationComplete": true,
+  "sonnet1m45MigrationComplete": true,
+  "seenNotifications": {},
+  "migrationVersion": 13,
+  "userID": "a772be33744e301322bb063c9b50534f9514f6f5f0602692742602baa7c9e2d4",
+  "changelogLastFetched": 1778739157995,
+  "oauthAccount": {
+    "accountUuid": "0b9ef065-0e56-42b2-bccb-6c00f362465e",
+    "emailAddress": "brandon@brandonpittman.com",
+    "organizationUuid": "b472eb01-748a-4351-b313-11a39b4281cc",
+    "hasExtraUsageEnabled": true,
+    "billingType": "stripe_subscription",
+    "accountCreatedAt": "2025-04-28T01:12:31.571949Z",
+    "subscriptionCreatedAt": "2025-10-29T09:03:45.888024Z",
+    "ccOnboardingFlags": {},
+    "claudeCodeTrialEndsAt": null,
+    "claudeCodeTrialDurationDays": null,
+    "seatTier": null,
+    "displayName": "Brandon",
+    "organizationRole": "admin",
+    "workspaceRole": null,
+    "organizationName": "brandon@brandonpittman.com's Organization"
+  },
+  "claudeCodeFirstTokenDate": "2025-10-29T11:26:41.706884Z"
+}

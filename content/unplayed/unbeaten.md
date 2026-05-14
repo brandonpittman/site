@@ -1,8 +1,19 @@
-# Unbeaten
+---
+games:
+  - title: Alan Wake's American Nightmare
+    platform: Xbox 360
+    note: >-
+      Lots of ideas from this little Xbox Arcade have a big impact on Alan Wake
+      2.
+  - title: Cyberpunk 2077
+    platform: Xbox Series X
+  - title: 'Alien: Isolation'
+    platform: Xbox One
+  - title: GTA V
+    platform: Xbox One
+  - title: A Way Out
+    platform: Xbox One
+  - title: Lego Marvel Super Heroes
+    platform: Unknown
+---
 
-- Alan Wake's American Nightmare (Xbox 360) (Lots of ideas from this little Xbox Arcade have a big impact on Alan Wake 2.)
-- Cyberpunk 2077 (Xbox Series X)
-- Alien: Isolation (Xbox One)
-- GTA V (Xbox One)
-- A Way Out (Xbox One)
-- Lego Marvel Super Heroes

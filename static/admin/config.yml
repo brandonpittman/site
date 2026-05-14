@@ -1,0 +1,74 @@
+# Sveltia CMS config. Local editing: open /admin/, "Work with Local Repository",
+# pick the repo root (Chromium only). For remote editing, deploy the OAuth worker
+# (workers/sveltia-cms-auth) and uncomment base_url below.
+backend:
+  name: github
+  repo: brandonpittman/site
+  branch: main # overwritten per-deployment by scripts/set-cms-config.js
+  # OAuth relay worker origin (Sveltia appends /auth and /callback).
+  base_url: https://site-cms-auth.brandonpittman.workers.dev
+
+# Drafts are owned by the CMS: a Draft -> In Review -> Ready workflow, stored as
+# GitHub PRs that never merge to the production branch, so the published site
+# needs no draft filtering. Applies on the deployed /admin/ (GitHub backend);
+# local "Work with Local Repository" writes files directly with no draft stage.
+publish_mode: editorial_workflow
+
+site_url: https://brandonpittman.com
+display_url: https://brandonpittman.com
+
+# Required for the image widget even if unused by text-only content.
+media_folder: static/images/cms
+public_folder: /images/cms
+
+collections:
+  # Notes — one markdown file per entry, prose in the body.
+  - name: notes
+    label: Notes
+    label_singular: Note
+    folder: content/notes
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    sortable_fields: [date, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, picker_utc: true }
+      - { name: location, label: Location, widget: string, required: false }
+      - { name: description, label: Description, widget: text, required: false }
+      - { name: deprecated, label: Deprecated, widget: boolean, default: false, required: false }
+      - { name: successor, label: Successor slug, widget: string, required: false }
+      - { name: body, label: Body, widget: markdown }
+
+  # Books — fixed status lists; each entry is title/author/(note).
+  - name: books
+    label: Books
+    label_singular: Book list
+    extension: md
+    format: frontmatter
+    files:
+      - { name: reading, label: Reading, file: content/unread/reading.md, fields: &book_fields [
+            { name: books, label: Books, widget: list, summary: '{{fields.title}}', fields: [
+              { name: title, label: Title, widget: string },
+              { name: author, label: Author, widget: string },
+              { name: note, label: Note, widget: string, required: false } ] } ] }
+      - { name: unread, label: Unread, file: content/unread/unread.md, fields: *book_fields }
+      - { name: read, label: Read, file: content/unread/read.md, fields: *book_fields }
+      - { name: abandoned, label: Abandoned, file: content/unread/abandoned.md, fields: *book_fields }
+
+  # Games — fixed status lists; each entry is title/platform/(note).
+  - name: games
+    label: Games
+    label_singular: Game list
+    extension: md
+    format: frontmatter
+    files:
+      - { name: unplayed, label: Unplayed, file: content/unplayed/unplayed.md, fields: &game_fields [
+            { name: games, label: Games, widget: list, summary: '{{fields.title}}', fields: [
+              { name: title, label: Title, widget: string },
+              { name: platform, label: Platform, widget: string },
+              { name: note, label: Note, widget: string, required: false } ] } ] }
+      - { name: unbeaten, label: Unbeaten, file: content/unplayed/unbeaten.md, fields: *game_fields }
+      - { name: beaten, label: Beaten, file: content/unplayed/beaten.md, fields: *game_fields }
+      - { name: abandoned, label: Abandoned, file: content/unplayed/abandoned.md, fields: *game_fields }

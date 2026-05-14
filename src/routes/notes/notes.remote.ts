@@ -12,7 +12,6 @@ export type Note = {
 	title: string;
 	description: string;
 	date: string;
-	draft?: boolean;
 	deprecated?: boolean;
 	successor?: string;
 	location?: string;
@@ -49,16 +48,10 @@ const allNotes = Object.entries(noteModules).map(([path, content]) => {
 export const getNotes = query(z.string(), async (q = '') => {
 	let notes = allNotes;
 
-	// Only filter in production
+	// Hide future-dated notes in production (scheduled publishing)
 	if (!dev) {
 		const now = new Date();
-		notes = notes.filter((note) => {
-			// Filter out drafts
-			if (note.draft === true) return false;
-			// Filter out future-dated notes
-			if (new Date(note.date) > now) return false;
-			return true;
-		});
+		notes = notes.filter((note) => new Date(note.date) <= now);
 	}
 
 	// Apply search filter if query provided
