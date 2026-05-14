@@ -1,5 +1,6 @@
 import { query } from '$app/server';
 import * as z from 'zod/mini';
+import matter, { type Input } from 'gray-matter';
 
 export type Game = {
 	title: string;
@@ -12,37 +13,20 @@ export type GameList = {
 	games: Game[];
 };
 
-// Load all game markdown files at module scope
+// Load all game markdown files at module scope. Games live in the frontmatter
+// `games:` list (managed by Sveltia CMS); the body is empty.
 const game_modules = import.meta.glob('/content/unplayed/*.md', {
 	eager: true,
 	query: '?raw',
 	import: 'default'
 });
 
-// Parse game entry line
-function parse_game_line(line: string): Game | null {
-	// Match: "- Game Title (Platform)" or "- Game Title (Platform) (Note)"
-	const match = line.match(/^[*-]\s+(.+?)\s+\(([^)]+)\)(?:\s+\(([^)]+)\))?$/);
-	if (!match) return null;
-
-	return {
-		title: match[1].trim(),
-		platform: match[2].trim(),
-		note: match[3]?.trim()
-	};
-}
-
-// Parse all game lists once at module scope
 const all_game_lists = Object.entries(game_modules).map(([path, content]) => {
-	const status_match = path.match(/\/([^/]+)\.md$/)?.[1] as GameList['status'];
-	const lines = (content as string).split('\n');
-	const games = lines
-		.map(parse_game_line)
-		.filter((game): game is Game => game !== null);
-
+	const status = path.match(/\/([^/]+)\.md$/)?.[1] as GameList['status'];
+	const { data } = matter(content as Input);
 	return {
-		status: status_match,
-		games
+		status,
+		games: (data.games ?? []) as Game[]
 	};
 }) as GameList[];
 

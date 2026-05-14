@@ -1,5 +1,6 @@
 import { query } from '$app/server';
 import * as z from 'zod/mini';
+import matter, { type Input } from 'gray-matter';
 
 export type Book = {
 	title: string;
@@ -12,37 +13,20 @@ export type BookList = {
 	books: Book[];
 };
 
-// Load all book markdown files at module scope
+// Load all book markdown files at module scope. Books live in the frontmatter
+// `books:` list (managed by Sveltia CMS); the body is empty.
 const book_modules = import.meta.glob('/content/unread/*.md', {
 	eager: true,
 	query: '?raw',
 	import: 'default'
 });
 
-// Parse book entry line
-function parse_book_line(line: string): Book | null {
-	// Match: "- Title (Author)" or "- Title (Author) (Note)"
-	const match = line.match(/^[*-]\s+(.+?)\s+\(([^)]+)\)(?:\s+\(([^)]+)\))?$/);
-	if (!match) return null;
-
-	return {
-		title: match[1].trim(),
-		author: match[2].trim(),
-		note: match[3]?.trim()
-	};
-}
-
-// Parse all book lists once at module scope
 const all_book_lists = Object.entries(book_modules).map(([path, content]) => {
-	const status_match = path.match(/\/([^/]+)\.md$/)?.[1] as BookList['status'];
-	const lines = (content as string).split('\n');
-	const books = lines
-		.map(parse_book_line)
-		.filter((book): book is Book => book !== null);
-
+	const status = path.match(/\/([^/]+)\.md$/)?.[1] as BookList['status'];
+	const { data } = matter(content as Input);
 	return {
-		status: status_match,
-		books
+		status,
+		books: (data.books ?? []) as Book[]
 	};
 }) as BookList[];
 

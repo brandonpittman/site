@@ -1,10 +1,20 @@
-# Reading
+---
+books:
+  - title: Crossroads of Ravens
+    author: Andrzej Sapkowski
+  - title: 'Batman: Resurrection'
+    author: John Jackson Miller
+  - title: 'I, Robot'
+    author: Issac Asimov
+  - title: 'Exodus: The Archimedes Engine'
+    author: Peter Hamilton
+  - title: 'The AWK Programming Language, Second Edition'
+    author: Alfred V. Aho
+  - title: Discourses
+    author: Epictetus & Robin Waterfield
+  - title: Greek Lives
+    author: Plutarch & Robin Waterfield
+  - title: On Benefits
+    author: Seneca & Brad Inwood
+---
 
-- Crossroads of Ravens (Andrzej Sapkowski)
-- Batman: Resurrection (John Jackson Miller)
-- I, Robot (Issac Asimov)
-- Exodus: The Archimedes Engine (Peter Hamilton)
-- The AWK Programming Language, Second Edition (Alfred V. Aho)
-- Discourses (Epictetus & Robin Waterfield)
-- Greek Lives (Plutarch & Robin Waterfield)
-- On Benefits (Seneca & Brad Inwood)

@@ -1,0 +1,16 @@
+name = "site-cms-auth"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+# Brandon Pittman Cloudflare account.
+account_id = "b5cfd1650c6d683007face205f5a81bd"
+
+# Hostnames allowed to use this authenticator (wildcards ok). One worker serves
+# every deployment: production (brandonpittman.com + www) plus the *.pages.dev
+# wildcard that covers branch-aliased + per-commit preview URLs. The project's
+# pages.dev subdomain is "site-9yk" (not plain "site").
+[vars]
+ALLOWED_DOMAINS = "brandonpittman.com,www.brandonpittman.com,site-9yk.pages.dev,*.site-9yk.pages.dev"
+
+# Secrets are NOT stored here. Set them after the first deploy (from repo root):
+#   npx wrangler secret put GITHUB_CLIENT_ID --config workers/sveltia-cms-auth/wrangler.toml
+#   npx wrangler secret put GITHUB_CLIENT_SECRET --config workers/sveltia-cms-auth/wrangler.toml

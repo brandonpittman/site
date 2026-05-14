@@ -1,241 +1,484 @@
-# Read
+---
+books:
+  - title: '4,000 Weeks'
+    author: Oliver Burkeman
+  - title: 52 Omnibus
+    author: Greg Rucka
+  - title: A Clash of Kings
+    author: George R.R. Martin
+  - title: A Dance with Dragons
+    author: George R.R. Martin
+  - title: 'Batman: A Death in the Family'
+    author: Jim Starlin
+  - title: A Feast for Crows
+    author: George R.R. Martin
+  - title: A Game of Thrones
+    author: George R.R. Martin
+  - title: A Rulebook for Arguments
+    author: Anthony Weston
+  - title: A Stir of Echoes
+    author: Richard Matheson
+  - title: A Storm of Swords
+    author: George R.R. Martin
+  - title: Abaddon's Gate
+    author: James S. A. Corey
+  - title: Agile Web Development
+    author: Dave Thomas
+  - title: 'All-Star Batman & Robin: The Boy Wonder'
+    author: Frank Miller
+  - title: An Essay on the Unity of Stoic Philosophy
+    author: Johnny Christensen
+  - title: 'Anger, Mercy, Revenge'
+    author: Seneca
+  - title: 'Arkham Asylum: Living Hell'
+    author: Dan Slott
+  - title: At the Existentialist Cafe
+    author: Sarah Bakewell
+  - title: Atomic Design
+    author: Brad Frost
+  - title: Automate with Grunt
+    author: Brian P. Hogan
+  - title: Babylon's Ashes
+    author: James S. A. Corey
+  - title: Baptism of Fire
+    author: Andrzej Sapkowski
+  - title: 'Batgirl: Year One'
+    author: Scott Beatty
+  - title: Batman and the Monster Men
+    author: Matt Wagner
+  - title: 'Batman: Arkham Asylum'
+    author: Grant Morrison
+  - title: 'Batman Arkham: Ra''s Al Ghul'
+    author: Various
+  - title: 'Batman: As the Crow Flies'
+    author: Judd Winick
+  - title: 'Batman: Battle for the Cowl'
+    author: Tony Daniel
+  - title: 'Batman: Birth of the Demon'
+    author: Dennis O'Neill
+  - title: 'Batman: Bride of the Demon'
+    author: Mike Barr
+  - title: 'Batman: Broken City'
+    author: Brian Azzarello
+  - title: 'Batman: Bruce Wayne: Fugitive'
+    author: Greg Rucka
+  - title: 'Batman: Bruce Wayne: Murderer?'
+    author: Greg Rucka
+  - title: 'Batman: Bruce Wayne: The Road Home'
+    author: Fabian Nicieza
+  - title: Batman by Grant Morrison Omnibus Volume 1
+    author: Grant Morrison
+  - title: Batman by Grant Morrison Volume 2
+    author: Grant Morrison
+  - title: 'Batman Chronicles: The Gauntlet'
+    author: Bruce Canwell
+  - title: 'Batman: City of Crime'
+    author: David Lapham
+  - title: 'Batman: Damned'
+    author: Brian Azzarello
+  - title: 'Batman: Dark Knights Metal Omnibus'
+    author: Scott Synder
+  - title: 'Batman: Dark Victory'
+    author: Jeph Loeb
+  - title: 'Batman: Dear Detective'
+    author: Lee Bermejo
+  - title: 'Batman: Death of the Maidens'
+    author: Greg Rucka
+  - title: 'Batman/Deathblow: After the Fire'
+    author: Brian Azzarello
+  - title: 'Batman: Earth One'
+    author: Geoff Johns
+  - title: 'Batman: Ed Brubaker Vol. 1'
+    author: Ed Brubaker
+  - title: 'Batman: Ego and Other Tails'
+    author: Darwyn Cooke
+  - title: 'Batman: Eye of the Beholder'
+    author: Tony S. Daniel
+  - title: 'Batman: Face the Face'
+    author: James Robinson
+  - title: 'Batman: Full Circle'
+    author: Mike Barr
+  - title: 'Batman: Gotham By Gaslight'
+    author: Brian Augustyn
+  - title: 'Batman: Gothic'
+    author: Grant Morrison
+  - title: 'Batman: Harley and Ivy'
+    author: Paul Dini
+  - title: 'Batman: Harley Quinn'
+    author: Paul Dini
+  - title: 'Batman: Haunted Knight'
+    author: Jeph Loeb
+  - title: 'Batman / Huntress: Cry for Blood'
+    author: Greg Rucka
+  - title: 'Batman: Hush'
+    author: Jeph Loeb
+  - title: 'Batman: Life After Death'
+    author: Tony S. Daniel
+  - title: 'Batman: The Long Halloween Special'
+    author: Jeph Loeb
+  - title: 'Batman: Long Shadows'
+    author: Judd Winick
+  - title: 'Batman: Mad Love and Other Stories'
+    author: Paul Dini
+  - title: 'Batman: New Gotham Vol. 1'
+    author: Greg Rucka
+  - title: 'Batman: Noël'
+    author: Lee Bermejo
+  - title: 'Batman: Officer Down'
+    author: Greg Rucka
+  - title: 'Batman: One Bad Day: Mr. Freeze'
+    author: Gerry Duggan
+  - title: 'Batman: One Bad Day: Penguin'
+    author: John Ridley
+  - title: 'Batman: Poison Ivy'
+    author: John Francis Moore
+  - title: 'Batman: Prey'
+    author: Doug Moench
+  - title: 'Batman/Santa Claus: Silent Knight'
+    author: Jeff Parker
+  - title: 'Batman: Son of the Demon'
+    author: Mike Barr
+  - title: 'Batman-Spawn: War Devil'
+    author: Chuck Dixon
+  - title: 'Batman: Terror'
+    author: Doug Moench
+  - title: 'Batman: The 1989 Movie Adaptation'
+    author: Dennis O'Neil
+  - title: 'Batman: The Chalice'
+    author: Chuck Dixon
+  - title: 'Batman: The Court of Owls'
+    author: Scott Snyder
+  - title: 'Batman: The Dark Knight Returns'
+    author: Frank Miller
+  - title: 'Batman: The Joker War Saga'
+    author: James Tynion IV
+  - title: 'Batman: The Long Halloween'
+    author: Jeph Loeb
+  - title: 'Batman: The Man Who Laughs'
+    author: Ed Brubaker
+  - title: 'Batman: Their Dark Designs'
+    author: James Tynion IV
+  - title: 'Batman: Thrillkiller'
+    author: Howard Chaykin
+  - title: 'Batman: Turning Points'
+    author: Greg Rucka
+  - title: 'Batman: Under the Red Hood'
+    author: Judd Winick
+  - title: 'Batman: Venom'
+    author: Dennis O'Neill
+  - title: 'Batman: War Crimes'
+    author: Bill Willingham
+  - title: 'Batman: War Drums'
+    author: Andersen Gabrych
+  - title: 'Batman: War Games'
+    author: Andersen Gabrych
+  - title: 'Batman: Whatever Happened to The Caped Crusader'
+    author: Neil Gaiman
+  - title: 'Batman: White Knight'
+    author: Sean Murphy
+  - title: 'Batman: Year One'
+    author: Frank Miller
+  - title: 'Batman: Year Two'
+    author: Mike Barr
+  - title: Beyond the Individual
+    author: Will Johncock
+  - title: Blackest Night Omnibus
+    author: Geoff Johns
+  - title: Build Awesome Command-Line Applications in Ruby 2
+    author: David Copeland
+  - title: Caliban's War
+    author: James S. A. Corey
+  - title: Choke
+    author: Chuck Palahniuk
+  - title: Cibola Burn
+    author: James S. A. Corey
+  - title: CoffeeScript
+    author: Trevor Burnham
+  - title: The Cambridge Companion to the Stoics
+    author: Brad Inwood
+  - title: Confident Ruby
+    author: Avdi Grimm
+  - title: Consider This
+    author: Chuck Palahniuk
+  - title: Courage is Calling
+    author: Ryan Holiday
+  - title: Creating Flow with OmniFocus
+    author: Kuorosh Dini
+  - title: Crisis on Infinite Earths
+    author: Marv Wolfman
+  - title: Diary
+    author: Chuck Palahniuk
+  - title: 'Discourses, Fragments, Handbook'
+    author: Epictetus & Robin Hard
+  - title: Do Androids Dream of Electric Sheep?
+    author: Philip K. Dick
+  - title: Dust
+    author: Hugh Howey
+  - title: Effective Notetaking
+    author: Dr. Fiona McPherson
+  - title: Effortless
+    author: Greg McKeowan
+  - title: El Club Dumas
+    author: Arturo Perez-Revert
+  - title: 'Elements of Ethics, Fragments and Excerpts'
+    author: Hierocles&David Konstan
+  - title: ember-cli 101
+    author: Adolfo Builes
+  - title: 'Epictetus: A Stoic and Socratic Guide to Life'
+    author: A.A. Long
+  - title: Epitome of Stoic Ethics
+    author: Arius Didymus
+  - title: Essentialism
+    author: Greg McKeowan
+  - title: Exceptional Ruby
+    author: Avdi Grimm
+  - title: Fight Club 2
+    author: Chuck Palahniuk
+  - title: Fight Club
+    author: Chuck Palahniuk
+  - title: Final Crisis
+    author: Grant Morrison
+  - title: From Bash to Z Shell
+    author: Oliver Kiddle
+  - title: Fugitives and Refugees
+    author: Chuck Palahniuk
+  - title: Getting Real
+    author: Jason Fried
+  - title: Getting Things Done
+    author: David Allen
+  - title: Good Math
+    author: Mark C. Chu-Carroll
+  - title: Gotham Central
+    author: Greg Rucka
+  - title: 'Halo: The Fall of Reach'
+    author: Eric Nylund
+  - title: 'Harley and Ivy: Love on the Lam'
+    author: Judd Winick
+  - title: Haunted
+    author: Chuck Palahniuk
+  - title: Heartburn
+    author: Nora Ephron
+  - title: Hellenistic Philosophy
+    author: A.A. Long
+  - title: HELP!
+    author: Oliver Burkeman
+  - title: Fragments
+    author: Heraclitus
+  - title: Hero of Two Worlds
+    author: Mike Duncan
+  - title: How to Make Notes and Write
+    author: Dan Allosso
+  - title: HTML5 and CSS3
+    author: Brian P. Hogan
+  - title: The Beginner's Guide to Hunting Deer for Food
+    author: Jackson Landers
+  - title: Identity Crisis
+    author: Brad Meltzer
+  - title: In Fifty Years We'll All Be Chicks
+    author: Adam Carolla
+  - title: Infinite Crisis
+    author: Geoff Johns
+  - title: Invisible Monsters
+    author: Chuck Palahniuk
+  - title: It Doesn't Have to Be Crazy at Work
+    author: Jason Fried
+  - title: 'JLA: The Tower of Babel'
+    author: Mark Waid
+  - title: 'Joker: 80th Anniversary'
+    author: Various
+  - title: 'Joker: Killer Smile'
+    author: Jeff Lemire
+  - title: Joker
+    author: Brian Azzarello
+  - title: Learn AppleScript
+    author: Hamish Sanderson
+  - title: Learning Unix for OS X Mountain Lion
+    author: Dave Taylor
+  - title: Letters on Ethics
+    author: Seneca
+  - title: Letters to Steve
+    author: Mark Milian
+  - title: Leviathan Wakes
+    author: James S. A. Corey
+  - title: Lives of the Stoics
+    author: Ryan Holiday
+  - title: Lullaby
+    author: Chuck Palahniuk
+  - title: 'Luthor: Man of Steel'
+    author: Brian Azzarello
+  - title: Man's Search for Meaning
+    author: Victor Frankl
+  - title: 'Mass Effect: Ascension'
+    author: Drew Karpyshyn
+  - title: 'Mass Effect: Deception'
+    author: Some Hack
+  - title: 'Mass Effect: Retribution'
+    author: Drew Karpyshyn
+  - title: 'Mass Effect: Revelation'
+    author: Drew Karpyshyn
+  - title: Meditations
+    author: Marcus Aurelius&Gregory Hayes
+  - title: Meditations
+    author: Marcus Aurelius&Robin Waterfield
+  - title: Memory's Legion
+    author: James S. A. Corey
+  - title: Messy
+    author: Tim Harford
+  - title: Metaprogramming Ruby
+    author: Paola Perrotta
+  - title: Mind and Cosmos
+    author: Thomas Nagel
+  - title: Lectures and Sayings
+    author: Musonius Rufus&Cynthia King
+  - title: Natural Questions
+    author: Seneca
+  - title: Nausea
+    author: Jean-Paul Sartre
+  - title: Nemesis Games
+    author: James S. A. Corey
+  - title: 'Nightwing: Rising'
+    author: Hilary J. Bader
+  - title: Not Taco Bell Material
+    author: Adam Carolla
+  - title: On Writing Well
+    author: William Zinsser
+  - title: Persepolis Rising
+    author: James S. A. Corey
+  - title: 'Phenomenology: The Basics'
+    author: Dan Zahavi
+  - title: Philosophy as a Way of Life
+    author: Pierre Hadot
+  - title: Physics of the Stoics
+    author: Samuel Sambursky
+  - title: Practical Object-Oriented Design in Ruby
+    author: Sandi Metz
+  - title: Practical Vim
+    author: Drew Neil
+  - title: Pragmatic Guide to JavaScript
+    author: Christophe Porteneuve
+  - title: Programming Elixir
+    author: Dave Thomas
+  - title: Programming Ruby 1.9 & 2.0
+    author: Dave Thomas
+  - title: Pygmy
+    author: Chuck Palahniuk
+  - title: Quantum Physics
+    author: Alastair I.M. Rae
+  - title: Rant
+    author: Chuck Palahniuk
+  - title: 'Robin: Year One'
+    author: Chuck Dixon
+  - title: A Season of Storms
+    author: Andrzej Sapkowski
+  - title: Seven and a Half Lessons About the Brain
+    author: Lisa Feldman Barrett
+  - title: Several short sentences about writing
+    author: Verlyn Klinkenborg
+  - title: Shape Up
+    author: Ryan Singer
+  - title: Shift
+    author: Hugh Howey
+  - title: Snuff
+    author: Chuck Palahniuk
+  - title: Steve Jobs
+    author: Walter Isaacson
+  - title: Stoic Spiritual Exercises
+    author: Elen Buzaré
+  - title: Stoicism
+    author: John Sellars
+  - title: A Summary of Stoic Philosophy — Diogenes Laertius Book Seven
+    author: C. D. Yonge and Keith Seddon
+  - title: 'Superman/Batman: Absolute Power'
+    author: Jeph Loeb
+  - title: 'Superman/Batman: Public Enemies'
+    author: Jeph Loeb
+  - title: 'Superman/Batman: Supergirl'
+    author: Jeph Loeb
+  - title: 'Superman/Batman: Vengeance'
+    author: Jeph Loeb
+  - title: 'Superman: Kingdom Come'
+    author: Mark Waid
+  - title: Survivor
+    author: Chuck Palahniuk
+  - title: Take Control of BBEdit
+    author: Glenn Fleishman
+  - title: Take Control of the Terminal
+    author: Joe Kissel
+  - title: Text Processing with Ruby
+    author: Rob Miller
+  - title: That One Should Disdain Hardships
+    author: Musonius Rufus
+  - title: >-
+      The 4-Hour Body: An Uncommon Guide to Rapid Fat-Loss, Incredible Sex, and
+      Becoming Superhuman
+    author: Timothy Ferris
+  - title: The Antidote
+    author: Oliver Burkeman
+  - title: The Blood of Elves
+    author: Andrzej Sapkowski
+  - title: The Brewmaster's Table
+    author: Garrett Oliver
+  - title: The Cucumber Book
+    author: Matt Wynne
+  - title: The God Theory
+    author: Bernard Haisch
+  - title: The Inner Citadel
+    author: Pierre Hadot
+  - title: 'The Joker: 80 Years of the Clown Prince of Crime'
+    author: Various
+  - title: 'The Joker: Year of the Villain #1'
+    author: John Carpenter
+  - title: 'Batman: The Killing Joke'
+    author: Alan Moore
+  - title: The Lady of the Lake
+    author: Andrzej Sapkowski
+  - title: The Life Changing Magic of Tidying Up
+    author: Marie Kondo
+  - title: The Montessori Toddler
+    author: Simone Davies
+  - title: The Paleo Manifesto
+    author: Health
+  - title: The Practicing Stoic
+    author: Ward Farnsworth
+  - title: The Pragmatic Programmer
+    author: Dave Thomas
+  - title: The Primal Blueprint
+    author: Mark Sisson
+  - title: The Primal Connection
+    author: Mark Sisson
+  - title: The Resurrection of Ra's Al-Ghul
+    author: Paul Dini
+  - title: The Rspec Book
+    author: David Chelimsky
+  - title: The Science of Hitting
+    author: Ted Williams
+  - title: The Socratic Method
+    author: Ward Farnsworth
+  - title: 'The Storm Before the Storm: The Beginning of the End of the Roman Republic'
+    author: Mike Duncan
+  - title: The Sword of Destiny
+    author: Andrzej Sapkowski
+  - title: The Tower of Swallows
+    author: Andrzej Sapkowski
+  - title: 'Batman: Three Jokers'
+    author: Geoff Johns
+  - title: Time of Contempt
+    author: Andrzej Sapkowski
+  - title: 'Tiny Habits: The Small Changes That Change Everything'
+    author: BJ Fogg
+  - title: tmux
+    author: Brian P. Hogan
+  - title: Tranquility by Tuesday
+    author: Laura Vanderkam
+  - title: Two Meals a Day
+    author: Mark Sisson
+  - title: Wool
+    author: Hugh Howey
+  - title: Workflow Mastery
+    author: Kuorosh Dini
+  - title: Write Useful Books
+    author: Rob Fitzpatrick
+  - title: Zombie Spaceship Wasteland
+    author: Patton Oswald
+---
 
-* 4,000 Weeks (Oliver Burkeman)
-* 52 Omnibus (Greg Rucka)
-* A Clash of Kings (George R.R. Martin)
-* A Dance with Dragons (George R.R. Martin)
-* Batman: A Death in the Family (Jim Starlin)
-* A Feast for Crows (George R.R. Martin)
-* A Game of Thrones (George R.R. Martin)
-* A Rulebook for Arguments (Anthony Weston)
-* A Stir of Echoes (Richard Matheson)
-* A Storm of Swords (George R.R. Martin)
-* Abaddon's Gate (James S. A. Corey)
-* Agile Web Development (Dave Thomas)
-* All-Star Batman & Robin: The Boy Wonder (Frank Miller)
-* An Essay on the Unity of Stoic Philosophy (Johnny Christensen)
-* Anger, Mercy, Revenge (Seneca)
-* Arkham Asylum: Living Hell (Dan Slott)
-* At the Existentialist Cafe (Sarah Bakewell)
-* Atomic Design (Brad Frost)
-* Automate with Grunt (Brian P. Hogan)
-* Babylon's Ashes (James S. A. Corey)
-* Baptism of Fire (Andrzej Sapkowski)
-* Batgirl: Year One (Scott Beatty)
-* Batman and the Monster Men (Matt Wagner)
-* Batman: Arkham Asylum (Grant Morrison)
-* Batman Arkham: Ra's Al Ghul (Various)
-* Batman: As the Crow Flies (Judd Winick)
-* Batman: Battle for the Cowl (Tony Daniel)
-* Batman: Birth of the Demon (Dennis O'Neill)
-* Batman: Bride of the Demon (Mike Barr)
-* Batman: Broken City (Brian Azzarello)
-* Batman: Bruce Wayne: Fugitive (Greg Rucka)
-* Batman: Bruce Wayne: Murderer?Greg Rucka
-* Batman: Bruce Wayne: The Road Home (Fabian Nicieza)
-* Batman by Grant Morrison Omnibus Volume 1Grant Morrison
-* Batman by Grant Morrison Volume 2Grant Morrison
-* Batman Chronicles: The Gauntlet (Bruce Canwell)
-* Batman: City of Crime (David Lapham)
-* Batman: Damned (Brian Azzarello)
-* Batman: Dark Knights Metal Omnibus (Scott Synder)
-* Batman: Dark Victory (Jeph Loeb)
-* Batman: Dear Detective (Lee Bermejo)
-* Batman: Death of the Maidens (Greg Rucka)
-* Batman/Deathblow: After the Fire (Brian Azzarello)
-* Batman: Earth One (Geoff Johns)
-* Batman: Ed Brubaker Vol. 1Ed Brubaker
-* Batman: Ego and Other Tails (Darwyn Cooke)
-* Batman: Eye of the Beholder (Tony S. Daniel)
-* Batman: Face the Face (James Robinson)
-* Batman: Full Circle (Mike Barr)
-* Batman: Gotham By Gaslight (Brian Augustyn)
-* Batman: Gothic (Grant Morrison)
-* Batman: Harley and Ivy (Paul Dini)
-* Batman: Harley Quinn (Paul Dini)
-* Batman: Haunted Knight (Jeph Loeb)
-* Batman / Huntress: Cry for Blood (Greg Rucka)
-* Batman: Hush (Jeph Loeb)
-* Batman: Life After Death (Tony S. Daniel)
-* Batman: The Long Halloween Special (Jeph Loeb)
-* Batman: Long Shadows (Judd Winick)
-* Batman: Mad Love and Other Stories (Paul Dini)
-* Batman: New Gotham Vol. 1Greg Rucka
-* Batman: Noël (Lee Bermejo)
-* Batman: Officer Down (Greg Rucka)
-* Batman: One Bad Day: Mr. Freeze (Gerry Duggan)
-* Batman: One Bad Day: Penguin (John Ridley)
-* Batman: Poison Ivy (John Francis Moore)
-* Batman: Prey (Doug Moench)
-* Batman/Santa Claus: Silent Knight (Jeff Parker)
-* Batman: Son of the Demon (Mike Barr)
-* Batman-Spawn: War Devil (Chuck Dixon)
-* Batman: Terror (Doug Moench)
-* Batman: The 1989 Movie Adaptation (Dennis O'Neil)
-* Batman: The Chalice (Chuck Dixon)
-* Batman: The Court of Owls (Scott Snyder)
-* Batman: The Dark Knight Returns (Frank Miller)
-* Batman: The Joker War Saga (James Tynion IV)
-* Batman: The Long Halloween (Jeph Loeb)
-* Batman: The Man Who Laughs (Ed Brubaker)
-* Batman: Their Dark Designs (James Tynion IV)
-* Batman: Thrillkiller (Howard Chaykin)
-* Batman: Turning Points (Greg Rucka)
-* Batman: Under the Red Hood (Judd Winick)
-* Batman: Venom (Dennis O'Neill)
-* Batman: War Crimes (Bill Willingham)
-* Batman: War Drums (Andersen Gabrych)
-* Batman: War Games (Andersen Gabrych)
-* Batman: Whatever Happened to The Caped Crusader (Neil Gaiman)
-* Batman: White Knight (Sean Murphy)
-* Batman: Year One (Frank Miller)
-* Batman: Year Two (Mike Barr)
-* Beyond the Individual (Will Johncock)
-* Blackest Night Omnibus (Geoff Johns)
-* Build Awesome Command-Line Applications in Ruby 2David Copeland
-* Caliban's War (James S. A. Corey)
-* Choke (Chuck Palahniuk)
-* Cibola Burn (James S. A. Corey)
-* CoffeeScript (Trevor Burnham)
-* The Cambridge Companion to the Stoics (Brad Inwood)
-* Confident Ruby (Avdi Grimm)
-* Consider This (Chuck Palahniuk)
-* Courage is Calling (Ryan Holiday)
-* Creating Flow with OmniFocus (Kuorosh Dini)
-* Crisis on Infinite Earths (Marv Wolfman)
-* Diary (Chuck Palahniuk)
-* Discourses, Fragments, Handbook (Epictetus & Robin Hard)
-* Do Androids Dream of Electric Sheep?Philip K. Dick
-* Dust (Hugh Howey)
-* Effective Notetaking (Dr. Fiona McPherson)
-* Effortless (Greg McKeowan)
-* El Club Dumas (Arturo Perez-Revert)
-* Elements of Ethics, Fragments and Excerpts (Hierocles&David Konstan)
-* ember-cli 101Adolfo Builes
-* Epictetus: A Stoic and Socratic Guide to Life (A.A. Long)
-* Epitome of Stoic Ethics (Arius Didymus)
-* Essentialism (Greg McKeowan)
-* Exceptional Ruby (Avdi Grimm)
-* Fight Club 2Chuck Palahniuk
-* Fight Club (Chuck Palahniuk)
-* Final Crisis (Grant Morrison)
-* From Bash to Z Shell (Oliver Kiddle)
-* Fugitives and Refugees (Chuck Palahniuk)
-* Getting Real (Jason Fried)
-* Getting Things Done (David Allen)
-* Good Math (Mark C. Chu-Carroll)
-* Gotham Central (Greg Rucka)
-* Halo: The Fall of Reach (Eric Nylund)
-* Harley and Ivy: Love on the Lam (Judd Winick)
-* Haunted (Chuck Palahniuk)
-* Heartburn (Nora Ephron)
-* Hellenistic Philosophy (A.A. Long)
-* HELP!Oliver Burkeman
-* Fragments (Heraclitus)
-* Hero of Two Worlds (Mike Duncan)
-* How to Make Notes and Write (Dan Allosso)
-* HTML5 and CSS3Brian P. Hogan
-* The Beginner's Guide to Hunting Deer for Food (Jackson Landers)
-* Identity Crisis (Brad Meltzer)
-* In Fifty Years We'll All Be Chicks (Adam Carolla)
-* Infinite Crisis (Geoff Johns)
-* Invisible Monsters (Chuck Palahniuk)
-* It Doesn't Have to Be Crazy at Work (Jason Fried)
-* JLA: The Tower of Babel (Mark Waid)
-* Joker: 80th Anniversary (Various)
-* Joker: Killer Smile (Jeff Lemire)
-* Joker (Brian Azzarello)
-* Learn AppleScript (Hamish Sanderson)
-* Learning Unix for OS X Mountain Lion (Dave Taylor)
-* Letters on Ethics (Seneca)
-* Letters to Steve (Mark Milian)
-* Leviathan Wakes (James S. A. Corey)
-* Lives of the Stoics (Ryan Holiday)
-* Lullaby (Chuck Palahniuk)
-* Luthor: Man of Steel (Brian Azzarello)
-* Man's Search for Meaning (Victor Frankl)
-* Mass Effect: Ascension (Drew Karpyshyn)
-* Mass Effect: Deception (Some Hack)
-* Mass Effect: Retribution (Drew Karpyshyn)
-* Mass Effect: Revelation (Drew Karpyshyn)
-* Meditations (Marcus Aurelius&Gregory Hayes)
-* Meditations (Marcus Aurelius&Robin Waterfield)
-* Memory's Legion (James S. A. Corey)
-* Messy (Tim Harford)
-* Metaprogramming Ruby (Paola Perrotta)
-* Mind and Cosmos (Thomas Nagel)
-* Lectures and Sayings (Musonius Rufus&Cynthia King)
-* Natural Questions (Seneca)
-* Nausea (Jean-Paul Sartre)
-* Nemesis Games (James S. A. Corey)
-* Nightwing: Rising (Hilary J. Bader)
-* Not Taco Bell Material (Adam Carolla)
-* On Writing Well (William Zinsser)
-* Persepolis Rising (James S. A. Corey)
-* Phenomenology: The Basics (Dan Zahavi)
-* Philosophy as a Way of Life (Pierre Hadot)
-* Physics of the Stoics (Samuel Sambursky)
-* Practical Object-Oriented Design in Ruby (Sandi Metz)
-* Practical Vim (Drew Neil)
-* Pragmatic Guide to JavaScript (Christophe Porteneuve)
-* Programming Elixir (Dave Thomas)
-* Programming Ruby 1.9 & 2.0Dave Thomas
-* Pygmy (Chuck Palahniuk)
-* Quantum Physics (Alastair I.M. Rae)
-* Rant (Chuck Palahniuk)
-* Robin: Year One (Chuck Dixon)
-* A Season of Storms (Andrzej Sapkowski)
-* Seven and a Half Lessons About the Brain (Lisa Feldman Barrett)
-* Several short sentences about writing (Verlyn Klinkenborg)
-* Shape Up (Ryan Singer)
-* Shift (Hugh Howey)
-* Snuff (Chuck Palahniuk)
-* Steve Jobs (Walter Isaacson)
-* Stoic Spiritual Exercises (Elen Buzaré)
-* Stoicism (John Sellars)
-* A Summary of Stoic Philosophy — Diogenes Laertius Book Seven (C. D. Yonge and Keith Seddon)
-* Superman/Batman: Absolute Power (Jeph Loeb)
-* Superman/Batman: Public Enemies (Jeph Loeb)
-* Superman/Batman: Supergirl (Jeph Loeb)
-* Superman/Batman: Vengeance (Jeph Loeb)
-* Superman: Kingdom Come (Mark Waid)
-* Survivor (Chuck Palahniuk)
-* Take Control of BBEdit (Glenn Fleishman)
-* Take Control of the Terminal (Joe Kissel)
-* Text Processing with Ruby (Rob Miller)
-* That One Should Disdain Hardships (Musonius Rufus)
-* The 4-Hour Body: An Uncommon Guide to Rapid Fat-Loss, Incredible Sex, and Becoming Superhuman (Timothy Ferris)
-* The Antidote (Oliver Burkeman)
-* The Blood of Elves (Andrzej Sapkowski)
-* The Brewmaster's Table (Garrett Oliver)
-* The Cucumber Book (Matt Wynne)
-* The God Theory (Bernard Haisch)
-* The Inner Citadel (Pierre Hadot)
-* The Joker: 80 Years of the Clown Prince of Crime (Various)
-* The Joker: Year of the Villain #1John Carpenter
-* Batman: The Killing Joke (Alan Moore)
-* The Lady of the Lake (Andrzej Sapkowski)
-* The Life Changing Magic of Tidying Up (Marie Kondo)
-* The Montessori Toddler (Simone Davies)
-* The Paleo Manifesto (Health)
-* The Practicing Stoic (Ward Farnsworth)
-* The Pragmatic Programmer (Dave Thomas)
-* The Primal Blueprint (Mark Sisson)
-* The Primal Connection (Mark Sisson)
-* The Resurrection of Ra's Al-Ghul (Paul Dini)
-* The Rspec Book (David Chelimsky)
-* The Science of Hitting (Ted Williams)
-* The Socratic Method (Ward Farnsworth)
-* The Storm Before the Storm: The Beginning of the End of the Roman Republic (Mike Duncan)
-* The Sword of Destiny (Andrzej Sapkowski)
-* The Tower of Swallows (Andrzej Sapkowski)
-* Batman: Three Jokers (Geoff Johns)
-* Time of Contempt (Andrzej Sapkowski)
-* Tiny Habits: The Small Changes That Change Everything (BJ Fogg)
-* tmux (Brian P. Hogan)
-* Tranquility by Tuesday (Laura Vanderkam)
-* Two Meals a Day (Mark Sisson)
-* Wool (Hugh Howey)
-* Workflow Mastery (Kuorosh Dini)
-* Write Useful Books (Rob Fitzpatrick)
-* Zombie Spaceship Wasteland (Patton Oswald)
