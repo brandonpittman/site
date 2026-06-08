@@ -1,7 +1,10 @@
 ---
-location: Japan
 title: The Phenomenology of Ephemerality
 date: 2026-01-21
+location: Japan
+description: ''
+successor: ''
+draft: true
 ---
 
 We think of permanence and impermanence as material facts. A digital file exists on a server; you can delete it with a keystroke. Paper yellows and deteriorates; you can still see the crossed-out words beneath your revisions. By these measures, digital is more fragile than physical. Yet our _experience_ of these media contradicts their actual durability.
