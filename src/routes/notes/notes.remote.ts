@@ -12,6 +12,7 @@ export type Note = {
 	title: string;
 	description: string;
 	date: string;
+	draft?: boolean;
 	deprecated?: boolean;
 	successor?: string;
 	location?: string;
@@ -48,10 +49,14 @@ const allNotes = Object.entries(noteModules).map(([path, content]) => {
 export const getNotes = query(z.string(), async (q = '') => {
 	let notes = allNotes;
 
-	// Hide future-dated notes in production (scheduled publishing)
+	// Production hides drafts + future-dated notes (visible in dev for preview)
 	if (!dev) {
 		const now = new Date();
-		notes = notes.filter((note) => new Date(note.date) <= now);
+		notes = notes.filter((note) => {
+			if (note.draft === true) return false;
+			if (new Date(note.date) > now) return false;
+			return true;
+		});
 	}
 
 	// Apply search filter if query provided
@@ -74,6 +79,9 @@ export const getNote = query(z.string(), async (slug) => {
 	if (!content) error(404, 'Post not found');
 
 	const { data, content: markdown } = matter(content as Input);
+
+	// Drafts are not reachable in production, even by direct URL (visible in dev).
+	if (!dev && data.draft === true) error(404, 'Post not found');
 
 	return {
 		slug,

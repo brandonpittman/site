@@ -6,29 +6,32 @@ export type Book = {
 	title: string;
 	author: string;
 	note?: string;
+	status: 'unread' | 'reading' | 'read' | 'abandoned';
 };
 
 export type BookList = {
-	status: 'unread' | 'reading' | 'read' | 'abandoned';
+	status: Book['status'];
 	books: Book[];
 };
 
-// Load all book markdown files at module scope. Books live in the frontmatter
-// `books:` list (managed by Sveltia CMS); the body is empty.
-const book_modules = import.meta.glob('/content/unread/*.md', {
+const STATUSES: Book['status'][] = ['unread', 'reading', 'read', 'abandoned'];
+
+// One file per book; the `status` frontmatter field picks the list it renders in.
+const book_modules = import.meta.glob('/content/books/*.md', {
 	eager: true,
 	query: '?raw',
 	import: 'default'
 });
 
-const all_book_lists = Object.entries(book_modules).map(([path, content]) => {
-	const status = path.match(/\/([^/]+)\.md$/)?.[1] as BookList['status'];
-	const { data } = matter(content as Input);
-	return {
-		status,
-		books: (data.books ?? []) as Book[]
-	};
-}) as BookList[];
+const all_books = Object.values(book_modules).map((content) => matter(content as Input).data as Book);
+
+// Group into the per-status lists the pages expect, each sorted A–Z by title.
+const all_book_lists: BookList[] = STATUSES.map((status) => ({
+	status,
+	books: all_books
+		.filter((book) => book.status === status)
+		.sort((a, b) => a.title.localeCompare(b.title))
+}));
 
 // Get all book lists
 export const get_book_lists = query(async () => {
