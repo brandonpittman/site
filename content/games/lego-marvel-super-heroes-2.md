@@ -1,6 +1,6 @@
 ---
 title: Lego Marvel Super Heroes 2
-platform: Unknown
+platform: Xbox Series X
+note: ''
 status: unplayed
 ---
-
