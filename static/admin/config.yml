@@ -25,6 +25,7 @@ collections:
     format: frontmatter
     create: true
     slug: '{{slug}}'
+    preview_path: notes/{{slug}}
     sortable_fields: [date, title]
     fields:
       - { name: title, label: Title, widget: string }
