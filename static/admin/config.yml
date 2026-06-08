@@ -8,12 +8,6 @@ backend:
   # OAuth relay worker origin (Sveltia appends /auth and /callback).
   base_url: https://site-cms-auth.brandonpittman.workers.dev
 
-# Drafts are owned by the CMS: a Draft -> In Review -> Ready workflow, stored as
-# GitHub PRs that never merge to the production branch, so the published site
-# needs no draft filtering. Applies on the deployed /admin/ (GitHub backend);
-# local "Work with Local Repository" writes files directly with no draft stage.
-publish_mode: editorial_workflow
-
 site_url: https://brandonpittman.com
 display_url: https://brandonpittman.com
 
@@ -39,36 +33,43 @@ collections:
       - { name: description, label: Description, widget: text, required: false }
       - { name: deprecated, label: Deprecated, widget: boolean, default: false, required: false }
       - { name: successor, label: Successor slug, widget: string, required: false }
+      - { name: draft, label: Draft, widget: boolean, default: true, required: false }
       - { name: body, label: Body, widget: markdown }
 
-  # Books — fixed status lists; each entry is title/author/(note).
+  # Books — one file per book; `status` picks the list it renders in.
   - name: books
     label: Books
-    label_singular: Book list
+    label_singular: Book
+    folder: content/books
     extension: md
     format: frontmatter
-    files:
-      - { name: reading, label: Reading, file: content/unread/reading.md, fields: &book_fields [
-            { name: books, label: Books, widget: list, summary: '{{fields.title}}', fields: [
-              { name: title, label: Title, widget: string },
-              { name: author, label: Author, widget: string },
-              { name: note, label: Note, widget: string, required: false } ] } ] }
-      - { name: unread, label: Unread, file: content/unread/unread.md, fields: *book_fields }
-      - { name: read, label: Read, file: content/unread/read.md, fields: *book_fields }
-      - { name: abandoned, label: Abandoned, file: content/unread/abandoned.md, fields: *book_fields }
+    create: true
+    slug: '{{slug}}'
+    summary: '{{title}} — {{status}}'
+    sortable_fields: [title, status]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: author, label: Author, widget: string }
+      - { name: note, label: Note, widget: string, required: false }
+      - { name: status, label: Status, widget: select, default: unread, options: [
+            { label: Unread, value: unread }, { label: Reading, value: reading },
+            { label: Read, value: read }, { label: Abandoned, value: abandoned } ] }
 
-  # Games — fixed status lists; each entry is title/platform/(note).
+  # Games — one file per game; `status` picks the list it renders in.
   - name: games
     label: Games
-    label_singular: Game list
+    label_singular: Game
+    folder: content/games
     extension: md
     format: frontmatter
-    files:
-      - { name: unplayed, label: Unplayed, file: content/unplayed/unplayed.md, fields: &game_fields [
-            { name: games, label: Games, widget: list, summary: '{{fields.title}}', fields: [
-              { name: title, label: Title, widget: string },
-              { name: platform, label: Platform, widget: string },
-              { name: note, label: Note, widget: string, required: false } ] } ] }
-      - { name: unbeaten, label: Unbeaten, file: content/unplayed/unbeaten.md, fields: *game_fields }
-      - { name: beaten, label: Beaten, file: content/unplayed/beaten.md, fields: *game_fields }
-      - { name: abandoned, label: Abandoned, file: content/unplayed/abandoned.md, fields: *game_fields }
+    create: true
+    slug: '{{slug}}'
+    summary: '{{title}} — {{status}}'
+    sortable_fields: [title, status]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: platform, label: Platform, widget: string }
+      - { name: note, label: Note, widget: string, required: false }
+      - { name: status, label: Status, widget: select, default: unplayed, options: [
+            { label: Unplayed, value: unplayed }, { label: Unbeaten, value: unbeaten },
+            { label: Beaten, value: beaten }, { label: Abandoned, value: abandoned } ] }

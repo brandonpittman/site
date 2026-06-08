@@ -6,29 +6,32 @@ export type Game = {
 	title: string;
 	platform: string;
 	note?: string;
+	status: 'unplayed' | 'unbeaten' | 'beaten' | 'abandoned';
 };
 
 export type GameList = {
-	status: 'unplayed' | 'unbeaten' | 'beaten' | 'abandoned';
+	status: Game['status'];
 	games: Game[];
 };
 
-// Load all game markdown files at module scope. Games live in the frontmatter
-// `games:` list (managed by Sveltia CMS); the body is empty.
-const game_modules = import.meta.glob('/content/unplayed/*.md', {
+const STATUSES: Game['status'][] = ['unplayed', 'unbeaten', 'beaten', 'abandoned'];
+
+// One file per game; the `status` frontmatter field picks the list it renders in.
+const game_modules = import.meta.glob('/content/games/*.md', {
 	eager: true,
 	query: '?raw',
 	import: 'default'
 });
 
-const all_game_lists = Object.entries(game_modules).map(([path, content]) => {
-	const status = path.match(/\/([^/]+)\.md$/)?.[1] as GameList['status'];
-	const { data } = matter(content as Input);
-	return {
-		status,
-		games: (data.games ?? []) as Game[]
-	};
-}) as GameList[];
+const all_games = Object.values(game_modules).map((content) => matter(content as Input).data as Game);
+
+// Group into the per-status lists the pages expect, each sorted A–Z by title.
+const all_game_lists: GameList[] = STATUSES.map((status) => ({
+	status,
+	games: all_games
+		.filter((game) => game.status === status)
+		.sort((a, b) => a.title.localeCompare(b.title))
+}));
 
 // Get all game lists
 export const get_game_lists = query(async () => {
