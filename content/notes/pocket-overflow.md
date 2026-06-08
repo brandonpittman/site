@@ -1,6 +1,6 @@
 ---
 title: Pocket Overflow
-date: 2026-04-24
+date: 2026-06-08
 location: Japan
 description: My EDC in layers of fidelity.
 successor: ''
