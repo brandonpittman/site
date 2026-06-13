@@ -1,4 +1,4 @@
-import { query } from '$app/server';
+import { prerender } from '$app/server';
 import * as z from 'zod/mini';
 import matter, { type Input } from 'gray-matter';
 
@@ -34,11 +34,15 @@ const all_game_lists: GameList[] = STATUSES.map((status) => ({
 }));
 
 // Get all game lists
-export const get_game_lists = query(async () => {
+export const get_game_lists = prerender(async () => {
 	return all_game_lists;
 });
 
 // Get single game list by status
-export const get_game_list = query(z.enum(['unplayed', 'unbeaten', 'beaten', 'abandoned']), async (status) => {
-	return all_game_lists.find((list) => list.status === status);
-});
+export const get_game_list = prerender(
+	z.enum(['unplayed', 'unbeaten', 'beaten', 'abandoned']),
+	async (status) => {
+		return all_game_lists.find((list) => list.status === status);
+	},
+	{ inputs: () => STATUSES }
+);

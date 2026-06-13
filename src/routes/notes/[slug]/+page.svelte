@@ -29,7 +29,7 @@
 	</p>
 {/if}
 
-{@html note.content}
+{@html note.html}
 
 <NoteSignature date={new Date(note.meta.date)} location={note.meta.location} />
 
