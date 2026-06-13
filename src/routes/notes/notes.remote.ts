@@ -1,4 +1,4 @@
-import { query } from '$app/server';
+import { prerender } from '$app/server';
 import { dev } from '$app/environment';
 import { error } from '@sveltejs/kit';
 import matter, { type Input } from 'gray-matter';
@@ -7,7 +7,8 @@ import { markedHighlight } from 'marked-highlight';
 import * as z from 'zod/mini';
 import hljs from 'highlight.js/lib/common';
 
-export type Note = {
+// Raw note: shape of the markdown source — frontmatter plus the unparsed markdown body.
+export type RawNote = {
 	slug: string;
 	title: string;
 	description: string;
@@ -18,6 +19,9 @@ export type Note = {
 	location?: string;
 	content: string;
 };
+
+// Rendered note: the markdown body parsed to an `html` string at build time.
+export type Note = Omit<RawNote, 'content'> & { html: string };
 
 const marked = new Marked(
 	markedHighlight({
@@ -37,55 +41,67 @@ const noteModules = import.meta.glob('/content/notes/*.md', {
 	import: 'default'
 });
 
-// Parse once at module scope
+// Parse frontmatter once at module scope
 const allNotes = Object.entries(noteModules).map(([path, content]) => {
 	const fm = matter(content as Input);
 	const { data, content: md } = fm;
 	const slug = path.match(/\/([^/]+)\.md$/)?.[1];
 	return { slug, ...data, content: md };
-}) as Note[];
+}) as RawNote[];
+
+// Render each note's markdown body to html once, at build time.
+const renderedBySlug = new Map<string, Note>(
+	allNotes.map(({ content, ...meta }) => [meta.slug, { ...meta, html: marked.parse(content) as string }])
+);
 
 // Get all posts
-export const getNotes = query(z.string(), async (q = '') => {
-	let notes = allNotes;
+export const getNotes = prerender(
+	z.string(),
+	async (q = '') => {
+		let notes = allNotes;
 
-	// Production hides drafts + future-dated notes (visible in dev for preview)
-	if (!dev) {
-		const now = new Date();
-		notes = notes.filter((note) => {
-			if (note.draft === true) return false;
-			if (new Date(note.date) > now) return false;
-			return true;
-		});
-	}
+		// Production hides drafts + future-dated notes (visible in dev for preview)
+		if (!dev) {
+			const now = new Date();
+			notes = notes.filter((note) => {
+				if (note.draft === true) return false;
+				if (new Date(note.date) > now) return false;
+				return true;
+			});
+		}
 
-	// Apply search filter if query provided
-	const searchQuery = q.toLowerCase();
-	if (searchQuery) {
-		notes = notes.filter((note) => {
-			const searchableText = `${note.title} ${note.content}`.toLowerCase();
-			return searchableText.includes(searchQuery);
-		});
-	}
+		// Apply search filter if query provided
+		const searchQuery = q.toLowerCase();
+		if (searchQuery) {
+			notes = notes.filter((note) => {
+				const searchableText = `${note.title} ${note.content}`.toLowerCase();
+				return searchableText.includes(searchQuery);
+			});
+		}
 
-	return notes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-});
+		return notes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	},
+	// Bake the unfiltered list; arbitrary search queries render on demand.
+	{ inputs: () => [''], dynamic: true }
+);
 
 // Get single post by slug
-export const getNote = query(z.string(), async (slug) => {
-	const path = `/content/notes/${slug}.md`;
-	const content = noteModules[path];
+export const getNote = prerender(
+	z.string(),
+	async (slug) => {
+		const note = renderedBySlug.get(slug);
 
-	if (!content) error(404, 'Post not found');
+		if (!note) error(404, 'Post not found');
 
-	const { data, content: markdown } = matter(content as Input);
+		// Drafts are not reachable in production, even by direct URL (visible in dev).
+		if (!dev && note.draft === true) error(404, 'Post not found');
 
-	// Drafts are not reachable in production, even by direct URL (visible in dev).
-	if (!dev && data.draft === true) error(404, 'Post not found');
-
-	return {
-		slug,
-		meta: data,
-		content: marked.parse(markdown)
-	};
-});
+		return {
+			slug,
+			meta: note,
+			html: note.html
+		};
+	},
+	// Drafts 404 at build time, so only enumerate publishable slugs as inputs.
+	{ inputs: () => allNotes.filter((note) => note.draft !== true).map((note) => note.slug) }
+);

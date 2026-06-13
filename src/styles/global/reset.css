@@ -102,4 +102,13 @@
   :target {
     scroll-margin-block: 5ex;
   }
+
+  /* View transitions don't respect reduced-motion on their own — opt out here */
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
 }

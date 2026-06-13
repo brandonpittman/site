@@ -1,4 +1,4 @@
-import { query } from '$app/server';
+import { prerender } from '$app/server';
 import * as z from 'zod/mini';
 import matter, { type Input } from 'gray-matter';
 
@@ -34,11 +34,15 @@ const all_book_lists: BookList[] = STATUSES.map((status) => ({
 }));
 
 // Get all book lists
-export const get_book_lists = query(async () => {
+export const get_book_lists = prerender(async () => {
 	return all_book_lists;
 });
 
 // Get single book list by status
-export const get_book_list = query(z.enum(['unread', 'reading', 'read', 'abandoned']), async (status) => {
-	return all_book_lists.find((list) => list.status === status);
-});
+export const get_book_list = prerender(
+	z.enum(['unread', 'reading', 'read', 'abandoned']),
+	async (status) => {
+		return all_book_lists.find((list) => list.status === status);
+	},
+	{ inputs: () => STATUSES }
+);
