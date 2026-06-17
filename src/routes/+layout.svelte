@@ -2,8 +2,9 @@
 	import '../styles/styles.css';
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
-	import { onNavigate } from '$app/navigation';
+	import { goto, onNavigate } from '$app/navigation';
 	import 'highlight.js/styles/night-owl.css';
+	import { PressedKeys } from 'runed';
 
 	let { children } = $props();
 
@@ -17,6 +18,11 @@
 				await navigation.complete;
 			});
 		});
+	});
+
+	const keys = new PressedKeys();
+	keys.onKeys(['c', 'm', 's'], () => {
+		goto('/admin');
 	});
 
 	// Get title from page data meta or use default
