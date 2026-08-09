@@ -2,28 +2,10 @@
 	import '../styles/styles.css';
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
-	import { goto, onNavigate } from '$app/navigation';
+	import { OgygiaRouter } from 'ogygia';
 	import 'highlight.js/styles/night-owl.css';
-	import { PressedKeys } from 'runed';
 
 	let { children } = $props();
-
-	// Cross-fade between pages where the browser supports it; no-op elsewhere.
-	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
-
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
-	});
-
-	const keys = new PressedKeys();
-	keys.onKeys(['c', 'm', 's'], () => {
-		goto('/admin');
-	});
 
 	// Get title from page data meta or use default
 	// TODO: Fix global metadata handling
@@ -36,6 +18,9 @@
 <svelte:head>
 	<title>{pageTitle ? pageTitle + titleSuffix : baseName}</title>
 </svelte:head>
+
+<!-- Owns client-side navigation and view transitions now that Kit's router is gone. -->
+<OgygiaRouter />
 
 <Header />
 <main class="region wrapper prose w-full flow">

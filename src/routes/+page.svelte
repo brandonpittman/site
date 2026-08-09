@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import MessageMe from '$lib/components/MessageMe.svelte';
+	import MessageMe from '$lib/components/MessageMe.svelte' with { hydrate: 'visible' };
 
 	const traditionStoicism = 'https://traditionalstoicism.com/the-path-of-the-prokopton/';
 	const github = 'https://github.com/brandonpittman';
