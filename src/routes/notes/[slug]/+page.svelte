@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 	import { getNote } from '../notes.remote';
 	import MessageMe from '$lib/components/MessageMe.svelte' with { hydrate: 'visible' };
 	import NoteSignature from '$lib/components/NoteSignature.svelte';
@@ -23,7 +24,8 @@
 		<em>
 			This note no longer reflects my current thinking, but I'm leaving it up for posterity.
 			{#if note.meta.successor}
-				See <a href={`/notes/${note.meta.successor}`}>the updated note</a> for my current thoughts.
+				See <a href={resolve('/notes/[slug]', { slug: note.meta.successor })}>the updated note</a> for
+				my current thoughts.
 			{/if}
 		</em>
 	</p>
