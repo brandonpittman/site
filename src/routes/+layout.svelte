@@ -29,9 +29,13 @@
 <!-- Keeps the live header node across SPA body swaps instead of rebuilding it each navigation.
      The attribute wraps the island region rather than sitting inside it, which is what lets
      ogygia mark the region as preserved during the move.
-     Note this does NOT preserve focus -- relocating a focused element blurs it, so keyboard
-     focus still resets to <body> on navigation, same as without persist. -->
-<div data-ogygia-persist="header" style="display: contents">
+     Deliberately NOT display:contents: body is a flex column, and `contents` relies on the
+     browser hoisting children into that flex container, which Safari gets wrong -- leaving the
+     region inline and the header invisible. A plain block wrapper stretches as a flex item
+     exactly like the header used to.
+     This does NOT preserve focus -- relocating a focused element blurs it, so keyboard focus
+     still resets to body on navigation, same as without persist. -->
+<div data-ogygia-persist="header">
 	<Header />
 </div>
 
