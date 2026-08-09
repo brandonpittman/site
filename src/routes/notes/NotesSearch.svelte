@@ -28,20 +28,25 @@
 	}
 </script>
 
-<form onsubmit={search}>
-	<label for="search" class="visually-hidden">Search</label>
-	<div
-		class="sidebar"
-		data-dir="rtl"
-		style="--gutter: var(--space-2xs); --sidebar-min-inline-size: 80%; max-inline-size: 30rem"
-	>
-		<input bind:value={query} id="search" type="search" name="q" placeholder="Search notes..." />
-		<button type="submit" class="cta">Search</button>
-	</div>
-</form>
+<!-- The form and list used to be siblings under `article.prose.flow`, which spaced them apart.
+     Islanding moved them inside <ogygia-region>, so that rule now only sees the region -- this
+     wrapper puts the flow composition back where the two elements actually sit. -->
+<div class="flow">
+	<form onsubmit={search}>
+		<label for="search" class="visually-hidden">Search</label>
+		<div
+			class="sidebar"
+			data-dir="rtl"
+			style="--gutter: var(--space-2xs); --sidebar-min-inline-size: 80%; max-inline-size: 30rem"
+		>
+			<input bind:value={query} id="search" type="search" name="q" placeholder="Search notes..." />
+			<button type="submit" class="cta">Search</button>
+		</div>
+	</form>
 
-<ul class="flow" role="list">
-	{#each await getNotes(submitted) as post (post.slug)}
-		<NoteLink {post} />
-	{/each}
-</ul>
+	<ul class="flow" role="list">
+		{#each await getNotes(submitted) as post (post.slug)}
+			<NoteLink {post} />
+		{/each}
+	</ul>
+</div>

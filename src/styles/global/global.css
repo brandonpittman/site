@@ -212,4 +212,16 @@ aside {
 	summary {
 		cursor: default;
 	}
+
+	/*
+	 * ogygia wraps every island in <ogygia-region>. It's a custom element with no UA styles, so
+	 * it defaults to display: inline -- which collapses block content inside it and breaks the
+	 * layout primitives, since those assume normal block flow. Chromium happened to hide this
+	 * wherever the region landed in a flex container (flex items get blockified); Safari did not.
+	 * Making it a block matches the elements islands actually wrap, and keeps `> * + *` spacing
+	 * rules working, since they select the region rather than the component root inside it.
+	 */
+	ogygia-region {
+		display: block;
+	}
 }
