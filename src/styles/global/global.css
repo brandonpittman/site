@@ -3,6 +3,16 @@
 }
 
 @layer global {
+	/*
+	 * The page background lives on body, which normally propagates to the canvas. That
+	 * propagation doesn't survive a view transition: the root snapshots have no opaque backdrop,
+	 * so the canvas shows through mid-transition and reads as a black flash on iOS. Painting the
+	 * background on html as well gives both snapshots something solid to sit on.
+	 */
+	html {
+		background-color: var(--color-base-light);
+	}
+
 	body {
 		--bg-color: var(--color-base-light);
 		--fg-color: var(--color-base-dark);
