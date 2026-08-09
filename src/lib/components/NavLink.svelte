@@ -9,12 +9,21 @@
 
 	let { href, matches = [], children }: Props = $props();
 
+	// `href` comes from resolve(), which returns a path relative to the current page
+	// (`./about` at the root, `../about` under /notes/[slug]) because kit.paths.relative
+	// defaults to true. Matching that against pathname directly never hits -- as a regex,
+	// `./about` demands a character before `/about`. Normalise to an absolute pathname
+	// first, then keep the original substring semantics so `/notes` stays current on
+	// `/notes/[slug]`.
 	const isCurrentPage = $derived(
-		[href, ...matches].some((v) => page.url.pathname.match(v))
+		[new URL(href, page.url).pathname, ...matches].some((v) => page.url.pathname.match(v))
 	);
 </script>
 
 <li>
+	<!-- `href` arrives already resolved from the call site (see Header.svelte), but eslint
+	     can't trace that through a prop. -->
+	<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 	<a {href} aria-current={isCurrentPage ? 'page' : undefined}>
 		{@render children()}
 	</a>

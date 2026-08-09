@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	const dateFormatter = new Intl.DateTimeFormat('en', {
 		month: 'long',
 		day: 'numeric',
@@ -22,7 +24,7 @@
 </script>
 
 <li>
-	<a href={`/notes/${post.slug}`} class="no-underline cluster">
+	<a href={resolve('/notes/[slug]', { slug: post.slug })} class="no-underline cluster">
 		<span class="color-gray-light white-space-nowrap">
 			{formatDate(post.date)}{post.deprecated ? ' (Deprecated)' : ''}
 		</span>
