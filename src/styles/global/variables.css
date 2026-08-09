@@ -1,6 +1,11 @@
-@import "https://unpkg.com/open-props/sizes.min.css" layer(props);
-@import "https://unpkg.com/open-props/easings.min.css" layer(props);
-@import "https://unpkg.com/open-props/animations.min.css" layer(props);
+/* Self-hosted from the npm package rather than unpkg: a remote CSS @import is render-blocking
+   and can only be discovered after this file downloads and parses, so it cost a serialized
+   DNS + TLS + fetch to a third-party origin on every page load. Bundled locally, it's free.
+   easings is required even though nothing here uses --ease-* directly -- open-props' own
+   animations reference --ease-out-3 and friends, and animations.min.css defines none of them. */
+@import "open-props/sizes" layer(props);
+@import "open-props/easings" layer(props);
+@import "open-props/animations" layer(props);
 
 @layer props {
   :root {
