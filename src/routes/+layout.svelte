@@ -3,6 +3,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import { page } from '$app/state';
 	import { goto, onNavigate, beforeNavigate } from '$app/navigation';
+	import { OgygiaRouter } from 'ogygia';
 	import 'highlight.js/styles/night-owl.css';
 	import { PressedKeys } from 'runed';
 
@@ -55,6 +56,8 @@
 <svelte:head>
 	<title>{pageTitle ? pageTitle + titleSuffix : baseName}</title>
 </svelte:head>
+
+<OgygiaRouter />
 
 <Header />
 <main class="region wrapper prose w-full flow">
