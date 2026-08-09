@@ -23,6 +23,11 @@ export type RawNote = {
 // Rendered note: the markdown body parsed to an `html` string at build time.
 export type Note = Omit<RawNote, 'content'> & { html: string };
 
+// What the notes list actually renders. Deliberately narrow: `getNotes` used to return whole
+// RawNotes, so the baked payload carried every note's full markdown body (~62 KB) even though
+// NoteLink only reads these four fields. The list is queried client-side now, so that mattered.
+export type NoteSummary = Pick<RawNote, 'slug' | 'title' | 'date'> & { deprecated?: boolean };
+
 const marked = new Marked(
 	markedHighlight({
 		emptyLangClass: 'hljs',
@@ -51,7 +56,10 @@ const allNotes = Object.entries(noteModules).map(([path, content]) => {
 
 // Render each note's markdown body to html once, at build time.
 const renderedBySlug = new Map<string, Note>(
-	allNotes.map(({ content, ...meta }) => [meta.slug, { ...meta, html: marked.parse(content) as string }])
+	allNotes.map(({ content, ...meta }) => [
+		meta.slug,
+		{ ...meta, html: marked.parse(content) as string }
+	])
 );
 
 // Get all posts
@@ -79,7 +87,9 @@ export const getNotes = prerender(
 			});
 		}
 
-		return notes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+		return notes
+			.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+			.map(({ slug, title, date, deprecated }): NoteSummary => ({ slug, title, date, deprecated }));
 	},
 	// Bake the unfiltered list; arbitrary search queries render on demand.
 	{ inputs: () => [''], dynamic: true }

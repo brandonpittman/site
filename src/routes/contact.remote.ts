@@ -1,9 +1,14 @@
 import { form } from '$app/server';
 import { Resend } from 'resend';
-import { RESEND_API_KEY } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import * as z from 'zod/mini';
 
-const resend = new Resend(RESEND_API_KEY);
+// Read at runtime, not build time: `$env/static/private` makes a missing RESEND_API_KEY a hard
+// build failure, which breaks Cloudflare Pages preview builds (the var is only set on the
+// Production environment). The placeholder keeps Resend's constructor from throwing at module
+// load when the key is absent -- production still uses the real value, and an environment without
+// one fails at the API call instead, which is the right behaviour for a preview.
+const resend = new Resend(env.RESEND_API_KEY ?? 're_placeholder_preview_build_only');
 
 export const send_message = form(
 	z.object({

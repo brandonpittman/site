@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { getNote } from '../notes.remote';
-	import MessageMe from '$lib/components/MessageMe.svelte';
+	import MessageMe from '$lib/components/MessageMe.svelte' with { hydrate: 'visible' };
 	import NoteSignature from '$lib/components/NoteSignature.svelte';
 
 	let param = $derived(page.params.slug);
