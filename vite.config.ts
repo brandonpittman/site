@@ -1,5 +1,6 @@
 import devtoolsJson from 'vite-plugin-devtools-json';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { ogygia } from 'ogygia/vite';
 import { defineConfig, searchForWorkspaceRoot, type Plugin } from 'vite';
 
 // Serves static/admin/index.html at /admin/ in `vite dev` (Cloudflare does this
@@ -23,7 +24,8 @@ const admin_index_fallback: Plugin = {
 };
 
 export default defineConfig({
-  plugins: [admin_index_fallback, sveltekit(), devtoolsJson()],
+  // ogygia must come before sveltekit() so it can transform `with { hydrate | defer | preset }` imports.
+  plugins: [admin_index_fallback, ogygia(), sveltekit(), devtoolsJson()],
   server: {
     fs: {
       allow: [
