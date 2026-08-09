@@ -20,10 +20,10 @@
 <p>
 	My name is Brandon Pittman. I build web sites and apps, study
 	<a href={traditionStoicism}>traditional Stoicism</a>, and I train Brazilian jiu-jitsu. I sometimes
-	<a href="/notes">write</a>
+	<a href={resolve('/notes')}>write</a>
 	about programming, Stoic ideals, and managing time and attention. I don't use social media aside from
-	<a href={github}>GitHub</a>. My backstory is on the <a href="/about">About</a> page. You may also
-	find something interesting in the interested in what
+	<a href={github}>GitHub</a>. My backstory is on the <a href={resolve('/about')}>About</a> page.
+	You may also find something interesting in the interested in what
 	<a href={resolve('/unplayed')}>games I play</a>
 	or
 	<a href={resolve('/unread')}>books I read</a>.
