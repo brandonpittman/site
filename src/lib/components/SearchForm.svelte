@@ -18,7 +18,7 @@
 	<div
 		class="sidebar"
 		data-dir="rtl"
-		style="--gutter: var(--space-2xs); --sidebar-min-inline-size: 80%; max-inline-size: var(--size-15)"
+		style="--gutter: var(--space-2xs); --sidebar-min-inline-size: 80%; max-inline-size: 30rem"
 	>
 		<input
 			autofocus
