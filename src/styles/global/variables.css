@@ -1,7 +1,3 @@
-@import 'open-props/sizes.min.css' layer(props);
-@import 'open-props/easings.min.css' layer(props);
-@import 'open-props/animations.min.css' layer(props);
-
 @layer props {
 	:root {
 		/* Colors */
