@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import MessageMe from '$lib/components/MessageMe.svelte';
 
 	const traditionStoicism = 'https://traditionalstoicism.com/the-path-of-the-prokopton/';
 	const github = 'https://github.com/brandonpittman';
@@ -41,4 +40,6 @@
 	playlist in Apple Music.
 </p>
 
-<MessageMe title="home page" />
+<p>
+	Got something to say? <a href="mailto:hey@brandonpittman.com">Email me</a>.
+</p>
