@@ -6,6 +6,7 @@ import { Marked } from 'marked';
 import { markedHighlight } from 'marked-highlight';
 import * as z from 'zod/mini';
 import hljs from 'highlight.js/lib/common';
+import markedFootnote from 'marked-footnote';
 
 // Raw note: shape of the markdown source — frontmatter plus the unparsed markdown body.
 export type RawNote = {
@@ -32,7 +33,7 @@ const marked = new Marked(
 			return hljs.highlight(code, { language }).value;
 		}
 	})
-);
+).use(markedFootnote({ footnoteDivider: true }));
 
 // Load all posts at module scope
 const noteModules = import.meta.glob('/content/notes/*.md', {
