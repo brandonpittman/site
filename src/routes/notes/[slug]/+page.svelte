@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { getNote } from '../notes.remote';
-	import MessageMe from '$lib/components/MessageMe.svelte';
 	import NoteSignature from '$lib/components/NoteSignature.svelte';
 
 	let param = $derived(page.params.slug);
@@ -32,7 +31,3 @@
 {@html note.html}
 
 <NoteSignature date={new Date(note.meta.date)} location={note.meta.location} />
-
-<hr />
-
-<MessageMe title={note.meta.title} />
