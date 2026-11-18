@@ -40,3 +40,4 @@ server
 # CMS-managed content + self-hosted bundle (don't reformat)
 content/**/*.md
 static/admin/sveltia-cms.js
+static/admin/config.yml

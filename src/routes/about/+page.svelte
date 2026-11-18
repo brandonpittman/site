@@ -8,8 +8,8 @@
 	came to Japan in 2004 for study abroad and after returning to the US for one year to finish my
 	degrees in International Relations and Asian Studies, I returned to Japan as an English teacher.
 	After working in private and public schools for a decade, I became a self-taught programmer. I
-	caught the programming bug while automating OmniFocus. After seeing what could be done with code, I
-	learned Ruby and then Rails in hopes of turning my hobby into a career.
+	caught the programming bug while automating OmniFocus. After seeing what could be done with code,
+	I learned Ruby and then Rails in hopes of turning my hobby into a career.
 </p>
 
 <p>

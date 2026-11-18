@@ -51,7 +51,10 @@ const allNotes = Object.entries(noteModules).map(([path, content]) => {
 
 // Render each note's markdown body to html once, at build time.
 const renderedBySlug = new Map<string, Note>(
-	allNotes.map(({ content, ...meta }) => [meta.slug, { ...meta, html: marked.parse(content) as string }])
+	allNotes.map(({ content, ...meta }) => [
+		meta.slug,
+		{ ...meta, html: marked.parse(content) as string }
+	])
 );
 
 // Get all posts
