@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { getNote } from '../notes.remote';
-	import NoteSignature from '$lib/components/NoteSignature.svelte';
+	import NoteSignature from '#lib/components/NoteSignature.svelte';
 
 	let param = $derived(page.params.slug);
 	let note = $derived(await getNote(param!));

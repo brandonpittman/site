@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../styles/styles.css';
-	import Header from '$lib/components/Header.svelte';
+	import Header from '#lib/components/Header.svelte';
 	import { page } from '$app/state';
 	import 'highlight.js/styles/night-owl.css';
 

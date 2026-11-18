@@ -50,5 +50,9 @@
 		"esbuild": true,
 		"sharp": true,
 		"workerd": true
+	},
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
 	}
 }

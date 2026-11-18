@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { GameList } from '$lib/games.remote';
-	import '$lib/styles/list.css';
+	import type { GameList } from '#lib/games.remote.ts';
+	import '#lib/styles/list.css';
 
 	let { game_list }: { game_list: GameList } = $props();
 </script>

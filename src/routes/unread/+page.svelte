@@ -1,6 +1,6 @@
 <script lang="ts">
-	import BookList from '$lib/components/BookList.svelte';
-	import { get_book_list } from '$lib/books.remote';
+	import BookList from '#lib/components/BookList.svelte';
+	import { get_book_list } from '#lib/books.remote.ts';
 
 	const read = await get_book_list('read');
 	const reading = await get_book_list('reading');

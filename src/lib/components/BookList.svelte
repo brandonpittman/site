@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { BookList } from '$lib/books.remote';
-	import '$lib/styles/list.css';
+	import type { BookList } from '#lib/books.remote.ts';
+	import '#lib/styles/list.css';
 
 	let { book_list }: { book_list: BookList } = $props();
 </script>

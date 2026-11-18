@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import SearchForm from '$lib/components/SearchForm.svelte';
+	import SearchForm from '#lib/components/SearchForm.svelte';
 	import NoteLink from './NoteLink.svelte';
 	import { getNotes } from './notes.remote';
 </script>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import GameList from '$lib/components/GameList.svelte';
-	import { get_game_list } from '$lib/games.remote';
+	import GameList from '#lib/components/GameList.svelte';
+	import { get_game_list } from '#lib/games.remote.ts';
 
 	const beaten = await get_game_list('beaten');
 	const unbeaten = await get_game_list('unbeaten');
