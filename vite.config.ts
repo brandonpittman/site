@@ -1,3 +1,5 @@
+import adapter from '@sveltejs/adapter-cloudflare';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import devtoolsJson from 'vite-plugin-devtools-json';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, searchForWorkspaceRoot, type Plugin } from 'vite';
@@ -23,7 +25,16 @@ const admin_index_fallback: Plugin = {
 };
 
 export default defineConfig({
-  plugins: [admin_index_fallback, sveltekit(), devtoolsJson()],
+  plugins: [
+    admin_index_fallback,
+    sveltekit({
+      preprocess: vitePreprocess(),
+      compilerOptions: { experimental: { async: true } },
+      experimental: { remoteFunctions: true },
+      adapter: adapter()
+    }),
+    devtoolsJson()
+  ],
   server: {
     fs: {
       allow: [
