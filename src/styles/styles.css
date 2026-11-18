@@ -1,11 +1,10 @@
 /* GLOBAL CSS */
 
-@layer reset,global,props,fonts,composition,utility,blocks,exceptions;
+@layer reset,global,props,composition,utility,blocks,exceptions;
 
 @import '../styles/global/reset.css';
 @import '../styles/global/global.css';
 @import '../styles/global/variables.css';
-@import '../styles/global/fonts.css';
 
 /* CUBE CSS */
 
