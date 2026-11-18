@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import type { Snippet } from 'svelte';
 
 	type Props = {
 		placeholder?: string;
-		children: any;
+		children: Snippet;
 	};
 
 	let { placeholder, children }: Props = $props();

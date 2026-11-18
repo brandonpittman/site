@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
+	import type { Pathname } from '$app/types';
+	import type { Snippet } from 'svelte';
 
 	type Props = {
-		href: string;
+		href: Pathname;
 		matches?: string[];
-		children: any;
+		children: Snippet;
 	};
 
 	let { href, matches = [], children }: Props = $props();
@@ -15,7 +18,7 @@
 </script>
 
 <li>
-	<a {href} aria-current={isCurrentPage ? 'page' : undefined}>
+	<a href={resolve(href)} aria-current={isCurrentPage ? 'page' : undefined}>
 		{@render children()}
 	</a>
 </li>

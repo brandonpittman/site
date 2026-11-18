@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import NavLink from './NavLink.svelte';
 </script>
 
 <header class="header wrapper repel w-full">
-	<a href="/" class="with-icon no-underline font-bold">
+	<a href={resolve('/')} class="with-icon no-underline font-bold">
 		<span class="icon">🏛</span>
 		<span>Brandon Pittman</span>
 	</a>

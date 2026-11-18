@@ -6,7 +6,7 @@
 </script>
 
 <ul class="item-list">
-	{#each book_list.books as book}
+	{#each book_list.books as book (`${book.title}|${book.author}`)}
 		<li>
 			{book.title}
 			<span>{book.author}</span>

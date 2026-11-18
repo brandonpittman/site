@@ -6,7 +6,7 @@
 </script>
 
 <ul class="item-list">
-	{#each game_list.games as game}
+	{#each game_list.games as game (game.title)}
 		<li>
 			{game.title}
 			<span>{game.platform}</span>
