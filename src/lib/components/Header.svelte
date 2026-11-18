@@ -10,8 +10,8 @@
 	</a>
 
 	<ul role="list" class="cluster font-bold gutter-s">
-		<NavLink href="/about">About</NavLink>
-		<NavLink href="/notes">Notes</NavLink>
-		<NavLink href="/colophon">Colophon</NavLink>
+		<NavLink href="about">About</NavLink>
+		<NavLink href="notes">Notes</NavLink>
+		<NavLink href="colophon">Colophon</NavLink>
 	</ul>
 </header>
