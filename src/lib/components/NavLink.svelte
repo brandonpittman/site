@@ -1,14 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import type { Pathname } from '$app/types';
+	import type { Path } from '$app/types';
 	import type { Snippet } from 'svelte';
 
-	type Props = {
-		href: Pathname;
-		matches?: string[];
-		children: Snippet;
-	};
+	type Props = { href: Path; matches?: string[]; children: Snippet };
 
 	let { href, matches = [], children }: Props = $props();
 
@@ -29,11 +25,11 @@
 		position: relative;
 	}
 
-	[aria-current='page'] {
+	[aria-current="page"] {
 		color: var(--color-base-light);
 	}
 
-	[aria-current='page']::before {
+	[aria-current="page"]::before {
 		content: '';
 		position: absolute;
 		inset-inline: calc(var(--space-2xs) * -1);
@@ -45,7 +41,7 @@
 		background-color: var(--color-base-dark);
 	}
 
-	[aria-current='page']:focus-visible {
+	[aria-current="page"]:focus-visible {
 		outline-offset: 0.6rem;
 	}
 </style>

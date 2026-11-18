@@ -13,19 +13,23 @@
 
 <p>
 	Welcome to my little corner of the Internet! This site is an attempt to get back to where we used
-	to be in the 90's&mdash;everyone having their own personal site that told the world who they are
-	and what they're interested in.
+	to be in the 90's—everyone having their own personal site that told the world who they are and
+	what they're interested in.
 </p>
 <p>
 	My name is Brandon Pittman. I build web sites and apps, study
-	<a href={traditionStoicism}>traditional Stoicism</a>, and I train Brazilian jiu-jitsu. I sometimes
-	<a href={resolve('/notes')}>write</a>
+	<a href={traditionStoicism}>traditional Stoicism</a>
+	, and I train Brazilian jiu-jitsu. I sometimes
+	<a href={resolve('notes')}>write</a>
 	about programming, Stoic ideals, and managing time and attention. I don't use social media aside from
-	<a href={github}>GitHub</a>. My backstory is on the <a href={resolve('/about')}>About</a> page.
-	You may also find something interesting in the interested in what
-	<a href={resolve('/unplayed')}>games I play</a>
+	<a href={github}>GitHub</a>
+	. My backstory is on the
+	<a href={resolve('about')}>About</a>
+	page. You may also find something interesting in the interested in what
+	<a href={resolve('unplayed')}>games I play</a>
 	or
-	<a href={resolve('/unread')}>books I read</a>.
+	<a href={resolve('unread')}>books I read</a>
+	.
 </p>
 
 <p>
