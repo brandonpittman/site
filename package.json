@@ -47,7 +47,7 @@
     "marked-highlight": "^2.2.3",
     "zod": "^4.1.12"
   },
-  "allowBuilds": {
+  "allowScripts": {
     "esbuild": true,
     "sharp": true,
     "workerd": true
