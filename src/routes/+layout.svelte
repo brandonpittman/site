@@ -6,8 +6,6 @@
 
 	let { children } = $props();
 
-	// Get title from page data meta or use default
-	// TODO: Fix global metadata handling
 	const baseName = 'Brandon Pittman';
 	const titleSuffix = ' | ' + baseName;
 
