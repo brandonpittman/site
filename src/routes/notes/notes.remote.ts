@@ -1,5 +1,5 @@
 import { prerender } from '$app/server';
-import { dev } from '$app/environment';
+import { dev } from '$app/env';
 import { error } from '@sveltejs/kit';
 import matter, { type Input } from 'gray-matter';
 import { Marked } from 'marked';
