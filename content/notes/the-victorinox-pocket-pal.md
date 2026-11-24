@@ -5,7 +5,7 @@ location: ''
 description: The perfect lounging knife.
 deprecated: false
 successor: ''
-draft: true
+draft: false
 ---
 
 ![](/images/cms/IMG_3680.jpeg)
