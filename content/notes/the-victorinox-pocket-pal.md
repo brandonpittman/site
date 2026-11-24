@@ -1,5 +1,5 @@
 ---
-title: The Victorinox Pocket Pal
+title: The Victorinox Ambassador
 date: 2026-11-24
 location: ''
 description: The perfect lounging knife.
