@@ -2,10 +2,10 @@
 title: The Victorinox Pocket Pal
 date: 2026-11-24
 location: ''
-description: The most comfortable small Victorinox knife.
+description: The most comfortable medium-sized Victorinox knife.
 deprecated: false
 successor: ''
-draft: true
+draft: false
 ---
 
 ![](/images/cms/image.jpg)
