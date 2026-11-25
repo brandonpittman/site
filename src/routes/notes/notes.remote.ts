@@ -106,5 +106,8 @@ export const getNote = prerender(
 		};
 	},
 	// Drafts 404 at build time, so only enumerate publishable slugs as inputs.
-	{ inputs: () => allNotes.filter((note) => note.draft !== true).map((note) => note.slug) }
+	{
+		inputs: () => allNotes.filter((note) => note.draft !== true).map((note) => note.slug),
+		dynamic: true
+	}
 );
