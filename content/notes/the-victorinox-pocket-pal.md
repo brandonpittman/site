@@ -1,13 +1,13 @@
 ---
-title: The Victorinox Ambassador
+title: The Victorinox Pocket Pal
 date: 2026-11-24
 location: ''
-description: The perfect lounging knife.
+description: The most comfortable small Victorinox knife.
 deprecated: false
 successor: ''
-draft: false
+draft: true
 ---
 
-![](/images/cms/IMG_3680.jpeg)
+![](/images/cms/image.jpg)
 
-The Ambassador is a 74mm Classic, essentially. Same tools, just sized up. This makes it more comfortable to hold and easier to use. I think the 58mm tools are a better fit for keychains, but around the house, opening packages, filing rough nails for myself, and occasionally clipping a nail for my kids, this may be the perfect tool set. I typically carry only Alox tools but lately the tweezers have seemed like a nice thing to have with all the stickers I put on Lego pieces.
+The Pocket Pal is a tool I'd wanted for a while. I had a similar model with a keyring before but unless I'm actually gonna stick it on a keyring, I don't want that keyring attachment in the way. The Pocket Pal is a good size for the hand and the celidor is a bit thicker than the Alox variants of this. That extra bit of thickness improves the grip feel.
